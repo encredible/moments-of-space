@@ -1,16 +1,16 @@
 {
-  "name": "moments-of-space",
+  "name": "temp-nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "framer-motion": "^12.12.2",
+    "framer-motion": "^12.13.0",
     "lucide-react": "^0.511.0",
     "next": "15.3.2",
     "react": "^19.0.0",

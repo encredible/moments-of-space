@@ -1,164 +1,104 @@
 import Link from 'next/link';
-import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Twitter, Facebook, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const footerLinks = [
+    { name: '서비스', href: '/services' },
+    { name: '프로젝트', href: '/projects' },
+    { name: '소개', href: '/about' },
+    { name: '연락처', href: '/contact' },
+    { name: '개인정보처리방침', href: '/privacy' },
+  ];
 
-  const footerLinks = {
-    services: [
-      { name: '주거 공간 인테리어', href: '/services#residential' },
-      { name: '상업 공간 디자인', href: '/services#commercial' },
-      { name: '팝업 스토어', href: '/services#popup' },
-      { name: '공간 스타일링', href: '/services#styling' },
-    ],
-    projects: [
-      { name: '주거 공간', href: '/projects/residential' },
-      { name: '상업 공간', href: '/projects/commercial' },
-      { name: '팝업 & 이벤트', href: '/projects/popup' },
-    ],
-    company: [
-      { name: 'About', href: '/about' },
-      { name: 'Contact', href: '/contact' },
-      { name: 'Inclusions', href: '/inclusions' },
-    ],
-  };
+  const contactInfo = [
+    { icon: Mail, text: 'hello@momentsofspace.kr', href: 'mailto:hello@momentsofspace.kr' },
+    { icon: Phone, text: '010-1234-5678', href: 'tel:010-1234-5678' },
+  ];
+
+  const socialLinks = [
+    { name: 'Instagram', href: '#', icon: Instagram },
+    { name: 'Twitter', href: '#', icon: Twitter },
+    { name: 'Facebook', href: '#', icon: Facebook },
+  ];
 
   return (
-    <footer className="bg-primary-900 text-white">
-      <div className="container mx-auto py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* 브랜드 섹션 */}
-          <div className="lg:col-span-1">
-            <Link 
-              href="/" 
-              className="text-2xl font-heading font-bold text-white hover:text-accent-400 transition-colors duration-300"
-            >
-              Moments of Space
-            </Link>
-            <p className="mt-4 text-primary-200 leading-relaxed">
-              공간에 생명을 불어넣는 디자이너. 주거부터 상업공간까지, 당신만의 특별한 공간을 만들어드립니다.
-            </p>
-            
-            {/* 소셜 미디어 */}
-            <div className="flex space-x-4 mt-6">
-              <a 
-                href="mailto:hello@momentsofspace.com" 
-                className="text-primary-200 hover:text-accent-400 transition-colors duration-300"
-                aria-label="이메일"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://instagram.com/momentsofspace" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary-200 hover:text-accent-400 transition-colors duration-300"
-                aria-label="인스타그램"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a 
-                href="tel:+82-10-1234-5678" 
-                className="text-primary-200 hover:text-accent-400 transition-colors duration-300"
-                aria-label="전화"
-              >
-                <Phone className="h-5 w-5" />
-              </a>
+    <footer className="bg-gray-900 text-white pt-20 pb-12 font-sans">
+      <div className="w-full max-w-[1400px] mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 max-w-[1200px] mx-auto">
+          {/* Brand & Description */}
+          <div className="md:col-span-1 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start space-x-3 mb-6">
+              <div className="w-4 h-4 bg-amber-600 rounded-full"></div>
+              <span className="font-bold text-xl text-white font-sans">
+                Moments of Space
+              </span>
             </div>
+            <p className="text-gray-300 leading-relaxed font-sans text-lg">
+              공간에 생명을 불어넣는 디자이너. 
+              주거부터 상업공간까지, 당신만의 특별한 공간을 만들어드립니다.
+            </p>
           </div>
 
-          {/* 서비스 링크 */}
-          <div>
-            <h3 className="text-lg font-heading font-semibold mb-4">Services</h3>
-            <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="text-primary-200 hover:text-accent-400 transition-colors duration-300 text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* 프로젝트 링크 */}
-          <div>
-            <h3 className="text-lg font-heading font-semibold mb-4">Projects</h3>
-            <ul className="space-y-2">
-              {footerLinks.projects.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="text-primary-200 hover:text-accent-400 transition-colors duration-300 text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* 연락처 정보 */}
-          <div>
-            <h3 className="text-lg font-heading font-semibold mb-4">Contact</h3>
+          {/* Quick Links */}
+          <div className="md:col-span-1 text-center md:text-left">
+            <h3 className="font-semibold text-xl mb-6 font-sans">빠른 링크</h3>
             <div className="space-y-3">
-              <div className="flex items-start space-x-3">
-                <Mail className="h-4 w-4 mt-1 text-accent-400 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-primary-200">이메일</p>
-                  <a 
-                    href="mailto:hello@momentsofspace.com"
-                    className="text-sm text-white hover:text-accent-400 transition-colors duration-300"
-                  >
-                    hello@momentsofspace.com
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <Phone className="h-4 w-4 mt-1 text-accent-400 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-primary-200">전화</p>
-                  <a 
-                    href="tel:+82-10-1234-5678"
-                    className="text-sm text-white hover:text-accent-400 transition-colors duration-300"
-                  >
-                    010-1234-5678
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <MapPin className="h-4 w-4 mt-1 text-accent-400 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-primary-200">상담 지역</p>
-                  <p className="text-sm text-white">서울 · 경기</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 하단 구분선 및 저작권 */}
-        <div className="border-t border-primary-700 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-primary-200">
-              © {currentYear} Moments of Space. All rights reserved.
-            </p>
-            
-            <div className="flex space-x-6">
-              {footerLinks.company.map((link) => (
-                <Link 
+              {footerLinks.map((link) => (
+                <Link
                   key={link.name}
                   href={link.href}
-                  className="text-sm text-primary-200 hover:text-accent-400 transition-colors duration-300"
+                  className="block text-gray-300 hover:text-amber-400 transition-colors duration-300 font-sans text-lg"
                 >
                   {link.name}
                 </Link>
               ))}
+            </div>
+          </div>
+
+          {/* Contact Info */}
+          <div className="md:col-span-1 text-center md:text-left">
+            <h3 className="font-semibold text-xl mb-6 font-sans">연락처</h3>
+            <div className="space-y-4">
+              {contactInfo.map((contact, index) => {
+                const IconComponent = contact.icon;
+                return (
+                  <Link
+                    key={index}
+                    href={contact.href}
+                    className="flex items-center justify-center md:justify-start space-x-3 text-gray-300 hover:text-amber-400 transition-colors duration-300"
+                  >
+                    <IconComponent size={18} />
+                    <span className="font-sans text-lg">{contact.text}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-gray-700 pt-10 max-w-[1200px] mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            {/* Copyright */}
+            <p className="text-gray-400 text-lg font-sans">
+              © 2024 Moments of Space. All rights reserved.
+            </p>
+
+            {/* Social Media Icons */}
+            <div className="flex items-center space-x-6">
+              {socialLinks.map((social) => {
+                const IconComponent = social.icon;
+                return (
+                  <Link
+                    key={social.name}
+                    href={social.href}
+                    className="w-10 h-10 bg-gray-700 hover:bg-amber-600 rounded-full flex items-center justify-center transition-colors duration-300"
+                    aria-label={social.name}
+                  >
+                    <IconComponent size={18} className="text-white" />
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
