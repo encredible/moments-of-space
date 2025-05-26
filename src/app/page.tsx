@@ -12,8 +12,8 @@ export default function Home() {
       <About />
       <AboutTwo />
       <AboutThree />
-      <FeaturedProjects />
-      <CTASection />
+      {/*<FeaturedProjects />*/}
+      {/*<CTASection />*/}
     </>
   );
 }

@@ -22,9 +22,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white pt-20 pb-12 font-sans">
-      <div className="w-full max-w-[1400px] mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 max-w-[1200px] mx-auto">
+    <footer className="bg-gray-900 text-white pt-20 pb-12 font-sans w-full flex justify-center">
+      <div className="w-full max-w-[1200px] px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand & Description */}
           <div className="md:col-span-1 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-3 mb-6">
@@ -77,7 +77,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-700 pt-10 max-w-[1200px] mx-auto">
+        <div className="border-t border-gray-700 pt-10">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             {/* Copyright */}
             <p className="text-gray-400 text-lg font-sans">

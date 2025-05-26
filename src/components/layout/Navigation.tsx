@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import React from 'react';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,16 +33,15 @@ const Navigation = () => {
           {/* Desktop Navigation - Centered (within this right-aligned block) */}
           <div className="hidden md:flex items-center">
             {menuItems.map((item, index) => (
-              <>
+              <React.Fragment key={item.name}>
                 <Link
-                  key={item.name}
                   href={item.href}
                   className="text-gray-900 font-medium text-lg hover:text-amber-600 transition-colors duration-300 font-sans px-2 py-3"
                 >
                   {item.name}
                 </Link>
                 {index < menuItems.length - 1 && <div className="w-9"></div>}
-              </>
+              </React.Fragment>
             ))}
           </div>
 

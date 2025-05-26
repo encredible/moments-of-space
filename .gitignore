@@ -17,6 +17,8 @@
 /.next/
 /out/
 
+/.idea/
+
 # production
 /build
 
@@ -40,4 +42,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.idea
