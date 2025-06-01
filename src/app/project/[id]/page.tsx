@@ -1,33 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import fs from 'fs';
-import path from 'path';
-
-interface ProjectImage {
-  src: string;
-  alt: string;
-}
-
-interface Testimonial {
-  quote: string;
-  author: string;
-}
-
-interface ProjectItemDetail {
-  id: string;
-  title: string;
-  imageUrl: string;
-  category: string;
-  description: string;
-  details?: string[];
-  images?: ProjectImage[];
-  client?: string;
-  date?: string;
-  tags?: string[];
-  servicesProvided?: string[];
-  testimonial?: Testimonial;
-}
+import { projectDetailsById, ProjectItemDetail, ProjectImage, Testimonial } from '../projectData';
 
 interface ProjectDetailPageProps {
   params: { id: string };
@@ -35,17 +9,14 @@ interface ProjectDetailPageProps {
 
 export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   const { id } = params;
-  // Support both string and number id, but always use numeric filename
-  const numericId = typeof id === 'string' && !isNaN(Number(id)) ? Number(id) : id;
-  const filePath = path.join(process.cwd(), 'src/app/project/data', `${numericId}.json`);
-  let project: ProjectItemDetail | null = null;
-  try {
-    const raw = fs.readFileSync(filePath, 'utf-8');
-    project = JSON.parse(raw) as ProjectItemDetail;
-  } catch {
+  
+  // 프로젝트 데이터 가져오기
+  const project = projectDetailsById[id];
+  
+  // 프로젝트가 없으면 404 페이지로 이동
+  if (!project) {
     notFound();
   }
-  if (!project) return null;
 
   return (
     <main className="max-w-3xl mx-auto py-12 px-4">

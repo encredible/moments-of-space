@@ -1,10 +1,29 @@
+// 프로젝트 이미지 인터페이스
+export interface ProjectImage {
+  src: string;
+  alt: string;
+}
+
+// 추천사 인터페이스
+export interface Testimonial {
+  quote: string;
+  author: string;
+}
+
 // Interface for the detailed project data (as in 1.json, 2.json, etc.)
 export interface ProjectDetailData {
   id: number; // Numeric ID from individual files
   title: string;
   imageUrl: string;
   category: string;
-  // Add other fields if needed
+  description?: string;
+  details?: string[];
+  images?: ProjectImage[];
+  client?: string;
+  date?: string;
+  tags?: string[];
+  servicesProvided?: string[];
+  testimonial?: Testimonial;
 }
 
 // Interface for the objects we'll use in components' state/rendering
@@ -13,6 +32,22 @@ export interface ProjectItem {
   title: string;
   imageUrl: string;
   category: string;
+}
+
+// 프로젝트 상세 페이지에서 사용할 인터페이스
+export interface ProjectItemDetail {
+  id: string;
+  title: string;
+  imageUrl: string;
+  category: string;
+  description: string;
+  details?: string[];
+  images?: ProjectImage[];
+  client?: string;
+  date?: string;
+  tags?: string[];
+  servicesProvided?: string[];
+  testimonial?: Testimonial;
 }
 
 // Interface for the structure of projectContent.json
