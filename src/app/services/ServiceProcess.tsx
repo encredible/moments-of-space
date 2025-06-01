@@ -13,7 +13,7 @@ interface ServiceProcessProps {
 
 export default function ServiceProcess({ steps, className = '' }: ServiceProcessProps) {
     return (
-        <section className={`w-full max-w-5xl py-16 ${className}`}>
+        <section className={`w-full max-w-5xl mx-auto py-16 px-4 ${className}`}>
             <h2 className="font-korean text-2xl sm:text-3xl text-neutral-900 text-center mb-10">
                 서비스 진행 프로세스
             </h2>

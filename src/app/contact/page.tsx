@@ -13,7 +13,7 @@ const ContactPage = () => {
             />
 
             {/* 반투명 배경이 있는 폼 컨테이너 */}
-            <div className="bg-white/95 backdrop-blur-sm p-8 shadow-xl">
+            <div className="backdrop-blur-sm p-8">
                 <form className="space-y-6">
                     {contactContent.form.fields.map((field) => (
                         <div key={field.id}>
