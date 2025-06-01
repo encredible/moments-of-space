@@ -2,10 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Props가 필요하다면 여기에 정의합니다.
-interface FooterProps {}
-
-const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="border-t border-gray-200 w-full mt-auto">
       <div className="max-w-screen-xl mx-auto flex flex-col items-center px-5 py-8 sm:px-10 gap-6">

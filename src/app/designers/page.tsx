@@ -32,7 +32,7 @@ const DesignersPage = () => {
             <Image src="/images/aisha-khan.jpg" alt="Aisha Khan, Interior Designer" width={160} height={160} className="w-40 h-40 rounded-full object-cover flex-shrink-0" />
             <div className="flex flex-col">
               <h3 className="font-plus-jakarta-sans font-semibold text-xl sm:text-2xl text-neutral-900 mb-2">Aisha Khan</h3>
-              <p className="font-plus-jakarta-sans text-sm sm:text-base text-gray-600">Aisha is passionate about vibrant colors and eclectic styles. She loves to craft unique and personalized environments that truly reflect the client's personality and story.</p>
+              <p className="font-plus-jakarta-sans text-sm sm:text-base text-gray-600">Aisha is passionate about vibrant colors and eclectic styles. She loves to craft unique and personalized environments that truly reflect the client&apos;s personality and story.</p>
             </div>
           </article>
         </div>

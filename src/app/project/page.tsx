@@ -57,7 +57,7 @@ const ProjectPage = () => {
           Our Projects
         </h2>
         <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
-          Discover the spaces we've transformed. Each project reflects our commitment to creating environments that are both beautiful and functional, tailored to our clients' unique visions.
+          Discover the spaces we&apos;ve transformed. Each project reflects our commitment to creating environments that are both beautiful and functional, tailored to our clients&apos; unique visions.
         </p>
       </div>
 

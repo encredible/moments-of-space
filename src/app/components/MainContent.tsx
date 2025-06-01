@@ -2,10 +2,7 @@
 import Image from 'next/image'; // Image 컴포넌트를 사용하지 않더라도, 스타일 가이드 일관성을 위해 포함
 import Link from 'next/link';
 
-// Props가 필요하다면 여기에 정의합니다.
-interface MainContentProps {}
-
-const MainContent: React.FC<MainContentProps> = () => {
+const MainContent: React.FC = () => {
   return (
     <main className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-5 w-full">
       <div className="flex flex-col flex-grow w-full">
@@ -93,11 +90,11 @@ const MainContent: React.FC<MainContentProps> = () => {
         </section>
         <section className="flex flex-col gap-4 p-4">
           <article className="p-4 rounded-xl border border-gray-200">
-            <p className="font-plus-jakarta-sans text-base text-neutral-900">"Sarah transformed our living room into a masterpiece. Her attention to detail and creative vision are unparalleled."</p>
+            <p className="font-plus-jakarta-sans text-base text-neutral-900">&ldquo;Sarah transformed our living room into a masterpiece. Her attention to detail and creative vision are unparalleled.&rdquo;</p>
             <footer className="mt-3 font-plus-jakarta-sans text-sm text-gray-500">- John & Jane Doe</footer>
           </article>
           <article className="p-4 rounded-xl border border-gray-200">
-            <p className="font-plus-jakarta-sans text-base text-neutral-900">"Working with Sarah was a pleasure. She understood our needs perfectly and delivered a stunning design for our office."</p>
+            <p className="font-plus-jakarta-sans text-base text-neutral-900">&ldquo;Working with Sarah was a pleasure. She understood our needs perfectly and delivered a stunning design for our office.&rdquo;</p>
             <footer className="mt-3 font-plus-jakarta-sans text-sm text-gray-500">- ACME Corp</footer>
           </article>
         </section>

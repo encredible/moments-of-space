@@ -34,7 +34,7 @@ const ServicesPage = () => {
             Our Services
           </h2>
           <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
-            We offer a range of services to help you create a space you'll love. Whether you need a full redesign or just a little guidance, our team is here to bring your vision to life.
+            We offer a range of services to help you create a space you&apos;ll love. Whether you need a full redesign or just a little guidance, our team is here to bring your vision to life.
           </p>
         </div>
       </section>
