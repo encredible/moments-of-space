@@ -34,14 +34,18 @@ const ServicesPage = () => {
 
       {/* 서비스 카드 섹션 */}
       <section className="w-full max-w-6xl mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {content.services.map((service: Service, idx: number) => (
-          <div key={service.title + idx} className="flex flex-col bg-white p-6 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-            <Image src={service.imageSrc} alt={service.imageAlt} width={600} height={400} className="object-cover w-full h-auto md:h-96 mb-4" />
-            <h3 className="font-plus-jakarta-sans font-semibold text-xl text-neutral-900 mb-3">{service.title}</h3>
-            <p className="font-plus-jakarta-sans text-sm text-gray-600 flex-grow">{service.shortDescription}</p>
-          </div>
-        ))}
+        <div className="flex flex-row overflow-x-auto gap-6 md:gap-8 scrollbar-hide md:overflow-visible">
+          {content.services.map((service: Service, idx: number) => (
+            <div
+              key={service.title + idx}
+              className="flex-shrink-0 w-80 md:w-96 flex flex-col bg-white p-6 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 rounded-lg"
+              style={{ minWidth: '20rem', maxWidth: '24rem' }}
+            >
+              <Image src={service.imageSrc} alt={service.imageAlt} width={600} height={400} className="object-cover w-full h-56 md:h-72 mb-4" />
+              <h3 className="font-plus-jakarta-sans font-semibold text-xl text-neutral-900 mb-3">{service.title}</h3>
+              <p className="font-plus-jakarta-sans text-sm text-gray-600 flex-grow">{service.shortDescription}</p>
+            </div>
+          ))}
         </div>
       </section>
 
