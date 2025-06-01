@@ -8,17 +8,17 @@ const MainContent: React.FC = () => {
       <div className="flex flex-col flex-grow w-full">
         {/* Hero Section */}
         <section
-          className="rounded-xl h-128 bg-cover bg-center flex flex-col items-center justify-center text-center text-white mb-8"
+          className=" h-128 bg-cover bg-center flex flex-col items-center justify-center text-center text-white mb-8"
           style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url("/images/hero-background.jpg")' }}
         >
           <h1 className="font-plus-jakarta-sans font-extrabold text-4xl md:text-5xl leading-tight tracking-tighter">
             Creating beautiful spaces that inspire
           </h1>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link href="/services" className="inline-block bg-neutral-900 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-neutral-700 transition-colors">
+            <Link href="/services" className="inline-block bg-neutral-900 text-white px-8 py-3  text-lg font-medium hover:bg-neutral-700 transition-colors">
               Our Services
             </Link>
-            <Link href="/project" className="inline-block bg-white text-neutral-900 px-8 py-3 rounded-lg text-lg font-medium border border-neutral-300 hover:bg-neutral-100 transition-colors">
+            <Link href="/project" className="inline-block bg-white text-neutral-900 px-8 py-3  text-lg font-medium border border-neutral-300 hover:bg-neutral-100 transition-colors">
               View Projects
             </Link>
           </div>
@@ -32,18 +32,18 @@ const MainContent: React.FC = () => {
           </h2>
         </section>
         <section className="p-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <article className="flex flex-col items-center text-center p-6 border border-gray-200 rounded-xl shadow-lg">
-            <Image src="/images/elena-rodriguez.jpg" alt="Elena Rodriguez, Lead Designer" width={128} height={128} className="w-32 h-32 rounded-full object-cover mb-4" />
+          <article className="flex flex-col items-center text-center p-6 border border-gray-200  shadow-lg">
+            <Image src="/images/elena-rodriguez.jpg" alt="Elena Rodriguez, Lead Designer" width={128} height={128} className="w-32 h-32  object-cover mb-4" />
             <h3 className="font-plus-jakarta-sans font-semibold text-xl text-neutral-900 mb-1">Elena Rodriguez</h3>
             <p className="font-plus-jakarta-sans text-sm text-gray-600">Elena is our Lead Designer, specializing in minimalist and sustainable design. She believes in creating spaces that are not only beautiful but also kind to the environment, bringing harmony and nature into every project.</p>
           </article>
-          <article className="flex flex-col items-center text-center p-6 border border-gray-200 rounded-xl shadow-lg">
-            <Image src="/images/marcus-chen.jpg" alt="Marcus Chen, Senior Designer" width={128} height={128} className="w-32 h-32 rounded-full object-cover mb-4" />
+          <article className="flex flex-col items-center text-center p-6 border border-gray-200  shadow-lg">
+            <Image src="/images/marcus-chen.jpg" alt="Marcus Chen, Senior Designer" width={128} height={128} className="w-32 h-32  object-cover mb-4" />
             <h3 className="font-plus-jakarta-sans font-semibold text-xl text-neutral-900 mb-1">Marcus Chen</h3>
             <p className="font-plus-jakarta-sans text-sm text-gray-600">Marcus, a Senior Designer, is an expert in blending modern aesthetics with classic comfort. He excels at creating timeless interiors that feel both sophisticated and inviting.</p>
           </article>
-          <article className="flex flex-col items-center text-center p-6 border border-gray-200 rounded-xl shadow-lg">
-            <Image src="/images/aisha-khan.jpg" alt="Aisha Khan, Interior Designer" width={128} height={128} className="w-32 h-32 rounded-full object-cover mb-4" />
+          <article className="flex flex-col items-center text-center p-6 border border-gray-200  shadow-lg">
+            <Image src="/images/aisha-khan.jpg" alt="Aisha Khan, Interior Designer" width={128} height={128} className="w-32 h-32  object-cover mb-4" />
             <h3 className="font-plus-jakarta-sans font-semibold text-xl text-neutral-900 mb-1">Aisha Khan</h3>
             <p className="font-plus-jakarta-sans text-sm text-gray-600">Aisha is passionate about vibrant colors and eclectic styles. She loves to craft unique and personalized environments that truly reflect the client's personality and story.</p>
           </article>
@@ -59,24 +59,24 @@ const MainContent: React.FC = () => {
         <section className="flex flex-col gap-5 p-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             <article className="flex-1 flex flex-col gap-3">
-              <Image src="/images/modern-apartment.jpg" alt="Modern Apartment" width={400} height={169} className="rounded-xl object-cover w-full h-44" />
+              <Image src="/images/modern-apartment.jpg" alt="Modern Apartment" width={400} height={169} className=" object-cover w-full h-44" />
               <h3 className="font-plus-jakarta-sans font-medium text-base text-neutral-900">Modern Apartment</h3>
               <p className="font-plus-jakarta-sans text-sm text-gray-500">A sleek and minimalist apartment design in downtown San Francisco.</p>
             </article>
             <article className="flex-1 flex flex-col gap-3">
-              <Image src="/images/cozy-home.jpg" alt="Cozy Home" width={400} height={169} className="rounded-xl object-cover w-full h-44" />
+              <Image src="/images/cozy-home.jpg" alt="Cozy Home" width={400} height={169} className=" object-cover w-full h-44" />
               <h3 className="font-plus-jakarta-sans font-medium text-base text-neutral-900">Cozy Home</h3>
               <p className="font-plus-jakarta-sans text-sm text-gray-500">A warm and inviting home design with a focus on comfort and functionality.</p>
             </article>
             <article className="flex-1 flex flex-col gap-3">
-              <Image src="/images/luxury-villa.jpg" alt="Luxury Villa" width={400} height={170} className="rounded-xl object-cover w-full h-44" />
+              <Image src="/images/luxury-villa.jpg" alt="Luxury Villa" width={400} height={170} className=" object-cover w-full h-44" />
               <h3 className="font-plus-jakarta-sans font-medium text-base text-neutral-900">Luxury Villa</h3>
               <p className="font-plus-jakarta-sans text-sm text-gray-500">An opulent villa design showcasing luxurious materials and finishes.</p>
             </article>
           </div>
           {/* Portfolio Item 4 */}
           <article className="flex flex-col gap-3 mt-5">
-            <Image src="/images/office-space.jpg" alt="Office Space" width={1232} height={170} className="rounded-xl object-cover w-full h-44" />
+            <Image src="/images/office-space.jpg" alt="Office Space" width={1232} height={170} className=" object-cover w-full h-44" />
             <h3 className="font-plus-jakarta-sans font-medium text-base text-neutral-900">Office Space</h3>
             <p className="font-plus-jakarta-sans text-sm text-gray-500">A modern and collaborative office space designed for productivity.</p>
           </article>
@@ -89,11 +89,11 @@ const MainContent: React.FC = () => {
           </h2>
         </section>
         <section className="flex flex-col gap-4 p-4">
-          <article className="p-4 rounded-xl border border-gray-200">
+          <article className="p-4  border border-gray-200">
             <p className="font-plus-jakarta-sans text-base text-neutral-900">&ldquo;Sarah transformed our living room into a masterpiece. Her attention to detail and creative vision are unparalleled.&rdquo;</p>
             <footer className="mt-3 font-plus-jakarta-sans text-sm text-gray-500">- John & Jane Doe</footer>
           </article>
-          <article className="p-4 rounded-xl border border-gray-200">
+          <article className="p-4  border border-gray-200">
             <p className="font-plus-jakarta-sans text-base text-neutral-900">&ldquo;Working with Sarah was a pleasure. She understood our needs perfectly and delivered a stunning design for our office.&rdquo;</p>
             <footer className="mt-3 font-plus-jakarta-sans text-sm text-gray-500">- ACME Corp</footer>
           </article>
@@ -104,7 +104,7 @@ const MainContent: React.FC = () => {
           <h2 className="font-plus-jakarta-sans font-bold text-2xl text-neutral-900">
             Ready to transform your space?
           </h2>
-          <button className="mt-3 bg-black rounded-xl px-5 h-12 flex justify-center items-center font-plus-jakarta-sans font-bold text-base text-white hover:bg-gray-800 mx-auto">
+          <button className="mt-3 bg-black  px-5 h-12 flex justify-center items-center font-plus-jakarta-sans font-bold text-base text-white hover:bg-gray-800 mx-auto">
             Get in Touch
           </button>
         </section>
@@ -118,7 +118,7 @@ const MainContent: React.FC = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Project Item 1 */}
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="bg-white  shadow-lg overflow-hidden">
                 <Image src="/images/project/project-highlight-1.jpg" alt="Project 1 Highlight" width={400} height={300} className="w-full h-64 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-neutral-900 mb-2">Modern Living Redefined</h3>
@@ -127,7 +127,7 @@ const MainContent: React.FC = () => {
                 </div>
               </div>
               {/* Project Item 2 */}
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="bg-white  shadow-lg overflow-hidden">
                 <Image src="/images/project/project-highlight-2.jpg" alt="Project 2 Highlight" width={400} height={300} className="w-full h-64 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-neutral-900 mb-2">Cozy & Chic Bedroom</h3>
@@ -136,7 +136,7 @@ const MainContent: React.FC = () => {
                 </div>
               </div>
               {/* Project Item 3 */}
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="bg-white  shadow-lg overflow-hidden">
                 <Image src="/images/project/project-highlight-3.jpg" alt="Project 3 Highlight" width={400} height={300} className="w-full h-64 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-neutral-900 mb-2">Elegant Kitchen Space</h3>
@@ -145,7 +145,7 @@ const MainContent: React.FC = () => {
                 </div>
               </div>
               {/* Project Item 4 */}
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="bg-white  shadow-lg overflow-hidden">
                 <Image src="/images/project/project-highlight-4.jpg" alt="Project 4 Highlight" width={400} height={300} className="w-full h-64 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-neutral-900 mb-2">Luxury Villa Retreat</h3>

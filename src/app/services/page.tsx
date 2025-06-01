@@ -43,10 +43,10 @@ const ServicesPage = () => {
       <section className="w-full max-w-6xl mb-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div key={service.title} className="flex flex-col bg-white p-6 border border-gray-200 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+            <div key={service.title} className="flex flex-col bg-white p-6 border border-gray-200  shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
               <h3 className="font-plus-jakarta-sans font-semibold text-xl text-neutral-900 mb-3">{service.title}</h3>
               <p className="font-plus-jakarta-sans text-sm text-gray-600 flex-grow">{service.shortDescription}</p>
-              {/* <button className="mt-auto bg-neutral-800 text-white px-4 py-2 rounded-lg hover:bg-neutral-900 transition-colors text-sm font-medium">
+              {/* <button className="mt-auto bg-neutral-800 text-white px-4 py-2  hover:bg-neutral-900 transition-colors text-sm font-medium">
                 Learn More
               </button> */}
             </div>
@@ -58,7 +58,7 @@ const ServicesPage = () => {
       <section className="w-full max-w-5xl space-y-20">
         {services.map((service, index) => (
           <article key={service.title} className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-            <div className="md:w-1/2 w-full rounded-lg overflow-hidden shadow-lg">
+            <div className="md:w-1/2 w-full  overflow-hidden shadow-lg">
               <Image src={service.imageSrc} alt={service.imageAlt} width={600} height={400} className="object-cover w-full h-auto md:h-96" />
             </div>
             <div className="md:w-1/2 w-full">

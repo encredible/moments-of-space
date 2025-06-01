@@ -175,7 +175,7 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ params }) => 
           </p>
         </header>
 
-        <figure className="mb-8 w-full aspect-[16/9] relative overflow-hidden rounded-lg shadow-lg">
+        <figure className="mb-8 w-full aspect-[16/9] relative overflow-hidden  shadow-lg">
           <Image 
             src={item.imageUrl} 
             alt={`Main image for ${item.title}`} 
@@ -204,7 +204,7 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ params }) => 
             <h2 className="font-plus-jakarta-sans font-bold text-2xl sm:text-3xl text-neutral-900 mb-6 text-center">Gallery</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {item.images.map((image: PortfolioImage, index: number) => (
-                <div key={index} className="aspect-video relative overflow-hidden rounded-lg shadow-md">
+                <div key={index} className="aspect-video relative overflow-hidden  shadow-md">
                   <Image src={image.src} alt={image.alt} fill className="object-cover" />
                 </div>
               ))}
@@ -213,7 +213,7 @@ const PortfolioDetailPage: React.FC<PortfolioDetailPageProps> = ({ params }) => 
         )}
 
         <div className="text-center mt-12">
-          <Link href="/portfolio" className="inline-block bg-neutral-800 text-white px-6 py-3 rounded-lg hover:bg-neutral-900 transition-colors text-base font-medium">
+          <Link href="/portfolio" className="inline-block bg-neutral-800 text-white px-6 py-3  hover:bg-neutral-900 transition-colors text-base font-medium">
             Back to Portfolio
           </Link>
         </div>

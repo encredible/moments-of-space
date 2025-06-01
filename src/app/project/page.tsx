@@ -66,13 +66,13 @@ const ProjectPage = () => {
       {/* 여기서는 반응형 그리드를 사용하고, 아이템 높이를 다르게 하여 유사한 느낌을 줍니다. */}
       <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
         {projectItems.map((item, index) => (
-          <Link key={item.id} href={`/project/${item.id}`} className="block group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 break-inside-avoid">
+          <Link key={item.id} href={`/project/${item.id}`} className="block group relative overflow-hidden  shadow-lg hover:shadow-xl transition-shadow duration-300 break-inside-avoid">
             <Image
               src={item.imageUrl}
               alt={item.title}
               width={500} // 예시 크기, 실제 이미지 비율에 맞게 조정
               height={index % 2 === 0 ? 700 : 500} // 높이를 다르게 하여 masonry 느낌 연출
-              className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
+              className="object-cover h-full transform group-hover:scale-105 transition-transform duration-300"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-6 flex flex-col justify-end">
               <h3 className="font-plus-jakarta-sans font-semibold text-xl text-white mb-1">
