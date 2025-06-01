@@ -2,41 +2,9 @@
   "title": "Our Projects",
   "description": "Discover the spaces we've transformed. Each project reflects our commitment to creating environments that are both beautiful and functional, tailored to our clients' unique visions.",
   "projects": [
-    {
-      "id": "1",
-      "title": "Modern Apartment Makeover",
-      "imageUrl": "/images/project/project-modern-apartment-detail1.jpg",
-      "category": "Residential"
-    },
-    {
-      "id": "2",
-      "title": "Cozy Living Room Refresh",
-      "imageUrl": "/images/project/project-cozy-living-detail2.jpg",
-      "category": "Residential"
-    },
-    {
-      "id": "3",
-      "title": "Luxury Villa Design",
-      "imageUrl": "/images/project/project-luxury-villa-detail1.jpg",
-      "category": "Residential"
-    },
-    {
-      "id": "4",
-      "title": "Minimalist Office Space",
-      "imageUrl": "/images/project/project-modern-apartment-detail3.jpg",
-      "category": "Commercial"
-    },
-    {
-      "id": "5",
-      "title": "Bohemian Bedroom Retreat",
-      "imageUrl": "/images/project/project-boho-bedroom.jpg",
-      "category": "Residential"
-    },
-    {
-      "id": "6",
-      "title": "Sleek Kitchen Remodel",
-      "imageUrl": "/images/project/project-sleek-kitchen.jpg",
-      "category": "Residential"
-    }
+    "1",
+    "2",
+    "3",
+    "4"
   ]
 }

@@ -3,34 +3,71 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 
-interface ProjectItem {
-  id: string;
+// Interface for the detailed project data (as in 1.json, 2.json, etc.)
+interface ProjectDetailData {
+  id: number; // Numeric ID from individual files
   title: string;
   imageUrl: string;
   category: string;
-  // 나중에 상세 페이지 내용 추가 시 필드 확장
+  // Add other fields if needed by ProjectPage
 }
 
-import projectList from './projectContent.json' assert { type: 'json' };
-
-type ProjectList = {
+// Interface for the objects we'll use in the component's state/rendering
+interface ProjectItem {
+  id: string; // String ID as expected by the component
   title: string;
+  imageUrl: string;
+  category: string;
+}
+
+// Interface for the structure of projectContent.json (now just IDs)
+interface ProjectIdListData {
+  title: string; // Keep title and description for the page
   description: string;
-  projects: ProjectItem[];
+  projects: string[]; // Array of project IDs
+}
+
+// Load the list of project IDs and page metadata
+const projectPageContent: ProjectIdListData = require('./projectContent.json');
+const allProjectIds = projectPageContent.projects;
+
+// Pre-load all individual project details based on available data files
+// Assumes 1.json to 4.json exist in ./data/
+const projectDetailsById: { [key: string]: ProjectDetailData } = {
+  "1": require("./data/1.json"),
+  "2": require("./data/2.json"),
+  "3": require("./data/3.json"),
+  "4": require("./data/4.json"),
 };
 
-const content: ProjectList = projectList;
-const projectItems: ProjectItem[] = content.projects;
+// Map IDs to the full ProjectItem objects
+const projectItems: ProjectItem[] = allProjectIds.map(id => {
+  const detail = projectDetailsById[id];
+  if (!detail) {
+    console.warn(`Project data for ID ${id} not found in ProjectPage. Skipping.`);
+    return null;
+  }
+  return {
+    id: String(detail.id),
+    title: detail.title,
+    imageUrl: detail.imageUrl,
+    category: detail.category,
+  };
+}).filter(Boolean) as ProjectItem[];
+
+// Use page title and description from projectContent.json
+const pageTitle = projectPageContent.title;
+const pageDescription = projectPageContent.description;
 
 const ProjectPage = () => {
   return (
     <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div className="pt-5 pb-8">
         <h2 className="font-plus-jakarta-sans font-bold text-3xl sm:text-4xl text-neutral-900 text-center mb-10">
-          {content.title}
+          {pageTitle}
         </h2>
         <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
-          {content.description}
+          {pageDescription}
         </p>
       </div>
 

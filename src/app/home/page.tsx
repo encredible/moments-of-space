@@ -5,6 +5,7 @@ import homeContent from './homeContent.json';
 import ServiceHighlights from './ServiceHighlights';
 import ProjectHighlights from './ProjectHighlights';
 import HomeIntroSections from './HomeIntroSections';
+import { useRouter } from 'next/navigation';
 
 type PortfolioItem = {
   image: string;
@@ -53,6 +54,7 @@ type HomeContent = {
 };
 
 export default function HomePage() {
+  const router = useRouter();
   return (
     <main className="max-w-screen-xl mx-auto py-5 w-full">
       <div className="flex flex-col flex-grow w-full">
@@ -115,11 +117,14 @@ export default function HomePage() {
 
         {/* Call to Action Section */}
         <section className="pt-5 px-4 pb-3 text-center">
-          <h2 className="font-plus-jakarta-sans font-bold text-2xl text-neutral-900">
+          <h2 className="font-plus-jakarta-sans font-bold text-2xl mb-2 text-neutral-900">
             {homeContent.cta.title}
           </h2>
-          <button className="mt-3 bg-black px-5 h-12 flex justify-center items-center font-plus-jakarta-sans font-bold text-base text-white hover:bg-gray-800 mx-auto">
-            {homeContent.cta.button}
+          <button
+              onClick={() => router.push('/contact')}
+              className="font-plus-jakarta-sans font-bold text-base text-white bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
+          >
+            Get In Touch
           </button>
         </section>
       </div>
