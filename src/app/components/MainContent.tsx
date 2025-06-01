@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 const MainContent: React.FC = () => {
   return (
-    <main className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-5 w-full">
+    <main className="max-w-screen-xl mx-auto py-5 w-full">
       <div className="flex flex-col flex-grow w-full">
         {/* Hero Section */}
         <section
-          className="p-4 rounded-xl h-128 bg-cover bg-center flex flex-col items-center justify-center text-center text-white mb-8"
+          className="rounded-xl h-128 bg-cover bg-center flex flex-col items-center justify-center text-center text-white mb-8"
           style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url("/images/hero-background.jpg")' }}
         >
           <h1 className="font-plus-jakarta-sans font-extrabold text-4xl md:text-5xl leading-tight tracking-tighter">
