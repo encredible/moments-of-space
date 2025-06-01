@@ -1,74 +1,123 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import React, { useState, useEffect } from "react";
 
-// Interface for the detailed project data (as in 1.json, 2.json, etc.)
-// Note: The 'id' in these files is a number.
+// 홈 콘텐츠 인터페이스
+interface HomeContent {
+  projectHighlights: {
+    title: string;
+    projectIds: string[];
+  };
+  // 기타 필요한 필드들
+}
+
+// 프로젝트 상세 데이터 인터페이스
 interface ProjectDetailData {
-  id: number; // Numeric ID from individual files
+  id: number;
   title: string;
   imageUrl: string;
   category: string;
-  // Other fields from individual data files can be added here if needed by ProjectHighlights
+  // 기타 필요한 필드들
 }
 
-// Interface for the objects we'll use in the component's state/rendering
+// 컴포넌트에서 사용할 프로젝트 인터페이스
 interface Project {
-  id: string; // String ID as expected by the component
+  id: string;
   title: string;
   imageUrl: string;
   category: string;
 }
 
-// Interface for the structure of projectContent.json (now just IDs)
-interface ProjectIdListData {
-  projects: string[]; // Array of project IDs
-}
-
-// Load the list of project IDs
-const projectIdListData: ProjectIdListData = require("../project/projectContent.json");
-const allProjectIds = projectIdListData.projects;
-
-// Pre-load all individual project details
-const projectDetailsById: { [key: string]: ProjectDetailData } = {
-  "1": require("../project/data/1.json"),
-  "2": require("../project/data/2.json"),
-  "3": require("../project/data/3.json"),
-  "4": require("../project/data/4.json"),
-  // Removed 5.json and 6.json as they don't exist
-};
+// homeContent.json 불러오기
+import homeContentData from "./homeContent.json";
 
 export default function ProjectHighlights() {
   const router = useRouter();
+  const [highlightedProjects, setHighlightedProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+  
+  // homeContent에서 하이라이트할 프로젝트 ID 목록 가져오기
+  const projectHighlightsData = (homeContentData as HomeContent).projectHighlights;
+  const highlightedProjectIds = projectHighlightsData.projectIds;
 
-  // Get first 4 project IDs to highlight
-  const highlightedProjectIds = allProjectIds.slice(0, 4);
-
-  // Map these IDs to the full Project objects using the pre-loaded details
-  const highlightedProjects: Project[] = highlightedProjectIds.map(id => {
-    const detail = projectDetailsById[id];
-    if (!detail) {
-      console.warn(`Project data for ID ${id} not found. Skipping this project.`);
-      return null; // Will be filtered out later
-    }
-    return {
-      id: String(detail.id), // Convert numeric ID from data file to string
-      title: detail.title,
-      imageUrl: detail.imageUrl,
-      category: detail.category,
+  useEffect(() => {
+    // 프로젝트 데이터를 가져오는 함수
+    const fetchProjectData = async () => {
+      try {
+        const projects: Project[] = [];
+        
+        // 각 프로젝트 ID에 대해 데이터 가져오기
+        for (const id of highlightedProjectIds) {
+          try {
+            const response = await fetch(`/texts/project/${id}.json`);
+            
+            // 파일이 없으면 건너뛰기
+            if (!response.ok) {
+              console.warn(`프로젝트 ID ${id}의 데이터를 찾을 수 없습니다.`);
+              continue;
+            }
+            
+            const data = await response.json() as ProjectDetailData;
+            
+            projects.push({
+              id: String(data.id),
+              title: data.title,
+              imageUrl: data.imageUrl,
+              category: data.category,
+            });
+          } catch (error) {
+            console.error(`프로젝트 ID ${id}의 데이터를 불러오는 중 오류가 발생했습니다:`, error);
+          }
+        }
+        
+        // 정렬된 프로젝트 배열 설정
+        setHighlightedProjects(projects);
+      } catch (error) {
+        console.error('프로젝트 데이터를 불러오는 중 오류가 발생했습니다:', error);
+      } finally {
+        setLoading(false);
+      }
     };
-  }).filter(Boolean) as Project[]; // Filter out any nulls and assert type
+    
+    fetchProjectData();
+  }, [highlightedProjectIds]); // highlightedProjectIds가 변경될 때만 실행
 
   const navigateToProject = (id: string) => {
     router.push(`/project/${id}`);
   };
+
+  // 로딩 상태일 때 표시할 내용
+  if (loading) {
+    return (
+      <section className="py-12 px-4 md:px-8 bg-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <p>프로젝트 하이라이트를 불러오는 중...</p>
+        </div>
+      </section>
+    );
+  }
+  
+  // 프로젝트가 비어있으면 표시할 내용
+  if (highlightedProjects.length === 0) {
+    return (
+      <section className="py-12 px-4 md:px-8 bg-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="font-plus-jakarta-sans font-bold text-2xl text-neutral-900">
+            {projectHighlightsData.title}
+          </h2>
+          <p className="mt-4">표시할 프로젝트가 없습니다.</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-12 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8 px-4">
           <h2 className="font-plus-jakarta-sans font-bold text-2xl text-neutral-900">
-            Project Highlights
+            {projectHighlightsData.title}
           </h2>
         </div>
 
