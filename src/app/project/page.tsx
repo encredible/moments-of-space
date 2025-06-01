@@ -24,26 +24,18 @@ interface ProjectItem {
 interface ProjectIdListData {
   title: string; // Keep title and description for the page
   description: string;
+  projects: string[]; // Array of project IDs
 }
 
 // Load the list of project IDs and page metadata
 const projectPageContent: ProjectIdListData = require('./projectContent.json');
-const allProjectIds = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+const allProjectIds = projectPageContent.projects;
 
 // Pre-load all individual project details based on available data files
 // Now includes all 10 project data files
-const projectDetailsById: { [key: string]: ProjectDetailData } = {
-  "1": require("./data/1.json"),
-  "2": require("./data/2.json"),
-  "3": require("./data/3.json"),
-  "4": require("./data/4.json"),
-  "5": require("./data/5.json"),
-  "6": require("./data/6.json"),
-  "7": require("./data/7.json"),
-  "8": require("./data/8.json"),
-  "9": require("./data/9.json"),
-  "10": require("./data/10.json"),
-};
+const projectDetailsById: {
+  [key: string]: ProjectDetailData
+} = Object.fromEntries(allProjectIds.map(id => [id, require(`./data/${id}.json`)]));
 
 // Map IDs to the full ProjectItem objects
 const projectItems: ProjectItem[] = allProjectIds.map(id => {

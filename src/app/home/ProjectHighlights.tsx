@@ -20,8 +20,15 @@ interface Project {
   category: string;
 }
 
-// Load the list of project IDs
-const allProjectIds = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+// Interface for the structure of projectContent.json (now just IDs)
+interface ProjectIdListData {
+  title: string; // Keep title and description for the page
+  description: string;
+  projects: string[]; // Array of project IDs
+}
+
+const projectPageContent: ProjectIdListData = require('../project/projectContent.json');
+const allProjectIds = projectPageContent.projects;
 
 // Pre-load all individual project details
 const projectDetailsById: { [key: string]: ProjectDetailData } = {
