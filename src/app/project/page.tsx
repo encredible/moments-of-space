@@ -24,12 +24,11 @@ interface ProjectItem {
 interface ProjectIdListData {
   title: string; // Keep title and description for the page
   description: string;
-  projects: string[]; // Array of project IDs
 }
 
 // Load the list of project IDs and page metadata
 const projectPageContent: ProjectIdListData = require('./projectContent.json');
-const allProjectIds = projectPageContent.projects;
+const allProjectIds = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
 // Pre-load all individual project details based on available data files
 // Now includes all 10 project data files
