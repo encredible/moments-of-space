@@ -1,110 +1,85 @@
 'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+
 
 // Interface for the detailed project data (as in 1.json, 2.json, etc.)
 interface ProjectDetailData {
-  id: number;
+  id: number; // Numeric ID from individual files
   title: string;
   imageUrl: string;
   category: string;
-  // 기타 필요한 필드들
+  // Add other fields if needed by ProjectPage
 }
 
-// 컴포넌트에서 사용할 프로젝트 아이템 인터페이스
+// Interface for the objects we'll use in the component's state/rendering
 interface ProjectItem {
-  id: string;
+  id: string; // String ID as expected by the component
   title: string;
   imageUrl: string;
   category: string;
 }
 
-// projectContent.json 구조 인터페이스
-interface ProjectPageContent {
-  title: string;
+// Interface for the structure of projectContent.json (now just IDs)
+interface ProjectIdListData {
+  title: string; // Keep title and description for the page
   description: string;
+  projects: string[]; // Array of project IDs
 }
 
-// projectContent.json은 기존 위치에 있으므로 import로 직접 불러옵니다
-import projectContentData from './projectContent.json';
+// Load the list of project IDs and page metadata
+const projectPageContent: ProjectIdListData = require('./projectContent.json');
+const allProjectIds = projectPageContent.projects;
+
+// Pre-load all individual project details based on available data files
+// Now includes all 10 project data files
+const projectDetailsById: { [key: string]: ProjectDetailData } = {
+  "1": require("./data/1.json"),
+  "2": require("./data/2.json"),
+  "3": require("./data/3.json"),
+  "4": require("./data/4.json"),
+  "5": require("./data/5.json"),
+  "6": require("./data/6.json"),
+  "7": require("./data/7.json"),
+  "8": require("./data/8.json"),
+  "9": require("./data/9.json"),
+  "10": require("./data/10.json"),
+};
+
+// Map IDs to the full ProjectItem objects
+const projectItems: ProjectItem[] = allProjectIds.map(id => {
+  const detail = projectDetailsById[id];
+  if (!detail) {
+    console.warn(`Project data for ID ${id} not found in ProjectPage. Skipping.`);
+    return null;
+  }
+  return {
+    id: String(detail.id),
+    title: detail.title,
+    imageUrl: detail.imageUrl,
+    category: detail.category,
+  };
+}).filter(Boolean) as ProjectItem[];
+
+// Use page title and description from projectContent.json
+const pageTitle = projectPageContent.title;
+const pageDescription = projectPageContent.description;
 
 const ProjectPage = () => {
-  // projectContent.json은 직접 import해서 사용
-  const pageContent = projectContentData as ProjectPageContent;
-  const [projectItems, setProjectItems] = useState<ProjectItem[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    // 프로젝트 데이터만 동적으로 불러오는 함수
-    const fetchData = async () => {
-      try {
-
-        // 2. 프로젝트 JSON 파일 불러오기
-        const projectDataArray: ProjectDetailData[] = [];
-        
-        // public/texts/project 폴더에 있는 모든 JSON 파일을 순차적으로 불러옵니다
-        for (let i = 1; i <= 100; i++) {
-          try {
-            const projectResponse = await fetch(`/texts/project/${i}.json`);
-            
-            // 404 오류가 발생하면(파일이 없으면) 건너뜁니다
-            if (!projectResponse.ok) {
-              continue;
-            }
-            
-            const projectData = await projectResponse.json();
-            projectDataArray.push(projectData);
-          } catch (error) {
-            // 파일이 없으면 그냥 계속 진행합니다
-            continue;
-          }
-        }
-
-        // 프로젝트 ID 기준으로 정렬
-        projectDataArray.sort((a, b) => a.id - b.id);
-        
-        // 표시용 형식으로 변환
-        const items = projectDataArray.map(detail => ({
-          id: String(detail.id),
-          title: detail.title,
-          imageUrl: detail.imageUrl,
-          category: detail.category,
-        }));
-        
-        setProjectItems(items);
-      } catch (error) {
-        console.error('데이터를 불러오는 중 오류 발생:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  // 로딩 중일 때 표시할 내용
-  if (loading) {
-    return (
-      <main className="container mx-auto px-4 py-20 text-center">
-        <p className="text-xl">프로젝트를 불러오는 중입니다...</p>
-      </main>
-    );
-  }
-
   return (
     <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div className="pt-5 pb-8">
         <h2 className="font-plus-jakarta-sans font-bold text-3xl sm:text-4xl text-neutral-900 text-center mb-10">
-          {pageContent.title}
+          {pageTitle}
         </h2>
         <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
-          {pageContent.description}
+          {pageDescription}
         </p>
       </div>
 
-      {/* 프로젝트 카드 그리드 - Masonry 효과를 위한 레이아웃 */}
+      {/* 프로젝트 카드 그리드 - Masonry 효과를 위해 단순 CSS로 시도 */}
+      {/* 실제 Masonry 레이아웃은 클라이언트 사이드 JS 또는 전용 라이브러리가 필요할 수 있습니다. */}
+      {/* 여기서는 반응형 그리드를 사용하고, 아이템 높이를 다르게 하여 유사한 느낌을 줍니다. */}
       <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
         {projectItems.map((item: ProjectItem, idx: number) => (
           <Link key={item.id} href={`/project/${item.id}`} className="block group relative overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 break-inside-avoid">

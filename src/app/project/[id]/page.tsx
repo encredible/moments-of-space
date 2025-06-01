@@ -33,16 +33,11 @@ interface ProjectDetailPageProps {
   params: { id: string };
 }
 
-// 비동기 함수로 변경
-export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-  // params.id를 비동기적으로 처리
+export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   const { id } = params;
   // Support both string and number id, but always use numeric filename
   const numericId = typeof id === 'string' && !isNaN(Number(id)) ? Number(id) : id;
-  
-  // 경로를 public/texts/project 폴더로 변경
-  const filePath = path.join(process.cwd(), 'public/texts/project', `${numericId}.json`);
-  
+  const filePath = path.join(process.cwd(), 'src/app/project/data', `${numericId}.json`);
   let project: ProjectItemDetail | null = null;
   try {
     const raw = fs.readFileSync(filePath, 'utf-8');
