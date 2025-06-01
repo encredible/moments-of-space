@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import PageLayout from "@/app/components/PageLayout";
 
 const maruburi = localFont({
   src: [
@@ -31,7 +32,9 @@ export default function RootLayout({
         className={`${maruburi.variable} antialiased flex flex-col min-h-screen font-korean`}
       >
         <Header />
-        <main className="flex-grow max-w-screen-xl mx-auto">{children}</main>
+        <PageLayout>
+          {children}
+        </PageLayout>
         <Footer />
       </body>
     </html>

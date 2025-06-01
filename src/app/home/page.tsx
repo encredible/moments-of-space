@@ -12,23 +12,22 @@ export default function HomePage() {
   const router = useRouter();
   return (
     <PageLayout>
-      <div className="flex flex-col flex-grow w-full">
         {/* Hero Section */}
         <section
-          className="h-128 bg-cover bg-center flex flex-col items-center justify-center text-center text-custom-bg mb-8"
-          style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('${homeContent.hero.backgroundImage}')` }}
+          className="h-[50vh] bg-cover bg-center flex flex-col items-center justify-center text-center text-custom-bg mb-8"
+          style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('${homeContent.hero.backgroundImage}')` }}
         >
-          <h1 className="font-korean text-4xl md:text-5xl leading-tight tracking-tighter">
+          <h1 className="font-korean text-3xl md:text-5xl leading-tight tracking-tighter">
             {homeContent.hero.title}
           </h1>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="mt-6 md:mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
             {homeContent.hero.ctaButtons.map((btn, idx) => {
               const variant = btn.variant === 'primary' ? 'primary' : 'secondary';
               return (
                 <Link
                   key={btn.text + idx}
                   href={btn.href}
-                  className="inline-block bg-neutral-900 text-custom-bg px-8 py-3 text-lg font-korean-button hover:bg-neutral-700 transition-colors"
+                  className="inline-block bg-neutral-900 text-custom-bg px-6 md:px-8 py-2.5 md:py-3 text-base md:text-lg font-korean-button hover:bg-neutral-700 transition-colors"
                 >
                   {btn.text}
                 </Link>
@@ -50,18 +49,17 @@ export default function HomePage() {
         <DesignerHighlights />
 
         {/* Call to Action Section */}
-        <section className="pt-5 px-4 pb-3 text-center">
-          <h2 className="font-korean text-2xl mb-7 text-neutral-900">
+        <section className="pt-8 px-4 pb-10 text-center my-4">
+          <h2 className="font-korean text-xl md:text-2xl mb-5 md:mb-7 text-neutral-900">
             {homeContent.cta.title}
           </h2>
           <button
               onClick={() => router.push('/contact')}
-              className="font-korean text-base text-custom-bg bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
+              className="font-korean-button text-base text-custom-bg bg-black px-5 h-12 hover:bg-gray-800 transition-colors w-full sm:w-auto max-w-xs"
           >
             {homeContent.cta.button}
           </button>
         </section>
-      </div>
     </PageLayout>
   );
 }

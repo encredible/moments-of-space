@@ -27,32 +27,36 @@ export default function ServiceHighlights() {
   };
 
   return (
-    <section className="flex flex-row overflow-x-auto gap-6 md:gap-8 p-4 scrollbar-hide md:overflow-visible">
-      {servicesContent.services.map((service) => {
-        const slug = slugify(service.title);
-        return (
-          <button
-            key={service.title}
-            onClick={handleClick(slug)}
-            className="flex-shrink-0 w-80 md:w-96 block px-6 py-6 hover:bg-custom-bg transition-colors shadow text-left focus:outline-none"
-            style={{ minWidth: "20rem", maxWidth: "24rem" }}
-            tabIndex={0}
-            type="button"
-          >
-            <img
-              src={service.imageSrc}
-              alt={service.imageAlt}
-              className="w-full h-40 object-cover mb-3"
-            />
-            <div className="font-korean text-lg text-neutral-900 mb-2">
-              {service.title}
-            </div>
-            <div className="font-korean text-sm text-gray-600">
-              {service.shortDescription}
-            </div>
-          </button>
-        );
-      })}
+    <section className="py-4 md:py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-auto gap-4 md:gap-6 px-4 pb-4 max-w-6xl">
+        {servicesContent.services.map((service) => {
+          const slug = slugify(service.title);
+          return (
+            <button
+              key={service.title}
+              onClick={handleClick(slug)}
+              className="w-full block px-4 py-4 md:px-5 md:py-5 hover:bg-custom-bg transition-colors shadow text-left focus:outline-none rounded-sm"
+              tabIndex={0}
+              type="button"
+            >
+              <div className="relative h-32 md:h-40 overflow-hidden rounded-sm mb-3">
+                <img
+                  src={service.imageSrc}
+                  alt={service.imageAlt}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="font-korean text-base md:text-lg text-neutral-900 mb-1 md:mb-2">
+                {service.title}
+              </div>
+              <div className="font-korean text-xs md:text-sm text-gray-600 line-clamp-2">
+                {service.shortDescription}
+              </div>
+            </button>
+          );
+        })}
+      </div>
     </section>
   );
 }
