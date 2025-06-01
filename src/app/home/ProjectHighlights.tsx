@@ -1,64 +1,26 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { ProjectItem, projectDetailsById, getProjectItems } from "../project/projectData";
 
-// Interface for the detailed project data (as in 1.json, 2.json, etc.)
-// Note: The 'id' in these files is a number.
-interface ProjectDetailData {
-  id: number; // Numeric ID from individual files
+// Interface for the homeContent.json ProjectHighlights section
+interface ProjectHighlightsData {
   title: string;
-  imageUrl: string;
-  category: string;
-  // Other fields from individual data files can be added here if needed by ProjectHighlights
+  highlightedProjectIds: string[];
 }
 
-// Interface for the objects we'll use in the component's state/rendering
-interface Project {
-  id: string; // String ID as expected by the component
-  title: string;
-  imageUrl: string;
-  category: string;
-}
-
-// Interface for the structure of projectContent.json (now just IDs)
-interface ProjectIdListData {
-  title: string; // Keep title and description for the page
-  description: string;
-  projects: string[]; // Array of project IDs
-}
-
-const projectPageContent: ProjectIdListData = require('../project/projectContent.json');
-const allProjectIds = projectPageContent.projects;
-
-// Pre-load all individual project details
-const projectDetailsById: { [key: string]: ProjectDetailData } = {
-  "1": require("../project/data/1.json"),
-  "2": require("../project/data/2.json"),
-  "3": require("../project/data/3.json"),
-  "4": require("../project/data/4.json"),
-  // Removed 5.json and 6.json as they don't exist
-};
+// Load the project highlights data from homeContent.json
+const homeContent = require('./homeContent.json');
+const projectHighlightsData: ProjectHighlightsData = homeContent.projectHighlights;
 
 export default function ProjectHighlights() {
   const router = useRouter();
 
-  // Get first 4 project IDs to highlight
-  const highlightedProjectIds = allProjectIds.slice(0, 4);
+  // Use the project IDs from homeContent.json
+  const highlightedProjectIds = projectHighlightsData.highlightedProjectIds;
 
-  // Map these IDs to the full Project objects using the pre-loaded details
-  const highlightedProjects: Project[] = highlightedProjectIds.map(id => {
-    const detail = projectDetailsById[id];
-    if (!detail) {
-      console.warn(`Project data for ID ${id} not found. Skipping this project.`);
-      return null; // Will be filtered out later
-    }
-    return {
-      id: String(detail.id), // Convert numeric ID from data file to string
-      title: detail.title,
-      imageUrl: detail.imageUrl,
-      category: detail.category,
-    };
-  }).filter(Boolean) as Project[]; // Filter out any nulls and assert type
+  // Map these IDs to the full ProjectItem objects using the function from the shared module
+  const highlightedProjects = getProjectItems(highlightedProjectIds);
 
   const navigateToProject = (id: string) => {
     router.push(`/project/${id}`);
@@ -69,7 +31,7 @@ export default function ProjectHighlights() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-8 px-4">
           <h2 className="font-plus-jakarta-sans font-bold text-2xl text-neutral-900">
-            Project Highlights
+            {projectHighlightsData.title}
           </h2>
         </div>
 

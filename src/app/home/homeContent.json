@@ -44,6 +44,10 @@
       }
     ]
   },
+  "projectHighlights": {
+    "title": "Project Highlights",
+    "highlightedProjectIds": ["1", "2", "3", "4"]
+  },
   "testimonials": {
     "title": "What Our Clients Say",
     "items": [

@@ -1,60 +1,16 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ProjectItem, ProjectIdListData, projectPageContent, allProjectIds, projectDetailsById, getProjectItems } from './projectData';
 
-
-// Interface for the detailed project data (as in 1.json, 2.json, etc.)
-interface ProjectDetailData {
-  id: number; // Numeric ID from individual files
-  title: string;
-  imageUrl: string;
-  category: string;
-  // Add other fields if needed by ProjectPage
-}
-
-// Interface for the objects we'll use in the component's state/rendering
-interface ProjectItem {
-  id: string; // String ID as expected by the component
-  title: string;
-  imageUrl: string;
-  category: string;
-}
-
-// Interface for the structure of projectContent.json (now just IDs)
-interface ProjectIdListData {
-  title: string; // Keep title and description for the page
-  description: string;
-  projects: string[]; // Array of project IDs
-}
-
-// Load the list of project IDs and page metadata
-const projectPageContent: ProjectIdListData = require('./projectContent.json');
-const allProjectIds = projectPageContent.projects;
-
-// Pre-load all individual project details based on available data files
-// Now includes all 10 project data files
-const projectDetailsById: {
-  [key: string]: ProjectDetailData
-} = Object.fromEntries(allProjectIds.map(id => [id, require(`./data/${id}.json`)]));
-
-// Map IDs to the full ProjectItem objects
-const projectItems: ProjectItem[] = allProjectIds.map(id => {
-  const detail = projectDetailsById[id];
-  if (!detail) {
-    console.warn(`Project data for ID ${id} not found in ProjectPage. Skipping.`);
-    return null;
-  }
-  return {
-    id: String(detail.id),
-    title: detail.title,
-    imageUrl: detail.imageUrl,
-    category: detail.category,
-  };
-}).filter(Boolean) as ProjectItem[];
-
-// Use page title and description from projectContent.json
+// Use the page title and description from projectContent.json
 const pageTitle = projectPageContent.title;
 const pageDescription = projectPageContent.description;
+
+// Get all project items
+const projectItems = getProjectItems(allProjectIds);
+
+// Page title and description already loaded from projectContent.json above
 
 const ProjectPage = () => {
   return (
