@@ -1,14 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { projectDetailsById, ProjectItemDetail, ProjectImage, Testimonial } from '../projectData';
+import { projectDetailsById } from '../projectData';
 import PageLayout from '../../components/PageLayout';
 
-interface ProjectDetailPageProps {
-  params: { id: string };
+interface PageProps {
+    params: {
+        id: string;
+    };
 }
 
-export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
+export default function ProjectDetailPage({ params }: PageProps) {
   const { id } = params;
   
   // 프로젝트 데이터 가져오기

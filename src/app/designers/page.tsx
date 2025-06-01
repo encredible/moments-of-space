@@ -22,7 +22,7 @@ const content: DesignersContent = designersContent;
 const DesignersPage = () => {
   return (
     <PageLayout>
-      <section className="w-full max-w-3xl"> {/* 최대 너비를 약간 줄여 세로 리스트에 적합하게 조정 */}
+      <section className="w-full max-w-3xl mx-auto"> {/* 최대 너비를 약간 줄여 세로 리스트에 적합하게 조정, mx-auto로 중앙 정렬 */}
         <PageHeader 
           title={content.title}
           description={content.description}

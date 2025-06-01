@@ -1,4 +1,4 @@
-import Image from 'next/image';
+
 import contactContent from './content.json' assert {type: 'json'};
 import PageLayout from '../components/PageLayout';
 import PageHeader from '../components/PageHeader';

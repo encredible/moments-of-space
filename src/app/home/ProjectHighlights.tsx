@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { ProjectItem, projectDetailsById, getProjectItems } from "../project/projectData";
+import { getProjectItems } from "../project/projectData";
 
 // Interface for the homeContent.json ProjectHighlights section
 interface ProjectHighlightsData {
@@ -11,7 +11,7 @@ interface ProjectHighlightsData {
 }
 
 // Load the project highlights data from homeContent.json
-const homeContent = require('./content.json');
+import homeContent from './content.json' assert { type: 'json' };
 const projectHighlightsData: ProjectHighlightsData = homeContent.projectHighlights;
 
 export default function ProjectHighlights() {

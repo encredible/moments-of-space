@@ -9,13 +9,8 @@ interface IntroSection {
   imageOnLeft: boolean;
 }
 
-interface HomeContent {
-  introSections: IntroSection[];
-  [key: string]: any;
-}
-
 // Load the home content data from content.json
-const homeContent: HomeContent = require('./content.json');
+import homeContent from './content.json' assert { type: 'json' };
 
 export default function HomeIntroSections() {
   const introSections = homeContent.introSections || [];

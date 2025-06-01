@@ -22,7 +22,6 @@ export default function HomePage() {
           </h1>
           <div className="mt-6 md:mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
             {homeContent.hero.ctaButtons.map((btn, idx) => {
-              const variant = btn.variant === 'primary' ? 'primary' : 'secondary';
               return (
                 <Link
                   key={btn.text + idx}

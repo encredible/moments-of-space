@@ -1,7 +1,8 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
-import servicesContent from "../services/content.json";
+import Image from "next/image";
+import servicesContent from "../services/content.json" assert { type: 'json' };
 
 const slugify = (str: string) =>
   str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -40,10 +41,12 @@ export default function ServiceHighlights() {
               type="button"
             >
               <div className="relative h-32 md:h-40 overflow-hidden rounded-sm mb-3">
-                <img
+                <Image
                   src={service.imageSrc}
                   alt={service.imageAlt}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 384px"
+                  className="object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                 />
               </div>

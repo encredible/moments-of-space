@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ProjectItem, ProjectIdListData, projectPageContent, allProjectIds, projectDetailsById, getProjectItems } from './projectData';
+import { ProjectItem, projectPageContent, allProjectIds, getProjectItems } from './projectData';
 import PageLayout from '../components/PageLayout';
 import PageHeader from '../components/PageHeader';
 
