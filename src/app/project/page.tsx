@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ProjectItem, ProjectIdListData, projectPageContent, allProjectIds, projectDetailsById, getProjectItems } from './projectData';
+import PageLayout from '../components/PageLayout';
 
 // Use the page title and description from projectContent.json
 const pageTitle = projectPageContent.title;
@@ -14,7 +15,7 @@ const projectItems = getProjectItems(allProjectIds);
 
 const ProjectPage = () => {
   return (
-    <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <PageLayout>
       <div className="pt-5 pb-8">
         <h2 className="font-plus-jakarta-sans font-bold text-3xl sm:text-4xl text-neutral-900 text-center mb-10">
           {pageTitle}
@@ -37,7 +38,7 @@ const ProjectPage = () => {
           </Link>
         ))}
       </div>
-    </main>
+    </PageLayout>
   );
 };
 

@@ -1,7 +1,8 @@
 'use client'; // 나중에 인터랙션 추가 시 필요할 수 있음
 import servicesContent from './content.json' assert {type: 'json'};
 import SplitSection from '../components/SplitSection';
-import ServiceProcess from '../components/ServiceProcess';
+import ServiceProcess from './ServiceProcess';
+import PageLayout from '../components/PageLayout';
 
 type Service = {
     title: string;
@@ -21,7 +22,7 @@ const content: ServicesContent = servicesContent;
 
 const ServicesPage = () => {
     return (
-        <main className="flex flex-col items-center px-4 sm:px-10 md:px-20 py-10">
+        <PageLayout>
             <section className="w-full max-w-5xl mb-16"> {/* 페이지 제목 및 소개 */}
                 <div className="pt-5 pb-8">
                     <h2 className="font-plus-jakarta-sans font-bold text-3xl sm:text-4xl text-neutral-900 text-center mb-6">
@@ -82,7 +83,7 @@ const ServicesPage = () => {
                     }
                 ]}
             />
-        </main>
+        </PageLayout>
     );
 };
 

@@ -1,5 +1,7 @@
 import Image from 'next/image';
-import contactContent from './content.json';
+import contactContent from './content.json' assert { type: 'json' };
+import { Mail, MapPin } from 'lucide-react';
+import PageLayout from '../components/PageLayout';
 
 type Field = {
   id: string;
@@ -12,7 +14,7 @@ type Field = {
 
 const ContactPage = () => {
   return (
-    <main className="relative min-h-screen flex flex-col items-center">
+    <PageLayout className="relative">
       {/* 배경 이미지 */}
       <div className="absolute inset-0">
         <Image
@@ -121,7 +123,7 @@ const ContactPage = () => {
           </div>
         </section>
       </div>
-    </main>
+    </PageLayout>
   );
 };
 

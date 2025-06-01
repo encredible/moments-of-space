@@ -5,6 +5,7 @@ import ServiceHighlights from './ServiceHighlights';
 import ProjectHighlights from './ProjectHighlights';
 import HomeIntroSections from './HomeIntroSections';
 import { useRouter } from 'next/navigation';
+import PageLayout from '../components/PageLayout';
 
 type PortfolioItem = {
   image: string;
@@ -55,7 +56,7 @@ type HomeContent = {
 export default function HomePage() {
   const router = useRouter();
   return (
-    <main className="max-w-screen-xl mx-auto py-5 w-full">
+    <PageLayout>
       <div className="flex flex-col flex-grow w-full">
         {/* Hero Section */}
         <section
@@ -127,6 +128,6 @@ export default function HomePage() {
           </button>
         </section>
       </div>
-    </main>
+    </PageLayout>
   );
 }

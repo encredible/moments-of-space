@@ -1,5 +1,7 @@
-import designersContent from './content.json' assert { type: 'json' };
+import React from 'react';
 import Image from 'next/image';
+import designersContent from './content.json' assert { type: 'json' };
+import PageLayout from '../components/PageLayout';
 
 type Designer = {
   name: string;
@@ -18,7 +20,7 @@ const content: DesignersContent = designersContent;
 
 const DesignersPage = () => {
   return (
-    <main className="flex flex-col items-center px-4 sm:px-10 md:px-20 py-10"> {/* 반응형 패딩 조정 */}
+    <PageLayout>
       <section className="w-full max-w-3xl"> {/* 최대 너비를 약간 줄여 세로 리스트에 적합하게 조정 */}
         <div className="pt-5 pb-8">
           <h2 className="font-plus-jakarta-sans font-bold text-3xl sm:text-4xl text-neutral-900 text-center mb-10">
@@ -37,7 +39,7 @@ const DesignersPage = () => {
           ))}
         </div>
       </section>
-    </main>
+    </PageLayout>
   );
 };
 

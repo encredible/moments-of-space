@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { projectDetailsById, ProjectItemDetail, ProjectImage, Testimonial } from '../projectData';
+import PageLayout from '../../components/PageLayout';
 
 interface ProjectDetailPageProps {
   params: { id: string };
@@ -19,7 +20,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   }
 
   return (
-    <main className="max-w-3xl mx-auto py-12 px-4">
+    <PageLayout>
       <Link href="/project" className="text-blue-600 hover:underline text-sm mb-6 block">← Back to Projects</Link>
       <h1 className="text-4xl font-bold mb-2">{project.title}</h1>
       <div className="text-gray-500 text-sm mb-4">{project.category}{project.date ? ` · ${project.date}` : ''}</div>
@@ -81,6 +82,6 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
           <div className="mt-2 text-sm text-gray-600">— {project.testimonial.author}</div>
         </div>
       )}
-    </main>
+    </PageLayout>
   );
 }
