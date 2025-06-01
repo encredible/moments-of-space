@@ -12,7 +12,7 @@ const DesignersPage = () => {
         </div>
         <div className="flex flex-col gap-12"> {/* 세로 정렬을 위해 flex-col과 gap 증가 */}
           {/* Designer 1 */}
-          <article className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left p-6 border border-gray-200 rounded-xl shadow-lg gap-6"> {/* 반응형 정렬 및 gap 추가 */}
+          <article className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left p-6 gap-6"> {/* 반응형 정렬 및 gap 추가 */}
             <Image src="/images/elena-rodriguez.jpg" alt="Elena Rodriguez, Lead Designer" width={160} height={160} className="w-40 h-40 rounded-full object-cover flex-shrink-0" /> {/* 이미지 축소 방지 */}
             <div className="flex flex-col">
               <h3 className="font-plus-jakarta-sans font-semibold text-xl sm:text-2xl text-neutral-900 mb-2">Elena Rodriguez</h3>
@@ -20,7 +20,7 @@ const DesignersPage = () => {
             </div>
           </article>
           {/* Designer 2 */}
-          <article className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left p-6 border border-gray-200 rounded-xl shadow-lg gap-6">
+          <article className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left p-6 gap-6">
             <Image src="/images/marcus-chen.jpg" alt="Marcus Chen, Senior Designer" width={160} height={160} className="w-40 h-40 rounded-full object-cover flex-shrink-0" />
             <div className="flex flex-col">
               <h3 className="font-plus-jakarta-sans font-semibold text-xl sm:text-2xl text-neutral-900 mb-2">Marcus Chen</h3>
@@ -28,7 +28,7 @@ const DesignersPage = () => {
             </div>
           </article>
           {/* Designer 3 */}
-          <article className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left p-6 border border-gray-200 rounded-xl shadow-lg gap-6">
+          <article className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left p-6 gap-6">
             <Image src="/images/aisha-khan.jpg" alt="Aisha Khan, Interior Designer" width={160} height={160} className="w-40 h-40 rounded-full object-cover flex-shrink-0" />
             <div className="flex flex-col">
               <h3 className="font-plus-jakarta-sans font-semibold text-xl sm:text-2xl text-neutral-900 mb-2">Aisha Khan</h3>
