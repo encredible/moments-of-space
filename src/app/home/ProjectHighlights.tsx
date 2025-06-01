@@ -75,7 +75,7 @@ export default function ProjectHighlights() {
         <div className="text-center mt-8">
           <button
             onClick={() => router.push('/project')}
-            className="font-korean text-base text-custom-bg bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
+            className="font-korean-button text-base text-custom-bg bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
           >
             {projectHighlightsData.viewAllButtonText}
           </button>

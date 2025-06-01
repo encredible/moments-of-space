@@ -30,7 +30,7 @@ export default function DesignerHighlights() {
       <div className="text-center mt-8">
         <Link 
           href="/designers" 
-          className="inline-block py-2 px-4 border border-neutral-300 text-neutral-800 hover:bg-neutral-100 transition-colors"
+          className="inline-block py-2 px-4 border font-korean-button text-custom-bg bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
         >
           {homeContent.designerHighlights.viewAllButtonText}
         </Link>

@@ -1,9 +1,19 @@
 @import "tailwindcss";
 
+/* 나눔스퀘어 폰트 정의 */
+@font-face {
+  font-family: 'NanumSquare';
+  src: url('/fonts/NanumSquareR.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #f4f3ef;
   --foreground: #171717;
   --custom-bg: #ecece5; /* 원하는 커스텀 배경색 */
+  --font-nanumsquare: 'NanumSquare', sans-serif;
 }
 
 @theme inline {
@@ -30,4 +40,9 @@ body {
 /* 한글 폰트 클래스 */
 .font-korean {
   font-family: var(--font-maruburi), sans-serif;
+}
+
+/* 나눔스퀘어 한글 버튼 폰트 클래스 */
+.font-korean-button {
+  font-family: var(--font-nanumsquare);
 }

@@ -28,11 +28,7 @@ export default function HomePage() {
                 <Link
                   key={btn.text + idx}
                   href={btn.href}
-                  className={
-                    variant === 'primary'
-                      ? 'inline-block bg-neutral-900 text-custom-bg px-8 py-3 text-lg font-medium hover:bg-neutral-700 transition-colors'
-                      : 'inline-block bg-white text-neutral-900 px-8 py-3 text-lg font-medium border border-neutral-300 hover:bg-neutral-100 transition-colors'
-                  }
+                  className="inline-block bg-neutral-900 text-custom-bg px-8 py-3 text-lg font-korean-button hover:bg-neutral-700 transition-colors"
                 >
                   {btn.text}
                 </Link>
