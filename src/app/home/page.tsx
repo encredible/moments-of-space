@@ -3,6 +3,7 @@ import Link from 'next/link';
 import homeContent from './content.json';
 import ServiceHighlights from './ServiceHighlights';
 import ProjectHighlights from './ProjectHighlights';
+import DesignerHighlights from './DesignerHighlights';
 import HomeIntroSections from './HomeIntroSections';
 import { useRouter } from 'next/navigation';
 import PageLayout from '../components/PageLayout';
@@ -99,6 +100,14 @@ export default function HomePage() {
 
         {/* Project Highlights Section */}
         <ProjectHighlights />
+
+        {/* Designer Highlights Section */}
+        <section className="pt-5 px-4 pb-3">
+          <h2 className="font-plus-jakarta-sans font-bold text-2xl text-neutral-900">
+            Our Designers
+          </h2>
+        </section>
+        <DesignerHighlights />
 
         {/* Testimonials Section */}
         <section className="pt-5 px-4 pb-3">
