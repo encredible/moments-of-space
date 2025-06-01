@@ -26,7 +26,7 @@ export default function ServiceProcess({ steps, className = '' }: ServiceProcess
                     {steps.map((step) => (
                         <div key={step.id} className="relative">
                             {/* 왼쪽 마름모꼴 스텝 넘버 - 검은색 테두리, 흰색 바탕, 검은색 글자, 테두리 두께 반감 */}
-                            <div className="absolute left-10 w-10 h-10 bg-white border border-black items-center justify-center text-black z-10 hidden md:flex -translate-x-1/2 rotate-45">
+                            <div className="absolute left-10 w-10 h-10 bg-background border border-black items-center justify-center text-black z-10 hidden md:flex -translate-x-1/2 rotate-45">
                                 <span className="-rotate-45">{step.id}</span>
                             </div>
                             
