@@ -1,0 +1,19 @@
+{
+  "id": 6,
+  "title": "Sleek Kitchen Renovation",
+  "category": "Residential",
+  "imageUrl": "/images/project/project-sleek-kitchen.jpg",
+  "description": "A comprehensive kitchen renovation that transformed an outdated space into a sleek, functional cooking area. The design features minimalist cabinetry, integrated appliances, and a streamlined workflow for passionate home chefs.",
+  "client": "The Nakamura Family",
+  "date": "2023-07-18",
+  "tags": ["Modern", "Residential", "Kitchen", "Minimalist"],
+  "servicesProvided": ["Kitchen Design", "Material Selection", "Appliance Integration", "Lighting Design"],
+  "images": [
+    { "src": "/images/project/project-sleek-kitchen.jpg", "alt": "Modern kitchen with island" },
+    { "src": "/images/project/project-sleek-kitchen-detail2.jpg", "alt": "Custom cabinetry and integrated appliances" }
+  ],
+  "testimonial": {
+    "quote": "The kitchen is now the heart of our home. It's beautiful, functional, and makes cooking a joy!",
+    "author": "Hiroshi & Keiko N."
+  }
+}

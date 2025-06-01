@@ -1,0 +1,19 @@
+{
+  "id": 8,
+  "title": "Boutique Hotel Lobby",
+  "category": "Commercial",
+  "imageUrl": "/images/project/project-highlight-3.jpg",
+  "description": "A complete redesign of the lobby area for a boutique hotel, creating a welcoming yet sophisticated first impression for guests. The design incorporates local art, custom lighting, and comfortable seating areas.",
+  "client": "Serenity Boutique Hotel",
+  "date": "2024-02-15",
+  "tags": ["Hospitality", "Commercial", "Lobby Design", "Custom Lighting"],
+  "servicesProvided": ["Commercial Design", "Custom Furniture Design", "Art Curation", "Lighting Design"],
+  "images": [
+    { "src": "/images/project/project-highlight-3.jpg", "alt": "Hotel lobby seating area" },
+    { "src": "/images/project/project-highlight-1.jpg", "alt": "Custom reception desk with ambient lighting" }
+  ],
+  "testimonial": {
+    "quote": "Our guests constantly comment on how beautiful and welcoming our lobby is. It has completely transformed the arrival experience.",
+    "author": "Serenity Hotel Management"
+  }
+}

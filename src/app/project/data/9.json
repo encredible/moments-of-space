@@ -1,0 +1,19 @@
+{
+  "id": 9,
+  "title": "Eco-Friendly Family Home",
+  "category": "Residential",
+  "imageUrl": "/images/project/project-modern-apartment-detail3.jpg",
+  "description": "A sustainable renovation project for a growing family, focusing on eco-friendly materials, energy efficiency, and flexible spaces that adapt to changing needs. The design incorporates natural light, recycled materials, and smart home technology.",
+  "client": "The Rodriguez Family",
+  "date": "2023-09-28",
+  "tags": ["Sustainable", "Residential", "Family Home", "Smart Technology"],
+  "servicesProvided": ["Sustainable Design", "Space Planning", "Material Sourcing", "Smart Home Integration"],
+  "images": [
+    { "src": "/images/project/project-modern-apartment-detail3.jpg", "alt": "Open concept living area with sustainable materials" },
+    { "src": "/images/project/project-highlight-4.jpg", "alt": "Natural light filled bedroom with eco-friendly furnishings" }
+  ],
+  "testimonial": {
+    "quote": "Not only is our home beautiful, but we love knowing that the materials and systems are environmentally responsible. Perfect for raising our children.",
+    "author": "Elena & Carlos R."
+  }
+}

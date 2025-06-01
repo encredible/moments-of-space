@@ -1,0 +1,19 @@
+{
+  "id": 10,
+  "title": "Coastal Vacation Retreat",
+  "category": "Residential",
+  "imageUrl": "/images/project/project-luxury-villa-detail2.jpg",
+  "description": "A complete redesign of a beachfront vacation home, creating a serene retreat that celebrates coastal views and indoor-outdoor living. The design features a light color palette, weather-resistant materials, and comfortable spaces for gathering and relaxation.",
+  "client": "Private Owners",
+  "date": "2023-12-10",
+  "tags": ["Coastal", "Residential", "Vacation Home", "Indoor-Outdoor"],
+  "servicesProvided": ["Interior Design", "Outdoor Living Spaces", "Custom Furniture", "Decor Styling"],
+  "images": [
+    { "src": "/images/project/project-luxury-villa-detail2.jpg", "alt": "Bright living area with ocean views" },
+    { "src": "/images/project/project-modern-apartment-detail1.jpg", "alt": "Coastal-inspired bedroom design" }
+  ],
+  "testimonial": {
+    "quote": "Our vacation home is now truly a place where we can relax and recharge. The design perfectly captures the coastal atmosphere we wanted.",
+    "author": "The Lawson Family"
+  }
+}

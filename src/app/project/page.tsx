@@ -32,12 +32,18 @@ const projectPageContent: ProjectIdListData = require('./projectContent.json');
 const allProjectIds = projectPageContent.projects;
 
 // Pre-load all individual project details based on available data files
-// Assumes 1.json to 4.json exist in ./data/
+// Now includes all 10 project data files
 const projectDetailsById: { [key: string]: ProjectDetailData } = {
   "1": require("./data/1.json"),
   "2": require("./data/2.json"),
   "3": require("./data/3.json"),
   "4": require("./data/4.json"),
+  "5": require("./data/5.json"),
+  "6": require("./data/6.json"),
+  "7": require("./data/7.json"),
+  "8": require("./data/8.json"),
+  "9": require("./data/9.json"),
+  "10": require("./data/10.json"),
 };
 
 // Map IDs to the full ProjectItem objects

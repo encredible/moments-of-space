@@ -1,0 +1,19 @@
+{
+  "id": 7,
+  "title": "Urban Loft Conversion",
+  "category": "Residential",
+  "imageUrl": "/images/project/project-highlight-2.jpg",
+  "description": "Conversion of an industrial warehouse space into a stylish urban loft. The design preserved original architectural elements while introducing modern comforts and functionality for contemporary urban living.",
+  "client": "Michael Chen",
+  "date": "2023-05-12",
+  "tags": ["Industrial", "Residential", "Loft", "Urban"],
+  "servicesProvided": ["Architectural Consultation", "Space Planning", "Custom Furniture", "Material Selection"],
+  "images": [
+    { "src": "/images/project/project-highlight-2.jpg", "alt": "Open concept loft with original beams" },
+    { "src": "/images/project/project-highlight-4.jpg", "alt": "Custom built-in storage solutions" }
+  ],
+  "testimonial": {
+    "quote": "They managed to keep the industrial character I loved while making the space completely livable. It's the perfect balance.",
+    "author": "Michael C."
+  }
+}

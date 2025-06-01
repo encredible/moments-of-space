@@ -1,0 +1,19 @@
+{
+  "id": 5,
+  "title": "Boho Bedroom Sanctuary",
+  "category": "Residential",
+  "imageUrl": "/images/project/project-boho-bedroom.jpg",
+  "description": "A complete transformation of a master bedroom into a bohemian-inspired sanctuary. The project focused on creating a relaxing retreat with natural textures, layered fabrics, and a harmonious color palette inspired by nature.",
+  "client": "Sarah & Tom Johnson",
+  "date": "2023-11-05",
+  "tags": ["Bohemian", "Residential", "Bedroom", "Natural Materials"],
+  "servicesProvided": ["Interior Styling", "Custom Bedding Design", "Furniture Selection", "Accent Lighting"],
+  "images": [
+    { "src": "/images/project/project-boho-bedroom.jpg", "alt": "Bohemian style bedroom with natural textures" },
+    { "src": "/images/project/project-highlight-1.jpg", "alt": "Detail of custom bedding and pillows" }
+  ],
+  "testimonial": {
+    "quote": "Our bedroom has become our favorite place in the house. The calm, natural feeling is exactly what we wanted!",
+    "author": "Sarah J."
+  }
+}
