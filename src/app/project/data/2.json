@@ -1,0 +1,19 @@
+{
+  "id": 2,
+  "title": "Luxury Villa Design",
+  "category": "Residential",
+  "imageUrl": "/images/project/project-luxury-villa-detail1.jpg",
+  "description": "End-to-end design for a new luxury villa, featuring expansive ocean views, infinity pool, and high-end finishes throughout. The project involved close collaboration with architects and builders.",
+  "client": "Confidential",
+  "date": "2024-01-20",
+  "tags": ["Luxury", "Residential", "New Build", "Ocean View"],
+  "servicesProvided": ["Architectural Design Consultation", "Full Interior Design", "Landscape Design Coordination", "Material Selection"],
+  "images": [
+    { "src": "/images/project/project-luxury-villa-detail1.jpg", "alt": "Villa exterior with infinity pool" },
+    { "src": "/images/project/project-luxury-villa-detail2.jpg", "alt": "Spacious living area with ocean view" }
+  ],
+  "testimonial": {
+    "quote": "An absolute dream to work with. Their vision and execution were flawless, creating a truly exceptional home.",
+    "author": "A Satisfied Client"
+  }
+}

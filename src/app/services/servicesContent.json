@@ -1,0 +1,27 @@
+{
+  "title": "Our Services",
+  "description": "We offer a wide range of interior design services to meet every need, from concept to completion. Discover how we can transform your space.",
+  "services": [
+    {
+      "title": "Online Home Styling",
+      "shortDescription": "Get expert home styling advice entirely online. Perfect for quick makeovers and remote consultations.",
+      "longDescription": "Our online home styling service connects you with our talented designers virtually. Share your space through photos or video calls, and receive personalized mood boards, shopping lists, and layout suggestions. It's a convenient and affordable way to refresh your home, no matter where you are.",
+      "imageSrc": "/images/online-styling.jpg",
+      "imageAlt": "Online home styling session with a designer on a laptop"
+    },
+    {
+      "title": "In-Person Home Styling",
+      "shortDescription": "Comprehensive home styling with on-site visits from our experienced designers.",
+      "longDescription": "For a more hands-on approach, our in-person styling service includes site visits, detailed measurements, and direct collaboration with our designers. We'll help you transform your space from concept to completion, managing every detail to create your dream home.",
+      "imageSrc": "/images/in-person-styling.jpg",
+      "imageAlt": "Interior designer discussing plans with a client in a living room"
+    },
+    {
+      "title": "Furniture Purchase Consulting",
+      "shortDescription": "Expert advice to help you choose the perfect furniture pieces for your space and budget.",
+      "longDescription": "Struggling to find the right furniture? Our consulting service provides expert guidance on selecting pieces that fit your style, needs, and budget. We'll help you navigate choices, consider materials, and ensure your new furniture complements your existing decor beautifully.",
+      "imageSrc": "/images/furniture-consulting.jpg",
+      "imageAlt": "Designer helping a client choose fabric swatches for furniture"
+    }
+  ]
+}

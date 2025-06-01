@@ -1,0 +1,19 @@
+{
+  "id": 3,
+  "title": "Minimalist Office Space",
+  "category": "Commercial",
+  "imageUrl": "/images/project/project-modern-apartment-detail1.jpg",
+  "description": "Design of a new office space for a tech startup, emphasizing collaboration, flexibility, and a clean, minimalist aesthetic. The layout includes open work areas, private meeting pods, and a communal kitchen.",
+  "client": "Innovatech Ltd.",
+  "date": "2023-08-10",
+  "tags": ["Minimalist", "Commercial", "Office Design", "Startup"],
+  "servicesProvided": ["Space Planning", "Furniture Sourcing", "Branding Integration"],
+  "images": [
+    { "src": "/images/project/project-modern-apartment-detail3.jpg", "alt": "Open concept office with natural light" },
+    { "src": "/images/project/project-luxury-villa-detail2.jpg", "alt": "Collaborative meeting area" }
+  ],
+  "testimonial": {
+    "quote": "The new office has completely changed the way we work. It's bright, inspiring, and perfectly suited to our team.",
+    "author": "Innovatech Team"
+  }
+}

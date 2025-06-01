@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "title": "Cozy Living Room Refresh",
+  "category": "Residential",
+  "imageUrl": "/images/project/project-cozy-living-room-detail1.jpg",
+  "description": "A warm and inviting living room transformation, with an emphasis on comfort, layered textures, and natural materials. The project included custom shelving, soft furnishings, and improved lighting.",
+  "client": "The Parkers",
+  "date": "2023-01-22",
+  "tags": ["Cozy", "Residential", "Living Room", "Custom Shelving"],
+  "servicesProvided": ["Interior Styling", "Custom Shelving Design", "Lighting Upgrade"],
+  "images": [
+    { "src": "/images/project/project-cozy-living-room-detail1.jpg", "alt": "Cozy living room after refresh" },
+    { "src": "/images/project/project-cozy-living-room-detail2.jpg", "alt": "Custom shelving and decor" }
+  ],
+  "testimonial": {
+    "quote": "We love our new living room! It feels so much more comfortable and personal.",
+    "author": "The Parkers"
+  }
+}

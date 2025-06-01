@@ -1,0 +1,36 @@
+{
+  "heroImageAlt": "Contact background",
+  "heroImageSrc": "/images/contact-hero.jpg",
+  "overlayColor": "bg-black/60",
+  "title": "Get in Touch",
+  "description": "Have a project in mind or just want to say hello? Fill out the form below and we'll get back to you as soon as possible.",
+  "form": {
+    "fields": [
+      {
+        "id": "name",
+        "label": "Full Name",
+        "type": "text",
+        "autoComplete": "name",
+        "required": true,
+        "placeholder": "Enter your full name"
+      },
+      {
+        "id": "email",
+        "label": "Email Address",
+        "type": "email",
+        "autoComplete": "email",
+        "required": true,
+        "placeholder": "Enter your email address"
+      },
+      {
+        "id": "message",
+        "label": "Message",
+        "type": "textarea",
+        "autoComplete": "off",
+        "required": true,
+        "placeholder": "Write your message here"
+      }
+    ],
+    "submitText": "Send Message"
+  }
+}

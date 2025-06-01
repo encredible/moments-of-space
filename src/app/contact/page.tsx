@@ -1,4 +1,14 @@
 import Image from 'next/image';
+import contactContent from './contactContent.json';
+
+type Field = {
+  id: string;
+  label: string;
+  type: string;
+  autoComplete?: string;
+  required?: boolean;
+  placeholder?: string;
+};
 
 const ContactPage = () => {
   return (
@@ -6,15 +16,15 @@ const ContactPage = () => {
       {/* 배경 이미지 */}
       <div className="absolute inset-0">
         <Image
-          src="/images/contact-hero.jpg"
-          alt="Contact background"
+          src={contactContent.heroImageSrc}
+          alt={contactContent.heroImageAlt}
           fill
           className="object-cover"
           priority
           quality={85}
         />
         {/* 오버레이 */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className={`absolute inset-0 ${contactContent.overlayColor}`}></div>
       </div>
       
       {/* 콘텐츠 */}
@@ -22,10 +32,10 @@ const ContactPage = () => {
         <section className="w-full max-w-2xl">
           <div className="pt-5 pb-8">
             <h2 className="font-plus-jakarta-sans font-bold text-3xl sm:text-4xl text-white text-center mb-10">
-              Get in Touch
+              {contactContent.title}
             </h2>
             <p className="text-center text-gray-200 mb-10">
-              Have a project in mind or just want to say hello? Fill out the form below and we&apos;ll get back to you as soon as possible.
+              {contactContent.description}
             </p>
           </div>
 

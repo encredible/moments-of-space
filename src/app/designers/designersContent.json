@@ -1,0 +1,24 @@
+{
+  "title": "Our Designers",
+  "description": "Meet the creative minds behind our projects. Our team of designers brings passion, expertise, and a unique perspective to every space.",
+  "designers": [
+    {
+      "name": "Elena Rodriguez",
+      "role": "Lead Designer",
+      "image": "/images/elena-rodriguez.jpg",
+      "bio": "Elena is our Lead Designer, specializing in minimalist and sustainable design. She believes in creating spaces that are not only beautiful but also kind to the environment, bringing harmony and nature into every project."
+    },
+    {
+      "name": "Marcus Chen",
+      "role": "Senior Designer",
+      "image": "/images/marcus-chen.jpg",
+      "bio": "Marcus, a Senior Designer, is an expert in blending modern aesthetics with classic comfort. He excels at creating timeless interiors that feel both sophisticated and inviting."
+    },
+    {
+      "name": "Aisha Khan",
+      "role": "Interior Designer",
+      "image": "/images/aisha-khan.jpg",
+      "bio": "Aisha is passionate about vibrant colors and eclectic styles. She loves to craft unique and personalized environments that truly reflect the client's personality and story."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "backgroundImage": "/images/hero-background.jpg",
+    "title": "Creating beautiful spaces that inspire",
+    "ctaButtons": [
+      {
+        "href": "/services",
+        "text": "Our Services",
+        "variant": "primary"
+      },
+      {
+        "href": "/project",
+        "text": "View Projects",
+        "variant": "secondary"
+      }
+    ]
+  },
+  "portfolioHighlights": {
+    "title": "Portfolio Highlights",
+    "items": [
+      {
+        "image": "/images/modern-apartment.jpg",
+        "alt": "Modern Apartment",
+        "title": "Modern Apartment",
+        "desc": "A sleek and minimalist apartment design in downtown San Francisco."
+      },
+      {
+        "image": "/images/cozy-home.jpg",
+        "alt": "Cozy Home",
+        "title": "Cozy Home",
+        "desc": "A warm and inviting home design with a focus on comfort and functionality."
+      },
+      {
+        "image": "/images/luxury-villa.jpg",
+        "alt": "Luxury Villa",
+        "title": "Luxury Villa",
+        "desc": "An opulent villa design showcasing luxurious materials and finishes."
+      },
+      {
+        "image": "/images/office-space.jpg",
+        "alt": "Office Space",
+        "title": "Office Space",
+        "desc": "A modern and collaborative office space designed for productivity."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "items": [
+      {
+        "quote": "Sarah transformed our living room into a masterpiece. Her attention to detail and creative vision are unparalleled.",
+        "author": "John & Jane Doe"
+      },
+      {
+        "quote": "Working with Sarah was a pleasure. She understood our needs perfectly and delivered a stunning design for our office.",
+        "author": "ACME Corp"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to transform your space?",
+    "button": "Get in Touch"
+  }
+}
