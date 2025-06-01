@@ -14,7 +14,7 @@ interface ServiceProcessProps {
 export default function ServiceProcess({ steps, className = '' }: ServiceProcessProps) {
     return (
         <section className={`w-full max-w-5xl py-16 ${className}`}>
-            <h2 className="font-plus-jakarta-sans text-2xl sm:text-3xl text-neutral-900 text-center mb-10">
+            <h2 className="font-korean text-2xl sm:text-3xl text-neutral-900 text-center mb-10">
                 서비스 진행 프로세스
             </h2>
             
@@ -35,7 +35,7 @@ export default function ServiceProcess({ steps, className = '' }: ServiceProcess
                                 {/* 텍스트 영역 - 타임라인과 더 멀게 */}
                                 <div className="w-full pl-0 md:pl-32">
                                     <div className="flex flex-col">
-                                        <h3 className="font-plus-jakarta-sans text-xl text-neutral-900 mb-2">
+                                        <h3 className="font-korean text-xl text-neutral-900 mb-2">
                                             {step.title}
                                         </h3>
                                         <p className="text-gray-600">

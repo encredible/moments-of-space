@@ -31,7 +31,7 @@ export default function ProjectHighlights() {
     <section className="py-12 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8 px-4">
-          <h2 className="font-plus-jakarta-sans text-2xl text-neutral-900">
+          <h2 className="font-korean text-2xl text-neutral-900">
             {projectHighlightsData.title}
           </h2>
         </div>
@@ -75,7 +75,7 @@ export default function ProjectHighlights() {
         <div className="text-center mt-8">
           <button
             onClick={() => router.push('/project')}
-            className="font-plus-jakarta-sans text-base text-white bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
+            className="font-korean text-base text-white bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
           >
             {projectHighlightsData.viewAllButtonText}
           </button>

@@ -23,7 +23,7 @@ export default function HomePage() {
           className="h-128 bg-cover bg-center flex flex-col items-center justify-center text-center text-white mb-8"
           style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('${homeContent.hero.backgroundImage}')` }}
         >
-          <h1 className="font-plus-jakarta-sans text-4xl md:text-5xl leading-tight tracking-tighter">
+          <h1 className="font-korean text-4xl md:text-5xl leading-tight tracking-tighter">
             {homeContent.hero.title}
           </h1>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -60,27 +60,27 @@ export default function HomePage() {
 
         {/* Testimonials Section */}
         <section className="pt-5 px-4 pb-3">
-          <h2 className="font-plus-jakarta-sans text-2xl text-neutral-900">
+          <h2 className="font-korean text-2xl text-neutral-900">
             {homeContent.testimonials.title}
           </h2>
         </section>
         <section className="flex flex-col gap-4 p-4">
           {homeContent.testimonials.items.map((item: Testimonial, idx: number) => (
             <article className="p-4 border border-gray-200" key={item.author + idx}>
-              <p className="font-plus-jakarta-sans text-base text-neutral-900">&ldquo;{item.quote}&rdquo;</p>
-              <footer className="mt-3 font-plus-jakarta-sans text-sm text-gray-500">- {item.author}</footer>
+              <p className="font-korean text-base text-neutral-900">&ldquo;{item.quote}&rdquo;</p>
+              <footer className="mt-3 font-korean text-sm text-gray-500">- {item.author}</footer>
             </article>
           ))}
         </section>
 
         {/* Call to Action Section */}
         <section className="pt-5 px-4 pb-3 text-center">
-          <h2 className="font-plus-jakarta-sans text-2xl mb-2 text-neutral-900">
+          <h2 className="font-korean text-2xl mb-2 text-neutral-900">
             {homeContent.cta.title}
           </h2>
           <button
               onClick={() => router.push('/contact')}
-              className="font-plus-jakarta-sans text-base text-white bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
+              className="font-korean text-base text-white bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
           >
             {homeContent.cta.button}
           </button>

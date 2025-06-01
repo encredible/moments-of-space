@@ -22,7 +22,7 @@ export default function PageHeader({
 
   return (
     <div className={`pt-5 pb-8 ${className}`}>
-      <h2 className={`font-plus-jakarta-sans text-3xl sm:text-4xl ${titleColorClass} text-center mb-10`}>
+      <h2 className={`font-korean text-3xl sm:text-4xl ${titleColorClass} text-center mb-10`}>
         {title}
       </h2>
       {description && (

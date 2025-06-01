@@ -30,7 +30,7 @@ const ProjectPage = () => {
           <Link key={item.id} href={`/project/${item.id}`} className="block group relative overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 break-inside-avoid">
             <Image src={item.imageUrl} alt={item.title} width={500} height={idx % 2 === 0 ? 700 : 500} className="object-cover h-full transform group-hover:scale-105 transition-transform duration-300" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-6 flex flex-col justify-end">
-              <h3 className="font-plus-jakarta-sans text-xl text-white mb-1">{item.title}</h3>
+              <h3 className="font-korean text-xl text-white mb-1">{item.title}</h3>
             </div>
           </Link>
         ))}
