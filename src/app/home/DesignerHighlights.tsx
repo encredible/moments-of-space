@@ -31,7 +31,7 @@ export default function DesignerHighlights() {
           href="/designers" 
           className="inline-block py-2 px-4 border border-neutral-300 text-neutral-800 hover:bg-neutral-100 transition-colors"
         >
-          View All Designers
+          모든 디자이너 보기
         </Link>
       </div>
     </section>

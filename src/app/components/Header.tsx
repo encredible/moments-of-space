@@ -8,14 +8,14 @@ const Header: React.FC = () => {
       <div className="max-w-screen-xl mx-auto flex flex-row justify-between items-start py-12 w-full">
         <Link href="/home" className="group">
           <span className="font-plus-jakarta-sans font-extrabold text-[7rem] leading-none text-neutral-900 group-hover:text-neutral-700 transition-colors tracking-tight">
-            Moment of Space
+            Living collage
           </span>
         </Link>
         <nav className="flex flex-col items-end gap-3 ml-auto" style={{minWidth: '180px'}}>
-          <Link href="/services" className="font-plus-jakarta-sans font-semibold text-lg text-neutral-900 hover:text-neutral-700">Services</Link>
-          <Link href="/project" className="font-plus-jakarta-sans font-semibold text-lg text-neutral-900 hover:text-neutral-700">Projects</Link>
-          <Link href="/designers" className="font-plus-jakarta-sans font-semibold text-lg text-neutral-900 hover:text-neutral-700">Designers</Link>
-          <Link href="/contact" className="font-plus-jakarta-sans font-semibold text-lg text-neutral-900 hover:text-neutral-700">Contact</Link>
+          <Link href="/services" className="font-plus-jakarta-sans font-semibold text-lg text-neutral-900 hover:text-neutral-700">서비스</Link>
+          <Link href="/project" className="font-plus-jakarta-sans font-semibold text-lg text-neutral-900 hover:text-neutral-700">프로젝트</Link>
+          <Link href="/designers" className="font-plus-jakarta-sans font-semibold text-lg text-neutral-900 hover:text-neutral-700">디자이너</Link>
+          <Link href="/contact" className="font-plus-jakarta-sans font-semibold text-lg text-neutral-900 hover:text-neutral-700">상담신청</Link>
         </nav>
       </div>
     </header>

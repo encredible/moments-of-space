@@ -1,36 +1,36 @@
 {
-  "heroImageAlt": "Contact background",
+  "heroImageAlt": "연락처 배경",
   "heroImageSrc": "/images/contact-hero.jpg",
   "overlayColor": "bg-black/60",
-  "title": "Get in Touch",
-  "description": "Have a project in mind or just want to say hello? Fill out the form below and we'll get back to you as soon as possible.",
+  "title": "연락하기",
+  "description": "프로젝트를 계획 중이시거나 그냥 인사를 나누고 싶으세요? 아래 양식을 작성하시면 가능한 빨리 연락드리겠습니다.",
   "form": {
     "fields": [
       {
         "id": "name",
-        "label": "Full Name",
+        "label": "이름",
         "type": "text",
         "autoComplete": "name",
         "required": true,
-        "placeholder": "Enter your full name"
+        "placeholder": "이름을 입력하세요"
       },
       {
         "id": "email",
-        "label": "Email Address",
+        "label": "이메일 주소",
         "type": "email",
         "autoComplete": "email",
         "required": true,
-        "placeholder": "Enter your email address"
+        "placeholder": "이메일 주소를 입력하세요"
       },
       {
         "id": "message",
-        "label": "Message",
+        "label": "메세지",
         "type": "textarea",
         "autoComplete": "off",
         "required": true,
-        "placeholder": "Write your message here"
+        "placeholder": "메세지를 입력하세요"
       }
     ],
-    "submitText": "Send Message"
+    "submitText": "메세지 보내기"
   }
 }

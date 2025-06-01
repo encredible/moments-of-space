@@ -1,5 +1,5 @@
 {
-  "title": "Our Projects",
-  "description": "Discover the spaces we've transformed. Each project reflects our commitment to creating environments that are both beautiful and functional, tailored to our clients' unique visions.",
+  "title": "프로젝트 개요",
+  "description": "우리가 변화시킨 공간들을 둘러보세요. 각 프로젝트는 고객의 고유한 비전에 맞춰진 아름답고 기능적인 환경을 만들기 위한 우리의 노력을 보여줍니다.",
   "projects": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 }

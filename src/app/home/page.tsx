@@ -91,28 +91,18 @@ export default function HomePage() {
         <HomeIntroSections />
 
         {/* Services Highlights Section */}
-        <section className="pt-5 px-4 pb-3">
-          <h2 className="font-plus-jakarta-sans font-bold text-2xl text-neutral-900">
-            Our Services
-          </h2>
-        </section>
         <ServiceHighlights />
 
         {/* Project Highlights Section */}
         <ProjectHighlights />
 
         {/* Designer Highlights Section */}
-        <section className="pt-5 px-4 pb-3">
-          <h2 className="font-plus-jakarta-sans font-bold text-2xl text-neutral-900">
-            Our Designers
-          </h2>
-        </section>
         <DesignerHighlights />
 
         {/* Testimonials Section */}
         <section className="pt-5 px-4 pb-3">
           <h2 className="font-plus-jakarta-sans font-bold text-2xl text-neutral-900">
-            {homeContent.testimonials.title}
+            고객 후기
           </h2>
         </section>
         <section className="flex flex-col gap-4 p-4">
@@ -127,13 +117,13 @@ export default function HomePage() {
         {/* Call to Action Section */}
         <section className="pt-5 px-4 pb-3 text-center">
           <h2 className="font-plus-jakarta-sans font-bold text-2xl mb-2 text-neutral-900">
-            {homeContent.cta.title}
+            공간을 변화시킬 준비가 되셨나요?
           </h2>
           <button
               onClick={() => router.push('/contact')}
               className="font-plus-jakarta-sans font-bold text-base text-white bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
           >
-            Get In Touch
+            연락하기
           </button>
         </section>
       </div>

@@ -76,7 +76,7 @@ export default function ProjectHighlights() {
             onClick={() => router.push('/project')}
             className="font-plus-jakarta-sans font-bold text-base text-white bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
           >
-            View All Projects
+            모든 프로젝트 보기
           </button>
         </div>
       </div>

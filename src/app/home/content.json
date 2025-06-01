@@ -1,68 +1,55 @@
 {
   "hero": {
     "backgroundImage": "/images/hero-background.jpg",
-    "title": "Creating beautiful spaces that inspire",
+    "title": "영감을 주는 아름다운 공간 만들기",
     "ctaButtons": [
       {
         "href": "/services",
-        "text": "Our Services",
+        "text": "서비스 소개",
         "variant": "primary"
       },
       {
         "href": "/project",
-        "text": "View Projects",
+        "text": "프로젝트 보기",
         "variant": "secondary"
       }
     ]
   },
-  "portfolioHighlights": {
-    "title": "Portfolio Highlights",
-    "items": [
-      {
-        "image": "/images/modern-apartment.jpg",
-        "alt": "Modern Apartment",
-        "title": "Modern Apartment",
-        "desc": "A sleek and minimalist apartment design in downtown San Francisco."
-      },
-      {
-        "image": "/images/cozy-home.jpg",
-        "alt": "Cozy Home",
-        "title": "Cozy Home",
-        "desc": "A warm and inviting home design with a focus on comfort and functionality."
-      },
-      {
-        "image": "/images/luxury-villa.jpg",
-        "alt": "Luxury Villa",
-        "title": "Luxury Villa",
-        "desc": "An opulent villa design showcasing luxurious materials and finishes."
-      },
-      {
-        "image": "/images/office-space.jpg",
-        "alt": "Office Space",
-        "title": "Office Space",
-        "desc": "A modern and collaborative office space designed for productivity."
-      }
-    ]
-  },
   "projectHighlights": {
-    "title": "Project Highlights",
+    "title": "프로젝트 하이라이트",
     "highlightedProjectIds": ["1", "2", "3", "4"]
   },
   "testimonials": {
-    "title": "What Our Clients Say",
+    "title": "고객 후기",
     "items": [
       {
-        "quote": "Sarah transformed our living room into a masterpiece. Her attention to detail and creative vision are unparalleled.",
-        "author": "John & Jane Doe"
+        "quote": "사라는 우리 거실을 걸작품으로 변화시켰습니다. 그녀의 세세한 부분까지 신경쓰는 스타일과 창의적인 비전은 비교할 수 없습니다.",
+        "author": "존 & 제인 두"
       },
       {
-        "quote": "Working with Sarah was a pleasure. She understood our needs perfectly and delivered a stunning design for our office.",
-        "author": "ACME Corp"
+        "quote": "사라와 함께 일하는 것은 즐거움이었습니다. 그녀는 우리의 요구사항을 완벽히 이해하고 우리 사무실을 위한 놀라운 디자인을 제공했습니다.",
+        "author": "ACME 회사"
       }
     ]
   },
   "cta": {
-    "title": "Ready to transform your space?",
-    "button": "Get in Touch"
-  }
+    "title": "공간을 변화시킬 준비가 되셨나요?",
+    "button": "연락하기"
+  },
+  "introSections": [
+    {
+      "imageUrl": "/images/home-styling-meaning.jpg",
+      "imageAlt": "자연광이 들어오는 아름답게 꺼나진 거실",
+      "title": "홈 스타일링이 중요한 이유",
+      "description": "홈 스타일링은 단순한 장식 이상의 의미가 있습니다. 그것은 당신만의 이야기를 반영하고, 당신의 라이프스타일을 지원하며, 일상 속에서 최고의 순간을 만들어내는 공간을 만드는 것입니다. 신중한 스타일링은 어떤 공간도 영감과 편안함을 주는 공간으로 변화시킬 수 있습니다.",
+      "imageOnLeft": true
+    },
+    {
+      "imageUrl": "/images/home-styling-process.jpg",
+      "imageAlt": "디자이너가 고객과 함께 집 레이아웃과 소재를 계획하는 장면",
+      "title": "아름다운 삶을 위한 우리의 접근법",
+      "description": "우리는 기능과 아름다움을 조화시켜, 실용적이면서도 시각적으로 화려한 집을 만들기 위한 레이아웃, 소재, 세부 사항에 중점을 두고 있습니다. 우리의 디자이너들은 모든 과정을 안내하며, 그 결과가 당신만을 위한 조화롭고 편안한 환경이 되도록 보장합니다.",
+      "imageOnLeft": false
+    }
+  ]
 }
