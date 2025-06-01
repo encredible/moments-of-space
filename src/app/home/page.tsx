@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import homeContent from './homeContent.json';
 import ServiceHighlights from './ServiceHighlights';
+import ProjectHighlights from './ProjectHighlights';
 import HomeIntroSections from './HomeIntroSections';
 
 type PortfolioItem = {
@@ -93,6 +94,9 @@ export default function HomePage() {
           </h2>
         </section>
         <ServiceHighlights />
+
+        {/* Project Highlights Section */}
+        <ProjectHighlights />
 
         {/* Testimonials Section */}
         <section className="pt-5 px-4 pb-3">
