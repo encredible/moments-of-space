@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import homeContent from './homeContent.json';
+import ServiceHighlights from './ServiceHighlights';
 
 type PortfolioItem = {
   image: string;
@@ -81,31 +82,23 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Portfolio Highlights Section */}
+        {/* Home Styling Introduction Sections */}
+        <section className="py-8 px-4 flex flex-col items-center bg-white">
+          <h2 className="font-plus-jakarta-sans font-bold text-2xl sm:text-3xl text-neutral-900 mb-4 text-center">Why Home Styling Matters</h2>
+          <p className="max-w-2xl text-gray-700 text-base text-center">Home styling is more than just decorating—it's about creating a space that reflects your unique story, supports your lifestyle, and brings out the best in everyday living. Thoughtful styling can transform any room into a place of inspiration and comfort.</p>
+        </section>
+        <section className="py-8 px-4 flex flex-col items-center bg-gray-50">
+          <h2 className="font-plus-jakarta-sans font-bold text-2xl sm:text-3xl text-neutral-900 mb-4 text-center">Our Approach to Beautiful Living</h2>
+          <p className="max-w-2xl text-gray-700 text-base text-center">We blend function and beauty, focusing on layouts, materials, and details that make your home both practical and visually stunning. Our designers guide you through every step, ensuring the result is a harmonious, welcoming environment tailored just for you.</p>
+        </section>
+
+        {/* Services Highlights Section */}
         <section className="pt-5 px-4 pb-3">
           <h2 className="font-plus-jakarta-sans font-bold text-2xl text-neutral-900">
-            {homeContent.portfolioHighlights.title}
+            Our Services
           </h2>
         </section>
-        <section className="flex flex-col gap-5 p-4">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            {homeContent.portfolioHighlights.items.slice(0, 3).map((item: PortfolioItem, idx: number) => (
-              <article className="flex-1 flex flex-col gap-3" key={item.title + idx}>
-                <Image src={item.image} alt={item.alt} width={400} height={169} className="object-cover w-full h-44" />
-                <h3 className="font-plus-jakarta-sans font-medium text-base text-neutral-900">{item.title}</h3>
-                <p className="font-plus-jakarta-sans text-sm text-gray-500">{item.desc}</p>
-              </article>
-            ))}
-          </div>
-          {/* Portfolio Item 4 */}
-          {homeContent.portfolioHighlights.items[3] && (
-            <article className="flex flex-col gap-3 mt-5">
-              <Image src={homeContent.portfolioHighlights.items[3].image} alt={homeContent.portfolioHighlights.items[3].alt} width={1232} height={170} className="object-cover w-full h-44" />
-              <h3 className="font-plus-jakarta-sans font-medium text-base text-neutral-900">{homeContent.portfolioHighlights.items[3].title}</h3>
-              <p className="font-plus-jakarta-sans text-sm text-gray-500">{homeContent.portfolioHighlights.items[3].desc}</p>
-            </article>
-          )}
-        </section>
+        <ServiceHighlights />
 
         {/* Testimonials Section */}
         <section className="pt-5 px-4 pb-3">
