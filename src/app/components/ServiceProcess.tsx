@@ -20,14 +20,14 @@ export default function ServiceProcess({ steps, className = '' }: ServiceProcess
             
             <div className="relative">
                 {/* 프로세스 연결선 - 왼쪽에 배치, 원형 마커와 일치하는 테두리 두께 */}
-                <div className="absolute left-10 top-10 bottom-10 w-0.5 bg-black hidden md:block"></div>
+                <div className="absolute left-10 top-10 bottom-10 w-0.25 bg-black hidden md:block"></div>
                 
                 <div className="space-y-12 md:space-y-16">
                     {steps.map((step) => (
                         <div key={step.id} className="relative">
-                            {/* 왼쪽 원형 스텝 넘버 - 검은색 테두리, 흰색 바탕, 검은색 글자 */}
-                            <div className="absolute left-10 w-10 h-10 bg-white rounded-full border-2 border-black items-center justify-center text-black font-bold z-10 hidden md:flex -translate-x-1/2">
-                                {step.id}
+                            {/* 왼쪽 마름모꼴 스텝 넘버 - 검은색 테두리, 흰색 바탕, 검은색 글자, 테두리 두께 반감 */}
+                            <div className="absolute left-10 w-10 h-10 bg-white border border-black items-center justify-center text-black font-bold z-10 hidden md:flex -translate-x-1/2 rotate-45">
+                                <span className="-rotate-45">{step.id}</span>
                             </div>
                             
                             {/* 텍스트 영역 - 타임라인 오른쪽에 모두 배치 */}

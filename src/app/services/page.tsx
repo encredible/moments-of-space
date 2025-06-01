@@ -1,6 +1,5 @@
 'use client'; // 나중에 인터랙션 추가 시 필요할 수 있음
 import servicesContent from './servicesContent.json' assert {type: 'json'};
-import Image from 'next/image';
 import SplitSection from '../components/SplitSection';
 import ServiceProcess from '../components/ServiceProcess';
 
@@ -28,8 +27,8 @@ const ServicesPage = () => {
                     <h2 className="font-plus-jakarta-sans font-bold text-3xl sm:text-4xl text-neutral-900 text-center mb-6">
                         {content.title}
                     </h2>
-                    <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
-                        <p className="text-gray-600 mb-10">{content.description}</p>
+                    <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-10">
+                        {content.description}
                     </p>
                 </div>
             </section>
