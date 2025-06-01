@@ -2,7 +2,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Header: React.FC = () => {
+// Props가 필요하다면 여기에 정의합니다.
+interface HeaderProps {}
+
+const Header: React.FC<HeaderProps> = () => {
   return (
     <header className="border-b border-gray-200 w-full">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center py-3 px-10 w-full">
