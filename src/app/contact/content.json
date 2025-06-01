@@ -2,7 +2,7 @@
   "heroImageAlt": "연락처 배경",
   "heroImageSrc": "/images/contact-hero.jpg",
   "overlayColor": "bg-black/60",
-  "title": "연락하기",
+  "title": "상담신청",
   "description": "프로젝트를 계획 중이시거나 그냥 인사를 나누고 싶으세요? 아래 양식을 작성하시면 가능한 빨리 연락드리겠습니다.",
   "form": {
     "fields": [
@@ -23,14 +23,30 @@
         "placeholder": "이메일 주소를 입력하세요"
       },
       {
+        "id": "phone",
+        "label": "전화번호 (선택사항)",
+        "type": "tel",
+        "autoComplete": "tel",
+        "required": false,
+        "placeholder": "전화번호를 입력하세요"
+      },
+      {
+        "id": "subject",
+        "label": "제목",
+        "type": "text",
+        "autoComplete": "off",
+        "required": true,
+        "placeholder": "제목을 입력하세요"
+      },
+      {
         "id": "message",
-        "label": "메세지",
+        "label": "메시지 / 상담 내용",
         "type": "textarea",
         "autoComplete": "off",
         "required": true,
-        "placeholder": "메세지를 입력하세요"
+        "placeholder": "메시지를 입력하세요"
       }
     ],
-    "submitText": "메세지 보내기"
+    "submitText": "메시지 보내기"
   }
 }

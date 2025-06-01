@@ -8,50 +8,9 @@ import HomeIntroSections from './HomeIntroSections';
 import { useRouter } from 'next/navigation';
 import PageLayout from '../components/PageLayout';
 
-type PortfolioItem = {
-  image: string;
-  alt: string;
-  title: string;
-  desc: string;
-};
-
 type Testimonial = {
   quote: string;
   author: string;
-};
-
-type CtaButton = {
-  href: string;
-  text: string;
-  variant: 'primary' | 'secondary';
-};
-
-type Hero = {
-  backgroundImage: string;
-  title: string;
-  ctaButtons: CtaButton[];
-};
-
-type PortfolioHighlights = {
-  title: string;
-  items: PortfolioItem[];
-};
-
-type Testimonials = {
-  title: string;
-  items: Testimonial[];
-};
-
-type Cta = {
-  title: string;
-  button: string;
-};
-
-type HomeContent = {
-  hero: Hero;
-  portfolioHighlights: PortfolioHighlights;
-  testimonials: Testimonials;
-  cta: Cta;
 };
 
 export default function HomePage() {
