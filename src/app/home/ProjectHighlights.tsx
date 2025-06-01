@@ -7,6 +7,7 @@ import { ProjectItem, projectDetailsById, getProjectItems } from "../project/pro
 interface ProjectHighlightsData {
   title: string;
   highlightedProjectIds: string[];
+  viewAllButtonText: string;
 }
 
 // Load the project highlights data from homeContent.json
@@ -76,7 +77,7 @@ export default function ProjectHighlights() {
             onClick={() => router.push('/project')}
             className="font-plus-jakarta-sans font-bold text-base text-white bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
           >
-            모든 프로젝트 보기
+            {projectHighlightsData.viewAllButtonText}
           </button>
         </div>
       </div>

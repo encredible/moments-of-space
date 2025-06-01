@@ -61,7 +61,7 @@ export default function HomePage() {
         {/* Testimonials Section */}
         <section className="pt-5 px-4 pb-3">
           <h2 className="font-plus-jakarta-sans font-bold text-2xl text-neutral-900">
-            고객 후기
+            {homeContent.testimonials.title}
           </h2>
         </section>
         <section className="flex flex-col gap-4 p-4">
@@ -76,13 +76,13 @@ export default function HomePage() {
         {/* Call to Action Section */}
         <section className="pt-5 px-4 pb-3 text-center">
           <h2 className="font-plus-jakarta-sans font-bold text-2xl mb-2 text-neutral-900">
-            공간을 변화시킬 준비가 되셨나요?
+            {homeContent.cta.title}
           </h2>
           <button
               onClick={() => router.push('/contact')}
               className="font-plus-jakarta-sans font-bold text-base text-white bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
           >
-            연락하기
+            {homeContent.cta.button}
           </button>
         </section>
       </div>

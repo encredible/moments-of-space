@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import designersContent from '../designers/content.json' assert { type: 'json' };
+import homeContent from './content.json' assert { type: 'json' };
 
 export default function DesignerHighlights() {
   // 최대 3명의 디자이너만 표시
@@ -31,7 +32,7 @@ export default function DesignerHighlights() {
           href="/designers" 
           className="inline-block py-2 px-4 border border-neutral-300 text-neutral-800 hover:bg-neutral-100 transition-colors"
         >
-          모든 디자이너 보기
+          {homeContent.designerHighlights.viewAllButtonText}
         </Link>
       </div>
     </section>
