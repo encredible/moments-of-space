@@ -44,7 +44,7 @@ export default function ServiceHighlights() {
               alt={service.imageAlt}
               className="w-full h-40 object-cover mb-3"
             />
-            <div className="font-plus-jakarta-sans font-semibold text-lg text-neutral-900 mb-2">
+            <div className="font-plus-jakarta-sans text-lg text-neutral-900 mb-2">
               {service.title}
             </div>
             <div className="font-plus-jakarta-sans text-sm text-gray-600">

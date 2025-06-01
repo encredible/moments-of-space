@@ -14,7 +14,7 @@ interface ServiceProcessProps {
 export default function ServiceProcess({ steps, className = '' }: ServiceProcessProps) {
     return (
         <section className={`w-full max-w-5xl py-16 ${className}`}>
-            <h2 className="font-plus-jakarta-sans font-bold text-2xl sm:text-3xl text-neutral-900 text-center mb-10">
+            <h2 className="font-plus-jakarta-sans text-2xl sm:text-3xl text-neutral-900 text-center mb-10">
                 서비스 진행 프로세스
             </h2>
             
@@ -26,7 +26,7 @@ export default function ServiceProcess({ steps, className = '' }: ServiceProcess
                     {steps.map((step) => (
                         <div key={step.id} className="relative">
                             {/* 왼쪽 마름모꼴 스텝 넘버 - 검은색 테두리, 흰색 바탕, 검은색 글자, 테두리 두께 반감 */}
-                            <div className="absolute left-10 w-10 h-10 bg-white border border-black items-center justify-center text-black font-bold z-10 hidden md:flex -translate-x-1/2 rotate-45">
+                            <div className="absolute left-10 w-10 h-10 bg-white border border-black items-center justify-center text-black z-10 hidden md:flex -translate-x-1/2 rotate-45">
                                 <span className="-rotate-45">{step.id}</span>
                             </div>
                             
@@ -35,7 +35,7 @@ export default function ServiceProcess({ steps, className = '' }: ServiceProcess
                                 {/* 텍스트 영역 - 타임라인과 더 멀게 */}
                                 <div className="w-full pl-0 md:pl-32">
                                     <div className="flex flex-col">
-                                        <h3 className="font-plus-jakarta-sans font-semibold text-xl text-neutral-900 mb-2">
+                                        <h3 className="font-plus-jakarta-sans text-xl text-neutral-900 mb-2">
                                             {step.title}
                                         </h3>
                                         <p className="text-gray-600">

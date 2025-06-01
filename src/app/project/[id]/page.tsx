@@ -22,7 +22,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   return (
     <PageLayout>
       <Link href="/project" className="text-blue-600 hover:underline text-sm mb-6 block">← Back to Projects</Link>
-      <h1 className="text-4xl font-bold mb-2">{project.title}</h1>
+      <h1 className="text-4xl mb-2">{project.title}</h1>
       <div className="text-gray-500 text-sm mb-4">{project.category}{project.date ? ` · ${project.date}` : ''}</div>
       <div className="mb-6">
         <Image
@@ -65,7 +65,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
       )}
       {project.servicesProvided && project.servicesProvided.length > 0 && (
         <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Services Provided</h2>
+          <h2 className="text-xl mb-2">Services Provided</h2>
           <ul className="list-disc list-inside ml-4">
             {project.servicesProvided.map((service) => (
               <li key={service}>{service}</li>

@@ -21,7 +21,7 @@ export default function DesignerHighlights() {
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
               />
             </div>
-            <h3 className="font-plus-jakarta-sans font-semibold text-xl mb-1">{designer.name}</h3>
+            <h3 className="font-plus-jakarta-sans text-xl mb-1">{designer.name}</h3>
             <p className="text-gray-600 mb-3">{designer.role}</p>
             <p className="text-gray-500 text-sm line-clamp-3 mb-4">{designer.bio}</p>
           </div>

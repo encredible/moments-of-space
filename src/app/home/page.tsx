@@ -23,7 +23,7 @@ export default function HomePage() {
           className="h-128 bg-cover bg-center flex flex-col items-center justify-center text-center text-white mb-8"
           style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('${homeContent.hero.backgroundImage}')` }}
         >
-          <h1 className="font-plus-jakarta-sans font-extrabold text-4xl md:text-5xl leading-tight tracking-tighter">
+          <h1 className="font-plus-jakarta-sans text-4xl md:text-5xl leading-tight tracking-tighter">
             {homeContent.hero.title}
           </h1>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -60,7 +60,7 @@ export default function HomePage() {
 
         {/* Testimonials Section */}
         <section className="pt-5 px-4 pb-3">
-          <h2 className="font-plus-jakarta-sans font-bold text-2xl text-neutral-900">
+          <h2 className="font-plus-jakarta-sans text-2xl text-neutral-900">
             {homeContent.testimonials.title}
           </h2>
         </section>
@@ -75,12 +75,12 @@ export default function HomePage() {
 
         {/* Call to Action Section */}
         <section className="pt-5 px-4 pb-3 text-center">
-          <h2 className="font-plus-jakarta-sans font-bold text-2xl mb-2 text-neutral-900">
+          <h2 className="font-plus-jakarta-sans text-2xl mb-2 text-neutral-900">
             {homeContent.cta.title}
           </h2>
           <button
               onClick={() => router.push('/contact')}
-              className="font-plus-jakarta-sans font-bold text-base text-white bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
+              className="font-plus-jakarta-sans text-base text-white bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
           >
             {homeContent.cta.button}
           </button>

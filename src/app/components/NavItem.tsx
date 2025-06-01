@@ -10,7 +10,7 @@ const NavItem: React.FC<NavItemProps> = ({ text, href }) => {
   return (
     <Link 
       href={href} 
-      className="font-plus-jakarta-sans font-semibold text-lg text-neutral-900 hover:text-neutral-700 transition-colors duration-200"
+      className="font-plus-jakarta-sans text-sm text-neutral-900 hover:text-neutral-700 transition-colors duration-200"
     >
       {text}
     </Link>
