@@ -12,6 +12,7 @@ export interface SplitSectionProps {
   className?: string;
   priority?: boolean;
   shadowStyle?: string;
+  id?: string;
 }
 
 export default function SplitSection({
@@ -25,9 +26,10 @@ export default function SplitSection({
   className = '',
   priority = false,
   shadowStyle = 'shadow-md',
+  id,
 }: SplitSectionProps) {
   return (
-    <section className={`flex flex-col md:flex-row items-center justify-between py-12 px-4 md:px-0 gap-8 md:gap-0 ${className}`}>
+    <section id={id} className={`flex flex-col md:flex-row items-center justify-between py-12 px-4 md:px-0 gap-8 md:gap-0 ${className}`}>
       <div 
         className={`md:w-1/2 w-full flex justify-center mb-6 md:mb-0 ${
           !imageOnLeft ? 'order-1 md:order-2' : ''
