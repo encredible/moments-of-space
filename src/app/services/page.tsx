@@ -3,6 +3,7 @@ import servicesContent from './content.json' assert {type: 'json'};
 import SplitSection from '../components/SplitSection';
 import ServiceProcess from './ServiceProcess';
 import PageLayout from '../components/PageLayout';
+import PageHeader from '../components/PageHeader';
 
 type Service = {
     title: string;
@@ -23,16 +24,10 @@ const content: ServicesContent = servicesContent;
 const ServicesPage = () => {
     return (
         <PageLayout>
-            <section className="w-full max-w-5xl mb-16"> {/* 페이지 제목 및 소개 */}
-                <div className="pt-5 pb-8">
-                    <h2 className="font-plus-jakarta-sans font-bold text-3xl sm:text-4xl text-neutral-900 text-center mb-6">
-                        {content.title}
-                    </h2>
-                    <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-10">
-                        {content.description}
-                    </p>
-                </div>
-            </section>
+            <PageHeader 
+                title={content.title}
+                description={content.description}
+            />
 
             {/* 서비스 상세 설명 섹션 */}
             {content.services.map((service: Service, index: number) => {

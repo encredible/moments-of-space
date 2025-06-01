@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ProjectItem, ProjectIdListData, projectPageContent, allProjectIds, projectDetailsById, getProjectItems } from './projectData';
 import PageLayout from '../components/PageLayout';
+import PageHeader from '../components/PageHeader';
 
 // Use the page title and description from projectContent.json
 const pageTitle = projectPageContent.title;
@@ -16,14 +17,10 @@ const projectItems = getProjectItems(allProjectIds);
 const ProjectPage = () => {
   return (
     <PageLayout>
-      <div className="pt-5 pb-8">
-        <h2 className="font-plus-jakarta-sans font-bold text-3xl sm:text-4xl text-neutral-900 text-center mb-10">
-          {pageTitle}
-        </h2>
-        <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
-          {pageDescription}
-        </p>
-      </div>
+      <PageHeader 
+        title={pageTitle}
+        description={pageDescription}
+      />
 
       {/* 프로젝트 카드 그리드 - Masonry 효과를 위해 단순 CSS로 시도 */}
       {/* 실제 Masonry 레이아웃은 클라이언트 사이드 JS 또는 전용 라이브러리가 필요할 수 있습니다. */}
