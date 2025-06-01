@@ -4,11 +4,11 @@ import { notFound } from 'next/navigation';
 import { projectDetailsById } from '../projectData';
 import PageLayout from '../../components/PageLayout';
 
-interface PageProps {
+type PageProps = {
     params: {
         id: string;
     };
-}
+};
 
 export default function ProjectDetailPage({ params }: PageProps) {
   const { id } = params;
