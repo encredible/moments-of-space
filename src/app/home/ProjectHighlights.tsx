@@ -10,7 +10,7 @@ interface ProjectHighlightsData {
 }
 
 // Load the project highlights data from homeContent.json
-const homeContent = require('./homeContent.json');
+const homeContent = require('./content.json');
 const projectHighlightsData: ProjectHighlightsData = homeContent.projectHighlights;
 
 export default function ProjectHighlights() {

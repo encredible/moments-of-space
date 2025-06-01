@@ -1,5 +1,5 @@
 'use client'; // 나중에 인터랙션 추가 시 필요할 수 있음
-import servicesContent from './servicesContent.json' assert {type: 'json'};
+import servicesContent from './content.json' assert {type: 'json'};
 import SplitSection from '../components/SplitSection';
 import ServiceProcess from '../components/ServiceProcess';
 

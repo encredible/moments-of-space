@@ -1,4 +1,4 @@
-import designersContent from './designersContent.json' assert { type: 'json' };
+import designersContent from './content.json' assert { type: 'json' };
 import Image from 'next/image';
 
 type Designer = {

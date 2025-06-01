@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import contactContent from './contactContent.json';
+import contactContent from './content.json';
 
 type Field = {
   id: string;

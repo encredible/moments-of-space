@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import homeContent from './homeContent.json';
+import homeContent from './content.json';
 import ServiceHighlights from './ServiceHighlights';
 import ProjectHighlights from './ProjectHighlights';
 import HomeIntroSections from './HomeIntroSections';

@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
-import servicesContent from "../services/servicesContent.json";
+import servicesContent from "../services/content.json";
 
 const slugify = (str: string) =>
   str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");

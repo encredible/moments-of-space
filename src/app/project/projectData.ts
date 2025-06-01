@@ -42,7 +42,7 @@ export interface ProjectIdListData {
 }
 
 // Load the list of project IDs and page metadata
-export const projectPageContent: ProjectIdListData = require('./projectContent.json');
+export const projectPageContent: ProjectIdListData = require('./content.json');
 export const allProjectIds = projectPageContent.projects;
 
 // Pre-load all individual project details based on available data files
