@@ -34,7 +34,7 @@ export default function ServiceHighlights() {
           <button
             key={service.title}
             onClick={handleClick(slug)}
-            className="flex-shrink-0 w-80 md:w-96 block px-6 py-6 hover:bg-gray-50 transition-colors shadow text-left focus:outline-none"
+            className="flex-shrink-0 w-80 md:w-96 block px-6 py-6 hover:bg-custom-bg transition-colors shadow text-left focus:outline-none"
             style={{ minWidth: "20rem", maxWidth: "24rem" }}
             tabIndex={0}
             type="button"

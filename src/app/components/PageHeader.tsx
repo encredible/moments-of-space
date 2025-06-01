@@ -17,7 +17,7 @@ export default function PageHeader({
   textColor = 'dark',
   className = ''
 }: PageHeaderProps) {
-  const titleColorClass = textColor === 'light' ? 'text-white' : 'text-neutral-900';
+  const titleColorClass = textColor === 'light' ? 'text-custom-bg' : 'text-neutral-900';
   const descColorClass = textColor === 'light' ? 'text-gray-200' : 'text-gray-600';
 
   return (

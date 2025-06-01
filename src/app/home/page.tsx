@@ -8,11 +8,6 @@ import HomeIntroSections from './HomeIntroSections';
 import { useRouter } from 'next/navigation';
 import PageLayout from '../components/PageLayout';
 
-type Testimonial = {
-  quote: string;
-  author: string;
-};
-
 export default function HomePage() {
   const router = useRouter();
   return (
@@ -20,7 +15,7 @@ export default function HomePage() {
       <div className="flex flex-col flex-grow w-full">
         {/* Hero Section */}
         <section
-          className="h-128 bg-cover bg-center flex flex-col items-center justify-center text-center text-white mb-8"
+          className="h-128 bg-cover bg-center flex flex-col items-center justify-center text-center text-custom-bg mb-8"
           style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('${homeContent.hero.backgroundImage}')` }}
         >
           <h1 className="font-korean text-4xl md:text-5xl leading-tight tracking-tighter">
@@ -35,7 +30,7 @@ export default function HomePage() {
                   href={btn.href}
                   className={
                     variant === 'primary'
-                      ? 'inline-block bg-neutral-900 text-white px-8 py-3 text-lg font-medium hover:bg-neutral-700 transition-colors'
+                      ? 'inline-block bg-neutral-900 text-custom-bg px-8 py-3 text-lg font-medium hover:bg-neutral-700 transition-colors'
                       : 'inline-block bg-white text-neutral-900 px-8 py-3 text-lg font-medium border border-neutral-300 hover:bg-neutral-100 transition-colors'
                   }
                 >
@@ -58,29 +53,14 @@ export default function HomePage() {
         {/* Designer Highlights Section */}
         <DesignerHighlights />
 
-        {/* Testimonials Section */}
-        <section className="pt-5 px-4 pb-3">
-          <h2 className="font-korean text-2xl text-neutral-900">
-            {homeContent.testimonials.title}
-          </h2>
-        </section>
-        <section className="flex flex-col gap-4 p-4">
-          {homeContent.testimonials.items.map((item: Testimonial, idx: number) => (
-            <article className="p-4 border border-gray-200" key={item.author + idx}>
-              <p className="font-korean text-base text-neutral-900">&ldquo;{item.quote}&rdquo;</p>
-              <footer className="mt-3 font-korean text-sm text-gray-500">- {item.author}</footer>
-            </article>
-          ))}
-        </section>
-
         {/* Call to Action Section */}
         <section className="pt-5 px-4 pb-3 text-center">
-          <h2 className="font-korean text-2xl mb-2 text-neutral-900">
+          <h2 className="font-korean text-2xl mb-7 text-neutral-900">
             {homeContent.cta.title}
           </h2>
           <button
               onClick={() => router.push('/contact')}
-              className="font-korean text-base text-white bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
+              className="font-korean text-base text-custom-bg bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
           >
             {homeContent.cta.button}
           </button>

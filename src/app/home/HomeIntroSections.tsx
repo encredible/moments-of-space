@@ -31,7 +31,6 @@ export default function HomeIntroSections() {
           description={section.description}
           imageOnLeft={section.imageOnLeft}
           priority={true}
-          className={index === 0 ? "bg-white" : ""}
         />
       ))}
     </>

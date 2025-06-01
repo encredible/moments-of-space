@@ -28,7 +28,7 @@ export default function ProjectHighlights() {
   };
 
   return (
-    <section className="py-12 px-4 md:px-8 bg-white">
+    <section className="py-12 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8 px-4">
           <h2 className="font-korean text-2xl text-neutral-900">
@@ -61,10 +61,10 @@ export default function ProjectHighlights() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                   <div>
-                    <span className="inline-block px-3 py-1 text-sm font-medium text-white bg-black/50 rounded-full mb-2">
+                    <span className="inline-block px-3 py-1 text-sm font-medium text-custom-bg bg-black/50 rounded-full mb-2">
                       {project.category}
                     </span>
-                    <h3 className="text-xl text-white">{project.title}</h3>
+                    <h3 className="text-xl text-custom-bg">{project.title}</h3>
                   </div>
                 </div>
               </div>
@@ -75,7 +75,7 @@ export default function ProjectHighlights() {
         <div className="text-center mt-8">
           <button
             onClick={() => router.push('/project')}
-            className="font-korean text-base text-white bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
+            className="font-korean text-base text-custom-bg bg-black px-5 h-12 hover:bg-gray-800 transition-colors"
           >
             {projectHighlightsData.viewAllButtonText}
           </button>
