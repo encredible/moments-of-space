@@ -10,22 +10,6 @@ export interface Testimonial {
   author: string;
 }
 
-// Interface for the detailed project data (as in 1.json, 2.json, etc.)
-export interface ProjectDetailData {
-  id: number; // Numeric ID from individual files
-  title: string;
-  imageUrl: string;
-  category: string;
-  description?: string;
-  details?: string[];
-  images?: ProjectImage[];
-  client?: string;
-  date?: string;
-  tags?: string[];
-  servicesProvided?: string[];
-  testimonial?: Testimonial;
-}
-
 // Interface for the objects we'll use in components' state/rendering
 export interface ProjectItem {
   id: string; // String ID as expected by the component
@@ -62,7 +46,7 @@ export const projectPageContent: ProjectIdListData = require('./projectContent.j
 export const allProjectIds = projectPageContent.projects;
 
 // Pre-load all individual project details based on available data files
-export const projectDetailsById: { [key: string]: ProjectDetailData } = Object.fromEntries(
+export const projectDetailsById: { [key: string]: ProjectItemDetail } = Object.fromEntries(
   allProjectIds.map(id => [id, require(`./data/${id}.json`)])
 );
 
