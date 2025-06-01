@@ -32,38 +32,28 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* 서비스 카드 섹션 */}
-      <section className="w-full max-w-6xl mb-20">
-        <div className="flex flex-row overflow-x-auto gap-6 md:gap-8 scrollbar-hide md:overflow-visible">
-          {content.services.map((service: Service, idx: number) => (
-            <div
-              key={service.title + idx}
-              className="flex-shrink-0 w-80 md:w-96 flex flex-col bg-white p-6 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 rounded-lg"
-              style={{ minWidth: '20rem', maxWidth: '24rem' }}
-            >
-              <Image src={service.imageSrc} alt={service.imageAlt} width={600} height={400} className="object-cover w-full h-56 md:h-72 mb-4" />
-              <h3 className="font-plus-jakarta-sans font-semibold text-xl text-neutral-900 mb-3">{service.title}</h3>
-              <p className="font-plus-jakarta-sans text-sm text-gray-600 flex-grow">{service.shortDescription}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* 서비스 상세 설명 섹션 */}
       <section className="w-full max-w-5xl space-y-20">
-        {content.services.map((service: Service, index: number) => (
-          <article key={service.title} className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-            <div className="md:w-1/2 w-full  overflow-hidden shadow-lg">
-              <Image src={service.imageSrc} alt={service.imageAlt} width={600} height={400} className="object-cover w-full h-auto md:h-96" />
-            </div>
-            <div className="md:w-1/2 w-full">
-              <h3 className="font-plus-jakarta-sans font-bold text-2xl sm:text-3xl text-neutral-900 mb-4">{service.title}</h3>
-              <p className="font-plus-jakarta-sans text-base text-gray-700 leading-relaxed">
-                {service.longDescription}
-              </p>
-            </div>
-          </article>
-        ))}
+        {content.services.map((service: Service, index: number) => {
+          const slug = service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+          return (
+            <article
+              key={service.title}
+              id={slug}
+              className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+            >
+              <div className="md:w-1/2 w-full  overflow-hidden shadow-lg">
+                <Image src={service.imageSrc} alt={service.imageAlt} width={600} height={400} className="object-cover w-full h-auto md:h-96" />
+              </div>
+              <div className="md:w-1/2 w-full">
+                <h3 className="font-plus-jakarta-sans font-bold text-2xl sm:text-3xl text-neutral-900 mb-4">{service.title}</h3>
+                <p className="font-plus-jakarta-sans text-base text-gray-700 leading-relaxed">
+                  {service.longDescription}
+                </p>
+              </div>
+            </article>
+          );
+        })}
       </section>
     </main>
   );
