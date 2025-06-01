@@ -1,4 +1,4 @@
-import SplitSection from '@/components/SplitSection';
+import SplitSection from '../components/SplitSection';
 
 export default function HomeIntroSections() {
   return (
