@@ -1,19 +1,19 @@
 {
   "id": "8",
-  "title": "Boutique Hotel Lobby",
-  "category": "Commercial",
+  "title": "부티크 호텔 로비",
+  "category": "상업공간",
   "imageUrl": "/images/project/project-highlight-3.jpg",
-  "description": "A complete redesign of the lobby area for a boutique hotel, creating a welcoming yet sophisticated first impression for guests. The design incorporates local art, custom lighting, and comfortable seating areas.",
-  "client": "Serenity Boutique Hotel",
+  "description": "부티크 호텔의 로비 공간을 완전히 재디자인하여 손님들에게 온화적이면서도 세련된 첨인상을 만들었습니다. 이 디자인은 지역 예술품, 맞춤형 조명, 편안한 좌석 공간을 포함합니다.",
+  "client": "세레니티 부티크 호텔",
   "date": "2024-02-15",
-  "tags": ["Hospitality", "Commercial", "Lobby Design", "Custom Lighting"],
-  "servicesProvided": ["Commercial Design", "Custom Furniture Design", "Art Curation", "Lighting Design"],
+  "tags": ["호스피탈리티", "상업공간", "로비 디자인", "맞춤형 조명"],
+  "servicesProvided": ["상업 디자인", "맞춤형 가구 디자인", "예술품 크레이션", "조명 디자인"],
   "images": [
-    { "src": "/images/project/project-highlight-3.jpg", "alt": "Hotel lobby seating area" },
-    { "src": "/images/project/project-highlight-1.jpg", "alt": "Custom reception desk with ambient lighting" }
+    { "src": "/images/project/project-highlight-3.jpg", "alt": "호텔 로비 좌석 공간" },
+    { "src": "/images/project/project-highlight-1.jpg", "alt": "분위기 있는 조명이 있는 맞춤형 리셉션 데스크" }
   ],
   "testimonial": {
-    "quote": "Our guests constantly comment on how beautiful and welcoming our lobby is. It has completely transformed the arrival experience.",
-    "author": "Serenity Hotel Management"
+    "quote": "우리 손님들은 항상 우리 로비가 얼마나 아름답고 환영하는 분위기인지 언급합니다. 손님들의 첨 방문 경험을 완전히 바꾸었습니다.",
+    "author": "세레니티 호텔 관리팀"
   }
 }

@@ -1,19 +1,19 @@
 {
   "id": "7",
-  "title": "Urban Loft Conversion",
-  "category": "Residential",
+  "title": "도심 로프트 컨버전",
+  "category": "주거공간",
   "imageUrl": "/images/project/project-highlight-2.jpg",
-  "description": "Conversion of an industrial warehouse space into a stylish urban loft. The design preserved original architectural elements while introducing modern comforts and functionality for contemporary urban living.",
-  "client": "Michael Chen",
+  "description": "산업용 창고 공간을 세련된 도심 로프트로 재탄생시켰습니다. 이 디자인은 원래의 건축적 요소를 보존하면서도 현대적 도시 생활에 맞는 편안함과 기능성을 도입했습니다.",
+  "client": "마이클 첨",
   "date": "2023-05-12",
-  "tags": ["Industrial", "Residential", "Loft", "Urban"],
-  "servicesProvided": ["Architectural Consultation", "Space Planning", "Custom Furniture", "Material Selection"],
+  "tags": ["산업스타일", "주거공간", "로프트", "도시"],
+  "servicesProvided": ["건축 컨설팅", "공간 계획", "맞춤형 가구", "소재 선정"],
   "images": [
-    { "src": "/images/project/project-highlight-2.jpg", "alt": "Open concept loft with original beams" },
-    { "src": "/images/project/project-highlight-4.jpg", "alt": "Custom built-in storage solutions" }
+    { "src": "/images/project/project-highlight-2.jpg", "alt": "원래의 보를 유지한 개방형 로프트" },
+    { "src": "/images/project/project-highlight-4.jpg", "alt": "맞춤형 내장 수납 솔루션" }
   ],
   "testimonial": {
-    "quote": "They managed to keep the industrial character I loved while making the space completely livable. It's the perfect balance.",
-    "author": "Michael C."
+    "quote": "그들은 내가 좋아하는 산업적 특성을 유지하면서도 공간을 완전히 살기 좋게 만들었습니다. 완벽한 균형이에요.",
+    "author": "마이클 C."
   }
 }

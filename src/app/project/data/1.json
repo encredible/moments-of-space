@@ -1,19 +1,19 @@
 {
   "id": "1",
-  "title": "Cozy Living Room Refresh",
-  "category": "Residential",
+  "title": "아늑한 거실 리프레쉬",
+  "category": "주거공간",
   "imageUrl": "/images/project/project-cozy-living-room-detail1.jpg",
-  "description": "A warm and inviting living room transformation, with an emphasis on comfort, layered textures, and natural materials. The project included custom shelving, soft furnishings, and improved lighting.",
-  "client": "The Parkers",
+  "description": "편안함, 다양한 질감, 자연 소재를 강조한 따뜻하고 초대하는 느낌의 거실 변화. 이 프로젝트는 맞춤형 선반, 부드러운 가구, 향상된 조명을 포함했습니다.",
+  "client": "파커 가족",
   "date": "2023-01-22",
-  "tags": ["Cozy", "Residential", "Living Room", "Custom Shelving"],
-  "servicesProvided": ["Interior Styling", "Custom Shelving Design", "Lighting Upgrade"],
+  "tags": ["아늑함", "주거공간", "거실", "맞춤형 선반"],
+  "servicesProvided": ["인테리어 스타일링", "맞춤형 선반 디자인", "조명 업그레이드"],
   "images": [
-    { "src": "/images/project/project-cozy-living-room-detail1.jpg", "alt": "Cozy living room after refresh" },
-    { "src": "/images/project/project-cozy-living-room-detail2.jpg", "alt": "Custom shelving and decor" }
+    { "src": "/images/project/project-cozy-living-room-detail1.jpg", "alt": "리프레쉬 후 아늑한 거실" },
+    { "src": "/images/project/project-cozy-living-room-detail2.jpg", "alt": "맞춤형 선반과 장식" }
   ],
   "testimonial": {
-    "quote": "We love our new living room! It feels so much more comfortable and personal.",
-    "author": "The Parkers"
+    "quote": "새로운 거실이 정말 마음에 들어요! 훨씬 더 편안하고 개인적인 느낌이 듭니다.",
+    "author": "파커 가족"
   }
 }

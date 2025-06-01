@@ -1,19 +1,19 @@
 {
   "id": "9",
-  "title": "Eco-Friendly Family Home",
-  "category": "Residential",
+  "title": "환경 친화적 가족 주택",
+  "category": "주거공간",
   "imageUrl": "/images/project/project-modern-apartment-detail3.jpg",
-  "description": "A sustainable renovation project for a growing family, focusing on eco-friendly materials, energy efficiency, and flexible spaces that adapt to changing needs. The design incorporates natural light, recycled materials, and smart home technology.",
-  "client": "The Rodriguez Family",
+  "description": "성장하는 가족을 위한 지속 가능한 리모델링 프로젝트로, 환경 친화적 소재, 에너지 효율성, 그리고 변화하는 요구에 맞게 적응할 수 있는 유연한 공간에 초점을 두었습니다. 이 디자인은 자연광, 재활용 소재, 스마트 홈 기술을 활용합니다.",
+  "client": "로드리게즈 가족",
   "date": "2023-09-28",
-  "tags": ["Sustainable", "Residential", "Family Home", "Smart Technology"],
-  "servicesProvided": ["Sustainable Design", "Space Planning", "Material Sourcing", "Smart Home Integration"],
+  "tags": ["지속가능성", "주거공간", "가족 주택", "스마트 기술"],
+  "servicesProvided": ["지속 가능한 디자인", "공간 계획", "소재 소싱", "스마트 홈 통합"],
   "images": [
-    { "src": "/images/project/project-modern-apartment-detail3.jpg", "alt": "Open concept living area with sustainable materials" },
-    { "src": "/images/project/project-highlight-4.jpg", "alt": "Natural light filled bedroom with eco-friendly furnishings" }
+    { "src": "/images/project/project-modern-apartment-detail3.jpg", "alt": "지속 가능한 소재로 만든 개방형 거실 공간" },
+    { "src": "/images/project/project-highlight-4.jpg", "alt": "자연광이 가득한 침실과 환경 친화적 가구" }
   ],
   "testimonial": {
-    "quote": "Not only is our home beautiful, but we love knowing that the materials and systems are environmentally responsible. Perfect for raising our children.",
-    "author": "Elena & Carlos R."
+    "quote": "우리 집은 아름다울 뒤 아니라, 소재와 시스템이 환경적으로 책임있다는 것을 알고 있어 기쁨니다. 아이들을 키우기에 완벽한 공간이에요.",
+    "author": "엘레나 & 카를로스 R."
   }
 }
