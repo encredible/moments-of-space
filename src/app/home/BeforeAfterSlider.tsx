@@ -140,7 +140,7 @@ export default function BeforeAfterSlider({
             onClick={() => changeImage(currentImageIndex - 1)}
             style={{ left: "-40px" }}
           >
-            <div className="relative w-48 h-84 overflow-hidden shadow-lg">
+            <div className="relative w-48 h-96 overflow-hidden shadow-lg">
               <Image
                 src={prevImage.afterImage}
                 alt={prevImage.afterAlt}
@@ -159,10 +159,10 @@ export default function BeforeAfterSlider({
         )}
 
         {/* Main Slider Container */}
-        <div className="relative overflow-hidden shadow-lg w-full max-w-4xl">
+        <div className="relative overflow-hidden shadow-lg w-full max-w-3xl">
           <div
             ref={containerRef}
-            className="relative w-full h-84 cursor-col-resize select-none"
+            className="relative w-full h-96 cursor-col-resize select-none"
           >
             {/* After Image (기본적으로 보이는 이미지) */}
             <div className="absolute inset-0">
@@ -233,8 +233,8 @@ export default function BeforeAfterSlider({
             className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
             onClick={() => changeImage(currentImageIndex + 1)}
             style={{ right: "-40px" }}
-            >
-            <div className="relative w-48 h-84 overflow-hidden shadow-lg">
+          >
+            <div className="relative w-48 h-96 overflow-hidden shadow-lg">
               <Image
                 src={nextImage.afterImage}
                 alt={nextImage.afterAlt}
