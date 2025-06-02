@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
@@ -39,7 +38,7 @@ export default function BeforeAfterSlider({
 
   const updateSliderPosition = (clientX: number) => {
     if (!containerRef.current || !isDragging) return;
-    
+
     const rect = containerRef.current.getBoundingClientRect();
     const x = clientX - rect.left;
     const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
@@ -62,7 +61,7 @@ export default function BeforeAfterSlider({
 
   const handleMainTouchEnd = () => {
     if (isDragging || !touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
@@ -171,7 +170,7 @@ export default function BeforeAfterSlider({
                 alt={currentPair.afterAlt}
                 fill
                 className={`object-cover transition-opacity duration-300 ${isNavigating ? 'opacity-50' : 'opacity-100'}`}
-                sizes="(max-width: 768px) 100vw, 896px"
+                sizes="(max-width: 768px) 100vw, 512px"
                 priority
               />
             </div>
@@ -186,7 +185,7 @@ export default function BeforeAfterSlider({
                 alt={currentPair.beforeAlt}
                 fill
                 className={`object-cover transition-opacity duration-300 ${isNavigating ? 'opacity-50' : 'opacity-100'}`}
-                sizes="(max-width: 768px) 100vw, 896px"
+                sizes="(max-width: 768px) 100vw, 512px"
                 priority
               />
             </div>
