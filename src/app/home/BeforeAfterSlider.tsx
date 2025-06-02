@@ -1,7 +1,6 @@
-
-'use client';
-import React, { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
+"use client";
+import React, { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 
 interface ImagePair {
   beforeImage: string;
@@ -18,7 +17,7 @@ interface BeforeAfterSliderProps {
 
 export default function BeforeAfterSlider({
   imagePairs,
-  className = ''
+  className = "",
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -101,29 +100,33 @@ export default function BeforeAfterSlider({
     };
 
     if (isDragging) {
-      document.addEventListener('mousemove', handleMouseMove);
-      document.addEventListener('mouseup', handleMouseUp);
-      document.addEventListener('touchmove', handleTouchMove);
-      document.addEventListener('touchend', handleTouchEnd);
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+      document.addEventListener("touchmove", handleTouchMove);
+      document.addEventListener("touchend", handleTouchEnd);
     }
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseup', handleMouseUp);
-      document.removeEventListener('touchmove', handleTouchMove);
-      document.removeEventListener('touchend', handleTouchEnd);
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("touchmove", handleTouchMove);
+      document.removeEventListener("touchend", handleTouchEnd);
     };
   }, [isDragging]);
 
   if (!imagePairs || imagePairs.length === 0) return null;
 
   const currentPair = imagePairs[currentImageIndex];
-  const prevImage = currentImageIndex > 0 ? imagePairs[currentImageIndex - 1] : null;
-  const nextImage = currentImageIndex < imagePairs.length - 1 ? imagePairs[currentImageIndex + 1] : null;
+  const prevImage =
+    currentImageIndex > 0 ? imagePairs[currentImageIndex - 1] : null;
+  const nextImage =
+    currentImageIndex < imagePairs.length - 1
+      ? imagePairs[currentImageIndex + 1]
+      : null;
 
   return (
     <div className={`relative w-full max-w-6xl mx-auto ${className}`}>
-      <div 
+      <div
         ref={mainContainerRef}
         className="relative flex items-center justify-center"
         onTouchStart={handleMainTouchStart}
@@ -132,12 +135,15 @@ export default function BeforeAfterSlider({
       >
         {/* Left Preview */}
         {prevImage && (
-          <div 
+          <div
             className="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
             onClick={() => changeImage(currentImageIndex - 1)}
-            style={{ left: '-120px' }}
+            style={{ left: "-40px" }}
           >
-            <div className="relative w-48 h-72 overflow-hidden rounded-sm shadow-lg" style={{ aspectRatio: '16/10' }}>
+            <div
+              className="relative w-48 h-72 overflow-hidden rounded-sm shadow-lg"
+              style={{ aspectRatio: "16/10" }}
+            >
               <Image
                 src={prevImage.afterImage}
                 alt={prevImage.afterAlt}
@@ -145,11 +151,24 @@ export default function BeforeAfterSlider({
                 className="object-cover"
                 sizes="192px"
               />
-              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(244, 243, 239, 0.3)' }}></div>
+              <div
+                className="absolute inset-0"
+                style={{ backgroundColor: "rgba(244, 243, 239, 0.3)" }}
+              ></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  <svg
+                    className="w-5 h-5 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
                   </svg>
                 </div>
               </div>
@@ -162,7 +181,7 @@ export default function BeforeAfterSlider({
           <div
             ref={containerRef}
             className="relative w-full h-72 cursor-col-resize select-none"
-            style={{ aspectRatio: '16/10' }}
+            style={{ aspectRatio: "16/10" }}
           >
             {/* After Image (기본적으로 보이는 이미지) */}
             <div className="absolute inset-0">
@@ -170,14 +189,14 @@ export default function BeforeAfterSlider({
                 src={currentPair.afterImage}
                 alt={currentPair.afterAlt}
                 fill
-                className={`object-cover transition-opacity duration-300 ${isNavigating ? 'opacity-50' : 'opacity-100'}`}
+                className={`object-cover transition-opacity duration-300 ${isNavigating ? "opacity-50" : "opacity-100"}`}
                 sizes="(max-width: 768px) 100vw, 384px"
                 priority
               />
             </div>
 
             {/* Before Image (슬라이더로 가려지는 이미지) */}
-            <div 
+            <div
               className="absolute inset-0 overflow-hidden"
               style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
             >
@@ -185,7 +204,7 @@ export default function BeforeAfterSlider({
                 src={currentPair.beforeImage}
                 alt={currentPair.beforeAlt}
                 fill
-                className={`object-cover transition-opacity duration-300 ${isNavigating ? 'opacity-50' : 'opacity-100'}`}
+                className={`object-cover transition-opacity duration-300 ${isNavigating ? "opacity-50" : "opacity-100"}`}
                 sizes="(max-width: 768px) 100vw, 384px"
                 priority
               />
@@ -194,7 +213,10 @@ export default function BeforeAfterSlider({
             {/* 슬라이더 핸들 */}
             <div
               className="absolute top-0 bottom-0 w-1 bg-white cursor-col-resize z-10"
-              style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
+              style={{
+                left: `${sliderPosition}%`,
+                transform: "translateX(-50%)",
+              }}
               onMouseDown={handleMouseDown}
               onTouchStart={handleTouchStart}
             >
@@ -225,22 +247,42 @@ export default function BeforeAfterSlider({
             {/* Mobile Navigation Arrows */}
             <div className="md:hidden absolute inset-y-0 left-0 right-0 flex items-center justify-between pointer-events-none z-30">
               {prevImage && (
-                <div 
+                <div
                   className="ml-4 w-10 h-10 rounded-full bg-black/50 flex items-center justify-center pointer-events-auto cursor-pointer"
                   onClick={() => changeImage(currentImageIndex - 1)}
                 >
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
                   </svg>
                 </div>
               )}
               {nextImage && (
-                <div 
+                <div
                   className="mr-4 w-10 h-10 rounded-full bg-black/50 flex items-center justify-center pointer-events-auto cursor-pointer"
                   onClick={() => changeImage(currentImageIndex + 1)}
                 >
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               )}
@@ -250,12 +292,15 @@ export default function BeforeAfterSlider({
 
         {/* Right Preview */}
         {nextImage && (
-          <div 
+          <div
             className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
             onClick={() => changeImage(currentImageIndex + 1)}
-            style={{ right: '-120px' }}
+            style={{ right: "-40px" }}
           >
-            <div className="relative w-48 h-72 overflow-hidden rounded-sm shadow-lg" style={{ aspectRatio: '16/10' }}>
+            <div
+              className="relative w-48 h-72 overflow-hidden rounded-sm shadow-lg"
+              style={{ aspectRatio: "16/10" }}
+            >
               <Image
                 src={nextImage.afterImage}
                 alt={nextImage.afterAlt}
@@ -263,11 +308,24 @@ export default function BeforeAfterSlider({
                 className="object-cover"
                 sizes="192px"
               />
-              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(244, 243, 239, 0.3)' }}></div>
+              <div
+                className="absolute inset-0"
+                style={{ backgroundColor: "rgba(244, 243, 239, 0.3)" }}
+              ></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-5 h-5 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               </div>
