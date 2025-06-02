@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
@@ -134,7 +135,7 @@ export default function BeforeAfterSlider({
           <div 
             className="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
             onClick={() => changeImage(currentImageIndex - 1)}
-            style={{ left: '-200px' }}
+            style={{ left: '-120px' }}
           >
             <div className="relative w-48 h-72 overflow-hidden rounded-sm shadow-lg" style={{ aspectRatio: '16/10' }}>
               <Image
@@ -252,7 +253,7 @@ export default function BeforeAfterSlider({
           <div 
             className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
             onClick={() => changeImage(currentImageIndex + 1)}
-            style={{ right: '-200px' }}
+            style={{ right: '-120px' }}
           >
             <div className="relative w-48 h-72 overflow-hidden rounded-sm shadow-lg" style={{ aspectRatio: '16/10' }}>
               <Image
@@ -273,9 +274,7 @@ export default function BeforeAfterSlider({
             </div>
           </div>
         )}
-        
       </div>
-  
     </div>
   );
 }
