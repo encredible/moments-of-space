@@ -135,20 +135,20 @@ export default function BeforeAfterSlider({
           <div 
             className="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
             onClick={() => changeImage(currentImageIndex - 1)}
-            style={{ left: '-60px' }}
+            style={{ left: '-320px' }}
           >
-            <div className="relative w-24 h-36 overflow-hidden rounded-sm shadow-lg">
+            <div className="relative w-80 h-96 md:h-[500px] overflow-hidden rounded-sm shadow-lg" style={{ aspectRatio: '16/10' }}>
               <Image
                 src={prevImage.afterImage}
                 alt={prevImage.afterAlt}
                 fill
                 className="object-cover"
-                sizes="96px"
+                sizes="320px"
               />
               <div className="absolute inset-0" style={{ backgroundColor: 'rgba(244, 243, 239, 0.3)' }}></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-6 h-6 rounded-full bg-white/80 flex items-center justify-center">
-                  <svg className="w-3 h-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </div>
@@ -253,20 +253,20 @@ export default function BeforeAfterSlider({
           <div 
             className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
             onClick={() => changeImage(currentImageIndex + 1)}
-            style={{ right: '-60px' }}
+            style={{ right: '-320px' }}
           >
-            <div className="relative w-24 h-36 overflow-hidden rounded-sm shadow-lg">
+            <div className="relative w-80 h-96 md:h-[500px] overflow-hidden rounded-sm shadow-lg" style={{ aspectRatio: '16/10' }}>
               <Image
                 src={nextImage.afterImage}
                 alt={nextImage.afterAlt}
                 fill
                 className="object-cover"
-                sizes="96px"
+                sizes="320px"
               />
               <div className="absolute inset-0" style={{ backgroundColor: 'rgba(244, 243, 239, 0.3)' }}></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-6 h-6 rounded-full bg-white/80 flex items-center justify-center">
-                  <svg className="w-3 h-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                   </div>
