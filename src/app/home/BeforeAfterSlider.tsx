@@ -133,16 +133,15 @@ export default function BeforeAfterSlider({
         {prevImage && (
           <div 
             className="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
-            onClick={() => changeImage(currentImageIndex - 1)}
-            style={{ left: '-320px' }}
+            style={{ left: '-200px' }}
           >
-            <div className="relative w-80 h-96 md:h-[500px] overflow-hidden rounded-sm shadow-lg" style={{ aspectRatio: '16/10' }}>
+            <div className="relative w-48 h-72 overflow-hidden rounded-sm shadow-lg" style={{ aspectRatio: '16/10' }}>
               <Image
                 src={prevImage.afterImage}
                 alt={prevImage.afterAlt}
                 fill
                 className="object-cover"
-                sizes="320px"
+                sizes="192px"
               />
               <div className="absolute inset-0" style={{ backgroundColor: 'rgba(244, 243, 239, 0.3)' }}></div>
               <div className="absolute inset-0 flex items-center justify-center">
@@ -157,12 +156,39 @@ export default function BeforeAfterSlider({
         )}
 
         {/* Main Slider Container */}
-        <div className="relative overflow-hidden rounded-sm shadow-lg w-full max-w-4xl">
+        <div className="relative overflow-hidden rounded-sm shadow-lg w-full max-w-2xl">
           <div
             ref={containerRef}
-            className="relative w-full h-96 md:h-[500px] cursor-col-resize select-none"
+            className="relative w-full h-72 cursor-col-resize select-none"
             style={{ aspectRatio: '16/10' }}
+          ></div>
+        </div>
+
+        {/* Right Preview */}
+        {nextImage && (
+          <div 
+            className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
+            style={{ right: '-200px' }}
           >
+            <div className="relative w-48 h-72 overflow-hidden rounded-sm shadow-lg" style={{ aspectRatio: '16/10' }}>
+              <Image
+                src={nextImage.afterImage}
+                alt={nextImage.afterAlt}
+                fill
+                className="object-cover"
+                sizes="192px"
+              />
+              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(244, 243, 239, 0.3)' }}></div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  </div>
+              </div>
+            </div>
+          </div>
+        )}
             {/* After Image (기본적으로 보이는 이미지) */}
             <div className="absolute inset-0">
               <Image
@@ -170,7 +196,7 @@ export default function BeforeAfterSlider({
                 alt={currentPair.afterAlt}
                 fill
                 className={`object-cover transition-opacity duration-300 ${isNavigating ? 'opacity-50' : 'opacity-100'}`}
-                sizes="(max-width: 768px) 100vw, 512px"
+                sizes="(max-width: 768px) 100vw, 384px"
                 priority
               />
             </div>
@@ -185,7 +211,7 @@ export default function BeforeAfterSlider({
                 alt={currentPair.beforeAlt}
                 fill
                 className={`object-cover transition-opacity duration-300 ${isNavigating ? 'opacity-50' : 'opacity-100'}`}
-                sizes="(max-width: 768px) 100vw, 512px"
+                sizes="(max-width: 768px) 100vw, 384px"
                 priority
               />
             </div>
@@ -245,34 +271,7 @@ export default function BeforeAfterSlider({
               )}
             </div>
           </div>
-        </div>
-
-        {/* Right Preview */}
-        {nextImage && (
-          <div 
-            className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
-            onClick={() => changeImage(currentImageIndex + 1)}
-            style={{ right: '-320px' }}
-          >
-            <div className="relative w-80 h-96 md:h-[500px] overflow-hidden rounded-sm shadow-lg" style={{ aspectRatio: '16/10' }}>
-              <Image
-                src={nextImage.afterImage}
-                alt={nextImage.afterAlt}
-                fill
-                className="object-cover"
-                sizes="320px"
-              />
-              <div className="absolute inset-0" style={{ backgroundColor: 'rgba(244, 243, 239, 0.3)' }}></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                  </div>
-              </div>
-            </div>
-          </div>
-        )}
+        
       </div>
 
       {/* Image Counter and Mobile Instruction */}
