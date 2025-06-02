@@ -7,6 +7,7 @@ import DesignerHighlights from './DesignerHighlights';
 import HomeIntroSections from './HomeIntroSections';
 import { useRouter } from 'next/navigation';
 import PageLayout from '../components/PageLayout';
+import BeforeAfterSlider from '../components/BeforeAfterSlider';
 
 export default function HomePage() {
   const router = useRouter();
@@ -46,6 +47,24 @@ export default function HomePage() {
 
         {/* Designer Highlights Section */}
         <DesignerHighlights />
+
+        {/* Before/After Comparison Section */}
+        <section className="py-12 md:py-16 px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-korean text-2xl md:text-3xl text-center text-neutral-900 mb-8 md:mb-12">
+              변화의 순간을 확인해보세요
+            </h2>
+            <p className="text-center text-gray-600 mb-8 md:mb-12 max-w-2xl mx-auto">
+              전문 디자이너의 손길로 완전히 새로워진 공간을 직접 비교해보세요. 슬라이더를 드래그하여 놀라운 변화를 확인할 수 있습니다.
+            </p>
+            <BeforeAfterSlider
+              beforeImage="/images/project/project-cozy-living-room-detail1.jpg"
+              afterImage="/images/project/project-cozy-living-room-detail2.jpg"
+              beforeAlt="인테리어 디자인 전 거실 모습"
+              afterAlt="인테리어 디자인 후 거실 모습"
+            />
+          </div>
+        </section>
 
         {/* Call to Action Section */}
         <section className="pt-8 px-4 pb-10 text-center my-4">
