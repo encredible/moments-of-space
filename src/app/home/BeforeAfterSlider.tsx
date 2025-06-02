@@ -140,10 +140,7 @@ export default function BeforeAfterSlider({
             onClick={() => changeImage(currentImageIndex - 1)}
             style={{ left: "-40px" }}
           >
-            <div
-              className="relative w-48 h-72 overflow-hidden rounded-sm shadow-lg"
-              style={{ aspectRatio: "16/10" }}
-            >
+            <div className="relative w-48 h-84 overflow-hidden shadow-lg">
               <Image
                 src={prevImage.afterImage}
                 alt={prevImage.afterAlt}
@@ -163,11 +160,10 @@ export default function BeforeAfterSlider({
         )}
 
         {/* Main Slider Container */}
-        <div className="relative overflow-hidden rounded-sm shadow-lg w-full max-w-2xl">
+        <div className="relative overflow-hidden shadow-lg w-full max-w-2xl">
           <div
             ref={containerRef}
-            className="relative w-full h-72 cursor-col-resize select-none"
-            style={{ aspectRatio: "16/10" }}
+            className="relative w-full h-84 cursor-col-resize select-none"
           >
             {/* After Image (기본적으로 보이는 이미지) */}
             <div className="absolute inset-0">
@@ -229,50 +225,6 @@ export default function BeforeAfterSlider({
                 {currentPair.title}
               </div>
             )}
-
-            {/* Mobile Navigation Arrows */}
-            <div className="md:hidden absolute inset-y-0 left-0 right-0 flex items-center justify-between pointer-events-none z-30">
-              {prevImage && (
-                <div
-                  className="ml-4 w-10 h-10 rounded-full bg-black/50 flex items-center justify-center pointer-events-auto cursor-pointer"
-                  onClick={() => changeImage(currentImageIndex - 1)}
-                >
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 19l-7-7 7-7"
-                    />
-                  </svg>
-                </div>
-              )}
-              {nextImage && (
-                <div
-                  className="mr-4 w-10 h-10 rounded-full bg-black/50 flex items-center justify-center pointer-events-auto cursor-pointer"
-                  onClick={() => changeImage(currentImageIndex + 1)}
-                >
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-              )}
-            </div>
           </div>
         </div>
 
@@ -283,10 +235,7 @@ export default function BeforeAfterSlider({
             onClick={() => changeImage(currentImageIndex + 1)}
             style={{ right: "-40px" }}
           >
-            <div
-              className="relative w-48 h-72 overflow-hidden rounded-sm shadow-lg"
-              style={{ aspectRatio: "16/10" }}
-            >
+            <div className="relative w-48 h-84 overflow-hidden shadow-lg">
               <Image
                 src={nextImage.afterImage}
                 alt={nextImage.afterAlt}
