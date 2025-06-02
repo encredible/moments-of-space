@@ -159,7 +159,7 @@ export default function BeforeAfterSlider({
         )}
 
         {/* Main Slider Container */}
-        <div className="relative overflow-hidden shadow-lg w-full max-w-lg">
+        <div className="relative overflow-hidden shadow-lg w-full max-w-2xl">
           <div
             ref={containerRef}
             className="relative w-full h-84 cursor-col-resize select-none"
