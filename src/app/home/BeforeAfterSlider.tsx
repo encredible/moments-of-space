@@ -153,7 +153,9 @@ export default function BeforeAfterSlider({
               />
               <div
                 className="absolute inset-0"
-                style={{ backgroundColor: "rgba(244, 243, 239, 0.3)" }}
+                style={{ 
+                  background: "linear-gradient(to left, rgba(244, 243, 239, 0.6), rgba(244, 243, 239, 0.1))" 
+                }}
               ></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
@@ -310,7 +312,9 @@ export default function BeforeAfterSlider({
               />
               <div
                 className="absolute inset-0"
-                style={{ backgroundColor: "rgba(244, 243, 239, 0.3)" }}
+                style={{ 
+                  background: "linear-gradient(to left, rgba(244, 243, 239, 0.6), rgba(244, 243, 239, 0.1))" 
+                }}
               ></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
