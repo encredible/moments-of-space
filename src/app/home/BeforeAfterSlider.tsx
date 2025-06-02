@@ -138,7 +138,7 @@ export default function BeforeAfterSlider({
           <div
             className="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
             onClick={() => changeImage(currentImageIndex - 1)}
-            style={{ left: "-10px" }}
+            style={{ left: "-40px" }}
           >
             <div className="relative w-48 h-84 overflow-hidden shadow-lg">
               <Image
@@ -146,7 +146,6 @@ export default function BeforeAfterSlider({
                 alt={prevImage.afterAlt}
                 fill
                 className="object-cover"
-                sizes="192px"
               />
               <div
                 className="absolute inset-0"
@@ -233,15 +232,14 @@ export default function BeforeAfterSlider({
           <div
             className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
             onClick={() => changeImage(currentImageIndex + 1)}
-            style={{ right: "-10px" }}
-          >
+            style={{ right: "-40px" }}
+            >
             <div className="relative w-48 h-84 overflow-hidden shadow-lg">
               <Image
                 src={nextImage.afterImage}
                 alt={nextImage.afterAlt}
                 fill
                 className="object-cover"
-                sizes="192px"
               />
               <div
                 className="absolute inset-0"
