@@ -32,17 +32,17 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-maruburi), sans-serif;
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* 한글 폰트 클래스 */
-.font-korean {
-  font-family: var(--font-maruburi), sans-serif;
+/* Hide scrollbar for mobile navigation */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* 나눔스퀘어 한글 버튼 폰트 클래스 */
-.font-korean-button {
-  font-family: var(--font-nanumsquare);
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
