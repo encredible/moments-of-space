@@ -158,23 +158,6 @@ export default function BeforeAfterSlider({
                     "linear-gradient(to right, rgba(244, 243, 239, 0.95), rgba(244, 243, 239, 0.5))",
                 }}
               ></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-black"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 19l-7-7 7-7"
-                    />
-                  </svg>
-                </div>
-              </div>
             </div>
           </div>
         )}
@@ -318,23 +301,6 @@ export default function BeforeAfterSlider({
                     "linear-gradient(to left, rgba(244, 243, 239, 0.95), rgba(244, 243, 239, 0.5))",
                 }}
               ></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-black"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-              </div>
             </div>
           </div>
         )}
