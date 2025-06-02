@@ -151,7 +151,7 @@ export default function BeforeAfterSlider({
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(to right, rgba(244, 243, 239, 0.95), rgba(244, 243, 239, 0.5))",
+                    "linear-gradient(to right, rgba(244, 243, 239, 0.7), rgba(244, 243, 239, 0.3))",
                 }}
               ></div>
             </div>
@@ -245,7 +245,7 @@ export default function BeforeAfterSlider({
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(to left, rgba(244, 243, 239, 0.95), rgba(244, 243, 239, 0.5))",
+                    "linear-gradient(to left, rgba(244, 243, 239, 0.7), rgba(244, 243, 239, 0.3))",
                 }}
               ></div>
             </div>
