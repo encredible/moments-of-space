@@ -133,49 +133,6 @@ export default function BeforeAfterSlider({
         onTouchMove={handleMainTouchMove}
         onTouchEnd={handleMainTouchEnd}
       >
-        {/* Left Preview */}
-        {prevImage && (
-          <div
-            className="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
-            onClick={() => changeImage(currentImageIndex - 1)}
-            style={{ left: "-40px" }}
-          >
-            <div
-              className="relative w-48 h-72 overflow-hidden rounded-sm shadow-lg"
-              style={{ aspectRatio: "16/10" }}
-            >
-              <Image
-                src={prevImage.afterImage}
-                alt={prevImage.afterAlt}
-                fill
-                className="object-cover"
-                sizes="192px"
-              />
-              <div
-                className="absolute inset-0"
-                style={{ backgroundColor: "rgba(244, 243, 239, 0.3)" }}
-              ></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-black"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 19l-7-7 7-7"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Main Slider Container */}
         <div className="relative overflow-hidden rounded-sm shadow-lg w-full max-w-2xl">
           <div
@@ -289,46 +246,14 @@ export default function BeforeAfterSlider({
             </div>
           </div>
         </div>
-
-        {/* Right Preview */}
-        {nextImage && (
-          <div
-            className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
-            onClick={() => changeImage(currentImageIndex + 1)}
-            style={{ right: "-40px" }}
-          >
-            <div
-              className="relative w-48 h-72 overflow-hidden rounded-sm shadow-lg"
-              style={{ aspectRatio: "16/10" }}
-            >
-              <Image
-                src={nextImage.afterImage}
-                alt={nextImage.afterAlt}
-                fill
-                className="object-cover"
-                sizes="192px"
-              />
-              <div
-                className="absolute inset-0"
-                style={{ backgroundColor: "rgba(244, 243, 239, 0.3)" }}
-              ></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-black"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-              </div>
+      {/* Image Counter and Mobile Instruction */}
+        {imagePairs.length > 1 && (
+          <div className="text-center mt-4">
+            <span className="text-sm text-gray-600 font-korean block mb-2">
+              {currentImageIndex + 1} / {imagePairs.length}
+            </span>
+            <div className="md:hidden text-xs text-gray-500 font-korean">
+              ← 좌우로 스와이프하여 다른 이미지를 확인하세요 →
             </div>
           </div>
         )}
