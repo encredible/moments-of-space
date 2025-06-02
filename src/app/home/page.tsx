@@ -7,7 +7,7 @@ import DesignerHighlights from './DesignerHighlights';
 import HomeIntroSections from './HomeIntroSections';
 import { useRouter } from 'next/navigation';
 import PageLayout from '../components/PageLayout';
-import BeforeAfterSlider from '../components/BeforeAfterSlider';
+import BeforeAfterSlider from './BeforeAfterSlider';
 
 export default function HomePage() {
   const router = useRouter();
