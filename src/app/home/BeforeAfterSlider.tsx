@@ -25,7 +25,7 @@ export default function BeforeAfterSlider({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isNavigating, setIsNavigating] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const navigationRef = useRef<HTMLDivElement>(null);
+  const mainContainerRef = useRef<HTMLDivElement>(null);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
@@ -46,30 +46,32 @@ export default function BeforeAfterSlider({
     setSliderPosition(percentage);
   };
 
-  // Navigation swipe handling for mobile
+  // Swipe handling for mobile
   const [touchStart, setTouchStart] = useState<number>(0);
   const [touchEnd, setTouchEnd] = useState<number>(0);
 
-  const handleNavigationTouchStart = (e: React.TouchEvent) => {
+  const handleMainTouchStart = (e: React.TouchEvent) => {
+    if (isDragging) return; // 슬라이더 드래그 중이면 스와이프 무시
     setTouchStart(e.targetTouches[0].clientX);
   };
 
-  const handleNavigationTouchMove = (e: React.TouchEvent) => {
+  const handleMainTouchMove = (e: React.TouchEvent) => {
+    if (isDragging) return;
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
-  const handleNavigationTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+  const handleMainTouchEnd = () => {
+    if (isDragging || !touchStart || !touchEnd) return;
     
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
 
     if (isLeftSwipe && currentImageIndex < imagePairs.length - 1) {
-      setCurrentImageIndex(currentImageIndex + 1);
+      changeImage(currentImageIndex + 1);
     }
     if (isRightSwipe && currentImageIndex > 0) {
-      setCurrentImageIndex(currentImageIndex - 1);
+      changeImage(currentImageIndex - 1);
     }
   };
 
@@ -116,148 +118,176 @@ export default function BeforeAfterSlider({
   if (!imagePairs || imagePairs.length === 0) return null;
 
   const currentPair = imagePairs[currentImageIndex];
+  const prevImage = currentImageIndex > 0 ? imagePairs[currentImageIndex - 1] : null;
+  const nextImage = currentImageIndex < imagePairs.length - 1 ? imagePairs[currentImageIndex + 1] : null;
 
   return (
-    <div className={`relative w-full max-w-4xl mx-auto ${className}`}>
-      {/* Image Comparison Container */}
-      <div className="relative overflow-hidden rounded-sm shadow-lg">
-        <div
-          ref={containerRef}
-          className="relative w-full h-96 md:h-[500px] cursor-col-resize select-none"
-          style={{ aspectRatio: '16/10' }}
-        >
-          {/* After Image (기본적으로 보이는 이미지) */}
-          <div className="absolute inset-0">
-            <Image
-              src={currentPair.afterImage}
-              alt={currentPair.afterAlt}
-              fill
-              className={`object-cover transition-opacity duration-300 ${isNavigating ? 'opacity-50' : 'opacity-100'}`}
-              sizes="(max-width: 768px) 100vw, 896px"
-              priority
-            />
-          </div>
-
-          {/* Before Image (슬라이더로 가려지는 이미지) */}
+    <div className={`relative w-full max-w-6xl mx-auto ${className}`}>
+      <div 
+        ref={mainContainerRef}
+        className="relative flex items-center justify-center"
+        onTouchStart={handleMainTouchStart}
+        onTouchMove={handleMainTouchMove}
+        onTouchEnd={handleMainTouchEnd}
+      >
+        {/* Left Preview */}
+        {prevImage && (
           <div 
-            className="absolute inset-0 overflow-hidden"
-            style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+            className="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
+            onClick={() => changeImage(currentImageIndex - 1)}
+            style={{ left: '-80px' }}
           >
-            <Image
-              src={currentPair.beforeImage}
-              alt={currentPair.beforeAlt}
-              fill
-              className={`object-cover transition-opacity duration-300 ${isNavigating ? 'opacity-50' : 'opacity-100'}`}
-              sizes="(max-width: 768px) 100vw, 896px"
-              priority
-            />
-          </div>
-
-          {/* 슬라이더 핸들 */}
-          <div
-            className="absolute top-0 bottom-0 w-1 bg-white cursor-col-resize z-10"
-            style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
-            onMouseDown={handleMouseDown}
-            onTouchStart={handleTouchStart}
-          >
-            {/* 핸들 원형 버튼 */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center cursor-col-resize">
-              <div className="flex space-x-1">
-                <div className="w-0.5 h-4 bg-gray-400"></div>
-                <div className="w-0.5 h-4 bg-gray-400"></div>
+            <div className="relative w-32 h-48 overflow-hidden rounded-sm shadow-lg">
+              <Image
+                src={prevImage.afterImage}
+                alt={prevImage.afterAlt}
+                fill
+                className="object-cover"
+                sizes="128px"
+              />
+              <div className="absolute inset-0 bg-black/30"></div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
+        )}
 
-          {/* Before/After 라벨 */}
-          <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded text-sm font-korean">
-            Before
-          </div>
-          <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded text-sm font-korean">
-            After
-          </div>
-
-          {/* 현재 이미지 제목 */}
-          {currentPair.title && (
-            <div className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 rounded text-sm font-korean">
-              {currentPair.title}
+        {/* Main Slider Container */}
+        <div className="relative overflow-hidden rounded-sm shadow-lg w-full max-w-4xl">
+          <div
+            ref={containerRef}
+            className="relative w-full h-96 md:h-[500px] cursor-col-resize select-none"
+            style={{ aspectRatio: '16/10' }}
+          >
+            {/* After Image (기본적으로 보이는 이미지) */}
+            <div className="absolute inset-0">
+              <Image
+                src={currentPair.afterImage}
+                alt={currentPair.afterAlt}
+                fill
+                className={`object-cover transition-opacity duration-300 ${isNavigating ? 'opacity-50' : 'opacity-100'}`}
+                sizes="(max-width: 768px) 100vw, 896px"
+                priority
+              />
             </div>
-          )}
+
+            {/* Before Image (슬라이더로 가려지는 이미지) */}
+            <div 
+              className="absolute inset-0 overflow-hidden"
+              style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+            >
+              <Image
+                src={currentPair.beforeImage}
+                alt={currentPair.beforeAlt}
+                fill
+                className={`object-cover transition-opacity duration-300 ${isNavigating ? 'opacity-50' : 'opacity-100'}`}
+                sizes="(max-width: 768px) 100vw, 896px"
+                priority
+              />
+            </div>
+
+            {/* 슬라이더 핸들 */}
+            <div
+              className="absolute top-0 bottom-0 w-1 bg-white cursor-col-resize z-10"
+              style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
+              onMouseDown={handleMouseDown}
+              onTouchStart={handleTouchStart}
+            >
+              {/* 핸들 원형 버튼 */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center cursor-col-resize">
+                <div className="flex space-x-1">
+                  <div className="w-0.5 h-4 bg-gray-400"></div>
+                  <div className="w-0.5 h-4 bg-gray-400"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Before/After 라벨 */}
+            <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded text-sm font-korean">
+              Before
+            </div>
+            <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded text-sm font-korean">
+              After
+            </div>
+
+            {/* 현재 이미지 제목 */}
+            {currentPair.title && (
+              <div className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 rounded text-sm font-korean">
+                {currentPair.title}
+              </div>
+            )}
+
+            {/* Mobile Navigation Arrows */}
+            <div className="md:hidden absolute inset-y-0 left-0 right-0 flex items-center justify-between pointer-events-none z-30">
+              {prevImage && (
+                <div 
+                  className="ml-4 w-10 h-10 rounded-full bg-black/50 flex items-center justify-center pointer-events-auto cursor-pointer"
+                  onClick={() => changeImage(currentImageIndex - 1)}
+                >
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </div>
+              )}
+              {nextImage && (
+                <div 
+                  className="mr-4 w-10 h-10 rounded-full bg-black/50 flex items-center justify-center pointer-events-auto cursor-pointer"
+                  onClick={() => changeImage(currentImageIndex + 1)}
+                >
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
+
+        {/* Right Preview */}
+        {nextImage && (
+          <div 
+            className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
+            onClick={() => changeImage(currentImageIndex + 1)}
+            style={{ right: '-80px' }}
+          >
+            <div className="relative w-32 h-48 overflow-hidden rounded-sm shadow-lg">
+              <Image
+                src={nextImage.afterImage}
+                alt={nextImage.afterAlt}
+                fill
+                className="object-cover"
+                sizes="128px"
+              />
+              <div className="absolute inset-0 bg-black/30"></div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* Navigation */}
+      {/* Image Counter and Mobile Instruction */}
       {imagePairs.length > 1 && (
-        <div className="mt-4">
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex justify-center space-x-4">
-            {imagePairs.map((pair, index) => (
-              <div
-                key={index}
-                className={`relative cursor-pointer transition-all duration-300 ${
-                  index === currentImageIndex ? 'ring-2 ring-black' : 'hover:opacity-80'
-                }`}
-                onClick={() => changeImage(index)}
-              >
-                <Image
-                  src={pair.afterImage}
-                  alt={pair.afterAlt}
-                  width={120}
-                  height={80}
-                  className="object-cover rounded-sm"
-                  sizes="120px"
-                />
-                {index !== currentImageIndex && (
-                  <div className="absolute inset-0 bg-black/20 rounded-sm"></div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Mobile Navigation */}
-          <div 
-            ref={navigationRef}
-            className="md:hidden flex overflow-x-auto space-x-3 px-4 py-2 scrollbar-hide"
-            onTouchStart={handleNavigationTouchStart}
-            onTouchMove={handleNavigationTouchMove}
-            onTouchEnd={handleNavigationTouchEnd}
-          >
-            {imagePairs.map((pair, index) => (
-              <div
-                key={index}
-                className={`relative flex-shrink-0 cursor-pointer transition-all duration-300 ${
-                  index === currentImageIndex ? 'ring-2 ring-black' : 'opacity-70'
-                }`}
-                onClick={() => changeImage(index)}
-              >
-                <Image
-                  src={pair.afterImage}
-                  alt={pair.afterAlt}
-                  width={100}
-                  height={70}
-                  className="object-cover rounded-sm"
-                  sizes="100px"
-                />
-                {index !== currentImageIndex && (
-                  <div className="absolute inset-0 bg-black/20 rounded-sm"></div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Mobile swipe indicator */}
-          <div className="md:hidden text-center mt-2">
-            <p className="text-xs text-gray-500 font-korean">
-              좌우로 스와이프하여 다른 이미지를 확인하세요
-            </p>
-          </div>
-
-          {/* Image counter */}
-          <div className="text-center mt-3">
-            <span className="text-sm text-gray-600 font-korean">
-              {currentImageIndex + 1} / {imagePairs.length}
-            </span>
-          </div>
+        <div className="text-center mt-4">
+          <span className="text-sm text-gray-600 font-korean block mb-2">
+            {currentImageIndex + 1} / {imagePairs.length}
+          </span>
+          <p className="md:hidden text-xs text-gray-500 font-korean">
+            좌우로 스와이프하거나 화살표를 터치하여 다른 이미지를 확인하세요
+          </p>
+          <p className="hidden md:block text-xs text-gray-500 font-korean">
+            좌우 미리보기 이미지를 클릭하여 다른 이미지를 확인하세요
+          </p>
         </div>
       )}
     </div>
