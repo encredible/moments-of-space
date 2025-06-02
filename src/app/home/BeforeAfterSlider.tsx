@@ -206,6 +206,13 @@ export default function BeforeAfterSlider({
               onMouseDown={handleMouseDown}
               onTouchStart={handleTouchStart}
             >
+              {/* 핸들 원형 버튼 */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full shadow-lg flex items-center justify-center cursor-col-resize">
+                <div className="flex space-x-0.5">
+                  <div className="w-0.5 h-2 bg-gray-400"></div>
+                  <div className="w-0.5 h-2 bg-gray-400"></div>
+                </div>
+              </div>
             </div>
 
             {/* Before/After 라벨 */}
