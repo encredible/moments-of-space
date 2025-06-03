@@ -260,7 +260,7 @@ export default function BeforeAfterSlider({
               tabIndex={0}
             >
               {/* 핸들 원형 버튼 */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full shadow-lg flex items-center justify-center cursor-col-resize">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow-lg flex items-center justify-center cursor-col-resize">
                 <div className="flex space-x-0.5" aria-hidden="true">
                   <div className="w-0.5 h-2 bg-gray-400"></div>
                   <div className="w-0.5 h-2 bg-gray-400"></div>
