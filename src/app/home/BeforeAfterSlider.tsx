@@ -31,20 +31,20 @@ function PreviewImage({
   // Tailwind는 기본적인 그라디언트만 제공하므로 이 경우 인라인 스타일을 유지합니다
   const gradientStyle = {
     background: direction === 'left'
-      ? "linear-gradient(to right, rgba(244, 243, 239, 0.95), rgba(244, 243, 239, 0.5))"
-      : "linear-gradient(to left, rgba(244, 243, 239, 0.95), rgba(244, 243, 239, 0.5))"
+      ? "linear-gradient(to right, rgba(244, 243, 239, 1), rgba(244, 243, 239, 0.5))"
+      : "linear-gradient(to left, rgba(244, 243, 239, 1), rgba(244, 243, 239, 0.5))"
   };
   
   return (
     <div
-      className={`hidden md:block absolute ${direction === 'left' ? '-left-10' : '-right-10'} top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105`}
+      className={`hidden md:block absolute ${direction === 'left' ? '-left-48 md:-left-56 lg:-left-84' : '-right-48 md:-right-56 lg:-right-84'} z-20 cursor-pointer transition-all duration-300 hover:scale-105`}
       onClick={onClick}
       aria-label={`${direction === 'left' ? '이전' : '다음'} 이미지 보기`}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => e.key === 'Enter' && onClick()}
     >
-      <div className="relative w-48 h-96 overflow-hidden shadow-lg">
+      <div className="relative w-40 md:w-48 lg:w-96 h-[50vh] overflow-hidden">
         <Image
           src={image.afterImage}
           alt={image.afterAlt}
@@ -186,7 +186,7 @@ export default function BeforeAfterSlider({
   // 렌더링
   return (
     <div 
-      className={`relative w-full max-w-6xl mx-auto ${className}`}
+      className={`relative w-full ${className}`}
       onKeyDown={handleKeyDown}
       tabIndex={0}
       role="region"
@@ -194,7 +194,7 @@ export default function BeforeAfterSlider({
     >
       <div
         ref={mainContainerRef}
-        className="relative flex items-center justify-center"
+        className="relative flex items-center justify-center w-full max-w-none px-0"
         onTouchStart={handleMainTouchStart}
         onTouchMove={handleMainTouchMove}
         onTouchEnd={handleMainTouchEnd}
@@ -210,12 +210,12 @@ export default function BeforeAfterSlider({
 
         {/* 메인 슬라이더 컨테이너 */}
         <div 
-          className="relative overflow-hidden shadow-lg w-full max-w-3xl"
+          className="relative overflow-hidden shadow-lg w-full max-w-5xl mx-auto"
           aria-live="polite"
         >
           <div
             ref={containerRef}
-            className="relative w-full h-96 cursor-col-resize select-none"
+            className="relative w-full h-[50vh] cursor-col-resize select-none"
           >
             {/* After 이미지 (기본적으로 보이는 이미지) */}
             <div className="absolute inset-0">
