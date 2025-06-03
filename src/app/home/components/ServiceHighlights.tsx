@@ -2,10 +2,10 @@
 import {useRouter} from "next/navigation";
 import {usePathname} from "next/navigation";
 import Image from "next/image";
-import servicesContent from "../services/content.json" assert {type: 'json'};
-import FurnitureGallery from "../components/FurnitureGallery";
-import SectionTitle from "../components/SectionTitle";
-import homeContent from "../home/content.json";
+import servicesContent from "../../services/content.json" assert {type: 'json'};
+import FurnitureGallery from "../../components/FurnitureGallery";
+import SectionTitle from "../../components/SectionTitle";
+import homeContent from "../../home/content.json";
 
 const slugify = (str: string) =>
     str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");

@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import homeContent from '../home/content.json';
-import SectionTitle from '../components/SectionTitle';
+import homeContent from '../../home/content.json';
+import SectionTitle from '../../components/SectionTitle';
 
 export default function InteriorIconsSection() {
   const { title, description, items } = homeContent.interiorIcons;

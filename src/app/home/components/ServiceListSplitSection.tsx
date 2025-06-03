@@ -1,7 +1,7 @@
-import SplitSection, { SplitSectionProps } from '../components/SplitSection';
+import SplitSection, { SplitSectionProps } from '../../components/SplitSection';
 
 // Load the home content data from content.json
-import homeContent from './content.json';
+import homeContent from '../content.json';
 
 export default function ServiceListSplitSection() {
   const serviceList = homeContent.serviceList || [] as SplitSectionProps[];

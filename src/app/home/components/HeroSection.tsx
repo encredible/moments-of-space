@@ -1,6 +1,6 @@
 'use client';
-import Button from '../components/Button';
-import homeContent from '../home/content.json';
+import Button from '../../components/Button';
+import homeContent from '../../home/content.json';
 import Image from 'next/image';
 
 export default function HeroSection() {

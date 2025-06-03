@@ -1,13 +1,11 @@
 'use client';
-import ServiceHighlights from './ServiceHighlights';
-import ServiceListSplitSection from './ServiceListSplitSection';
+import ServiceHighlights from './components/ServiceHighlights';
+import ServiceListSplitSection from './components/ServiceListSplitSection';
 import PageLayout from '../components/PageLayout';
-import HeroSection from './HeroSection';
-import ProjectGallery from './ProjectGallery';
-import CtaSection from './CtaSection';
-import InteriorIconsSection from './InteriorIconsSection';
-import SectionTitle from '../components/SectionTitle';
-import homeContent from './content.json';
+import HeroSection from './components/HeroSection';
+import ProjectGallery from './components/ProjectGallery';
+import CtaSection from './components/CtaSection';
+import InteriorIconsSection from './components/InteriorIconsSection';
 import React from "react";
 
 export default function HomePage() {
