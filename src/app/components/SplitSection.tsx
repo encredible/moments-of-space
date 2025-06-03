@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import Button from './Button';
 
 export interface ListItem {
   title: string;
@@ -92,12 +93,7 @@ export default function SplitSection({
         
         {buttonText && (
           <div className="mt-2">
-            <a 
-              href={buttonLink} 
-              className="px-4 py-2 border border-1 border-gray-300 text-sm hover:bg-gray-50 transition-colors font-korean-button"
-            >
-              {buttonText}
-            </a>
+            <Button href={buttonLink}>{buttonText}</Button>
           </div>
         )}
       </div>
