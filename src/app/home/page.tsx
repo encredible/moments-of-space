@@ -1,11 +1,10 @@
 'use client';
-import homeContent from './content.json';
 import ServiceHighlights from './ServiceHighlights';
 import ServiceListSplitSection from './ServiceListSplitSection';
 import PageLayout from '../components/PageLayout';
 import BeforeAfterSlider from './BeforeAfterSlider';
-import HeroSection from '../components/HeroSection';
-import CtaSection from '../components/CtaSection';
+import HeroSection from './HeroSection';
+import CtaSection from './CtaSection';
 
 export default function HomePage() {
   return (

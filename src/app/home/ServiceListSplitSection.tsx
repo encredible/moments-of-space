@@ -3,27 +3,12 @@ import SplitSection, { SplitSectionProps } from '../components/SplitSection';
 // Load the home content data from content.json
 import homeContent from './content.json';
 
-// 서비스 항목의 인터페이스 정의
-interface ServiceItem {
-  imageUrl: string;
-  imageAlt: string;
-  title: string;
-  description: string;
-  imageOnLeft: boolean;
-  includedTitle: string;
-  includedItems: string[];
-  feeTitle: string;
-  feeItems: string[];
-  buttonText: string;
-  buttonLink: string;
-}
-
 export default function ServiceListSplitSection() {
-  const serviceList = homeContent.serviceList || [] as ServiceItem[];
+  const serviceList = homeContent.serviceList || [] as SplitSectionProps[];
 
   return (
     <>
-      {serviceList.map((service: ServiceItem, index: number) => (
+      {serviceList.map((service: SplitSectionProps, index: number) => (
         <SplitSection
           key={`service-section-${index}`}
           imageUrl={service.imageUrl}

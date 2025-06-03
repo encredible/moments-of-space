@@ -2,11 +2,6 @@ import Image from 'next/image';
 import React from 'react';
 import Button from './Button';
 
-export interface ListItem {
-  title: string;
-  content: string;
-}
-
 export interface SplitSectionProps {
   imageUrl: string;
   imageAlt: string;
