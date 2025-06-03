@@ -31,9 +31,9 @@ const DesignersPage = () => {
           {content.designers.map((designer: Designer, idx: number) => (
             <article key={designer.name + idx} className="flex flex-col items-center text-center">
               <Image src={designer.image} alt={designer.name} width={128} height={128} className="w-32 h-32 object-cover mb-4 rounded-full" />
-              <h3 className="font-korean text-xl text-neutral-900 mb-1">{designer.name}</h3>
-              <p className="font-korean text-sm text-gray-600 mb-1">{designer.role}</p>
-              <p className="font-korean text-sm text-gray-600">{designer.bio}</p>
+              <h3 className="text-xl text-neutral-900 mb-1">{designer.name}</h3>
+              <p className="text-sm text-gray-600 mb-1">{designer.role}</p>
+              <p className="text-sm text-gray-600">{designer.bio}</p>
             </article>
           ))}
         </div>

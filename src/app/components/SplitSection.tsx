@@ -52,7 +52,7 @@ export default function SplitSection({
           imageOnLeft ? 'md:pl-8 lg:pl-12' : 'md:pr-8 lg:pr-12 order-2 md:order-1'
         }`}
       >
-        <h2 className="font-korean text-xl sm:text-2xl md:text-3xl text-neutral-900 mb-3 md:mb-4">{title}</h2>
+        <h2 className="text-xl sm:text-2xl md:text-3xl text-neutral-900 mb-3 md:mb-4">{title}</h2>
         <p className="max-w-xl text-gray-700 text-sm md:text-base">{description}</p>
       </div>
     </section>

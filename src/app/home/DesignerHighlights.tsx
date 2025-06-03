@@ -24,7 +24,7 @@ export default function DesignerHighlights() {
                   loading="eager"
                 />
               </div>
-              <h3 className="font-korean text-lg md:text-xl mb-1">{designer.name}</h3>
+              <h3 className="text-lg md:text-xl mb-1">{designer.name}</h3>
               <p className="text-gray-600 text-sm md:text-base mb-2">{designer.role}</p>
               <p className="text-gray-500 text-xs md:text-sm line-clamp-2 md:line-clamp-3 mb-3 md:mb-4 max-w-xs">{designer.bio}</p>
             </div>

@@ -18,7 +18,7 @@ export default function HomePage() {
           className="h-[50vh] bg-cover bg-center flex flex-col items-center justify-center text-center text-custom-bg mb-8"
           style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('${homeContent.hero.backgroundImage}')` }}
         >
-          <h1 className="font-korean text-3xl md:text-5xl leading-tight tracking-tighter">
+          <h1 className="text-3xl md:text-5xl leading-tight tracking-tighter">
             {homeContent.hero.title}
           </h1>
           <div className="mt-6 md:mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
@@ -51,7 +51,7 @@ export default function HomePage() {
         {/* Before/After Comparison Section */}
         <section className="py-12 md:py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="font-korean text-2xl md:text-3xl text-center text-neutral-900 mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl text-center text-neutral-900 mb-8 md:mb-12">
               변화의 순간을 확인해보세요
             </h2>
             <p className="text-center text-gray-600 mb-8 md:mb-12 max-w-2xl mx-auto">
@@ -87,7 +87,7 @@ export default function HomePage() {
 
         {/* Call to Action Section */}
         <section className="pt-8 px-4 pb-10 text-center my-4">
-          <h2 className="font-korean text-xl md:text-2xl mb-5 md:mb-7 text-neutral-900">
+          <h2 className="text-xl md:text-2xl mb-5 md:mb-7 text-neutral-900">
             {homeContent.cta.title}
           </h2>
           <button

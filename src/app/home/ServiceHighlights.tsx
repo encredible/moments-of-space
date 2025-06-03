@@ -50,10 +50,10 @@ export default function ServiceHighlights() {
                   loading="lazy"
                 />
               </div>
-              <div className="font-korean text-base md:text-lg text-neutral-900 mb-1 md:mb-2">
+              <div className="text-base md:text-lg text-neutral-900 mb-1 md:mb-2">
                 {service.title}
               </div>
-              <div className="font-korean text-xs md:text-sm text-gray-600 line-clamp-2">
+              <div className="text-xs md:text-sm text-gray-600 line-clamp-2">
                 {service.shortDescription}
               </div>
             </button>
