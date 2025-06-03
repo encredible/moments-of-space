@@ -68,7 +68,7 @@ export default function SplitSection({
           <div className="w-full mb-4 font-korean-button">
             <h3 className="font-medium text-lg mb-2">{includedTitle}</h3>
             {includedItems.map((item, index) => (
-              <div key={index} className="mb-2">
+              <div key={index} className="mb-1">
                 <p className="text-sm text-gray-500">{item}</p>
               </div>
             ))}
@@ -79,7 +79,7 @@ export default function SplitSection({
           <div className="w-full mb-6 font-korean-button">
             <h3 className="font-medium text-lg mb-2">{feeTitle}</h3>
             {feeItems.map((item, index) => (
-              <div key={index} className="mb-2">
+              <div key={index} className="mb-1">
                 <p className="text-sm text-gray-500">{item}</p>
               </div>
             ))}
