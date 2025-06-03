@@ -24,6 +24,36 @@
     "title": "공간을 변화시킬 준비가 되셨나요?",
     "button": "문의하기"
   },
+  "furnitureGallery": {
+    "title": "홈스타일링 서비스의 특징",
+    "description": "리빙 환경과 감각적인 디자인이 결합된 홈스타일링 컨설팅을 진행합니다. 개인의 공간과 취향을 분석하여, 가장 어울리는 가구를 선별하여 제안해드립니다. 자금, 우리 집에 꼭 맞는 스타일을 체험해보세요. 리빙 환경과 감각적인 디자인이 결합된 홈스타일링 컨설팅을 진행합니다. 개인의 공간과 취향을 분석하여, 가장 어울리는 가구를 선별하여 제안해드립니다. 자금, 우리 집에 꼭 맞는 스타일을 체험해보세요.",
+    "items": [
+      {
+        "src": "/images/furniture/chair1.jpg",
+        "alt": "편안한 라운지 체어"
+      },
+      {
+        "src": "/images/furniture/sofa1.jpg",
+        "alt": "모던 소파"
+      },
+      {
+        "src": "/images/furniture/table1.jpg",
+        "alt": "디자인 테이블"
+      },
+      {
+        "src": "/images/furniture/lamp1.jpg",
+        "alt": "모던 조명"
+      },
+      {
+        "src": "/images/furniture/bookshelf1.jpg",
+        "alt": "디자인 책장"
+      },
+      {
+        "src": "/images/furniture/chair2.jpg",
+        "alt": "디자인 체어"
+      }
+    ]
+  },
   "serviceList": [
     {
       "imageUrl": "/images/home-styling-process.jpg",

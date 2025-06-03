@@ -3,6 +3,7 @@ import {useRouter} from "next/navigation";
 import {usePathname} from "next/navigation";
 import Image from "next/image";
 import servicesContent from "../services/content.json" assert {type: 'json'};
+import FurnitureGallery from "../components/FurnitureGallery";
 
 const slugify = (str: string) =>
     str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -70,6 +71,9 @@ export default function ServiceHighlights() {
                     );
                 })}
             </div>
+            
+            {/* 가구 이미지 갤러리 섹션 */}
+            <FurnitureGallery />
         </section>
     );
 }
