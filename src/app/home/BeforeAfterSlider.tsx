@@ -37,14 +37,14 @@ function PreviewImage({
   
   return (
     <div
-      className={`hidden md:block absolute ${direction === 'left' ? '-left-48 md:-left-56 lg:-left-84' : '-right-48 md:-right-56 lg:-right-84'} z-20 cursor-pointer transition-all duration-300 hover:scale-105`}
+      className={`hidden md:block absolute ${direction === 'left' ? '-left-48 md:-left-56 lg:-left-76' : '-right-48 md:-right-56 lg:-right-76'} z-20 cursor-pointer transition-all duration-300 hover:scale-105`}
       onClick={onClick}
       aria-label={`${direction === 'left' ? '이전' : '다음'} 이미지 보기`}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => e.key === 'Enter' && onClick()}
     >
-      <div className="relative w-40 md:w-48 lg:w-96 h-[50vh] overflow-hidden">
+      <div className="relative w-40 md:w-48 lg:w-120 h-[50vh] overflow-hidden">
         <Image
           src={image.afterImage}
           alt={image.afterAlt}
@@ -223,12 +223,12 @@ export default function BeforeAfterSlider({
 
         {/* 메인 슬라이더 컨테이너 */}
         <div 
-          className="relative overflow-hidden shadow-lg w-full max-w-5xl mx-auto"
+          className="relative overflow-hidden shadow-lg w-full max-w-3xl mx-auto"
           aria-live="polite"
         >
           <div
             ref={containerRef}
-            className="relative w-full h-[50vh] cursor-col-resize select-none"
+            className="relative h-[50vh] cursor-col-resize select-none"
           >
             {/* After 이미지 (기본적으로 보이는 이미지) */}
             <div className="absolute inset-0">
