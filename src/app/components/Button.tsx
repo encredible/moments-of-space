@@ -20,10 +20,10 @@ export default function Button({
       className={`
         inline-block
         font-korean-button
-        text-neutral-900
+        text-neutral-500
         border
-        border-black
-        px-6 py-3 text-base
+        border-neutral-500
+        px-3 py-2 text-base
         hover:bg-gray-50
         transition-colors
         ${className}

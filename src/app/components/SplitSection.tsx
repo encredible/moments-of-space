@@ -65,7 +65,7 @@ export default function SplitSection({
         <p className="max-w-xl text-gray-700 text-sm md:text-base mb-6 whitespace-pre-line">{description}</p>
         
         {includedTitle && (
-          <div className="w-full mb-4">
+          <div className="w-full mb-4 font-korean-button">
             <h3 className="font-medium text-lg mb-2">{includedTitle}</h3>
             {includedItems.map((item, index) => (
               <div key={index} className="mb-2">
@@ -76,7 +76,7 @@ export default function SplitSection({
         )}
         
         {feeTitle && (
-          <div className="w-full mb-6">
+          <div className="w-full mb-6 font-korean-button">
             <h3 className="font-medium text-lg mb-2">{feeTitle}</h3>
             {feeItems.map((item, index) => (
               <div key={index} className="mb-2">

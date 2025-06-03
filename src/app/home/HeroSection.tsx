@@ -27,7 +27,7 @@ export default function HeroSection() {
       </div>
       
       {/* 컨텐츠 */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-black px-4">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-neutral-500 px-4">
         <h1 className="text-3xl md:text-7xl tracking-tighter whitespace-pre-line leading-loose max-w-5xl">
           {title}
         </h1>
