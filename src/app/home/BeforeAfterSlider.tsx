@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
+// 타입 정의
 interface ImagePair {
   beforeImage: string;
   afterImage: string;
@@ -15,27 +16,89 @@ interface BeforeAfterSliderProps {
   className?: string;
 }
 
+type SlidingDirection = 'prev' | 'next' | null;
+
+// 서브 컴포넌트: 미리보기 이미지
+function PreviewImage({ 
+  image, 
+  direction, 
+  onClick 
+}: { 
+  image: ImagePair; 
+  direction: 'left' | 'right'; 
+  onClick: () => void 
+}) {
+  // Tailwind는 기본적인 그라디언트만 제공하므로 이 경우 인라인 스타일을 유지합니다
+  const gradientStyle = {
+    background: direction === 'left'
+      ? "linear-gradient(to right, rgba(244, 243, 239, 0.95), rgba(244, 243, 239, 0.5))"
+      : "linear-gradient(to left, rgba(244, 243, 239, 0.95), rgba(244, 243, 239, 0.5))"
+  };
+  
+  return (
+    <div
+      className={`hidden md:block absolute ${direction === 'left' ? '-left-10' : '-right-10'} top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105`}
+      onClick={onClick}
+      aria-label={`${direction === 'left' ? '이전' : '다음'} 이미지 보기`}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === 'Enter' && onClick()}
+    >
+      <div className="relative w-48 h-96 overflow-hidden shadow-lg">
+        <Image
+          src={image.afterImage}
+          alt={image.afterAlt}
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0" style={gradientStyle}></div>
+      </div>
+    </div>
+  );
+}
+
+// 메인 컴포넌트
 export default function BeforeAfterSlider({
   imagePairs,
   className = "",
 }: BeforeAfterSliderProps) {
+  // 상태 관리
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isNavigating, setIsNavigating] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [slidingDirection, setSlidingDirection] = useState<SlidingDirection>(null);
+  
+  // 참조
   const containerRef = useRef<HTMLDivElement>(null);
   const mainContainerRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    e.preventDefault();
+  
+  // 유효성 검사
+  if (!imagePairs || imagePairs.length === 0) return null;
+  
+  // 현재/이전/다음 이미지 쌍 가져오기
+  const currentPair = imagePairs[currentImageIndex];
+  const prevImage = currentImageIndex > 0 ? imagePairs[currentImageIndex - 1] : null;
+  const nextImage = currentImageIndex < imagePairs.length - 1 ? imagePairs[currentImageIndex + 1] : null;
+  
+  // 이미지 변경 함수
+  const changeImage = (index: number) => {
+    if (index === currentImageIndex || isNavigating) return;
+    
+    const direction: SlidingDirection = index > currentImageIndex ? 'next' : 'prev';
+    setSlidingDirection(direction);
+    setIsNavigating(true);
+    setCurrentImageIndex(index);
+    
+    setTimeout(() => {
+      setIsNavigating(false);
+      setSlidingDirection(null);
+    }, 300);
   };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setIsDragging(true);
-    e.preventDefault();
-  };
-
+  
+  // 슬라이더 위치 업데이트 함수
   const updateSliderPosition = (clientX: number) => {
     if (!containerRef.current || !isDragging) return;
 
@@ -44,88 +107,91 @@ export default function BeforeAfterSlider({
     const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
     setSliderPosition(percentage);
   };
-
-  // Swipe handling for mobile
-  const [touchStart, setTouchStart] = useState<number>(0);
-  const [touchEnd, setTouchEnd] = useState<number>(0);
-
+  
+  // 이벤트 핸들러
+  const handleSliderInteractionStart = (e: React.MouseEvent | React.TouchEvent) => {
+    setIsDragging(true);
+    e.preventDefault();
+  };
+  
   const handleMainTouchStart = (e: React.TouchEvent) => {
-    if (isDragging) return; // 슬라이더 드래그 중이면 스와이프 무시
+    if (isDragging) return;
     setTouchStart(e.targetTouches[0].clientX);
   };
-
+  
   const handleMainTouchMove = (e: React.TouchEvent) => {
     if (isDragging) return;
     setTouchEnd(e.targetTouches[0].clientX);
   };
-
+  
   const handleMainTouchEnd = () => {
-    if (isDragging || !touchStart || !touchEnd) return;
+    if (isDragging || !touchStart || !touchEnd) {
+      setTouchStart(null);
+      setTouchEnd(null);
+      return;
+    }
 
     const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-
-    if (isLeftSwipe && currentImageIndex < imagePairs.length - 1) {
+    const minSwipeDistance = 50;
+    
+    if (distance > minSwipeDistance && currentImageIndex < imagePairs.length - 1) {
+      changeImage(currentImageIndex + 1); // 왼쪽 스와이프 -> 다음 이미지
+    } else if (distance < -minSwipeDistance && currentImageIndex > 0) {
+      changeImage(currentImageIndex - 1); // 오른쪽 스와이프 -> 이전 이미지
+    }
+    
+    // 터치 상태 초기화
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+  
+  // 키보드 네비게이션 이벤트 핸들러
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowLeft' && currentImageIndex > 0) {
+      changeImage(currentImageIndex - 1);
+    } else if (e.key === 'ArrowRight' && currentImageIndex < imagePairs.length - 1) {
       changeImage(currentImageIndex + 1);
     }
-    if (isRightSwipe && currentImageIndex > 0) {
-      changeImage(currentImageIndex - 1);
-    }
   };
-
-  const changeImage = (index: number) => {
-    if (index !== currentImageIndex && !isNavigating) {
-      setIsNavigating(true);
-      setCurrentImageIndex(index);
-      setTimeout(() => setIsNavigating(false), 300);
-    }
-  };
-
+  
+  // 마우스 및 터치 이벤트 등록/해제
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      updateSliderPosition(e.clientX);
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      updateSliderPosition(e.touches[0].clientX);
-    };
-
-    const handleMouseUp = () => {
-      setIsDragging(false);
-    };
-
-    const handleTouchEnd = () => {
-      setIsDragging(false);
-    };
-
-    if (isDragging) {
-      document.addEventListener("mousemove", handleMouseMove);
-      document.addEventListener("mouseup", handleMouseUp);
-      document.addEventListener("touchmove", handleTouchMove);
-      document.addEventListener("touchend", handleTouchEnd);
-    }
-
+    if (!isDragging) return;
+    
+    const handleGlobalMouseMove = (e: MouseEvent) => updateSliderPosition(e.clientX);
+    const handleGlobalTouchMove = (e: TouchEvent) => updateSliderPosition(e.touches[0].clientX);
+    const handleInteractionEnd = () => setIsDragging(false);
+    
+    // 이벤트 리스너 추가
+    document.addEventListener("mousemove", handleGlobalMouseMove);
+    document.addEventListener("mouseup", handleInteractionEnd);
+    document.addEventListener("touchmove", handleGlobalTouchMove);
+    document.addEventListener("touchend", handleInteractionEnd);
+    
+    // 클린업 함수
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-      document.removeEventListener("touchmove", handleTouchMove);
-      document.removeEventListener("touchend", handleTouchEnd);
+      document.removeEventListener("mousemove", handleGlobalMouseMove);
+      document.removeEventListener("mouseup", handleInteractionEnd);
+      document.removeEventListener("touchmove", handleGlobalTouchMove);
+      document.removeEventListener("touchend", handleInteractionEnd);
     };
   }, [isDragging]);
-
-  if (!imagePairs || imagePairs.length === 0) return null;
-
-  const currentPair = imagePairs[currentImageIndex];
-  const prevImage =
-    currentImageIndex > 0 ? imagePairs[currentImageIndex - 1] : null;
-  const nextImage =
-    currentImageIndex < imagePairs.length - 1
-      ? imagePairs[currentImageIndex + 1]
-      : null;
-
+  
+  // 트랜지션 클래스 계산
+  const getTransitionClass = () => {
+    if (!isNavigating) return "opacity-100";
+    return "opacity-50";
+  };
+  
+  // 렌더링
   return (
-    <div className={`relative w-full max-w-6xl mx-auto ${className}`}>
+    <div 
+      className={`relative w-full max-w-6xl mx-auto ${className}`}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+      role="region"
+      aria-label="이미지 비교 슬라이더"
+    >
       <div
         ref={mainContainerRef}
         className="relative flex items-center justify-center"
@@ -133,50 +199,37 @@ export default function BeforeAfterSlider({
         onTouchMove={handleMainTouchMove}
         onTouchEnd={handleMainTouchEnd}
       >
-        {/* Left Preview */}
+        {/* 이전 이미지 미리보기 */}
         {prevImage && (
-          <div
-            className="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
-            onClick={() => changeImage(currentImageIndex - 1)}
-            style={{ left: "-40px" }}
-          >
-            <div className="relative w-48 h-96 overflow-hidden shadow-lg">
-              <Image
-                src={prevImage.afterImage}
-                alt={prevImage.afterAlt}
-                fill
-                className="object-cover"
-              />
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(to right, rgba(244, 243, 239, 0.95), rgba(244, 243, 239, 0.5))",
-                }}
-              ></div>
-            </div>
-          </div>
+          <PreviewImage 
+            image={prevImage} 
+            direction="left" 
+            onClick={() => changeImage(currentImageIndex - 1)} 
+          />
         )}
 
-        {/* Main Slider Container */}
-        <div className="relative overflow-hidden shadow-lg w-full max-w-3xl">
+        {/* 메인 슬라이더 컨테이너 */}
+        <div 
+          className="relative overflow-hidden shadow-lg w-full max-w-3xl"
+          aria-live="polite"
+        >
           <div
             ref={containerRef}
             className="relative w-full h-96 cursor-col-resize select-none"
           >
-            {/* After Image (기본적으로 보이는 이미지) */}
+            {/* After 이미지 (기본적으로 보이는 이미지) */}
             <div className="absolute inset-0">
               <Image
                 src={currentPair.afterImage}
                 alt={currentPair.afterAlt}
                 fill
-                className={`object-cover transition-opacity duration-300 ${isNavigating ? "opacity-50" : "opacity-100"}`}
+                className={`object-cover transition-opacity duration-300 ${getTransitionClass()}`}
                 sizes="(max-width: 768px) 100vw, 384px"
                 priority
               />
             </div>
 
-            {/* Before Image (슬라이더로 가려지는 이미지) */}
+            {/* Before 이미지 (슬라이더로 가려지는 이미지) */}
             <div
               className="absolute inset-0 overflow-hidden"
               style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
@@ -185,7 +238,7 @@ export default function BeforeAfterSlider({
                 src={currentPair.beforeImage}
                 alt={currentPair.beforeAlt}
                 fill
-                className={`object-cover transition-opacity duration-300 ${isNavigating ? "opacity-50" : "opacity-100"}`}
+                className={`object-cover transition-opacity duration-300 ${getTransitionClass()}`}
                 sizes="(max-width: 768px) 100vw, 384px"
                 priority
               />
@@ -193,17 +246,22 @@ export default function BeforeAfterSlider({
 
             {/* 슬라이더 핸들 */}
             <div
-              className="absolute top-0 bottom-0 w-1 bg-white cursor-col-resize z-10"
+              className="absolute top-0 bottom-0 w-0.5 bg-white cursor-col-resize z-10 -translate-x-1/2"
               style={{
-                left: `${sliderPosition}%`,
-                transform: "translateX(-50%)",
+                left: `${sliderPosition}%`
               }}
-              onMouseDown={handleMouseDown}
-              onTouchStart={handleTouchStart}
+              onMouseDown={handleSliderInteractionStart}
+              onTouchStart={handleSliderInteractionStart}
+              role="slider"
+              aria-label="슬라이더 조절"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={sliderPosition}
+              tabIndex={0}
             >
               {/* 핸들 원형 버튼 */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full shadow-lg flex items-center justify-center cursor-col-resize">
-                <div className="flex space-x-0.5">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full shadow-lg flex items-center justify-center cursor-col-resize">
+                <div className="flex space-x-0.5" aria-hidden="true">
                   <div className="w-0.5 h-2 bg-gray-400"></div>
                   <div className="w-0.5 h-2 bg-gray-400"></div>
                 </div>
@@ -227,30 +285,19 @@ export default function BeforeAfterSlider({
           </div>
         </div>
 
-        {/* Right Preview */}
+        {/* 다음 이미지 미리보기 */}
         {nextImage && (
-          <div
-            className="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer transition-all duration-300 hover:scale-105"
-            onClick={() => changeImage(currentImageIndex + 1)}
-            style={{ right: "-40px" }}
-          >
-            <div className="relative w-48 h-96 overflow-hidden shadow-lg">
-              <Image
-                src={nextImage.afterImage}
-                alt={nextImage.afterAlt}
-                fill
-                className="object-cover"
-              />
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(to left, rgba(244, 243, 239, 0.95), rgba(244, 243, 239, 0.5))",
-                }}
-              ></div>
-            </div>
-          </div>
+          <PreviewImage 
+            image={nextImage} 
+            direction="right" 
+            onClick={() => changeImage(currentImageIndex + 1)} 
+          />
         )}
+      </div>
+      
+      {/* 이미지 인덱스 표시 (접근성 목적) */}
+      <div className="sr-only">
+        이미지 {currentImageIndex + 1} / {imagePairs.length}
       </div>
     </div>
   );
