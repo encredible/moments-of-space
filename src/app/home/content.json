@@ -5,12 +5,17 @@
     "ctaButtons": [
       {
         "href": "/services",
-        "text": "서비스 소개",
+        "text": "홈 스타일링 서비스 소개",
         "variant": "primary"
       },
       {
         "href": "/project",
-        "text": "프로젝트 보기",
+        "text": "프로젝트",
+        "variant": "secondary"
+      },
+      {
+        "href": "/contact",
+        "text": "신청하기",
         "variant": "secondary"
       }
     ]
