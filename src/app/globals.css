@@ -24,6 +24,9 @@
   --custom-bg: #ecece5; /* 원하는 커스텀 배경색 */
   --font-nanumsquare: 'NanumSquare', sans-serif;
   --font-maruburi: 'MaruBuri', sans-serif;
+  
+  /* 부드러운 스크롤 동작 */
+  scroll-behavior: smooth;
 }
 
 @theme inline {

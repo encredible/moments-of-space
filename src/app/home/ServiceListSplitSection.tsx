@@ -7,7 +7,7 @@ export default function ServiceListSplitSection() {
   const serviceList = homeContent.serviceList || [] as SplitSectionProps[];
 
   return (
-    <>
+    <section id="services-section" className="py-8 pt-16 mt-[-2rem]">
       {serviceList.map((service: SplitSectionProps, index: number) => (
         <SplitSection
           key={`service-section-${index}`}
@@ -29,6 +29,6 @@ export default function ServiceListSplitSection() {
           buttonLink={service.buttonLink}
         />
       ))}
-    </>
+    </section>
   );
 }

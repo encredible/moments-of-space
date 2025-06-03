@@ -36,12 +36,12 @@
     "title": "행복한 기억으로 남을\n영원한 공간의 순간\n나만의 아름다운 공간 만들기\n",
     "ctaButtons": [
       {
-        "href": "/services",
+        "href": "/#services-section",
         "text": "홈 스타일링 서비스 소개",
         "variant": "primary"
       },
       {
-        "href": "/project",
+        "href": "/#projects-section",
         "text": "프로젝트",
         "variant": "secondary"
       },

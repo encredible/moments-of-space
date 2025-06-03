@@ -314,11 +314,6 @@ export default function BeforeAfterSlider({
       <div className="sr-only">
         이미지 {currentImageIndex + 1} / {imagePairs.length}
       </div>
-
-
-      <section className="pt-8 px-4 pb-10 text-center my-4">
-        <Button href="/project">모든 프로젝트 보기</Button>
-      </section>
     </div>
   );
 }
