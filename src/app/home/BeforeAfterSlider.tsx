@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import {useRouter} from "next/navigation";
 
 // 타입 정의
 interface ImagePair {
@@ -62,6 +63,8 @@ export default function BeforeAfterSlider({
   imagePairs,
   className = "",
 }: BeforeAfterSliderProps) {
+  const router = useRouter();
+
   // 상태 관리
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -312,6 +315,16 @@ export default function BeforeAfterSlider({
       <div className="sr-only">
         이미지 {currentImageIndex + 1} / {imagePairs.length}
       </div>
+
+
+      <section className="pt-8 px-4 pb-10 text-center my-4">
+        <button
+            onClick={() => router.push('/project')}
+            className="font-korean-button text-base text-custom-bg bg-black px-5 h-12 hover:bg-gray-800 transition-colors w-full sm:w-auto max-w-xs mx-auto mt-8 mb-4 md:mb-8"
+        >
+          모든 프로젝트 보기
+        </button>
+      </section>
     </div>
   );
 }
