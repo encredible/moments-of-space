@@ -16,7 +16,7 @@ export default function HomePage() {
           className="h-[80vh] bg-cover bg-center flex flex-col items-center justify-center text-center text-custom-bg mb-8"
           style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('${homeContent.hero.backgroundImage}')` }}
         >
-          <h1 className="text-3xl md:text-5xl leading-tight tracking-tighter">
+          <h1 className="text-3xl md:text-7xl tracking-tighter whitespace-pre-line leading-loose">
             {homeContent.hero.title}
           </h1>
           <div className="mt-6 md:mt-8 flex flex-wrap justify-center gap-3 md:gap-4">

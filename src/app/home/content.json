@@ -1,7 +1,7 @@
 {
   "hero": {
     "backgroundImage": "/images/hero-background.jpg",
-    "title": "영감을 주는 아름다운 공간 만들기",
+    "title": "행복한 기억으로 남을\n영원한 공간의 순간\n나만의 아름다운 공간 만들기\n",
     "ctaButtons": [
       {
         "href": "/services",
@@ -17,7 +17,7 @@
   },
   "cta": {
     "title": "공간을 변화시킬 준비가 되셨나요?",
-    "button": "상담신청"
+    "button": "문의하기"
   },
   "serviceList": [
     {
