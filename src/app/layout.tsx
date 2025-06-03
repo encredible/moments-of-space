@@ -12,9 +12,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className="font-korean antialiased flex flex-col min-h-screen">
         <Header />
-        <PageLayout>
           {children}
-        </PageLayout>
         <Footer />
       </body>
     </html>

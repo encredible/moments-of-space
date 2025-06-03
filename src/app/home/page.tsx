@@ -12,10 +12,10 @@ import BeforeAfterSlider from './BeforeAfterSlider';
 export default function HomePage() {
   const router = useRouter();
   return (
-    <PageLayout>
+    <div className="w-full">
         {/* Hero Section */}
         <section
-          className="h-[50vh] bg-cover bg-center flex flex-col items-center justify-center text-center text-custom-bg mb-8"
+          className="h-[80vh] bg-cover bg-center flex flex-col items-center justify-center text-center text-custom-bg mb-8"
           style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('${homeContent.hero.backgroundImage}')` }}
         >
           <h1 className="text-3xl md:text-5xl leading-tight tracking-tighter">
@@ -36,18 +36,19 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Home Styling Introduction Sections with Images */}
-        <HomeIntroSections />
+        <PageLayout>
+            {/* Home Styling Introduction Sections with Images */}
+            <HomeIntroSections />
 
-        {/* Services Highlights Section */}
-        <ServiceHighlights />
+            {/* Services Highlights Section */}
+            <ServiceHighlights />
 
-        {/* Project Highlights Section */}
-        <ProjectHighlights />
+            {/* Project Highlights Section */}
+            <ProjectHighlights />
 
-        {/* Designer Highlights Section */}
-        <DesignerHighlights />
-
+            {/* Designer Highlights Section */}
+            <DesignerHighlights />
+        </PageLayout>
         {/* Before/After Comparison Section */}
         <section className="py-12 md:py-16 px-4">
           <div className="max-w-6xl mx-auto">
@@ -97,6 +98,6 @@ export default function HomePage() {
             {homeContent.cta.button}
           </button>
         </section>
-    </PageLayout>
+    </div>
   );
 }

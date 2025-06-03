@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="border-b border-gray-200 max-w-screen-xl mx-auto w-full">
+    <header className="h-[20vh] border-b border-gray-200 max-w-screen-xl mx-auto w-full">
       <div className="flex flex-row justify-between items-center py-6 md:py-12 w-full px-4 md:px-0">
         <Link href="/" className="group text-3xl leading-none text-neutral-900 group-hover:text-neutral-700 transition-colors tracking-tight">
           {headerContent.logo}
