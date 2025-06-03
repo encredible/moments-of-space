@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="display:none;">
+  <!-- 1. 소파 -->
+  <symbol id="icon-sofa" viewBox="0 0 100 100">
+    <path d="M85,50H75V35c0-5.5-4.5-10-10-10H35c-5.5,0-10,4.5-10,10v15H15c-5.5,0-10,4.5-10,10v10c0,2.8,2.2,5,5,5h5v5 c0,2.8,2.2,5,5,5s5-2.2,5-5v-5h50v5c0,2.8,2.2,5,5,5s5-2.2,5-5v-5h5c2.8,0,5-2.2,5-5V60C95,54.5,90.5,50,85,50z M35,35h30v15 H35V35z M30,65H15V60c0-2.8,2.2-5,5-5h10V65z M85,65H35V55h50v10H85z M85,55V50h5c2.8,0,5,2.2,5,5H85z" fill="currentColor"/>
+  </symbol>
+  
+  <!-- 2. 테이블 -->
+  <symbol id="icon-table" viewBox="0 0 100 100">
+    <path d="M90,40H10c-2.8,0-5,2.2-5,5s2.2,5,5,5h5v30c0,2.8,2.2,5,5,5s5-2.2,5-5V50h20v30c0,2.8,2.2,5,5,5s5-2.2,5-5V50h20v30 c0,2.8,2.2,5,5,5s5-2.2,5-5V50h5c2.8,0,5-2.2,5-5S92.8,40,90,40z M85,30c0-2.8-2.2-5-5-5H20c-2.8,0-5,2.2-5,5s2.2,5,5,5h60 C82.8,35,85,32.8,85,30z" fill="currentColor"/>
+  </symbol>
+  
+  <!-- 3. 침대 -->
+  <symbol id="icon-bed" viewBox="0 0 100 100">
+    <path d="M90,50H25V35c0-2.8-2.2-5-5-5H15c-2.8,0-5,2.2-5,5v40c0,2.8,2.2,5,5,5s5-2.2,5-5v-5h60v5c0,2.8,2.2,5,5,5s5-2.2,5-5V60 C95,54.5,90.5,50,90,50z M20,50h-5V35h5V50z M85,65H20v-5h65V65z M90,60h-5v-5h5V60z" fill="currentColor"/>
+    <path d="M75,40H35c-2.8,0-5,2.2-5,5v5h50v-5C80,42.2,77.8,40,75,40z" fill="currentColor"/>
+  </symbol>
+  
+  <!-- 4. 조명 -->
+  <symbol id="icon-lamp" viewBox="0 0 100 100">
+    <path d="M60,80h-20c-2.8,0-5,2.2-5,5s2.2,5,5,5h20c2.8,0,5-2.2,5-5S62.8,80,60,80z" fill="currentColor"/>
+    <path d="M70,30c0-11-9-20-20-20s-20,9-20,20c0,7.7,4.4,14.4,10.8,17.7L35,70h30l-5.8-22.3C65.6,44.4,70,37.7,70,30z M50,20 c5.5,0,10,4.5,10,10c0,5.5-4.5,10-10,10s-10-4.5-10-10C40,24.5,44.5,20,50,20z" fill="currentColor"/>
+  </symbol>
+  
+  <!-- 5. 장식품 -->
+  <symbol id="icon-decor" viewBox="0 0 100 100">
+    <path d="M50,15c-19.3,0-35,15.7-35,35c0,11.5,5.5,21.7,14.1,28L25,90h50l-4.1-12C79.5,71.7,85,61.5,85,50C85,30.7,69.3,15,50,15z M50,25c8.3,0,15,6.7,15,15c0,8.3-6.7,15-15,15s-15-6.7-15-15C35,31.7,41.7,25,50,25z" fill="currentColor"/>
+  </symbol>
+  
+  <!-- 6. 의자 -->
+  <symbol id="icon-chair" viewBox="0 0 100 100">
+    <path d="M65,30H35c-2.8,0-5,2.2-5,5v25h10v20c0,2.8,2.2,5,5,5s5-2.2,5-5V60h10v20c0,2.8,2.2,5,5,5s5-2.2,5-5V60h10V35 C70,32.2,67.8,30,65,30z M60,50H40V40h20V50z" fill="currentColor"/>
+    <path d="M70,25c0-2.8-2.2-5-5-5H35c-2.8,0-5,2.2-5,5s2.2,5,5,5h30C67.8,30,70,27.8,70,25z" fill="currentColor"/>
+  </symbol>
+  
+  <!-- 7. 책장 -->
+  <symbol id="icon-bookshelf" viewBox="0 0 100 100">
+    <path d="M85,20H15c-2.8,0-5,2.2-5,5v50c0,2.8,2.2,5,5,5h70c2.8,0,5-2.2,5-5V25C90,22.2,87.8,20,85,20z M80,70H20V30h60V70z" fill="currentColor"/>
+    <path d="M75,35H25c-1.1,0-2,0.9-2,2v6c0,1.1,0.9,2,2,2h50c1.1,0,2-0.9,2-2v-6C77,35.9,76.1,35,75,35z" fill="currentColor"/>
+    <path d="M75,50H25c-1.1,0-2,0.9-2,2v6c0,1.1,0.9,2,2,2h50c1.1,0,2-0.9,2-2v-6C77,50.9,76.1,50,75,50z" fill="currentColor"/>
+  </symbol>
+  
+  <!-- 8. 창문/커튼 -->
+  <symbol id="icon-window" viewBox="0 0 100 100">
+    <path d="M85,20H15c-2.8,0-5,2.2-5,5v50c0,2.8,2.2,5,5,5h70c2.8,0,5-2.2,5-5V25C90,22.2,87.8,20,85,20z M80,70H20V30h60V70z" fill="currentColor"/>
+    <path d="M50,30v40" stroke="currentColor" stroke-width="2"/>
+    <path d="M20,40h60" stroke="currentColor" stroke-width="2"/>
+    <path d="M30,30c0,20,0,40,0,40" stroke="currentColor" stroke-width="2" stroke-dasharray="4 2"/>
+    <path d="M70,30c0,20,0,40,0,40" stroke="currentColor" stroke-width="2" stroke-dasharray="4 2"/>
+  </symbol>
+</svg>

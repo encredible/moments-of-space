@@ -5,6 +5,7 @@ import PageLayout from '../components/PageLayout';
 import BeforeAfterSlider from './BeforeAfterSlider';
 import HeroSection from './HeroSection';
 import CtaSection from './CtaSection';
+import InteriorIconsSection from './InteriorIconsSection';
 
 export default function HomePage() {
   return (
@@ -20,6 +21,10 @@ export default function HomePage() {
             <ServiceHighlights />
 
         </PageLayout>
+        
+        {/* Interior Icons Section */}
+        <InteriorIconsSection />
+        
         {/* Before/After Comparison Section */}
         <section className="py-12 md:py-16 px-4">
           <div className="max-w-6xl mx-auto">

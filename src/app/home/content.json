@@ -54,6 +54,44 @@
       }
     ]
   },
+  "interiorIcons": {
+    "title": "시공 · 설치 서비스",
+    "description": "컨설팅부터 시공까지 모든 공간에 어울리는 다양한 인테리어와 홈스타일링 서비스를 제공합니다.",
+    "items": [
+      {
+        "icon": "sofa",
+        "title": "소파 설치 및 배치"
+      },
+      {
+        "icon": "chair",
+        "title": "의자 및 품목 커스텀"
+      },
+      {
+        "icon": "table",
+        "title": "다이닝 테이블 설치"
+      },
+      {
+        "icon": "lamp",
+        "title": "조명 교체 및 설치"
+      },
+      {
+        "icon": "bed",
+        "title": "침실 공간 리모델링"
+      },
+      {
+        "icon": "bookshelf",
+        "title": "가구 배치 컨설팅"
+      },
+      {
+        "icon": "decor",
+        "title": "장식품 스타일링"
+      },
+      {
+        "icon": "window",
+        "title": "창문 및 커튼 설치"
+      }
+    ]
+  },
   "serviceList": [
     {
       "imageUrl": "/images/home-styling-process.jpg",
