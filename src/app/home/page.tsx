@@ -4,7 +4,7 @@ import homeContent from './content.json';
 import ServiceHighlights from './ServiceHighlights';
 import ProjectHighlights from './ProjectHighlights';
 import DesignerHighlights from './DesignerHighlights';
-import HomeIntroSections from './HomeIntroSections';
+import ServiceListSplitSection from './ServiceListSplitSection';
 import { useRouter } from 'next/navigation';
 import PageLayout from '../components/PageLayout';
 import BeforeAfterSlider from './BeforeAfterSlider';
@@ -37,8 +37,8 @@ export default function HomePage() {
         </section>
 
         <PageLayout>
-            {/* Home Styling Introduction Sections with Images */}
-            <HomeIntroSections />
+            {/* Homs styling service list Section with Images */}
+            <ServiceListSplitSection />
 
             {/* Services Highlights Section */}
             <ServiceHighlights />
