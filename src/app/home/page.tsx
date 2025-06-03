@@ -2,8 +2,6 @@
 import Link from 'next/link';
 import homeContent from './content.json';
 import ServiceHighlights from './ServiceHighlights';
-import ProjectHighlights from './ProjectHighlights';
-import DesignerHighlights from './DesignerHighlights';
 import ServiceListSplitSection from './ServiceListSplitSection';
 import { useRouter } from 'next/navigation';
 import PageLayout from '../components/PageLayout';
@@ -43,17 +41,12 @@ export default function HomePage() {
             {/* Services Highlights Section */}
             <ServiceHighlights />
 
-            {/* Project Highlights Section */}
-            <ProjectHighlights />
-
-            {/* Designer Highlights Section */}
-            <DesignerHighlights />
         </PageLayout>
         {/* Before/After Comparison Section */}
         <section className="py-12 md:py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl md:text-3xl text-center text-neutral-900 mb-8 md:mb-12">
-              변화의 순간을 확인해보세요
+                프로젝트 구경하기
             </h2>
             <p className="text-center text-gray-600 mb-8 md:mb-12 max-w-2xl mx-auto">
               전문 디자이너의 손길로 완전히 새로워진 공간을 직접 비교해보세요. 슬라이더를 드래그하여 놀라운 변화를 확인할 수 있습니다.

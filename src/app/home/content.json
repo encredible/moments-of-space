@@ -15,30 +15,9 @@
       }
     ]
   },
-  "projectHighlights": {
-    "title": "프로젝트 하이라이트",
-    "highlightedProjectIds": ["1", "2", "3", "4"],
-    "viewAllButtonText": "모든 프로젝트 보기"
-  },
-  "testimonials": {
-    "title": "고객 후기",
-    "items": [
-      {
-        "quote": "사라는 우리 거실을 걸작품으로 변화시켰습니다. 그녀의 세세한 부분까지 신경쓰는 스타일과 창의적인 비전은 비교할 수 없습니다.",
-        "author": "존 & 제인 두"
-      },
-      {
-        "quote": "사라와 함께 일하는 것은 즐거움이었습니다. 그녀는 우리의 요구사항을 완벽히 이해하고 우리 사무실을 위한 놀라운 디자인을 제공했습니다.",
-        "author": "ACME 회사"
-      }
-    ]
-  },
   "cta": {
     "title": "공간을 변화시킬 준비가 되셨나요?",
     "button": "상담신청"
-  },
-  "designerHighlights": {
-    "viewAllButtonText": "모든 디자이너 보기"
   },
   "serviceList": [
     {
