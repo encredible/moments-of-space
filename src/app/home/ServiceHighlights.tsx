@@ -4,7 +4,7 @@ import {usePathname} from "next/navigation";
 import Image from "next/image";
 import servicesContent from "../services/content.json" assert {type: 'json'};
 import FurnitureGallery from "../components/FurnitureGallery";
-import TextSection from "../components/TextSection";
+import SectionTitle from "../components/SectionTitle";
 import homeContent from "../home/content.json";
 
 const slugify = (str: string) =>
@@ -32,7 +32,7 @@ export default function ServiceHighlights() {
 
     return (
         <section className="py-4 md:py-8 mx-auto">
-            <TextSection 
+            <SectionTitle
                 title={homeContent.commonText.serviceFeature.title}
                 description={homeContent.commonText.serviceFeature.description}
             />

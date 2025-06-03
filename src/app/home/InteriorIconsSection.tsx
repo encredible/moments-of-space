@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import homeContent from '../home/content.json';
-import TextSection from '../components/TextSection';
+import SectionTitle from '../components/SectionTitle';
 
 export default function InteriorIconsSection() {
   const { title, description, items } = homeContent.interiorIcons;
@@ -9,7 +9,7 @@ export default function InteriorIconsSection() {
   return (
     <section className="py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-4">
-        <TextSection 
+        <SectionTitle
           title={title}
           description={description}
         />

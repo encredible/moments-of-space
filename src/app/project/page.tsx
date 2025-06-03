@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ProjectItem, projectPageContent, allProjectIds, getProjectItems } from './projectData';
 import PageLayout from '../components/PageLayout';
-import PageHeader from '../components/PageHeader';
+import ContentHeader from '../components/ContentHeader';
 
 // Use the page title and description from projectContent.json
 const pageTitle = projectPageContent.title;
@@ -17,7 +17,7 @@ const projectItems = getProjectItems(allProjectIds);
 const ProjectPage = () => {
   return (
     <PageLayout>
-      <PageHeader 
+      <ContentHeader
         title={pageTitle}
         description={pageDescription}
       />

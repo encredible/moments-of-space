@@ -1,13 +1,13 @@
 
 import contactContent from './content.json' assert {type: 'json'};
 import PageLayout from '../components/PageLayout';
-import PageHeader from '../components/PageHeader';
+import ContentHeader from '../components/ContentHeader';
 
 const ContactPage = () => {
     return (
         <PageLayout>
             {/* 콘텐츠 */}
-            <PageHeader
+            <ContentHeader
                 title={contactContent.title}
                 description={contactContent.description}
             />

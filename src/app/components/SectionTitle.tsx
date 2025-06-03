@@ -9,7 +9,7 @@ interface TextSectionProps {
   descriptionClassName?: string;
 }
 
-export default function TextSection({
+export default function SectionTitle({
   title,
   description,
   className = '',

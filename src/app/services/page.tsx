@@ -3,7 +3,7 @@ import servicesContent from './content.json' assert {type: 'json'};
 import SplitSection from '../components/SplitSection';
 import ServiceProcess from './ServiceProcess';
 import PageLayout from '../components/PageLayout';
-import PageHeader from '../components/PageHeader';
+import ContentHeader from '../components/ContentHeader';
 
 type Service = {
     title: string;
@@ -24,7 +24,7 @@ const content: ServicesContent = servicesContent;
 const ServicesPage = () => {
     return (
         <PageLayout>
-            <PageHeader 
+            <ContentHeader
                 title={content.title}
                 description={content.description}
             />

@@ -11,7 +11,7 @@ interface PageHeaderProps {
  * 페이지 상단에 위치하는 제목과 설명을 표시하는 공통 컴포넌트
  * 모든 페이지에서 일관된 스타일로 헤더를 표시합니다.
  */
-export default function PageHeader({
+export default function ContentHeader({
   title,
   description,
   textColor = 'dark',
