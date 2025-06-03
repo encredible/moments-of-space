@@ -78,19 +78,32 @@ export default function BeforeAfterSlider({
   // 유효성 검사
   if (!imagePairs || imagePairs.length === 0) return null;
   
-  // 현재/이전/다음 이미지 쌍 가져오기
-  const currentPair = imagePairs[currentImageIndex];
-  const prevImage = currentImageIndex > 0 ? imagePairs[currentImageIndex - 1] : null;
-  const nextImage = currentImageIndex < imagePairs.length - 1 ? imagePairs[currentImageIndex + 1] : null;
+  // 현재/이전/다음 이미지 쌍 가져오기 (순환형 처리)
+  // 현재 인덱스가 범위를 벗어나지 않도록 보장
+  const safeCurrentIndex = Math.max(0, Math.min(currentImageIndex, imagePairs.length - 1));
+  const currentPair = imagePairs[safeCurrentIndex];
+  // 순환형 처리: 첫 번째 이미지일 때 마지막 이미지 표시
+  const prevImage = safeCurrentIndex > 0 ? imagePairs[safeCurrentIndex - 1] : imagePairs[imagePairs.length - 1];
+  // 순환형 처리: 마지막 이미지일 때 첫 번째 이미지 표시
+  const nextImage = safeCurrentIndex < imagePairs.length - 1 ? imagePairs[safeCurrentIndex + 1] : imagePairs[0];
   
-  // 이미지 변경 함수
+  // 이미지 변경 함수 - 순환형 인덱스 처리 추가
   const changeImage = (index: number) => {
     if (index === currentImageIndex || isNavigating) return;
     
-    const direction: SlidingDirection = index > currentImageIndex ? 'next' : 'prev';
+    // 순환형 인덱스 처리: 배열 범위를 벗어나면 적절히 조정
+    let safeIndex = index;
+    if (index < 0) {
+      safeIndex = imagePairs.length - 1;
+    } else if (index >= imagePairs.length) {
+      safeIndex = 0;
+    }
+    
+    const direction: SlidingDirection = safeIndex > currentImageIndex ? 'next' : 
+                                      (safeIndex < currentImageIndex ? 'prev' : null);
     setSlidingDirection(direction);
     setIsNavigating(true);
-    setCurrentImageIndex(index);
+    setCurrentImageIndex(safeIndex);
     
     setTimeout(() => {
       setIsNavigating(false);
