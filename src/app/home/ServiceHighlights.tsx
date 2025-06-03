@@ -4,6 +4,8 @@ import {usePathname} from "next/navigation";
 import Image from "next/image";
 import servicesContent from "../services/content.json" assert {type: 'json'};
 import FurnitureGallery from "../components/FurnitureGallery";
+import TextSection from "../components/TextSection";
+import homeContent from "../home/content.json";
 
 const slugify = (str: string) =>
     str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -30,12 +32,10 @@ export default function ServiceHighlights() {
 
     return (
         <section className="py-4 md:py-8 mx-auto">
-            <h2 className="text-2xl md:text-3xl text-center text-neutral-900 mb-8 md:mb-12">
-                {servicesContent.serviceHighlights.title}
-            </h2>
-            <p className="text-center text-gray-600 mb-8 md:mb-12 whitespace-pre-line">
-                {servicesContent.serviceHighlights.description}
-            </p>
+            <TextSection 
+                title={homeContent.commonText.serviceFeature.title}
+                description={homeContent.commonText.serviceFeature.description}
+            />
             <div className="mb-4 md:mb-8">
                 <h2 className="text-xl md:text-2xl text-neutral-900">
                     {servicesContent.serviceHighlights.pointTitle}

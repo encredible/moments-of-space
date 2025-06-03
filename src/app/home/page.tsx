@@ -6,6 +6,7 @@ import BeforeAfterSlider from './BeforeAfterSlider';
 import HeroSection from './HeroSection';
 import CtaSection from './CtaSection';
 import InteriorIconsSection from './InteriorIconsSection';
+import TextSection from '../components/TextSection';
 
 export default function HomePage() {
   return (
@@ -28,12 +29,10 @@ export default function HomePage() {
         {/* Before/After Comparison Section */}
         <section className="py-12 md:py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl text-center text-neutral-900 mb-8 md:mb-12">
-                프로젝트 구경하기
-            </h2>
-            <p className="text-center text-gray-600 mb-8 md:mb-12 max-w-2xl mx-auto">
-              전문 디자이너의 손길로 완전히 새로워진 공간을 직접 비교해보세요. 슬라이더를 드래그하여 놀라운 변화를 확인할 수 있습니다.
-            </p>
+            <TextSection 
+              title="프로젝트 구경하기"
+              description="전문 디자이너의 손길로 완전히 새로워진 공간을 직접 비교해보세요. 슬라이더를 드래그하여 놀라운 변화를 확인할 수 있습니다."
+            />
             <BeforeAfterSlider
               imagePairs={[
                 {

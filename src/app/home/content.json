@@ -1,4 +1,10 @@
 {
+  "commonText": {
+    "serviceFeature": {
+      "title": "서비스 특징",
+      "description": "리빙 꼴라주는 AI 기반 진단과 전문가의 감각을 결합한 홈스타일링 컨설팅 플랫폼입니다. \n개인의 공간과 취향을 분석하여, 가장 어울리는 인테리어 스타일을 제안해드립니다. \n지금, 우리 집에 꼭 맞는 스타일링을 쉽고 편리하게 상담 받아보세요."
+    }
+  },
   "hero": {
     "backgroundImage": "/images/hero-section.jpg",
     "title": "행복한 기억으로 남을\n영원한 공간의 순간\n나만의 아름다운 공간 만들기\n",
