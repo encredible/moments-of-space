@@ -36,7 +36,7 @@ export default function ProjectHighlights() {
           </h2>
         </div>
 
-        <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+        <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4 md:gap-6 mx-auto">
           {highlightedProjects.map((project) => (
             <div
               key={project.id}
@@ -70,11 +70,6 @@ export default function ProjectHighlights() {
                           {project.category}
                         </span>
                         <h3 className="text-base md:text-lg lg:text-xl text-white font-korean-button leading-tight">{project.title}</h3>
-                      </div>
-                      <div className="hidden sm:flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-full w-8 h-8 md:w-9 md:h-9">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 md:w-5 md:h-5 text-white">
-                          <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
                       </div>
                     </div>
                   </div>
