@@ -9,6 +9,15 @@
   font-display: swap;
 }
 
+/* 나눔스퀘어 ACR 폰트 정의 */
+@font-face {
+  font-family: 'NanumSquareACR';
+  src: url('../fonts/NanumSquareOTF_acR.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* 마루부리 폰트 정의 */
 @font-face {
   font-family: 'MaruBuri';
@@ -66,4 +75,18 @@ body {
 
 .font-korean-button {
   font-family: 'NanumSquare', sans-serif;
+}
+
+.font-nanum-acr {
+  font-family: 'NanumSquareACR', sans-serif;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); } /* Adjusted for doubled content */
+}
+
+.animate-marquee-custom {
+  animation: marquee 480s linear infinite; /* Speed further halved (1/4 of original) */
 }
