@@ -105,17 +105,13 @@ export default function TestResultPage() {
           </div>
 
           <div className={`p-6 md:p-8 border-t ${borderAccentClass} mt-8 flex flex-col sm:flex-row justify-center items-center gap-4 ${backgroundClass}`}>
-            <Link href="/space-type-test" legacyBehavior>
-              <a className={`w-full sm:w-auto px-8 py-3 ${accentClass} text-white font-semibold rounded-lg hover:opacity-90 transition duration-150 ease-in-out inline-flex items-center justify-center shadow-md hover:shadow-lg`}>
-                <ArrowPathIcon className="w-5 h-5 mr-2" />
-                테스트 다시하기
-              </a>
+            <Link href="/space-type-test" className={`w-full sm:w-auto px-8 py-3 ${accentClass} text-white font-semibold rounded-lg hover:opacity-90 transition duration-150 ease-in-out inline-flex items-center justify-center shadow-md hover:shadow-lg`}>
+              <ArrowPathIcon className="w-5 h-5 mr-2" />
+              테스트 다시하기
             </Link>
-            <Link href="/" legacyBehavior>
-              <a className={`w-full sm:w-auto px-8 py-3 border ${borderAccentClass} ${textClass} font-semibold rounded-lg hover:bg-gray-100 transition duration-150 ease-in-out inline-flex items-center justify-center shadow-md hover:shadow-lg`}>
-                <HomeIcon className="w-5 h-5 mr-2" />
-                홈으로 가기
-              </a>
+            <Link href="/" className={`w-full sm:w-auto px-8 py-3 border ${borderAccentClass} ${textClass} font-semibold rounded-lg hover:bg-gray-100 transition duration-150 ease-in-out inline-flex items-center justify-center shadow-md hover:shadow-lg`}>
+              <HomeIcon className="w-5 h-5 mr-2" />
+              홈으로 가기
             </Link>
           </div>
         </div>
