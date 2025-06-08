@@ -109,36 +109,36 @@
     "description": "",
     "items": [
       {
-        "icon": "sofa",
-        "title": "도배/페인트/필름"
-      },
-      {
-        "icon": "chair",
+        "imageSrc": "/images/icons/service_curtain.png",
         "title": "커튼 설치"
       },
       {
-        "icon": "table",
+        "imageSrc": "/images/icons/service_light_install.png",
         "title": "조명 설치"
       },
       {
-        "icon": "lamp",
+        "imageSrc": "/images/icons/service_paint.png",
+        "title": "도배/페인트/필름"
+      },
+      {
+        "imageSrc": "/images/icons/service_purchase.png",
         "title": "구매 대행"
       },
       {
-        "icon": "bed",
+        "imageSrc": "/images/icons/service_custom_furniture.png",
         "title": "제작 가구"
       },
       {
-        "icon": "bookshelf",
+        "imageSrc": "/images/icons/service_furniture_assemble.png",
         "title": "가구 조립"
       },
       {
-        "icon": "decor",
-        "title": "청소"
+        "imageSrc": "/images/icons/service_arrangement.png",
+        "title": "정리"
       },
       {
-        "icon": "window",
-        "title": "정리"
+        "imageSrc": "/images/icons/service_cleanup.png",
+        "title": "청소"
       }
     ]
   },

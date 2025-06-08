@@ -5,7 +5,7 @@ import PageLayout from '../components/PageLayout';
 import HeroSection from './components/HeroSection';
 import ProjectGallery from './components/ProjectGallery';
 import CtaSection from './components/CtaSection';
-import InteriorIconsSection from './components/InteriorIconsSection';
+import InteriorServiceIconsSection from './components/InteriorServiceIconsSection';
 import React from "react";
 // import FurnitureGallery from "./components/FurnitureGallery"; // LearnMoreSection으로 이동
 import LearnMoreSection from "./components/LearnMoreSection"; // 새로 추가
@@ -24,7 +24,7 @@ export default function HomePage() {
             <LearnMoreSection />
           
             {/* Interior Icons Section */}
-            <InteriorIconsSection />
+            <InteriorServiceIconsSection />
           
         </PageLayout>
 

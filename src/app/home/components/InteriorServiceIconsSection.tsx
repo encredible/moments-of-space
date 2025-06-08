@@ -2,8 +2,9 @@
 import React from 'react';
 import homeContent from '../../home/content.json';
 import SectionTitle from '../../components/SectionTitle';
+import Image from "next/image";
 
-export default function InteriorIconsSection() {
+export default function InteriorServiceIconsSection() {
   const { title, description, items } = homeContent.interiorIcons;
 
   return (
@@ -20,10 +21,8 @@ export default function InteriorIconsSection() {
               key={`icon-${index}`} 
               className="flex flex-col items-center text-center p-4"
             >
-              <div className="w-24 h-24 mb-4 flex items-center justify-center text-neutral-700">
-                <svg className="w-16 h-16">
-                  <use xlinkHref={`/images/icons/interior-icons.svg#icon-${item.icon}`} />
-                </svg>
+              <div className="relative w-24 h-24 mb-4 flex items-center justify-center text-neutral-700">
+                <Image src={item.imageSrc} alt={item.title} fill className="object-contain"/>
               </div>
               <h3 className="text-lg font-korean-button text-neutral-700">{item.title}</h3>
             </div>
