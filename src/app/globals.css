@@ -27,6 +27,15 @@
   font-display: swap;
 }
 
+/* Gill Sans Nova Book 폰트 정의 */
+@font-face {
+  font-family: 'GillSansNovaBook';
+  src: url('../fonts/gillsansnova_book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #f4f3ef;
   --foreground: #171717;
@@ -41,8 +50,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-maruburi);
-  --font-mono: var(--font-maruburi);
+  --font-sans: var(--font-nanumsquare);
+  --font-mono: var(--font-nanumsquare);
   --color-custom-bg: var(--custom-bg); /* 커스텀 색상 추가 */
 }
 
@@ -70,7 +79,7 @@ body {
 
 /* 폰트 관련 클래스 */
 .font-korean {
-  font-family: 'MaruBuri', sans-serif;
+  font-family: 'NanumSquare', sans-serif;
 }
 
 .font-korean-button {
@@ -79,6 +88,10 @@ body {
 
 .font-nanum-acr {
   font-family: 'NanumSquareACR', sans-serif;
+}
+
+.font-gillsansnova-book {
+  font-family: 'GillSansNovaBook', sans-serif;
 }
 
 /* Marquee Animation */

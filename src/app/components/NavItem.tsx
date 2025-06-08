@@ -33,7 +33,7 @@ const NavItem: React.FC<NavItemProps> = ({ text, href }) => {
   return (
     <Link 
       href={href} 
-      className="text-sm text-neutral-900 hover:text-neutral-700 transition-colors duration-200"
+      className="text-xl font-extrabold text-neutral-900 hover:text-neutral-700 transition-colors duration-200"
       onClick={handleClick}
     >
       {text}
