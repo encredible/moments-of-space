@@ -1,4 +1,52 @@
 {
+  "learnMoreSection": {
+    "merits": {
+      "title": "리빙꼴라쥬 홈스타일링의 장점",
+      "items": [
+        {
+          "imageSrc": "/images/online-styling.jpg",
+          "title": "공간 취향 유형 테스트"
+        },
+        {
+          "imageSrc": "/images/in-person-styling.jpg",
+          "title": "기존 가구를 반영하는 스타일링"
+        },
+        {
+          "imageSrc": "/images/furniture-consulting.jpg",
+          "title": "소형 공간 특화 솔루션"
+        }
+      ]
+    },
+    "rooms": {
+      "title": "방 하나만 꾸미고 싶으시다구요? 가능합니다!",
+      "items": [
+        {
+          "imageSrc": "/images/furniture/chair1.jpg",
+          "title": "컴퓨터방"
+        },
+        {
+          "imageSrc": "/images/furniture/sofa1.jpg",
+          "title": "서재"
+        },
+        {
+          "imageSrc": "/images/furniture/table1.jpg",
+          "title": "자녀방"
+        },
+        {
+          "imageSrc": "/images/furniture/lamp1.jpg",
+          "title": "테라스"
+        },
+        {
+          "imageSrc": "/images/furniture/bookshelf1.jpg",
+          "title": "드레스룸"
+        },
+        {
+          "imageSrc": "/images/furniture/chair2.jpg",
+          "title": "홈오피스"
+        }
+      ]
+    }
+  },
   "commonText": {
     "serviceFeature": {
       "title": "더 알아보기",
@@ -55,35 +103,6 @@
   "cta": {
     "title": "공간을 변화시킬 준비가 되셨나요?",
     "button": "문의하기"
-  },
-  "furnitureGallery": {
-    "title": "방 하나만 꾸미고 싶으시다구요? 가능합니다!",
-    "items": [
-      {
-        "src": "/images/furniture/chair1.jpg",
-        "alt": "컴퓨터방"
-      },
-      {
-        "src": "/images/furniture/sofa1.jpg",
-        "alt": "서재"
-      },
-      {
-        "src": "/images/furniture/table1.jpg",
-        "alt": "자녀방"
-      },
-      {
-        "src": "/images/furniture/lamp1.jpg",
-        "alt": "테라스"
-      },
-      {
-        "src": "/images/furniture/bookshelf1.jpg",
-        "alt": "드레스룸"
-      },
-      {
-        "src": "/images/furniture/bookshelf1.jpg",
-        "alt": "홈오피스"
-      }
-    ]
   },
   "interiorIcons": {
     "title": "시공·설치·기타 서비스",

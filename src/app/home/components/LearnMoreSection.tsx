@@ -1,6 +1,6 @@
 import React from 'react';
-import FurnitureGallery from './FurnitureGallery';
-import ServiceHighlights from './ServiceHighlights';
+import SixImageGridCardDisplay from './SixImageGridCardDisplay';
+import ThreeImageGridCardDisplay from './ThreeImageGridCardDisplay';
 import homeContent from "@/app/home/content.json";
 import SectionTitle from "@/app/components/SectionTitle";
 
@@ -11,8 +11,8 @@ const LearnMoreSection = () => {
         title={homeContent.commonText.serviceFeature.title}
         description={homeContent.commonText.serviceFeature.description}
       />
-      <ServiceHighlights />
-      <FurnitureGallery />
+      <ThreeImageGridCardDisplay />
+      <SixImageGridCardDisplay />
     </section>
   );
 };
