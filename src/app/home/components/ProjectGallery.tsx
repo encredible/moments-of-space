@@ -12,9 +12,6 @@ export default function ProjectGallery() {
       <div className="max-w-screen-xl mx-auto px-4">
         <SectionTitle title={title} description={description} />
         <BeforeAfterSlider imagePairs={imagePairs} />
-        <div className="mt-12 text-center">
-          <Button href="/project">모든 프로젝트 보기</Button>
-        </div>
       </div>
     </section>
   );

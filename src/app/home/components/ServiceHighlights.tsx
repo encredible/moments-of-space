@@ -37,7 +37,7 @@ export default function ServiceHighlights() {
                 description={homeContent.commonText.serviceFeature.description}
             />
             <div className="mb-4 md:mb-8">
-                <h2 className="text-xl md:text-2xl text-neutral-900">
+                <h2 className="text-xl font-extrabold md:text-2xl text-neutral-900">
                     {servicesContent.serviceHighlights.pointTitle}
                 </h2>
             </div>
@@ -61,19 +61,13 @@ export default function ServiceHighlights() {
                                     loading="lazy"
                                 />
                             </div>
-                            <div className="text-base md:text-xl text-neutral-900 mb-1 md:mb-2">
+                            <div className="text-center md:text-xl text-neutral-900 mb-1 md:mb-2">
                                 {service.title}
-                            </div>
-                            <div className="text-xs md:text-sm text-gray-600 line-clamp-2">
-                                {service.shortDescription}
                             </div>
                         </button>
                     );
                 })}
             </div>
-            
-            {/* 가구 이미지 갤러리 섹션 */}
-            <FurnitureGallery />
         </section>
     );
 }

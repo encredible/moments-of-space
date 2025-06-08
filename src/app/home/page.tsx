@@ -7,6 +7,7 @@ import ProjectGallery from './components/ProjectGallery';
 import CtaSection from './components/CtaSection';
 import InteriorIconsSection from './components/InteriorIconsSection';
 import React from "react";
+import FurnitureGallery from "./components/FurnitureGallery";
 
 export default function HomePage() {
   return (
@@ -20,11 +21,14 @@ export default function HomePage() {
 
             {/* Services Highlights Section */}
             <ServiceHighlights />
-
+          
+            {/* 가구 이미지 갤러리 섹션 */}
+            <FurnitureGallery />
+            
+            {/* Interior Icons Section */}
+            <InteriorIconsSection />
+          
         </PageLayout>
-
-        {/* Interior Icons Section */}
-        <InteriorIconsSection />
 
         {/* Project Gallery Section */}
         <ProjectGallery />
