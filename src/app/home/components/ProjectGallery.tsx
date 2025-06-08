@@ -1,7 +1,6 @@
 'use client';
 import BeforeAfterSlider from './BeforeAfterSlider';
 import homeContent from '../content.json';
-import Button from '../../components/Button';
 import SectionTitle from "@/app/components/SectionTitle";
 
 export default function ProjectGallery() {

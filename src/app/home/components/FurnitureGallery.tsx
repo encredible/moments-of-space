@@ -26,7 +26,7 @@ interface FurnitureGalleryProps {
 }
 
 export default function FurnitureGallery({ className = '' }: FurnitureGalleryProps) {
-  const { title, description, items } = homeContent.furnitureGallery;
+  const { title, items } = homeContent.furnitureGallery;
   
   return (
     <div className={`mt-16 md:mt-24 ${className}`}>

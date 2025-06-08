@@ -12,9 +12,7 @@ const Footer: React.FC = () => {
           <Link href="/terms-of-service" className="text-base text-gray-500 hover:text-neutral-700 text-center">Terms of Service</Link>
         </div>
         <div className="flex justify-center flex-wrap gap-5">
-          <a href="#" aria-label="Facebook"><Image src="/figma-images/Vector-0.svg" alt="Facebook" width={24} height={24} className="hover:opacity-75" /></a>
           <a href="#" aria-label="Instagram"><Image src="/figma-images/Vector-0.svg" alt="Instagram" width={24} height={24} className="hover:opacity-75" /></a>
-          <a href="#" aria-label="Twitter"><Image src="/figma-images/Vector-0.svg" alt="Twitter" width={24} height={24} className="hover:opacity-75" /></a>
         </div>
         <div className="flex flex-col items-center">
           <p className="text-sm text-gray-500 text-center">
