@@ -40,6 +40,7 @@
   --background: #f4f3ef;
   --foreground: #171717;
   --custom-bg: #ecece5; /* 원하는 커스텀 배경색 */
+  --card-bg: #f3f2ee;
   --font-nanumsquare: 'NanumSquare', sans-serif;
   --font-maruburi: 'MaruBuri', sans-serif;
   
@@ -53,13 +54,7 @@
   --font-sans: var(--font-nanumsquare);
   --font-mono: var(--font-nanumsquare);
   --color-custom-bg: var(--custom-bg); /* 커스텀 색상 추가 */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card-bg: var(--card-bg); /* 커스텀 색상 추가 */
 }
 
 body {

@@ -54,7 +54,7 @@ export default function SpaceTypeTestPage() {
 
   return (
     <div className="container mx-auto flex flex-col items-center h-[80vh]">
-      <div className="w-full max-w-2xl p-6 md:p-10 my-8 shadow-2xl bg-white">
+      <div className="w-full max-w-2xl p-6 md:p-10 my-8 shadow-lg bg-card-bg">
         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
           나에게 맞는 공간 찾기 테스트
         </h1>
@@ -67,7 +67,7 @@ export default function SpaceTypeTestPage() {
           </div>
           <div className="w-full bg-gray-200 rounded-full h-3 shadow-inner"> {/* 진행바 컨테이너의 상하 마진 제거 */}
             <div 
-              className="bg-gradient-to-r from-green-400 to-blue-500 h-3 rounded-full transition-all duration-300 ease-out" 
+              className="bg-neutral-800 h-3 rounded-full transition-all duration-300 ease-out"
               style={{ width: `${progressPercentage}%` }} // 진행률 퍼센티지는 바 너비 계산에 계속 사용
             ></div>
           </div>
@@ -83,11 +83,9 @@ export default function SpaceTypeTestPage() {
                 <button
                   key={option.id}
                   onClick={() => handleAnswer(option.value)}
-                  className="w-full text-left p-5 rounded-lg border border-gray-300 hover:border-blue-500 hover:bg-blue-50 
-                             transition-all duration-200 ease-in-out group focus:outline-none focus:ring-2 
-                             focus:ring-blue-500 focus:ring-opacity-75 shadow-sm hover:shadow-md"
-                >
-                  <span className="text-lg font-medium text-gray-700 group-hover:text-blue-600">
+                  className="w-full text-left p-5 border border-gray-300 hover:border-orange-900 hover:bg-orange-400
+                             transition-all duration-200 ease-in-out group">
+                  <span className="text-lg font-medium text-gray-700 group-hover:text-orange-900">
                     {option.text}
                   </span>
                 </button>
