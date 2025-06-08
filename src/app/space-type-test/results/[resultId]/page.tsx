@@ -4,7 +4,7 @@ import resultsData, { ResultType } from '../../results'; // 경로 수정
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HomeIcon, ArrowPathIcon, TagIcon, LightBulbIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, ArrowPathIcon, TagIcon, LightBulbIcon, SparklesIcon, PaintBrushIcon, ShoppingCartIcon, ChatBubbleLeftRightIcon, CheckBadgeIcon } from '@heroicons/react/24/outline';
 
 export default function TestResultPage() {
   const params = useParams();
@@ -42,7 +42,7 @@ export default function TestResultPage() {
         <div className="max-w-3xl mx-auto bg-white shadow-2xl overflow-hidden my-8">
           <div className={`p-6 md:p-10 ${accentClass} text-white`}>
             <h1 className="text-3xl md:text-4xl font-bold mb-2 text-center">{result.name}</h1>
-            <p className="text-xl md:text-2xl text-center opacity-90">{result.title}</p>
+            <p className="text-xl md:text-2xl text-center opacity-90">'✅ 공간 MBTI 유형: {result.id}형 – {result.name}'</p>
           </div>
 
           <div className="p-6 md:p-10">
@@ -57,19 +57,22 @@ export default function TestResultPage() {
             </div>
 
             <div className="mb-8">
-              <h2 className={`text-2xl font-semibold mb-3 ${textClass}`}>어떤 유형인가요?</h2>
-              <p className="text-lg leading-relaxed whitespace-pre-line">{result.description}</p>
+              <h2 className={`text-2xl font-semibold mb-3 ${textClass} flex items-center`}>
+                <ChatBubbleLeftRightIcon className={`w-7 h-7 mr-2 ${accentClass} p-1 rounded-md text-white`} />
+                🧠 성향 요약
+              </h2>
+              <p className="text-lg leading-relaxed whitespace-pre-line">{result.summary}</p>
             </div>
 
             <div className="mb-8">
               <h2 className={`text-2xl font-semibold mb-4 ${textClass} flex items-center`}>
-                <SparklesIcon className={`w-7 h-7 mr-2 ${accentClass} p-1 rounded-md text-white`} />
-                주요 특징
+                <HomeIcon className={`w-7 h-7 mr-2 ${accentClass} p-1 rounded-md text-white`} />
+                🛋 공간 특징
               </h2>
               <ul className="list-none space-y-2">
-                {result.characteristics.map((char: string, index: number) => ( // 타입 명시
+                {result.features.map((feature: string, index: number) => (
                   <li key={index} className={`p-3 rounded-md ${backgroundClass} border ${borderAccentClass} shadow-sm`}>
-                    {char}
+                    {feature}
                   </li>
                 ))}
               </ul>
@@ -77,11 +80,11 @@ export default function TestResultPage() {
 
             <div className="mb-8">
               <h2 className={`text-2xl font-semibold mb-4 ${textClass} flex items-center`}>
-                <TagIcon className={`w-7 h-7 mr-2 ${accentClass} p-1 rounded-md text-white`} />
-                키워드
+                <PaintBrushIcon className={`w-7 h-7 mr-2 ${accentClass} p-1 rounded-md text-white`} />
+                🎨 스타일 키워드
               </h2>
               <div className="flex flex-wrap gap-2">
-                {result.keywords.map((keyword: string, index: number) => ( // 타입 명시
+                {result.styleKeywords.map((keyword: string, index: number) => (
                   <span key={index} className={`px-3 py-1 rounded-full text-sm font-medium ${accentClass} text-white shadow-md`}>
                     #{keyword}
                   </span>
@@ -89,18 +92,32 @@ export default function TestResultPage() {
               </div>
             </div>
 
-            <div>
+            <div className="mb-8">
               <h2 className={`text-2xl font-semibold mb-4 ${textClass} flex items-center`}>
-                <LightBulbIcon className={`w-7 h-7 mr-2 ${accentClass} p-1 rounded-md text-white`} />
-                추천 공간 스타일
+                <ShoppingCartIcon className={`w-7 h-7 mr-2 ${accentClass} p-1 rounded-md text-white`} />
+                🛒 추천 아이템
               </h2>
               <ul className="list-none space-y-2">
-                {result.recommendedSpaces.map((space: string, index: number) => ( // 타입 명시
+                {result.recommendedItems.map((item: string, index: number) => (
                   <li key={index} className={`p-3 rounded-md ${backgroundClass} border ${borderAccentClass} shadow-sm`}>
-                    {space}
+                    {item}
                   </li>
                 ))}
               </ul>
+            </div>
+
+            <div className="mb-8">
+              <h2 className={`text-2xl font-semibold mb-4 ${textClass} flex items-center`}>
+                <CheckBadgeIcon className={`w-7 h-7 mr-2 ${accentClass} p-1 rounded-md text-white`} />
+                📌 이런 사람에게 잘 맞아요
+              </h2>
+              <div className={`p-4 rounded-md ${backgroundClass} border ${borderAccentClass} shadow-sm`}>
+                <ul className="list-disc list-inside space-y-1">
+                  {result.goodFor.map((good: string, index: number) => (
+                    <li key={index}>{good}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 
