@@ -1,5 +1,5 @@
 'use client';
-import ServiceHighlights from './components/ServiceHighlights';
+// import ServiceHighlights from './components/ServiceHighlights'; // LearnMoreSection으로 이동
 import ServiceListSplitSection from './components/ServiceListSplitSection';
 import PageLayout from '../components/PageLayout';
 import HeroSection from './components/HeroSection';
@@ -7,7 +7,8 @@ import ProjectGallery from './components/ProjectGallery';
 import CtaSection from './components/CtaSection';
 import InteriorIconsSection from './components/InteriorIconsSection';
 import React from "react";
-import FurnitureGallery from "./components/FurnitureGallery";
+// import FurnitureGallery from "./components/FurnitureGallery"; // LearnMoreSection으로 이동
+import LearnMoreSection from "./components/LearnMoreSection"; // 새로 추가
 
 export default function HomePage() {
   return (
@@ -19,12 +20,9 @@ export default function HomePage() {
             {/* Homs styling service list Section with Images */}
             <ServiceListSplitSection />
 
-            {/* Services Highlights Section */}
-            <ServiceHighlights />
+            {/* Learn More Section (includes ServiceHighlights and FurnitureGallery) */}
+            <LearnMoreSection />
           
-            {/* 가구 이미지 갤러리 섹션 */}
-            <FurnitureGallery />
-            
             {/* Interior Icons Section */}
             <InteriorIconsSection />
           
