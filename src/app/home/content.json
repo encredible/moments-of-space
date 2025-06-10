@@ -227,12 +227,12 @@
     "title": "PROJECT",
     "subtitle": "손끝에서 도안까지의 공간 스타일링 변화 사진을 확인해 보세요.",
     "images": [
-      { 
+      {
         "after": { "src": "/images/project/kitchen_after.jpeg", "alt": "주방 after" },
         "before": { "src": "/images/project/kitchen_before.jpeg", "alt": "주방 before" },
         "hasPair": true
       },
-      { 
+      {
         "after": { "src": "/images/project/livingroom_after.jpeg", "alt": "거실 after" },
         "before": { "src": "/images/project/livingroom_before.jpeg", "alt": "거실 before" },
         "hasPair": true
@@ -257,17 +257,17 @@
         "before": { "src": "/images/project/6_before.jpeg", "alt": "거실 before" },
         "hasPair": true
       },
-      { 
+      {
         "after": { "src": "/images/project/project-highlight-2.jpg", "alt": "프로젝트 하이라이트 2" },
         "before": null,
         "hasPair": false
       },
-      { 
+      {
         "after": { "src": "/images/project/project-highlight-3.jpg", "alt": "프로젝트 하이라이트 3" },
         "before": null,
         "hasPair": false
       },
-      { 
+      {
         "after": { "src": "/images/project/project-highlight-4.jpg", "alt": "프로젝트 하이라이트 4" },
         "before": null,
         "hasPair": false
