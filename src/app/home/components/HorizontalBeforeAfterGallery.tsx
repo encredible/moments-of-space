@@ -231,7 +231,7 @@ const HorizontalGallery = ({
                         left: `${sliderPositions[index]}%`,
                         height: '100%',
                         transform: 'translateX(-50%)',
-                        width: '32px' /* 터치 히트 영역 확장 */
+                        width: '128px' /* 터치 히트 영역 확장 */
                       }}
                       onMouseDown={(e) => handleDragStart(index, e)}
                       onTouchStart={() => handleTouchStart(index)}
