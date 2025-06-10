@@ -1,0 +1,297 @@
+"use client";
+
+import React, { useState, useRef, useEffect, MouseEvent, TouchEvent } from "react";
+import Image from "next/image";
+
+interface GalleryImageData {
+  src: string;
+  alt: string;
+}
+
+interface GalleryImage {
+  after: GalleryImageData;
+  before: GalleryImageData | null;
+  hasPair: boolean;
+}
+
+interface HorizontalGalleryProps {
+  title?: string;
+  subtitle?: string;
+  images: GalleryImage[];
+  height?: number; // 갤러리 이미지 높이 (픽셀 단위)
+}
+
+const HorizontalGallery = ({
+  title,
+  subtitle,
+  images,
+  height = 400, // 기본 높이 400px
+}: HorizontalGalleryProps) => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  // 각 이미지의 비교 슬라이더 위치 (0: after만 보임, 100: before만 보임, 50: 반반)
+  const [sliderPositions, setSliderPositions] = useState<number[]>(new Array(images.length).fill(50));
+  // 현재 드래그 중인 이미지 인덱스 (-1은 드래그 중이 아님)
+  const [draggingIndex, setDraggingIndex] = useState<number>(-1);
+
+  const scrollToImage = (index: number) => {
+    if (!scrollContainerRef.current) return;
+    
+    const container = scrollContainerRef.current;
+    const imageElements = container.querySelectorAll(".gallery-image-container");
+    
+    if (imageElements[index]) {
+      setActiveIndex(index);
+      
+      // 해당 이미지를 중앙으로 스크롤
+      imageElements[index].scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  };
+  
+  // 드래그 시작 핸들러
+  const handleDragStart = (index: number, e: MouseEvent) => {
+    const image = images[index];
+    
+    // before 이미지가 있는 경우에만 드래그 기능 활성화
+    if (image.hasPair && image.before) {
+      setDraggingIndex(index);
+      e.preventDefault(); // 기본 드래그 동작 방지
+    }
+  };
+  
+  // 터치 시작 핸들러 (모바일용)
+  const handleTouchStart = (index: number) => {
+    const image = images[index];
+    
+    // before 이미지가 있는 경우에만 드래그 기능 활성화
+    if (image.hasPair && image.before) {
+      setDraggingIndex(index);
+    }
+  };
+  
+  // 드래그 종료 핸들러
+  const handleDragEnd = () => {
+    setDraggingIndex(-1);
+  };
+  
+  // 마우스 이동 핸들러
+  const handleMouseMove = (e: MouseEvent) => {
+    if (draggingIndex === -1) return;
+    
+    updateSliderPosition(e.clientX, draggingIndex);
+  };
+  
+  // 터치 이동 핸들러 (모바일용)
+  const handleTouchMove = (e: TouchEvent) => {
+    if (draggingIndex === -1) return;
+    
+    const touch = e.touches[0];
+    updateSliderPosition(touch.clientX, draggingIndex);
+  };
+  
+  // 슬라이더 위치 업데이트 함수
+  const updateSliderPosition = (clientX: number, index: number) => {
+    const imageElement = document.querySelector(`[data-image-index="${index}"]`) as HTMLElement;
+    if (!imageElement) return;
+    
+    const rect = imageElement.getBoundingClientRect();
+    const x = clientX - rect.left; // 이미지 기준 상대적 x 좌표
+    
+    // 퍼센트 계산 (0~100)
+    let percent = (x / rect.width) * 100;
+    percent = Math.max(0, Math.min(100, percent));
+    
+    setSliderPositions(prev => {
+      const newPositions = [...prev];
+      newPositions[index] = percent;
+      return newPositions;
+    });
+  };
+  
+  // 마우스 포인터 및 터치 이벤트 전역 처리
+  useEffect(() => {
+    const handleGlobalMouseMove = (e: globalThis.MouseEvent) => {
+      if (draggingIndex !== -1) {
+        updateSliderPosition(e.clientX, draggingIndex);
+      }
+    };
+    
+    const handleGlobalMouseUp = () => {
+      if (draggingIndex !== -1) {
+        setDraggingIndex(-1);
+      }
+    };
+    
+    const handleGlobalTouchMove = (e: globalThis.TouchEvent) => {
+      if (draggingIndex !== -1) {
+        const touch = e.touches[0];
+        updateSliderPosition(touch.clientX, draggingIndex);
+      }
+    };
+    
+    const handleGlobalTouchEnd = () => {
+      if (draggingIndex !== -1) {
+        setDraggingIndex(-1);
+      }
+    };
+    
+    document.addEventListener('mousemove', handleGlobalMouseMove);
+    document.addEventListener('mouseup', handleGlobalMouseUp);
+    document.addEventListener('touchmove', handleGlobalTouchMove);
+    document.addEventListener('touchend', handleGlobalTouchEnd);
+    
+    return () => {
+      document.removeEventListener('mousemove', handleGlobalMouseMove);
+      document.removeEventListener('mouseup', handleGlobalMouseUp);
+      document.removeEventListener('touchmove', handleGlobalTouchMove);
+      document.removeEventListener('touchend', handleGlobalTouchEnd);
+    };
+  }, [draggingIndex]);
+
+  return (
+    <div className="w-full py-16">
+      {/* 제목과 부제목 */}
+      {(title || subtitle) && (
+        <div className="text-center mb-8">
+          {title && <h2 className="text-3xl font-bold mb-2">{title}</h2>}
+          {subtitle && <p className="text-lg text-gray-600">{subtitle}</p>}
+        </div>
+      )}
+
+      {/* 갤러리 스크롤 컨테이너 */}
+      <div 
+        ref={scrollContainerRef}
+        className="relative overflow-x-auto hide-scrollbar flex gap-12 pl-4 pr-4 pb-4"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        {/* 왼쪽 그라데이션 효과 */}
+        <div className="pointer-events-none fixed left-0 w-16 h-full bg-gradient-to-r from-stone-50 to-transparent z-10"></div>
+        
+        {/* 이미지 목록 */}
+        {images.map((image, index) => (
+          <div 
+            key={index} 
+            className={`gallery-image-container flex-shrink-0 cursor-pointer transition-all duration-300 ${activeIndex === index ? "scale-105" : "scale-100"}`}
+            onClick={() => scrollToImage(index)}
+            data-image-index={index}
+          >
+            <div className="flex overflow-hidden">
+              <div style={{ height: `${height}px` }}>
+                {/* After 이미지 (배경) */}
+                <div className="w-full h-full">
+                  <Image 
+                    src={image.after.src}
+                    alt={image.after.alt}
+                    width={1000} 
+                    height={height} 
+                    className="object-cover"
+                    style={{ 
+                      height: `${height}px`,
+                      width: "auto",
+                      maxWidth: "none"
+                    }}
+                    priority={index < 3} // 처음 몇 개 이미지는 우선 로드
+                  />
+                </div>
+                
+                {/* Before 이미지 (오버레이) - 페어가 있는 경우만 */}
+                {image.hasPair && image.before && (
+                  <>
+                    <div 
+                      className="absolute top-0 left-0 h-full overflow-hidden"
+                      style={{
+                        width: `${sliderPositions[index]}%`,
+                      }}
+                    >
+                      <Image 
+                        src={image.before.src}
+                        alt={image.before.alt}
+                        width={1000} 
+                        height={height} 
+                        className="object-cover"
+                        style={{ 
+                          height: `${height}px`,
+                          width: "auto",
+                          maxWidth: "none",
+                          position: 'absolute',
+                          left: 0,
+                          top: 0
+                        }}
+                      />
+                    </div>
+                    
+                    {/* 슬라이더 핸들 (드래그 가능한 손잡이) - 별도 배치 */}
+                    <div 
+                      className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize shadow-lg z-10"
+                      style={{ 
+                        left: `${sliderPositions[index]}%`,
+                        height: '100%',
+                        transform: 'translateX(-50%)',
+                      }}
+                      onMouseDown={(e) => handleDragStart(index, e)}
+                      onTouchStart={() => handleTouchStart(index)}
+                      onMouseUp={handleDragEnd}
+                      onTouchEnd={handleDragEnd}
+                    >
+                      {/* 핸들 중앙 원형 버튼 */}
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow-lg flex items-center justify-center cursor-col-resize">
+                        <div className="flex space-x-0.5" aria-hidden="true">
+                          <div className="w-0.5 h-2 bg-gray-400"></div>
+                          <div className="w-0.5 h-2 bg-gray-400"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+              
+              {/* before/after 라벨 표시 (페어가 있는 경우만) */}
+              {image.hasPair && (
+                <>
+                  <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1">
+                    After
+                  </div>
+                  <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1">
+                    Before
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        ))}
+        
+        {/* 오른쪽 그라데이션 효과 */}
+        <div className="pointer-events-none fixed right-0 w-16 h-full bg-gradient-to-l from-stone-50 to-transparent z-10"></div>
+      </div>
+
+      {/* 인디케이터 (선택 사항) */}
+      <div className="flex justify-center mt-4 gap-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => scrollToImage(index)}
+            className={`w-2 h-2 rounded-full transition-all ${activeIndex === index ? "bg-black w-4" : "bg-gray-300"}`}
+            aria-label={`이미지 ${index + 1}로 이동`}
+          ></button>
+        ))}
+      </div>
+
+      {/* 스크롤바 숨기는 스타일 */}
+      <style jsx global>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default HorizontalGallery;

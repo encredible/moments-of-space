@@ -260,7 +260,7 @@ export default function BeforeAfterSlider({
 
             {/* 슬라이더 핸들 */}
             <div
-              className="absolute top-0 bottom-0 w-0.5 bg-white cursor-col-resize z-10 -translate-x-1/2"
+              className="absolute top-0 bottom-0 w-0.5 bg-white cursor-col-resize -translate-x-1/2"
               style={{
                 left: `${sliderPosition}%`
               }}
