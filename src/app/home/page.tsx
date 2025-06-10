@@ -9,6 +9,8 @@ import InteriorServiceIconsSection from './components/InteriorServiceIconsSectio
 import React from "react";
 // import FurnitureGallery from "./components/FurnitureGallery"; // LearnMoreSection으로 이동
 import LearnMoreSection from "./components/LearnMoreSection"; // 새로 추가
+import HorizontalGallery from "./components/HorizontalGallery";
+import content from "./content.json";
 
 export default function HomePage() {
   return (
@@ -33,6 +35,14 @@ export default function HomePage() {
 
         {/* Call to Action Section */}
         <CtaSection />
+        
+        {/* 수평 스크롤 이미지 갤러리 */}
+        <HorizontalGallery 
+          title={content.projectGallery.title}
+          subtitle={content.projectGallery.subtitle}
+          images={content.projectGallery.images}
+          height={320}
+        />
     </div>
   );
 }
