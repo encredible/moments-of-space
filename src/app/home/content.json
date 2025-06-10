@@ -57,24 +57,17 @@
       "description": "전문가의 손길로 새로워진 공간을 비교해보세요. 슬라이더를 드래그하여 스타일링 전후를 확인할 수 있습니다.",
       "imagePairs": [
         {
-          "beforeImage": "/images/project/project-cozy-living-room-detail1.jpg",
-          "afterImage": "/images/project/project-cozy-living-room-detail2.jpg",
+          "beforeImage": "/images/project/livingroom_before.jpeg",
+          "afterImage": "/images/project/livingroom_after.jpeg",
           "beforeAlt": "인테리어 디자인 전 거실 모습",
           "afterAlt": "인테리어 디자인 후 거실 모습"
         },
         {
-          "beforeImage": "/images/project/project-modern-apartment-detail1.jpg",
-          "afterImage": "/images/project/project-modern-apartment-detail3.jpg",
+          "beforeImage": "/images/project/kitchen_before.jpeg",
+          "afterImage": "/images/project/kitchen_after.jpeg",
           "beforeAlt": "인테리어 디자인 전 모던 아파트",
           "afterAlt": "인테리어 디자인 후 모던 아파트",
           "title": "모던 아파트 리노베이션"
-        },
-        {
-          "beforeImage": "/images/project/project-luxury-villa-detail1.jpg",
-          "afterImage": "/images/project/project-luxury-villa-detail2.jpg",
-          "beforeAlt": "인테리어 디자인 전 럭셔리 빌라",
-          "afterAlt": "인테리어 디자인 후 럭셔리 빌라",
-          "title": "럭셔리 빌라 인테리어"
         }
       ]
     }

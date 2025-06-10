@@ -49,7 +49,7 @@ function PreviewImage({
           src={image.afterImage}
           alt={image.afterAlt}
           fill
-          className="object-cover"
+          className="object-contain"
         />
         <div className="absolute inset-0" style={gradientStyle}></div>
       </div>
@@ -237,7 +237,7 @@ export default function BeforeAfterSlider({
                 src={currentPair.afterImage}
                 alt={currentPair.afterAlt}
                 fill
-                className={`object-cover transition-opacity duration-300 ${getTransitionClass()}`}
+                className={`object-contain transition-opacity duration-300 ${getTransitionClass()}`}
                 sizes="(max-width: 768px) 100vw, 384px"
                 priority
               />
@@ -252,7 +252,7 @@ export default function BeforeAfterSlider({
                 src={currentPair.beforeImage}
                 alt={currentPair.beforeAlt}
                 fill
-                className={`object-cover transition-opacity duration-300 ${getTransitionClass()}`}
+                className={`object-contain transition-opacity duration-300 ${getTransitionClass()}`}
                 sizes="(max-width: 768px) 100vw, 384px"
                 priority
               />
