@@ -114,41 +114,48 @@ const HorizontalGallery = ({
   
   // 마우스 포인터 및 터치 이벤트 전역 처리
   useEffect(() => {
-    const handleGlobalMouseMove = (e: globalThis.MouseEvent) => {
+    // 드래그 중인 경우에만 전역 이벤트 리스너 추가
+    if (draggingIndex !== -1) {
+      const handleGlobalMouseMove = (e: globalThis.MouseEvent) => handleMouseMove(e as unknown as MouseEvent);
+      const handleGlobalTouchMove = (e: globalThis.TouchEvent) => {
+        handleTouchMove(e as unknown as TouchEvent);
+        // 슬라이더 드래그 중 전체 페이지 스크롤 방지
+        e.preventDefault();
+      };
+      const handleGlobalMouseUp = () => handleDragEnd();
+      const handleGlobalTouchEnd = () => handleDragEnd();
+      
+      document.addEventListener('mousemove', handleGlobalMouseMove);
+      document.addEventListener('touchmove', handleGlobalTouchMove, { passive: false }); // passive: false로 preventDefault 허용
+      document.addEventListener('mouseup', handleGlobalMouseUp);
+      document.addEventListener('touchend', handleGlobalTouchEnd);
+      
+      return () => {
+        document.removeEventListener('mousemove', handleGlobalMouseMove);
+        document.removeEventListener('touchmove', handleGlobalTouchMove);
+        document.removeEventListener('mouseup', handleGlobalMouseUp);
+        document.removeEventListener('touchend', handleGlobalTouchEnd);
+      };
+    }
+  }, [draggingIndex]);
+  
+  // 모바일에서 갤러리 좌우 스크롤 방지
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    
+    const preventHorizontalScroll = (e: TouchEvent) => {
+      // 슬라이더 드래그 중이면 갤러리 스크롤 방지
       if (draggingIndex !== -1) {
-        updateSliderPosition(e.clientX, draggingIndex);
+        e.preventDefault();
+        e.stopPropagation();
       }
     };
     
-    const handleGlobalMouseUp = () => {
-      if (draggingIndex !== -1) {
-        setDraggingIndex(-1);
-      }
-    };
-    
-    const handleGlobalTouchMove = (e: globalThis.TouchEvent) => {
-      if (draggingIndex !== -1) {
-        const touch = e.touches[0];
-        updateSliderPosition(touch.clientX, draggingIndex);
-      }
-    };
-    
-    const handleGlobalTouchEnd = () => {
-      if (draggingIndex !== -1) {
-        setDraggingIndex(-1);
-      }
-    };
-    
-    document.addEventListener('mousemove', handleGlobalMouseMove);
-    document.addEventListener('mouseup', handleGlobalMouseUp);
-    document.addEventListener('touchmove', handleGlobalTouchMove);
-    document.addEventListener('touchend', handleGlobalTouchEnd);
+    container.addEventListener('touchmove', preventHorizontalScroll as any, { passive: false });
     
     return () => {
-      document.removeEventListener('mousemove', handleGlobalMouseMove);
-      document.removeEventListener('mouseup', handleGlobalMouseUp);
-      document.removeEventListener('touchmove', handleGlobalTouchMove);
-      document.removeEventListener('touchend', handleGlobalTouchEnd);
+      container.removeEventListener('touchmove', preventHorizontalScroll as any);
     };
   }, [draggingIndex]);
 
@@ -162,11 +169,14 @@ const HorizontalGallery = ({
         </div>
       )}
 
-      {/* 갤러리 스크롤 컨테이너 */}
+      {/* 갤러리 스크롤 컨테이너 - 모바일에서는 스크롤 금지 */}
       <div 
         ref={scrollContainerRef}
-        className="relative overflow-x-auto hide-scrollbar flex gap-12 pl-4 pr-4 pb-4"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className="relative overflow-x-auto hide-scrollbar flex gap-12 pl-4 pr-4 pb-4 touch-pan-y"
+        style={{
+          scrollbarWidth: "none", 
+          msOverflowStyle: "none"
+        }}
       >
         {/* 왼쪽 그라데이션 효과 */}
         <div className="pointer-events-none fixed left-0 w-16 h-full bg-gradient-to-r from-stone-50 to-transparent z-10"></div>
@@ -178,6 +188,7 @@ const HorizontalGallery = ({
             className={`gallery-image-container flex-shrink-0 cursor-pointer transition-all duration-300 ${activeIndex === index ? "scale-105" : "scale-100"}`}
             onClick={() => scrollToImage(index)}
             data-image-index={index}
+            onTouchStart={(e) => image.hasPair && e.stopPropagation()} // 이미지가 슬라이더인 경우 이벤트 버블링 방지
           >
             <div className="flex overflow-hidden">
               <div style={{ height: `${height}px` }}>
