@@ -222,5 +222,56 @@
       "buttonText": "자세히 보기",
       "buttonLink": "/services/offline-styling"
     }
-  ]
+  ],
+  "projectGallery": {
+    "title": "PROJECT",
+    "subtitle": "손끝에서 도안까지의 공간 스타일링 변화 사진을 확인해 보세요.",
+    "images": [
+      { 
+        "after": { "src": "/images/project/kitchen_after.jpeg", "alt": "주방 after" },
+        "before": { "src": "/images/project/kitchen_before.jpeg", "alt": "주방 before" },
+        "hasPair": true
+      },
+      { 
+        "after": { "src": "/images/project/livingroom_after.jpeg", "alt": "거실 after" },
+        "before": { "src": "/images/project/livingroom_before.jpeg", "alt": "거실 before" },
+        "hasPair": true
+      },
+      { 
+        "after": { "src": "/images/project/project-boho-bedroom.jpg", "alt": "보헤미안 침실" },
+        "before": null,
+        "hasPair": false
+      },
+      { 
+        "after": { "src": "/images/project/project-cozy-living-room-detail1.jpg", "alt": "아늑한 거실 디테일 1" },
+        "before": null,
+        "hasPair": false
+      },
+      { 
+        "after": { "src": "/images/project/project-cozy-living-room-detail2.jpg", "alt": "아늑한 거실 디테일 2" },
+        "before": null,
+        "hasPair": false
+      },
+      { 
+        "after": { "src": "/images/project/project-highlight-1.jpg", "alt": "프로젝트 하이라이트 1" },
+        "before": null,
+        "hasPair": false
+      },
+      { 
+        "after": { "src": "/images/project/project-highlight-2.jpg", "alt": "프로젝트 하이라이트 2" },
+        "before": null,
+        "hasPair": false
+      },
+      { 
+        "after": { "src": "/images/project/project-highlight-3.jpg", "alt": "프로젝트 하이라이트 3" },
+        "before": null,
+        "hasPair": false
+      },
+      { 
+        "after": { "src": "/images/project/project-highlight-4.jpg", "alt": "프로젝트 하이라이트 4" },
+        "before": null,
+        "hasPair": false
+      }
+    ]
+  }
 }
