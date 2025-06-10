@@ -224,20 +224,23 @@ const HorizontalGallery = ({
                       />
                     </div>
                     
-                    {/* 슬라이더 핸들 (드래그 가능한 손잡이) - 별도 배치 */}
+                    {/* 슬라이더 핸들 (드래그 가능한 손잡이) - 별도 배치, 터치 영역 확장 */}
                     <div 
-                      className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize shadow-lg z-10"
+                      className="absolute top-0 bottom-0 cursor-ew-resize z-10"
                       style={{ 
                         left: `${sliderPositions[index]}%`,
                         height: '100%',
                         transform: 'translateX(-50%)',
+                        width: '32px' /* 터치 히트 영역 확장 */
                       }}
                       onMouseDown={(e) => handleDragStart(index, e)}
                       onTouchStart={() => handleTouchStart(index)}
                       onMouseUp={handleDragEnd}
                       onTouchEnd={handleDragEnd}
                     >
-                      {/* 핸들 중앙 원형 버튼 */}
+                      {/* 시각적 구분선 추가 */}
+                      <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-white shadow-lg -z-0 h-full -translate-x-1/2"></div>
+                      {/* 핸들 중앙 원형 버튼 - 시각적 표시는 그대로 유지 */}
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow-lg flex items-center justify-center cursor-col-resize">
                         <div className="flex space-x-0.5" aria-hidden="true">
                           <div className="w-0.5 h-2 bg-gray-400"></div>
