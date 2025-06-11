@@ -62,7 +62,7 @@ export default function ClockSection({ title, description, items }: ClockSection
             return (
               <div
                 key={index}
-                className={`absolute hidden md:block text-center w-full text-xl md:text-2xl font-extrabold transition-all duration-500 ${
+                className={`absolute hidden md:block text-center w-full text-xl md:text-4xl font-extrabold transition-all duration-500 ${
                   activeIndex === index ? 'text-orange-400' : 'text-neutral-700'
                 }`}
                 style={{
@@ -92,13 +92,13 @@ export default function ClockSection({ title, description, items }: ClockSection
             return (
               <div
                 key={`mobile-${index}`}
-                className={`absolute md:hidden text-center w-full text-xl font-extrabold transition-all duration-500 ${
+                className={`absolute md:hidden text-center w-full text-2xl font-extrabold transition-all duration-500 ${
                   activeIndex === index ? 'text-orange-400' : 'text-neutral-700'
                 }`}
                 style={{
                   left: `${mobileLeft}px`,
                   top: `${mobileTop}px`,
-                  transform: `translate(-50%, -50%) rotate(${textRotation}deg) scale(${activeIndex === index ? 1.1 : 1})`,
+                  transform: `translate(-50%, -50%) rotate(${textRotation}deg) scale(${activeIndex === index ? 1.15 : 1})`,
                 }}
               >
                 {item}
