@@ -17,7 +17,7 @@ const NavigationBar: React.FC = () => {
       {/* Fixed position: overlays content, does not occupy space in layout flow. */}
       {/* Positioned below MarqueeText (top-10) and to the right (right-0). */}
       {/* z-40 ensures it's above most content but below MarqueeText (z-50 if they overlap). */}
-      <div className="fixed top-20 right-0 z-40 flex justify-end p-8">
+      <div className="fixed top-10 md:top-20 right-0 z-40 flex justify-end p-8">
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex md:flex-col md:items-end gap-2.5">
           {headerContent.navItems.map((item, index) => (
@@ -39,7 +39,7 @@ const NavigationBar: React.FC = () => {
 
       {/* Mobile Menu Overlay - Full screen, fixed position */}
       {/* z-index is high to appear above other content, including Marquee if it had a higher z-index */}
-      <div className={`md:hidden fixed inset-0 bg-white z-[60] transition-transform duration-300 transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`md:hidden fixed inset-0 bg-background z-[60] transition-transform duration-300 transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex justify-between items-center p-4 border-b border-gray-200">
           <Link href="/" className="text-3xl text-neutral-900" onClick={() => setIsMenuOpen(false)}>
             {headerContent.logo} {/* Mobile menu also has logo */}
