@@ -8,7 +8,7 @@ import CtaSection from './components/CtaSection';
 import InteriorServiceIconsSection from './components/InteriorServiceIconsSection';
 import React from "react";
 // import FurnitureGallery from "./components/FurnitureGallery"; // LearnMoreSection으로 이동
-import LearnMoreSection from "./components/LearnMoreSection"; // 새로 추가
+import ProcessSection from "./components/ProcessSection"; // 새로 추가
 import HorizontalGallery from "./components/HorizontalGallery";
 import content from "./content.json";
 import HorizontalBeforeAfterGallery from "@/app/home/components/HorizontalBeforeAfterGallery";
@@ -23,8 +23,8 @@ export default function HomePage() {
         {/* Homs styling service list Section with Images */}
         <ServiceListSplitSection/>
         
-        {/* Learn More Section (includes ServiceHighlights and FurnitureGallery) */}
-        <LearnMoreSection/>
+        {/* Process Section */}
+        <ProcessSection/>
         
         {/* Interior Icons Section */}
         <InteriorServiceIconsSection/>

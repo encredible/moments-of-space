@@ -1,4 +1,25 @@
 {
+  "hero": {
+    "backgroundImage": "/images/img.png",
+    "title": "행복한 기억으로 남을\n영원한 공간의 순간\n나만의 아름다운 공간 만들기\n",
+    "ctaButtons": [
+      {
+        "href": "/#services-section",
+        "text": "홈 스타일링 서비스 소개",
+        "variant": "primary"
+      },
+      {
+        "href": "/#projects-section",
+        "text": "프로젝트",
+        "variant": "secondary"
+      },
+      {
+        "href": "/contact",
+        "text": "신청하기",
+        "variant": "secondary"
+      }
+    ]
+  },
   "serviceList": [
     {
       "imageUrl": "/images/service/service_1.jpg",
@@ -87,24 +108,26 @@
       "buttonLink": "/services/offline-styling"
     }
   ],
+  "process": {
+    "title": "PROCESS",
+    "description": "홈스타일링에 필요한 시공·설치 서비스를 원스톱으로 신청 가능합니다.",
+    "items": [
+      {
+        "imageSrc": "/images/online-styling.jpg",
+        "title": "공간 취향 유형 테스트"
+      },
+      {
+        "imageSrc": "/images/in-person-styling.jpg",
+        "title": "기존 가구를 반영하는 스타일링"
+      },
+      {
+        "imageSrc": "/images/furniture-consulting.jpg",
+        "title": "소형 공간 특화 솔루션"
+      }
+    ]
+  },
   "learnMoreSection": {
-    "merits": {
-      "title": "리빙꼴라쥬 홈스타일링의 장점",
-      "items": [
-        {
-          "imageSrc": "/images/online-styling.jpg",
-          "title": "공간 취향 유형 테스트"
-        },
-        {
-          "imageSrc": "/images/in-person-styling.jpg",
-          "title": "기존 가구를 반영하는 스타일링"
-        },
-        {
-          "imageSrc": "/images/furniture-consulting.jpg",
-          "title": "소형 공간 특화 솔루션"
-        }
-      ]
-    },
+
     "rooms": {
       "title": "방 하나만 꾸미고 싶으시다구요? 가능합니다!",
       "items": [
@@ -159,27 +182,6 @@
         }
       ]
     }
-  },
-  "hero": {
-    "backgroundImage": "/images/img.png",
-    "title": "행복한 기억으로 남을\n영원한 공간의 순간\n나만의 아름다운 공간 만들기\n",
-    "ctaButtons": [
-      {
-        "href": "/#services-section",
-        "text": "홈 스타일링 서비스 소개",
-        "variant": "primary"
-      },
-      {
-        "href": "/#projects-section",
-        "text": "프로젝트",
-        "variant": "secondary"
-      },
-      {
-        "href": "/contact",
-        "text": "신청하기",
-        "variant": "secondary"
-      }
-    ]
   },
   "cta": {
     "title": "공간을 변화시킬 준비가 되셨나요?",
