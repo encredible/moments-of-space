@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import SectionTitle from '@/app/components/SectionTitle';
 
 interface ClockSectionProps {
@@ -10,16 +10,26 @@ interface ClockSectionProps {
 }
 
 export default function ClockSection({ title, description, items }: ClockSectionProps) {
+  // 초기 각도: 12시 방향에서 시작 (-90도)
+  const initialRotation = -90; // 12시 방향
+
   const [activeIndex, setActiveIndex] = useState(0);
+  const rotationRef = useRef(initialRotation); // 시계 바늘의 현재 각도 (useRef로 변경)
+  const [displayRotation, setDisplayRotation] = useState(initialRotation); // 화면에 표시될 회전 각도
   
   // 바늘이 천천히 회전하도록 설정
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
-    }, 1000); // 1초마다 다음 항목으로 이동
+    const intervalId = setInterval(() => {
+      // 다음 인덱스 계산
+      setActiveIndex(prev => (prev + 1) % items.length);
+      
+      // 다음 회전 각도 계산 (매번 정해진 각도씩 증가)
+      rotationRef.current += 360 / items.length;
+      setDisplayRotation(rotationRef.current);
+    }, 1000);
     
-    return () => clearInterval(interval);
-  }, [items.length]);
+    return () => clearInterval(intervalId);
+  }, [items.length]); // activeIndex 의존성 제거
   
   return (
     <section className="py-16 md:py-24">
@@ -32,8 +42,9 @@ export default function ClockSection({ title, description, items }: ClockSection
         <div className="relative w-[390px] h-[390px]">
           {/* 텍스트 아이템들 */}
           {items.map((item, index) => {
+            // 시계 방향으로 배치 (6시 방향에서 시작 - 180도)
             const angle = (360 / items.length) * index;
-            const radian = ((angle - 180) * Math.PI) / 180; // -90도는 12시 방향에서 시작
+            const radian = ((angle - 180) * Math.PI) / 180;
             const radius = 150; // 중심에서 텍스트까지의 거리 (px)
             
             // 텍스트 회전 방향 조정 (항상 올바르게 보이도록)
@@ -45,7 +56,7 @@ export default function ClockSection({ title, description, items }: ClockSection
             return (
               <div
                 key={index}
-                className={`absolute text-center w-full text-xl font-extrabold transition-all duration-300 ${
+                className={`absolute text-center w-full text-xl font-extrabold transition-all duration-500 ${
                   activeIndex === index ? 'text-orange-400' : 'text-neutral-700'
                 }`}
                 style={{
@@ -66,11 +77,11 @@ export default function ClockSection({ title, description, items }: ClockSection
               top: '50%',
               left: '50%',
               width: '3px',
-              height: '112px',
+              height: '96px',
               backgroundColor: 'black',
               transformOrigin: 'center bottom',
-              transform: `translate(-50%, -100%) rotate(${(360 / items.length) * activeIndex - 90}deg)`,
-              transition: 'transform 1000ms ease-in-out',
+              transform: `translate(-50%, -100%) rotate(${displayRotation}deg)`,
+              transition: 'transform 400ms ease-in-out',
               zIndex: 10
             }}
           />
