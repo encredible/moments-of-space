@@ -65,7 +65,7 @@ export default function ClockSection({ title, description, items }: ClockSection
                 style={{
                   left: `${desktopLeft}px`,
                   top: `${desktopTop}px`,
-                  transform: `translate(-50%, -50%) rotate(${textRotation}deg) scale(${activeIndex === index ? 1.1 : 1})`,
+                  transform: `translate(-100%, -50%) rotate(${textRotation}deg) scale(${activeIndex === index ? 1.1 : 1})`,
                 }}
               >
                 {item}
