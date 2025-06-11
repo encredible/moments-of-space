@@ -41,10 +41,10 @@ export default function SplitSection({
   id,
 }: SplitSectionProps) {
   return (
-    <section id={id} className={`flex flex-col md:flex-row items-start justify-between py-8 md:py-12 px-4 md:px-0 gap-6 md:gap-10 ${className}`}>
+    <section id={id} className={`flex flex-col md:flex-row items-start justify-between py-4 md:py-12 px-2 md:px-0 gap-6 md:gap-10 ${className}`}>
       <div 
         className={`md:w-1/2 w-full flex justify-center mb-6 md:mb-0 ${
-          imageOnLeft ? 'pr-10' : 'pl-10 order-1 md:order-2'
+          imageOnLeft ? 'md:pr-10' : 'md:pl-10 order-1 md:order-2'
         }`}
       >
         <Image

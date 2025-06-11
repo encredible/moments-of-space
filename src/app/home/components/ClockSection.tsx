@@ -32,15 +32,15 @@ export default function ClockSection({ title, description, items }: ClockSection
   }, [items.length]);
   
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 px-2 md:py-24 w-full">
       <SectionTitle 
         title={title} 
         description={description} 
       />
       
-      <div className="flex justify-center mt-16">
-        {/* 모바일: 390px, 데스크탑: 585px (1.5배) */}
-        <div className="relative w-[390px] h-[390px] md:w-[585px] md:h-[585px]">
+      <div className="flex justify-center mt-16 w-full">
+        {/* 모바일: 레이아웃 최대 너비에 맞춤, 데스크탑: 585px 고정 */}
+        <div className="relative w-full max-w-[300px] h-[300px] md:w-[585px] md:h-[585px]">
           {/* 텍스트 아이템들 */}
           {items.map((item, index) => {
             // 시계 방향으로 배치 (6시 방향에서 시작 - 180도)
@@ -53,9 +53,6 @@ export default function ClockSection({ title, description, items }: ClockSection
               textRotation -= 180;
             }
             
-            // 모바일과 데스크탑의 서로 다른 반지름 및 중심점 고려
-            const mobileLeft = 195 + 150 * Math.cos(radian);
-            const mobileTop = 195 + 150 * Math.sin(radian);
             const desktopLeft = 292.5 + 225 * Math.cos(radian);
             const desktopTop = 292.5 + 225 * Math.sin(radian);
             
@@ -86,13 +83,13 @@ export default function ClockSection({ title, description, items }: ClockSection
               textRotation -= 180;
             }
             
-            const mobileLeft = 195 + 150 * Math.cos(radian);
-            const mobileTop = 195 + 150 * Math.sin(radian);
+            const mobileLeft = 150 + 150 * Math.cos(radian);
+            const mobileTop = 150 + 150 * Math.sin(radian);
             
             return (
               <div
                 key={`mobile-${index}`}
-                className={`absolute md:hidden text-center w-full text-2xl font-extrabold transition-all duration-500 ${
+                className={`absolute md:hidden text-lg whitespace-nowrap font-extrabold transition-all duration-500 ${
                   activeIndex === index ? 'text-orange-400' : 'text-neutral-700'
                 }`}
                 style={{
@@ -129,7 +126,7 @@ export default function ClockSection({ title, description, items }: ClockSection
               top: '50%',
               left: '50%',
               width: '3px',
-              height: '96px', // 모바일용 바늘
+              height: '88px', // 모바일용 바늘 조정
               backgroundColor: 'black',
               transformOrigin: 'center bottom',
               transform: `translate(-50%, -100%) rotate(${displayRotation}deg)`,

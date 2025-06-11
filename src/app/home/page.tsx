@@ -3,11 +3,9 @@
 import ServiceListSplitSection from './components/ServiceListSplitSection';
 import PageLayout from '../components/PageLayout';
 import HeroSection from './components/HeroSection';
-import ProjectGallery from './components/ProjectGallery';
 import CtaSection from './components/CtaSection';
 import InteriorServiceIconsSection from './components/InteriorServiceIconsSection';
 import React from "react";
-// import FurnitureGallery from "./components/FurnitureGallery"; // LearnMoreSection으로 이동
 import ProcessSection from "./components/ProcessSection"; // 새로 추가
 import HorizontalGallery from "./components/HorizontalGallery";
 import content from "./content.json";
@@ -38,9 +36,6 @@ export default function HomePage() {
         <InteriorServiceIconsSection/>
       
       </PageLayout>
-      
-      {/* Project Gallery Section */}
-      <ProjectGallery/>
       
       {/* Call to Action Section */}
       <CtaSection/>
