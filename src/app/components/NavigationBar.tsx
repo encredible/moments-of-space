@@ -17,7 +17,7 @@ const NavigationBar: React.FC = () => {
       {/* Fixed position: overlays content, does not occupy space in layout flow. */}
       {/* Positioned below MarqueeText (top-10) and to the right (right-0). */}
       {/* z-40 ensures it's above most content but below MarqueeText (z-50 if they overlap). */}
-      <div className="fixed top-10 right-0 z-40 flex justify-end p-8">
+      <div className="fixed top-20 right-0 z-40 flex justify-end p-8">
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex md:flex-col md:items-end gap-2.5">
           {headerContent.navItems.map((item, index) => (

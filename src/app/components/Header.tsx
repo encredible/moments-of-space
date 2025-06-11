@@ -2,19 +2,16 @@
 import Link from 'next/link';
 import headerContent from './header_content.json' assert { type: 'json' };
 
-
-import NavigationBar from './NavigationBar'; // Import NavigationBar
-
 const Header: React.FC = () => {
   const logoText = headerContent.logo;
   const logoLine1 = "SPACE STYLING SOLUTION"
 
   return (
-    <header className="relative max-w-screen-xl mx-auto w-full h-[20vh]">
+    <header className="relative top-25 max-w-screen-xl mx-auto w-full">
       <div className="flex flex-col items-center justify-center w-full h-full px-4 md:px-0"> {/* Centered content */}
         <Link href="/" className="group font-gillsansnova-book text-center leading-none text-neutral-900 group-hover:text-neutral-700 transition-colors tracking-tight">
-          <span className="block text-lg pb-2">{logoLine1}</span> {/* Line 1, smaller text, added colon back */}
-          <span className="block text-6xl">{logoText}</span> {/* Line 2, original size, added font-semibold for emphasis */}
+          <span className="block font-bold text-lg pb-2">{logoLine1}</span> {/* Line 1, smaller text, added colon back */}
+          <span className="block font-extrabold text-6xl">{logoText}</span> {/* Line 2, original size, added font-semibold for emphasis */}
         </Link>
       </div>
     </header>
