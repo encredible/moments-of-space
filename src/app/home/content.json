@@ -126,8 +126,25 @@
       }
     ]
   },
+  "clockSection": {
+    "title": "START WITH JUST ONE ROOM",
+    "description": "집 전체가 아니어도 괜찮습니다. 방 한칸부터 시작해보세요.",
+    "items": [
+      "테라스",
+      "거실",
+      "부엌",
+      "아기방",
+      "서재",
+      "소파",
+      "침실",
+      "드레스룸",
+      "오피스",
+      "카페",
+      "소품",
+      "공부방"
+    ]
+  },
   "learnMoreSection": {
-
     "rooms": {
       "title": "방 하나만 꾸미고 싶으시다구요? 가능합니다!",
       "items": [

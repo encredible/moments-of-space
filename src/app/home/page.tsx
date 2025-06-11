@@ -12,6 +12,7 @@ import ProcessSection from "./components/ProcessSection"; // 새로 추가
 import HorizontalGallery from "./components/HorizontalGallery";
 import content from "./content.json";
 import HorizontalBeforeAfterGallery from "@/app/home/components/HorizontalBeforeAfterGallery";
+import ClockSection from "./components/ClockSection"; // 새로 추가
 
 export default function HomePage() {
   return (
@@ -25,6 +26,13 @@ export default function HomePage() {
         
         {/* Process Section */}
         <ProcessSection/>
+        
+        {/* Clock Section */}
+        <ClockSection
+          title={content.clockSection.title}
+          description={content.clockSection.description}
+          items={content.clockSection.items}
+        />
         
         {/* Interior Icons Section */}
         <InteriorServiceIconsSection/>
