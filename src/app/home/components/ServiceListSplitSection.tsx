@@ -2,12 +2,14 @@ import SplitSection, { SplitSectionProps } from '../../components/SplitSection';
 
 // Load the home content data from content.json
 import homeContent from '../content.json';
+import SectionTitle from "@/app/components/SectionTitle";
 
 export default function ServiceListSplitSection() {
   const serviceList = homeContent.serviceList || [] as SplitSectionProps[];
 
   return (
     <section id="services-section" className="py-8 pt-16 mt-[-2rem]">
+      <SectionTitle title="HOME STYLING SERVICE" description="인테리어 공사 없이도 당신의 공간은 변화할 수 있습니다." />
       {serviceList.map((service: SplitSectionProps, index: number) => (
         <SplitSection
           key={`service-section-${index}`}
