@@ -14,19 +14,19 @@ interface GalleryImage {
   hasPair: boolean;
 }
 
-interface HorizontalGalleryProps {
+interface HorizontalBeforeAfterGalleryProps {
   title?: string;
   subtitle?: string;
   images: GalleryImage[];
   height?: number; // 갤러리 이미지 높이 (픽셀 단위)
 }
 
-const HorizontalGallery = ({
+const HorizontalBeforeAfterGallery = ({
   title,
   subtitle,
   images,
   height = 400, // 기본 높이 400px
-}: HorizontalGalleryProps) => {
+}: HorizontalBeforeAfterGalleryProps) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   // 각 이미지의 비교 슬라이더 위치 (0: after만 보임, 100: before만 보임, 50: 반반)
@@ -354,4 +354,4 @@ const HorizontalGallery = ({
   );
 };
 
-export default HorizontalGallery;
+export default HorizontalBeforeAfterGallery;

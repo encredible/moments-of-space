@@ -161,7 +161,7 @@
     }
   },
   "hero": {
-    "backgroundImage": "/images/hero-section.jpg",
+    "backgroundImage": "/images/img.png",
     "title": "행복한 기억으로 남을\n영원한 공간의 순간\n나만의 아름다운 공간 만들기\n",
     "ctaButtons": [
       {
