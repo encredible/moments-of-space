@@ -43,14 +43,14 @@ export default function HomePage() {
       {/* 수평 스크롤 이미지 갤러리 */}
       <MobileProjectGallery
         title={content.projectGallery.title}
-        subtitle={content.projectGallery.subtitle}
+        subtitle={content.projectGallery.mobileDescription}
         images={content.projectGallery.images}
         height={320}
       />
       
       <DesktopProjectGallery
         title={content.projectGallery.title}
-        subtitle={content.projectGallery.subtitle}
+        subtitle={content.projectGallery.description}
         images={content.projectGallery.images}
         height={320}
       />
