@@ -16,7 +16,7 @@
       ],
       "feeTitle": "비용 및 소요기간",
       "feeItems": [
-        "₩200,000 (20평 이하 공간 1실 기준)",
+        "₩200,000 (1실 기준) / ₩150,000 (추가 1실 당)",
         "1주일 이내 (피드백 포함 최대 10일)"
       ],
       "buttonText": "자세히 보기",
@@ -38,8 +38,8 @@
       ],
       "feeTitle": "비용 및 소요기간",
       "feeItems": [
-        "₩300,000 (1실 기준)",
-        "2주 (1회 피드백 포함 최대 14일)"
+        "₩300,000 (1실 기준) / ₩200,000 (추가 1실 당)",
+        "2주 (1회 피드백 포함 최대 20일)"
       ],
       "buttonText": "자세히 보기",
       "buttonLink": "/services/offline-styling"
@@ -61,7 +61,7 @@
       "feeTitle": "비용 및 소요기간",
       "feeItems": [
         "₩100,000 (단일 제안 1회 기준)",
-        "1주일 이내 (1회 피드백 포함 최대 7일)"
+        "1주일 이내"
       ],
       "buttonText": "자세히 보기",
       "buttonLink": "/services/offline-styling"
@@ -81,7 +81,7 @@
       "feeTitle": "비용 및 소요기간",
       "feeItems": [
         "₩100,000 (단일 제안 1회 기준)",
-        "3일 이내\n"
+        "1주일 이내"
       ],
       "buttonText": "자세히 보기",
       "buttonLink": "/services/offline-styling"
