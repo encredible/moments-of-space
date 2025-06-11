@@ -21,7 +21,7 @@ interface HorizontalBeforeAfterGalleryProps {
   height?: number; // 갤러리 이미지 높이 (픽셀 단위)
 }
 
-const HorizontalBeforeAfterGallery = ({
+const DesktopProjectGallery = ({
   title,
   subtitle,
   images,
@@ -198,7 +198,7 @@ const HorizontalBeforeAfterGallery = ({
   }, [draggingIndex]);
 
   return (
-    <div className="w-full py-16">
+    <div className="hidden md:block py-16 md:py-24">
       {/* 제목과 부제목 */}
       {(title || subtitle) && (
         <div className="text-center mb-8">
@@ -354,4 +354,4 @@ const HorizontalBeforeAfterGallery = ({
   );
 };
 
-export default HorizontalBeforeAfterGallery;
+export default DesktopProjectGallery;

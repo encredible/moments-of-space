@@ -21,7 +21,7 @@ interface HorizontalGalleryProps {
   height?: number; // 갤러리 이미지 높이 (픽셀 단위)
 }
 
-const HorizontalGallery = ({
+const MobileProjectGallery = ({
   title,
   subtitle,
   images,
@@ -84,7 +84,7 @@ const HorizontalGallery = ({
   };
 
   return (
-    <div className="w-full py-16">
+    <div className="md:hidden w-full py-16">
       {/* 제목과 부제목 */}
       {(title || subtitle) && (
         <div className="text-center mb-8">
@@ -191,4 +191,4 @@ const HorizontalGallery = ({
   );
 };
 
-export default HorizontalGallery;
+export default MobileProjectGallery;

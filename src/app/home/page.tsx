@@ -7,9 +7,9 @@ import CtaSection from './components/CtaSection';
 import InteriorServiceIconsSection from './components/InteriorServiceIconsSection';
 import React from "react";
 import ProcessSection from "./components/ProcessSection"; // 새로 추가
-import HorizontalGallery from "./components/HorizontalGallery";
+import MobileProjectGallery from "./components/MobileProjectGallery";
 import content from "./content.json";
-import HorizontalBeforeAfterGallery from "@/app/home/components/HorizontalBeforeAfterGallery";
+import DesktopProjectGallery from "@/app/home/components/DesktopProjectGallery";
 import ClockSection from "./components/ClockSection"; // 새로 추가
 
 export default function HomePage() {
@@ -41,14 +41,14 @@ export default function HomePage() {
       <CtaSection/>
       
       {/* 수평 스크롤 이미지 갤러리 */}
-      <HorizontalGallery
+      <MobileProjectGallery
         title={content.projectGallery.title}
         subtitle={content.projectGallery.subtitle}
         images={content.projectGallery.images}
         height={320}
       />
       
-      <HorizontalBeforeAfterGallery
+      <DesktopProjectGallery
         title={content.projectGallery.title}
         subtitle={content.projectGallery.subtitle}
         images={content.projectGallery.images}
