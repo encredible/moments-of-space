@@ -52,7 +52,8 @@ export default function SplitSection({
           alt={imageAlt}
           width={imageWidth}
           height={imageHeight}
-          className="object-cover border-6 border-neutral-800 rounded-4xl "
+          className="object-cover"
+          style={{ clipPath: "polygon(120px 0, 100% 0, 100% 100%, 0 100%, 0 120px)" }}
           priority={priority}
         />
       </div>
