@@ -49,7 +49,7 @@ export default function ClockSection({ title, description, items }: ClockSection
             
             // 텍스트 회전 방향 조정 (항상 올바르게 보이도록)
             let textRotation = angle;
-            if (textRotation > 90 && textRotation <= 270) {
+            if (textRotation >= 90 && textRotation <= 270) {
               textRotation -= 180;
             }
             
@@ -59,7 +59,7 @@ export default function ClockSection({ title, description, items }: ClockSection
             return (
               <div
                 key={index}
-                className={`absolute hidden md:block text-center w-full text-xl md:text-4xl font-extrabold transition-all duration-500 ${
+                className={`absolute hidden md:block text-center w-full text-xl md:text-3xl font-extrabold transition-all duration-500 ${
                   activeIndex === index ? 'text-orange-400' : 'text-neutral-700'
                 }`}
                 style={{
