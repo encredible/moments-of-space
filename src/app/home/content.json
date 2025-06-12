@@ -110,7 +110,7 @@
   ],
   "process": {
     "title": "PROCESS",
-    "description": "홈스타일링에 필요한 시공·설치 서비스를 원스톱으로 신청 가능합니다.",
+    "description": "5단계의 프로세스를 통해 나만의 아늑한 공간을 만들어요.",
     "items": [
       {
         "imageSrc": "/images/online-styling.jpg",
@@ -123,6 +123,38 @@
       {
         "imageSrc": "/images/furniture-consulting.jpg",
         "title": "소형 공간 특화 솔루션"
+      }
+    ],
+    "processSteps": [
+      {
+        "number": "01",
+        "title": "공간 분석",
+        "description": "가구를 포함 고객님에게 심층 질문지와 공간 사진을 받아 분석하고 공간취향 테스트를 통해 가장 적합한 스타일 방향을 제시합니다.",
+        "imageSrc": "/images/process/process_1.jpg"
+      },
+      {
+        "number": "02",
+        "title": "스타일 제안",
+        "description": "고객 예산과 라이프스타일을 고려하여 맞춤형 스타일링 플랜을 제안합니다. 온라인으로 상담을 진행하며 디자인 방향성을 함께 설정합니다.",
+        "imageSrc": "/images/process/process_2.jpg"
+      },
+      {
+        "number": "03",
+        "title": "디자인 구체화",
+        "description": "콘셉트에 따른 무드보드와 배치도를 작성하고 필요한 가구와 소품 리스트를 작성합니다. 예산 범위 내에서 실현 가능한 옵션을 제시합니다.",
+        "imageSrc": "/images/process/process_3.jpg"
+      },
+      {
+        "number": "04",
+        "title": "피드백 및 수정",
+        "description": "제안된 디자인에 대한 고객 피드백을 수렴하고 필요한 부분을 수정합니다. 최종 디자인이 고객의 기대에 부합하도록 세부 사항을 조정합니다.",
+        "imageSrc": "/images/process/process_4.jpg"
+      },
+      {
+        "number": "05",
+        "title": "최종 제안 및 구현",
+        "description": "완성된 디자인 제안서를 전달하고 실행 단계로 넘어갑니다. 원하는 경우 구매 및 설치 서비스를 연계하여 제공합니다.",
+        "imageSrc": "/images/process/process_5.jpg"
       }
     ]
   },

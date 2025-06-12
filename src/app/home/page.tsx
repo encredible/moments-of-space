@@ -36,10 +36,7 @@ export default function HomePage() {
         <InteriorServiceIconsSection/>
       
       </PageLayout>
-      
-      {/* Call to Action Section */}
-      <CtaSection/>
-      
+
       {/* 수평 스크롤 이미지 갤러리 */}
       <MobileProjectGallery
         title={content.projectGallery.title}
@@ -54,6 +51,9 @@ export default function HomePage() {
         images={content.projectGallery.images}
         height={320}
       />
+      
+      {/* Call to Action Section */}
+      <CtaSection/>
     </div>
   );
 }
