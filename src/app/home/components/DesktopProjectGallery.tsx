@@ -2,6 +2,8 @@
 
 import React, { useState, useRef, useEffect, MouseEvent, TouchEvent } from "react";
 import Image from "next/image";
+import {Section} from "lucide-react";
+import SectionTitle from "@/app/components/SectionTitle";
 
 interface GalleryImageData {
   src: string;
@@ -199,13 +201,7 @@ const DesktopProjectGallery = ({
 
   return (
     <div className="hidden md:block py-16 md:py-24">
-      {/* 제목과 부제목 */}
-      {(title || subtitle) && (
-        <div className="text-center mb-8">
-          {title && <h2 className="text-3xl font-bold mb-2">{title}</h2>}
-          {subtitle && <p className="text-lg text-gray-600">{subtitle}</p>}
-        </div>
-      )}
+      <SectionTitle title={title} description={subtitle} />
 
       {/* 갤러리 스크롤 컨테이너 - 모바일에서는 좌우 스크롤 금지 */}
       <div 
