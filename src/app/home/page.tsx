@@ -11,6 +11,7 @@ import MobileProjectGallery from "./components/MobileProjectGallery";
 import content from "./content.json";
 import DesktopProjectGallery from "@/app/home/components/DesktopProjectGallery";
 import ClockSection from "./components/ClockSection"; // 새로 추가
+import PictogramServicesSection from "./components/PictogramServicesSection"; // 픽토그램 서비스 섹션 추가
 
 export default function HomePage() {
   return (
@@ -36,6 +37,9 @@ export default function HomePage() {
         <InteriorServiceIconsSection/>
       
       </PageLayout>
+      
+      {/* 픽토그램 서비스 섹션 */}
+      <PictogramServicesSection />
 
       {/* 수평 스크롤 이미지 갤러리 */}
       <MobileProjectGallery
