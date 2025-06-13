@@ -15,9 +15,9 @@ const ProcessSection = () => {
           description={homeContent.process.description}
         />
         
-        <div className="mt-12 flex flex-row gap-12">
-          {/* 상단 이미지 섹션 */}
-          <div className="relative w-full aspect-video">
+        <div className="mt-12 flex flex-col md:flex-row gap-8 md:gap-12">
+          {/* 이미지 섹션 - 모바일에서는 상단에 표시 */}
+          <div className="relative w-full aspect-video md:w-1/2">
             {processSteps.map((step, index) => (
               <div
                 key={step.number}
@@ -36,8 +36,8 @@ const ProcessSection = () => {
             ))}
           </div>
           
-          {/* 프로세스 번호와 설명 섹션 */}
-          <div className="w-full mt-12">
+          {/* 프로세스 번호와 설명 섹션 - 모바일에서는 하단에 표시 */}
+          <div className="w-full md:w-1/2 mt-8 md:mt-0">
             {/* 프로세스 번호 (가로 배치) */}
             <div className="flex justify-center space-x-6 md:space-x-12 lg:space-x-16 mb-8">
               {processSteps.map((step, index) => (
