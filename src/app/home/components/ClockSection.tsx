@@ -39,8 +39,8 @@ export default function ClockSection({ title, description, items }: ClockSection
       />
       
       <div className="flex justify-center mt-16 w-full">
-        {/* 모바일: 레이아웃 최대 너비에 맞춤, 데스크탑: 585px 고정 */}
-        <div className="relative w-full max-w-[300px] h-[300px] md:w-[585px] md:h-[585px]">
+        {/* 모바일: 레이아웃 최대 너비에 맞춤, 데스크탑: 585px 고정 - 90%로 축소 */}
+        <div className="relative w-full max-w-[270px] h-[270px] md:w-[526px] md:h-[526px]">
           {/* 텍스트 아이템들 */}
           {items.map((item, index) => {
             // 시계 방향으로 배치 (6시 방향에서 시작 - 180도)
@@ -53,19 +53,18 @@ export default function ClockSection({ title, description, items }: ClockSection
               textRotation -= 180;
             }
             
-            const desktopLeft = 292.5 + 225 * Math.cos(radian);
-            const desktopTop = 292.5 + 225 * Math.sin(radian);
+            // 90%로 줄인 값 적용
+            const desktopLeft = 263 + 202.5 * Math.cos(radian);
+            const desktopTop = 263 + 202.5 * Math.sin(radian);
             
             return (
               <div
                 key={index}
-                className={`absolute hidden md:block text-center w-full text-xl md:text-3xl font-extrabold transition-all duration-500 ${
-                  activeIndex === index ? 'text-orange-400' : 'text-neutral-700'
-                }`}
+                className={`absolute hidden md:block text-center w-full text-xl md:text-3xl font-extrabold transition-all duration-500 text-black`}
                 style={{
                   left: `${desktopLeft}px`,
                   top: `${desktopTop}px`,
-                  transform: `translate(-100%, -50%) rotate(${textRotation}deg) scale(${activeIndex === index ? 1.1 : 1})`,
+                  transform: `translate(-100%, -50%) rotate(${textRotation}deg) scale(${activeIndex === index ? 1.25: 1})`,
                 }}
               >
                 {item}
@@ -83,19 +82,18 @@ export default function ClockSection({ title, description, items }: ClockSection
               textRotation -= 180;
             }
             
-            const mobileLeft = 150 + 150 * Math.cos(radian);
-            const mobileTop = 150 + 150 * Math.sin(radian);
+            // 90%로 줄인 값 적용
+            const mobileLeft = 135 + 135 * Math.cos(radian);
+            const mobileTop = 135 + 135 * Math.sin(radian);
             
             return (
               <div
                 key={`mobile-${index}`}
-                className={`absolute md:hidden text-lg whitespace-nowrap font-extrabold transition-all duration-500 ${
-                  activeIndex === index ? 'text-orange-400' : 'text-neutral-700'
-                }`}
+                className={`absolute md:hidden text-lg whitespace-nowrap font-extrabold transition-all duration-500  text-black`}
                 style={{
                   left: `${mobileLeft}px`,
                   top: `${mobileTop}px`,
-                  transform: `translate(-50%, -50%) rotate(${textRotation}deg) scale(${activeIndex === index ? 1.15 : 1})`,
+                  transform: `translate(-50%, -50%) rotate(${textRotation}deg) scale(${activeIndex === index ? 1.25 : 1})`,
                 }}
               >
                 {item}
@@ -109,8 +107,8 @@ export default function ClockSection({ title, description, items }: ClockSection
             style={{ 
               top: '50%',
               left: '50%',
-              width: '3px',
-              height: '144px', // 데스크탑용 바늘 (1.5배)
+              width: '5px',
+              height: '110px', // 데스크탑용 바늘 (1.5배)
               backgroundColor: 'black',
               transformOrigin: 'center bottom',
               transform: `translate(-50%, -100%) rotate(${displayRotation}deg)`,
@@ -125,8 +123,8 @@ export default function ClockSection({ title, description, items }: ClockSection
             style={{ 
               top: '50%',
               left: '50%',
-              width: '3px',
-              height: '88px', // 모바일용 바늘 조정
+              width: '5px',
+              height: '78px', // 모바일용 바늘 조정
               backgroundColor: 'black',
               transformOrigin: 'center bottom',
               transform: `translate(-50%, -100%) rotate(${displayRotation}deg)`,
