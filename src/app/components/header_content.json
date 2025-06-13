@@ -10,12 +10,12 @@
       "href": "/#projects-section"
     },
     {
-      "text": "공간 유형 테스트",
-      "href": "/space-type-test"
-    },
-    {
       "text": "상담신청",
       "href": "/contact"
+    },
+    {
+      "text": "공간 MBTI 테스트",
+      "href": "/space-type-test"
     }
   ]
 }
