@@ -1,5 +1,24 @@
 'use client';
 
+import footerContent from '@/app/data/footer_content.json';
+
+// footer_content.json을 위한 타입 정의
+interface FooterContent {
+  companyHeaderLine: string;
+  companyTitle: string;
+  openingHours: string;
+  address: string;
+  companyName: string;
+  ceo: string;
+  businessNumber: string;
+  salesNumber: string;
+  detailedAddress: string;
+  email: string;
+}
+
+// 타입 단언으로 footerContent에 타입 적용
+const typedFooterContent = footerContent as unknown as FooterContent;
+
 const Footer: React.FC = () => {
   return (
     <footer className="w-full py-12">
@@ -7,14 +26,14 @@ const Footer: React.FC = () => {
         <div className="flex flex-col">
           {/* 상단 영역 */}
           <div className="mb-5 font-gillsansnova-book">
-            <p className="text-xs tracking-wide">SPACE STYLING SOLUTION</p>
-            <h2 className="text-3xl font-bold uppercase mt-1">LIVING COLLAGE</h2>
+            <p className="text-xs tracking-wide">{typedFooterContent.companyHeaderLine}</p>
+            <h2 className="text-3xl font-bold uppercase mt-1">{typedFooterContent.companyTitle}</h2>
           </div>
           
           {/* 영업시간 */}
           <div className="mb-4 flex flex-col">
-            <p className="text-xs">mon - sat, 10am - 7pm</p>
-            <p className="text-xs">25, beopjo-ro, korea</p>
+            <p className="text-xs">{typedFooterContent.openingHours}</p>
+            <p className="text-xs">{typedFooterContent.address}</p>
           </div>
           
           {/* 인스타그램 아이콘 */}
@@ -30,11 +49,11 @@ const Footer: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:justify-between pb-2 text-xs">
             <div>
               <p className="mb-1 font-bold">공간의 순간</p>
-              <p className="mb-1">대표 : 이다솜 ㅣ 사업자번호 : 435-07-02557 ㅣ 통신판매업번호 :</p>
-              <p>경기도 수원시 영통구 광교2동 SK VIEW LAKE A동 1310호, 1311호</p>
+              <p className="mb-1">대표 : {typedFooterContent.ceo} ㅣ 사업자번호 : {typedFooterContent.businessNumber} ㅣ 통신판매업번호 :</p>
+              <p>{typedFooterContent.detailedAddress}</p>
             </div>
           </div>
-          <div className="text-xs">info@mos.kr</div>
+          <div className="text-xs">{typedFooterContent.email}</div>
         </div>
       </div>
     </footer>
