@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
+import SectionTitle from "@/app/components/SectionTitle";
 
 interface GalleryImageData {
   src: string;
@@ -84,14 +85,8 @@ const MobileProjectGallery = ({
   };
 
   return (
-    <div className="md:hidden w-full py-16">
-      {/* 제목과 부제목 */}
-      {(title || subtitle) && (
-        <div className="text-center mb-8">
-          {title && <h2 className="text-3xl font-bold mb-2">{title}</h2>}
-          {subtitle && <p className="text-lg text-gray-600">{subtitle}</p>}
-        </div>
-      )}
+    <section id="project-gallery-mobile" className="md:hidden w-full py-16">
+      <SectionTitle title={title} description={subtitle} />
 
       {/* 갤러리 스크롤 컨테이너 */}
       <div 
@@ -99,9 +94,6 @@ const MobileProjectGallery = ({
         className="relative overflow-x-auto hide-scrollbar flex gap-12 pl-4 pr-4 pb-4"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {/* 왼쪽 그라데이션 효과 */}
-        <div className="pointer-events-none fixed left-0 w-16 h-full bg-gradient-to-r from-stone-50 to-transparent z-10"></div>
-        
         {/* 이미지 목록 */}
         {images.map((image, index) => (
           <div 
@@ -150,44 +142,11 @@ const MobileProjectGallery = ({
                   </div>
                 )}
               </div>
-              
-              {/* before/after 아이콘 표시 (페어가 있는 경우만) */}
-              {image.hasPair && (
-                <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1">
-                  {showBeforeStates[index] ? "Before" : "After"}
-                </div>
-              )}
             </div>
           </div>
         ))}
-        
-        {/* 오른쪽 그라데이션 효과 */}
-        <div className="pointer-events-none fixed right-0 w-16 h-full bg-gradient-to-l from-stone-50 to-transparent z-10"></div>
       </div>
-
-      {/* 인디케이터 (선택 사항) */}
-      <div className="flex justify-center mt-4 gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => scrollToImage(index)}
-            className={`w-2 h-2 rounded-full transition-all ${activeIndex === index ? "bg-black w-4" : "bg-gray-300"}`}
-            aria-label={`이미지 ${index + 1}로 이동`}
-          ></button>
-        ))}
-      </div>
-
-      {/* 스크롤바 숨기는 스타일 */}
-      <style jsx global>{`
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .hide-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
-    </div>
+    </section>
   );
 };
 

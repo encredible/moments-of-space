@@ -7,7 +7,8 @@
     },
     {
       "text": "프로젝트",
-      "href": "/#projects-section"
+      "href": "/#project-gallery",
+      "mobile_href": "/#project-gallery-mobile"
     },
     {
       "text": "상담신청",

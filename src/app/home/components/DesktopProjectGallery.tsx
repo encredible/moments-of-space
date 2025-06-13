@@ -199,7 +199,7 @@ const DesktopProjectGallery = ({
   }, [draggingIndex]);
 
   return (
-    <div className="hidden md:block py-16 md:py-24">
+    <section id="project-gallery" className="hidden md:block py-16 md:py-24">
       <SectionTitle title={title} description={subtitle} />
 
       {/* 갤러리 스크롤 컨테이너 - 모바일에서는 좌우 스크롤 금지 */}
@@ -304,7 +304,7 @@ const DesktopProjectGallery = ({
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

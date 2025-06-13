@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import NavItem from './NavItem';
 import headerContent from './header_content.json' assert { type: 'json' };
+import { useMediaQuery } from 'react-responsive';
 
 const NavigationBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,6 +11,8 @@ const NavigationBar: React.FC = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  
+  const isMobile = useMediaQuery({ maxWidth: 767 }); // md 미만이면 모바일
 
   return (
     <>
@@ -59,7 +62,7 @@ const NavigationBar: React.FC = () => {
           {headerContent.navItems.map((item, index) => (
             <Link
               key={index}
-              href={item.href}
+              href={item.mobile_href && isMobile ? item.mobile_href : item.href}
               className="font-korean-button font-bold text-xl py-2 text-neutral-900 hover:text-neutral-700 transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)} // Close menu on item click
             >
