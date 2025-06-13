@@ -217,9 +217,6 @@ const DesktopProjectGallery = ({
           touchAction: 'pan-y' // 세로 스크롤만 허용, 가로 스크롤은 방지
         }}
       >
-        {/* 왼쪽 그라데이션 효과 */}
-        <div className="pointer-events-none fixed left-0 w-16 h-full bg-gradient-to-r from-stone-50 to-transparent z-10"></div>
-        
         {/* 이미지 목록 */}
         {images.map((image, index) => (
           <div 
@@ -296,9 +293,9 @@ const DesktopProjectGallery = ({
                       onTouchEnd={handleDragEnd}
                     >
                       {/* 시각적 구분선 추가 */}
-                      <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-white shadow-lg -z-0 h-full -translate-x-1/2"></div>
+                      <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-background shadow-lg -z-0 h-full -translate-x-1/2"></div>
                       {/* 핸들 중앙 원형 버튼 - 시각적 표시는 그대로 유지 */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow-lg flex items-center justify-center cursor-col-resize">
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-background rounded-full shadow-lg flex items-center justify-center cursor-col-resize">
                         <div className="flex space-x-0.5" aria-hidden="true">
                           <div className="w-0.5 h-2 bg-gray-400"></div>
                           <div className="w-0.5 h-2 bg-gray-400"></div>
@@ -308,48 +305,10 @@ const DesktopProjectGallery = ({
                   </>
                 )}
               </div>
-              
-              {/* before/after 라벨 표시 (페어가 있는 경우만) */}
-              {image.hasPair && (
-                <>
-                  <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1">
-                    After
-                  </div>
-                  <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1">
-                    Before
-                  </div>
-                </>
-              )}
             </div>
           </div>
         ))}
-        
-        {/* 오른쪽 그라데이션 효과 */}
-        <div className="pointer-events-none fixed right-0 w-16 h-full bg-gradient-to-l from-stone-50 to-transparent z-10"></div>
       </div>
-
-      {/* 인디케이터 (선택 사항) */}
-      <div className="flex justify-center mt-4 gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => scrollToImage(index)}
-            className={`w-2 h-2 rounded-full transition-all ${activeIndex === index ? "bg-black w-4" : "bg-gray-300"}`}
-            aria-label={`이미지 ${index + 1}로 이동`}
-          ></button>
-        ))}
-      </div>
-
-      {/* 스크롤바 숨기는 스타일 */}
-      <style jsx global>{`
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .hide-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </div>
   );
 };
