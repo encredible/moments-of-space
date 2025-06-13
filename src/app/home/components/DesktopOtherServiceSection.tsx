@@ -77,11 +77,11 @@ const services: PictogramService[] = [
   },
 ];
 
-const PictogramServicesSection: React.FC = () => {
+const DesktopOtherServiceSection: React.FC = () => {
   const [hoveredService, setHoveredService] = useState<string | null>(null);
 
   return (
-    <section className="py-16">
+    <section className="hidden py-16 md:block">
       <div className="container mx-auto px-4">
         <SectionTitle
           title="OTHER SERVICES"
@@ -131,4 +131,4 @@ const PictogramServicesSection: React.FC = () => {
   );
 };
 
-export default PictogramServicesSection;
+export default DesktopOtherServiceSection;

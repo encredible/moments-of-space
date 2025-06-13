@@ -4,11 +4,11 @@ import homeContent from '../../home/content.json';
 import SectionTitle from '../../components/SectionTitle';
 import Image from "next/image";
 
-export default function InteriorServiceIconsSection() {
+export default function MobileOtherServiceSection() {
   const { title, description, items } = homeContent.interiorIcons;
 
   return (
-    <section className="py-12 md:py-16 lg:py-20">
+    <section className="py-12 md:py-16 lg:py-20 md:hidden">
       <div className="container mx-auto px-4">
         <SectionTitle
           title={title}

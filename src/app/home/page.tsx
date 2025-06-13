@@ -4,14 +4,14 @@ import ServiceListSplitSection from './components/ServiceListSplitSection';
 import PageLayout from '../components/PageLayout';
 import HeroSection from './components/HeroSection';
 import CtaSection from './components/CtaSection';
-import InteriorServiceIconsSection from './components/InteriorServiceIconsSection';
+import MobileOtherServiceSection from './components/MobileOtherServiceSection';
 import React from "react";
 import ProcessSection from "./components/ProcessSection"; // 새로 추가
 import MobileProjectGallery from "./components/MobileProjectGallery";
 import content from "./content.json";
 import DesktopProjectGallery from "@/app/home/components/DesktopProjectGallery";
 import ClockSection from "./components/ClockSection"; // 새로 추가
-import PictogramServicesSection from "./components/PictogramServicesSection"; // 픽토그램 서비스 섹션 추가
+import DesktopOtherServiceSection from "./components/DesktopOtherServiceSection"; // 픽토그램 서비스 섹션 추가
 
 export default function HomePage() {
   return (
@@ -34,12 +34,12 @@ export default function HomePage() {
         />
         
         {/* Interior Icons Section */}
-        <InteriorServiceIconsSection/>
+        <MobileOtherServiceSection/>
       
       </PageLayout>
       
       {/* 픽토그램 서비스 섹션 */}
-      <PictogramServicesSection />
+      <DesktopOtherServiceSection />
 
       {/* 수평 스크롤 이미지 갤러리 */}
       <MobileProjectGallery
