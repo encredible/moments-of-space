@@ -1,5 +1,4 @@
 'use client';
-// import ServiceHighlights from './components/ServiceHighlights'; // LearnMoreSection으로 이동
 import ServiceListSplitSection from './components/ServiceListSplitSection';
 import PageLayout from '../components/PageLayout';
 import HeroSection from './components/HeroSection';

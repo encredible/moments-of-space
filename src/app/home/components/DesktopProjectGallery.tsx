@@ -2,7 +2,6 @@
 
 import React, { useState, useRef, useEffect, MouseEvent, TouchEvent } from "react";
 import Image from "next/image";
-import {Section} from "lucide-react";
 import SectionTitle from "@/app/components/SectionTitle";
 
 interface GalleryImageData {
