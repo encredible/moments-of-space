@@ -11,17 +11,8 @@
 
 /* 나눔스퀘어 ACR 폰트 정의 */
 @font-face {
-  font-family: 'NanumSquareACR';
-  src: url('../fonts/NanumSquareOTF_acR.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* 마루부리 폰트 정의 */
-@font-face {
-  font-family: 'MaruBuri';
-  src: url('../fonts/MaruBuri-Regular.otf') format('opentype');
+  font-family: 'NanumSquareEB';
+  src: url('../fonts/NanumSquareEB.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -41,9 +32,7 @@
   --foreground: #171717;
   --custom-bg: #ecece5; /* 원하는 커스텀 배경색 */
   --card-bg: #f3f2ee;
-  --font-nanumsquare: 'NanumSquare', sans-serif;
-  --font-maruburi: 'MaruBuri', sans-serif;
-  
+
   /* 부드러운 스크롤 동작 */
   scroll-behavior: smooth;
 }
@@ -51,8 +40,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-nanumsquare);
-  --font-mono: var(--font-nanumsquare);
   --color-custom-bg: var(--custom-bg); /* 커스텀 색상 추가 */
   --color-card-bg: var(--card-bg); /* 커스텀 색상 추가 */
 }
@@ -77,12 +64,12 @@ body {
   font-family: 'NanumSquare', sans-serif;
 }
 
-.font-korean-button {
-  font-family: 'NanumSquare', sans-serif;
+.font-korean-bold {
+  font-family: 'NanumSquareEB', sans-serif;
 }
 
-.font-nanum-acr {
-  font-family: 'NanumSquareACR', sans-serif;
+.font-korean-button {
+  font-family: 'NanumSquare', sans-serif;
 }
 
 .font-gillsansnova-book {

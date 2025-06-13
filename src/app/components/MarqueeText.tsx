@@ -12,7 +12,7 @@ const MarqueeText: React.FC<MarqueeTextProps> = ({ text, className }) => {
 
   return (
     // Outer container: handles overflow and basic styling
-    <div className={`overflow-hidden text-black font-bold border-y-2 py-2 font-nanum-acr bg-[var(--background)] ${className || ''}`}>
+    <div className={`overflow-hidden text-black font-bold border-y-2 py-2 font-korean bg-[var(--background)] ${className || ''}`}>
       {/* Track: this element is animated. It needs to be wide enough. */}
       {/* inline-block ensures it shrinks to content, whitespace-nowrap ensures spans stay on one line. */}
       <div className="inline-block whitespace-nowrap animate-marquee-custom">
