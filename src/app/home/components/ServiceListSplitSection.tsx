@@ -9,8 +9,8 @@ export default function ServiceListSplitSection() {
 
   return (
     <section id="services-section">
-      <SectionTitle title="HOME STYLING SERVICE" description="인테리어 공사 없이도 당신의 공간은 변화할 수 있습니다." />
-      {serviceList.map((service: SplitSectionProps, index: number) => (
+      <SectionTitle title={serviceList.title} description={serviceList.description} />
+      {serviceList.items.map((service: SplitSectionProps, index: number) => (
         <SplitSection
           key={`service-section-${index}`}
           imageUrl={service.imageUrl}
