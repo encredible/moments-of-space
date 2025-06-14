@@ -3,7 +3,6 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import MarqueeText from "@/app/components/MarqueeText";
 import NavigationBar from "@/app/components/NavigationBar";
-import FloatingTalkButton from "@/app/components/FloatingTalkButton";
 import footerContent from '@/app/data/footer_content.json';
 
 export default function RootLayout({
@@ -22,8 +21,6 @@ export default function RootLayout({
         <Header />
           {children}
         <Footer />
-        {/* 카카오톡 플로팅 버튼 */}
-        <FloatingTalkButton link={typedFooterContent.kakao_talk_link} />
       </body>
     </html>
   );
