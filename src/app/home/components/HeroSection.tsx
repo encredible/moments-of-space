@@ -20,7 +20,11 @@ interface RandomImageProps {
   zIndex: number;
 }
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  isMobile: boolean;
+}
+
+export default function HeroSection({isMobile}: HeroSectionProps) {
   // 랜덤 이미지 배열 상태
   const [randomImages, setRandomImages] = useState<RandomImageProps[]>([]);
   
@@ -196,7 +200,10 @@ export default function HeroSection() {
       const top = (cell.row * cellHeight) + (cellHeight / 2) + offsetY;
       
       // 회전과 크기에 무작위성 추가
-      const size = Math.random() * 40 + 60; // 60-100px 크기
+      var size = Math.random() * 40 + 60; // 60-100px 크기
+      if (isMobile) {
+        size *= 0.7
+      }
       const rotate = Math.random() * 40 - 20; // -20° ~ +20° 회전
       const zIndex = Math.floor(Math.random() * 10) + 1;
       

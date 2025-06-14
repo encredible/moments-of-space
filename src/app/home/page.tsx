@@ -18,7 +18,7 @@ export default function HomePage() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <HeroSection/>
+      <HeroSection isMobile={isMobile}/>
       
       <PageLayout>
         {/* Homs styling service list Section with Images */}
