@@ -83,7 +83,7 @@ body {
 }
 
 .animate-marquee-custom {
-  animation: marquee 480s linear infinite; /* Speed further halved (1/4 of original) */
+  animation: marquee 20s linear infinite; /* Speed further halved (1/4 of original) */
 }
 
 /* Sentence Slide Animation */
@@ -109,4 +109,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* 마퀴 텍스트 컨테이너 */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 2rem;
 }

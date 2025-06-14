@@ -1,11 +1,15 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
+import {useMediaQuery} from "react-responsive";
 
 interface MarqueeTextProps {
   className?: string;
+  texts?: string[];
 }
 
-const MarqueeText: React.FC<MarqueeTextProps> = ({ className }) => {
+const MarqueeText: React.FC<MarqueeTextProps> = ({className}) => {
+  const isMobile = useMediaQuery({maxWidth: 767}); // md 미만이면 모바일
+  
   const texts = [
     "집꾸미기 어디서부터 시작해야 할지 막막하신가요?",
     "어떤 스타일로 공간을 채워야 할지, 어떤 가구를 어디서 사야 할지, 내가 고른 가구들이 다함께 어울릴지 수많은 선택과 결정들에 지치시지 않았나요?",
@@ -26,16 +30,29 @@ const MarqueeText: React.FC<MarqueeTextProps> = ({ className }) => {
     return () => clearInterval(interval);
   }, [texts.length]);
   
+  // Marquee 텍스트를 위한 반복 텍스트 생성
+  const marqueeContent = texts.join(' ');
   return (
     // 외부 컨테이너: 스타일링과 오버플로우 처리
     <div className={`text-black border-b-2 py-2 font-korean bg-[var(--background)] ${className || ''}`}>
-      {/* 문장이 슬라이드되는 컨테이너 */}
-      <div className="sentence-container">
-        {/* 현재 문장만 렌더링 */}
-        <div key={currentSentenceIndex} className="sentence-slide px-4">
-          {texts[currentSentenceIndex]}
+      {isMobile ?
+        <div className="mobile-animation">
+          <div className="marquee-container">
+            <div className="animate-marquee-custom marquee-content">
+              {/* 마퀴 텍스트 2번 반복 (연속적으로 흐르는 효과를 위해) */}
+              {marqueeContent} • {marqueeContent}
+            </div>
+          </div>
         </div>
-      </div>
+        :
+        <div className="desktop-animation">
+          <div className="sentence-container">
+            <div key={`desktop-${currentSentenceIndex}`} className="sentence-slide px-4">
+              {texts[currentSentenceIndex]}
+            </div>
+          </div>
+        </div>
+      }
     </div>
   );
 };
