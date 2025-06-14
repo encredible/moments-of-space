@@ -94,14 +94,14 @@ const MobileProjectGallery = ({
       {/* 갤러리 스크롤 컨테이너 */}
       <div 
         ref={scrollContainerRef}
-        className="relative overflow-x-auto hide-scrollbar flex gap-12 pl-4 pr-4 pb-4"
+        className="relative overflow-x-auto hide-scrollbar flex gap-2"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* 이미지 목록 */}
         {images.map((image, index) => (
           <div 
             key={index} 
-            className={`gallery-image-container flex-shrink-0 cursor-pointer transition-all duration-300 ${activeIndex === index ? "scale-105" : "scale-100"}`}
+            className={`gallery-image-container flex-shrink-0 cursor-pointer`}
             onClick={() => scrollToImage(index)}
             onDoubleClick={() => handleDoubleClick(index)}
           >
