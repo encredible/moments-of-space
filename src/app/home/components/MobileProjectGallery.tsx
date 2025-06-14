@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import SectionTitle from "@/app/components/SectionTitle";
+import PageLayout from "@/app/components/PageLayout";
 
 interface GalleryImageData {
   src: string;
@@ -86,7 +87,9 @@ const MobileProjectGallery = ({
 
   return (
     <section id="project-gallery" className="md:hidden w-full py-16">
-      <SectionTitle title={title} description={subtitle} />
+      <PageLayout>
+        <SectionTitle title={title} description={subtitle} />
+      </PageLayout>
 
       {/* 갤러리 스크롤 컨테이너 */}
       <div 

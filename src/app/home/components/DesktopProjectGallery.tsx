@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect, MouseEvent, TouchEvent } from "react";
 import Image from "next/image";
 import SectionTitle from "@/app/components/SectionTitle";
+import PageLayout from "@/app/components/PageLayout";
 
 interface GalleryImageData {
   src: string;
@@ -200,7 +201,9 @@ const DesktopProjectGallery = ({
 
   return (
     <section id="project-gallery" className="hidden md:block py-16 md:py-24">
-      <SectionTitle title={title} description={subtitle} />
+      <PageLayout>
+        <SectionTitle title={title} description={subtitle} />
+      </PageLayout>
 
       {/* 갤러리 스크롤 컨테이너 - 모바일에서는 좌우 스크롤 금지 */}
       <div 

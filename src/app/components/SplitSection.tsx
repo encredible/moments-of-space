@@ -31,8 +31,6 @@ export default function SplitSection({
   includedItems = [],
   feeTitle,
   feeItems = [],
-  buttonText,
-  buttonLink = '#',
   imageOnLeft = true,
   imageWidth = 600,
   imageHeight = 800,

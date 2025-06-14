@@ -11,8 +11,8 @@ interface PageLayoutProps {
  */
 export default function PageLayout({ children, className = '' }: PageLayoutProps) {
   return (
-    <main className={`max-w-screen-xl mx-auto py-5 md:py-10 px-0 md:px-2 w-full ${className}`}>
+    <div className={`max-w-screen-xl mx-auto px-3 md:px-0 w-full ${className}`}>
       {children}
-    </main>
+    </div>
   );
 }

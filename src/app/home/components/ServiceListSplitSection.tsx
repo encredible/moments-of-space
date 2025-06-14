@@ -27,8 +27,6 @@ export default function ServiceListSplitSection() {
           includedItems={service.includedItems}
           feeTitle={service.feeTitle}
           feeItems={service.feeItems}
-          buttonText={service.buttonText}
-          buttonLink={service.buttonLink}
         />
       ))}
     </section>

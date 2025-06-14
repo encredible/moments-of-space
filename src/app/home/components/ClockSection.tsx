@@ -32,7 +32,7 @@ export default function ClockSection({ title, description, items }: ClockSection
   }, [items.length]);
   
   return (
-    <section className="py-16 px-2 md:py-24 w-full">
+    <section className="py-16 md:py-24 w-full">
       <SectionTitle 
         title={title} 
         description={description} 

@@ -39,9 +39,7 @@
       "feeItems": [
         "₩200,000 (1실 기준) / ₩150,000 (추가 1실 당)",
         "1주일 이내 (피드백 포함 최대 10일)"
-      ],
-      "buttonText": "자세히 보기",
-      "buttonLink": "/services/online-styling"
+      ]
     },
     {
       "imageUrl": "/images/service/service_2.jpg",
@@ -61,9 +59,7 @@
       "feeItems": [
         "₩300,000 (1실 기준) / ₩200,000 (추가 1실 당)",
         "2주 (1회 피드백 포함 최대 20일)"
-      ],
-      "buttonText": "자세히 보기",
-      "buttonLink": "/services/offline-styling"
+      ]
     },
     {
       "imageUrl": "/images/service/service_3.jpg",
@@ -83,9 +79,7 @@
       "feeItems": [
         "₩100,000 (단일 제안 1회 기준)",
         "1주일 이내"
-      ],
-      "buttonText": "자세히 보기",
-      "buttonLink": "/services/offline-styling"
+      ]
     },
     {
       "imageUrl": "/images/service/service_4.jpg",
@@ -103,9 +97,7 @@
       "feeItems": [
         "₩100,000 (단일 제안 1회 기준)",
         "1주일 이내"
-      ],
-      "buttonText": "자세히 보기",
-      "buttonLink": "/services/offline-styling"
+      ]
     }
   ],
   "process": {
