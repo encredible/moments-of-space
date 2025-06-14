@@ -8,7 +8,7 @@ export default function ServiceListSplitSection() {
   const serviceList = homeContent.serviceList || [] as SplitSectionProps[];
 
   return (
-    <section id="services-section" className="py-8 pt-16 mt-[-2rem]">
+    <section id="services-section">
       <SectionTitle title="HOME STYLING SERVICE" description="인테리어 공사 없이도 당신의 공간은 변화할 수 있습니다." />
       {serviceList.map((service: SplitSectionProps, index: number) => (
         <SplitSection

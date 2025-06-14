@@ -2,7 +2,6 @@
 import ServiceListSplitSection from './components/ServiceListSplitSection';
 import PageLayout from '../components/PageLayout';
 import HeroSection from './components/HeroSection';
-import CtaSection from './components/CtaSection';
 import MobileOtherServiceSection from './components/MobileOtherServiceSection';
 import React from "react";
 import ProcessSection from "./components/ProcessSection"; // 새로 추가
@@ -56,9 +55,6 @@ export default function HomePage() {
             height={480}
           />
       }
-      
-      {/* Call to Action Section */}
-      <CtaSection/>
     </div>
   );
 }
