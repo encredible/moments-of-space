@@ -85,3 +85,28 @@ body {
 .animate-marquee-custom {
   animation: marquee 480s linear infinite; /* Speed further halved (1/4 of original) */
 }
+
+/* Sentence Slide Animation */
+@keyframes sentence-slide {
+  0% { transform: translateX(100%); opacity: 0; } /* 오른쪽에서 시작 */
+  20% { transform: translateX(0); opacity: 1; } /* 가운데로 이동 */
+  80% { transform: translateX(0); opacity: 1; } /* 가운데에 머무름 */
+  100% { transform: translateX(-100%); opacity: 0; } /* 왼쪽으로 사라짐 */
+}
+
+.sentence-slide {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  animation: sentence-slide 6s ease-in-out forwards;
+  white-space: nowrap;
+}
+
+.sentence-container {
+  position: relative;
+  height: 1.5rem; /* 문장 높이에 맞게 조정 */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
