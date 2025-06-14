@@ -85,7 +85,7 @@ const MobileProjectGallery = ({
   };
 
   return (
-    <section id="project-gallery-mobile" className="md:hidden w-full py-16">
+    <section id="project-gallery" className="md:hidden w-full py-16">
       <SectionTitle title={title} description={subtitle} />
 
       {/* 갤러리 스크롤 컨테이너 */}

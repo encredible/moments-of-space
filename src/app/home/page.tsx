@@ -10,9 +10,12 @@ import MobileProjectGallery from "./components/MobileProjectGallery";
 import content from "./content.json";
 import DesktopProjectGallery from "@/app/home/components/DesktopProjectGallery";
 import ClockSection from "./components/ClockSection"; // 새로 추가
-import DesktopOtherServiceSection from "./components/DesktopOtherServiceSection"; // 픽토그램 서비스 섹션 추가
+import DesktopOtherServiceSection from "./components/DesktopOtherServiceSection";
+import {useMediaQuery} from "react-responsive"; // 픽토그램 서비스 섹션 추가
 
 export default function HomePage() {
+  const isMobile = useMediaQuery({maxWidth: 767}); // md 미만이면 모바일
+  
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -32,28 +35,27 @@ export default function HomePage() {
           items={content.clockSection.items}
         />
         
-        {/* Interior Icons Section */}
-        <MobileOtherServiceSection/>
+        
+        {isMobile ? <MobileOtherServiceSection/> : <DesktopOtherServiceSection/>}
       
       </PageLayout>
       
-      {/* 픽토그램 서비스 섹션 */}
-      <DesktopOtherServiceSection />
-
       {/* 수평 스크롤 이미지 갤러리 */}
-      <MobileProjectGallery
-        title={content.projectGallery.title}
-        subtitle={content.projectGallery.mobileDescription}
-        images={content.projectGallery.images}
-        height={320}
-      />
-      
-      <DesktopProjectGallery
-        title={content.projectGallery.title}
-        subtitle={content.projectGallery.description}
-        images={content.projectGallery.images}
-        height={320}
-      />
+      {
+        isMobile ?
+          <MobileProjectGallery
+            title={content.projectGallery.title}
+            subtitle={content.projectGallery.mobileDescription}
+            images={content.projectGallery.images}
+            height={320}
+          />
+          : <DesktopProjectGallery
+            title={content.projectGallery.title}
+            subtitle={content.projectGallery.description}
+            images={content.projectGallery.images}
+            height={320}
+          />
+      }
       
       {/* Call to Action Section */}
       <CtaSection/>

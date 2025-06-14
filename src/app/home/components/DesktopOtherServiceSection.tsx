@@ -29,7 +29,7 @@ const services: PictogramService[] = [
     id: 'closet',
     name: '정리',
     imagePath: '/images/pictogram/픽토그램_정리.svg',
-    x: 19.5,
+    x: 18.5,
     y: 45,
     size: 0.85,
     zIndex: 20, // 높은 z-index
