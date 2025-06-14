@@ -4,7 +4,7 @@ import homeContent from "@/app/home/content.json";
 import SectionTitle from "@/app/components/SectionTitle";
 
 const ProcessSection = () => {
-  const [activeStep, setActiveStep] = useState(1); // 기본값으로 두 번째 단계(인덱스 1) 선택
+  const [activeStep, setActiveStep] = useState(0);
   const processSteps = homeContent.process.processSteps;
   
   return (
