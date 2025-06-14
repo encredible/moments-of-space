@@ -223,10 +223,6 @@
         "title": "도배/페인트/필름"
       },
       {
-        "imageSrc": "/images/icons/service_purchase.png",
-        "title": "구매 대행"
-      },
-      {
         "imageSrc": "/images/icons/service_custom_furniture.png",
         "title": "제작 가구"
       },

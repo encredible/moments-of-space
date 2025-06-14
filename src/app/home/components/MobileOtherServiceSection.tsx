@@ -19,12 +19,12 @@ export default function MobileOtherServiceSection() {
           {items.map((item, index) => (
             <div 
               key={`icon-${index}`} 
-              className="flex flex-col items-center text-center p-4"
+              className="flex flex-col items-center text-center p-1"
             >
-              <div className="relative w-24 h-24 mb-4 flex items-center justify-center text-neutral-700">
+              <div className="relative w-15 h-15 mb-4 flex items-center justify-center text-neutral-700">
                 <Image src={item.imageSrc} alt={item.title} fill className="object-contain"/>
               </div>
-              <h3 className="text-lg font-korean-button text-neutral-700">{item.title}</h3>
+              <h3 className="text-sm font-korean-button text-neutral-700">{item.title}</h3>
             </div>
           ))}
         </div>

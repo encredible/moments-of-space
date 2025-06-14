@@ -19,7 +19,7 @@ interface PictogramService {
 const services: PictogramService[] = [
   {
     id: 'furniture-assembly',
-    name: '가구조립',
+    name: '가구 조립',
     imagePath: '/images/pictogram/픽토그램_가구조립.svg',
     x: 42, // 중앙
     y: 75,
@@ -36,7 +36,7 @@ const services: PictogramService[] = [
   },
   {
     id: 'painting',
-    name: '도장',
+    name: '도배/페인트/필름',
     imagePath: '/images/pictogram/픽토그램_도장.svg',
     x: 78,
     y: 30,
@@ -44,7 +44,7 @@ const services: PictogramService[] = [
   },
   {
     id: 'custom-furniture',
-    name: '제작가구',
+    name: '제작 가구',
     imagePath: '/images/pictogram/픽토그램_제작가구.svg',
     x: 24.5,
     y: 50,
@@ -53,7 +53,7 @@ const services: PictogramService[] = [
   },
   {
     id: 'lighting-install',
-    name: '조명설치',
+    name: '조명 설치',
     imagePath: '/images/pictogram/픽토그램_조명설치.svg',
     x: 50,
     y: 25,
@@ -69,7 +69,7 @@ const services: PictogramService[] = [
   },
   {
     id: 'curtain-install',
-    name: '커튼설치',
+    name: '커튼 설치',
     imagePath: '/images/pictogram/픽토그램_커튼설치.svg',
     x: 65,
     y: 55,
