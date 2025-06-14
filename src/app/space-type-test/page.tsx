@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import questions, { QuestionOption } from './questions'; // questions.ts에서 데이터 및 타입 가져오기
 import { useRouter } from 'next/navigation';
+import PageLayout from "@/app/components/PageLayout";
 
 // MBTI 각 유형별 점수를 저장할 인터페이스
 interface Scores {
@@ -53,7 +54,7 @@ export default function SpaceTypeTestPage() {
   const progressPercentage = Math.round(((currentQuestionIndex + 1) / questions.length) * 100);
 
   return (
-    <div className="container mx-auto flex flex-col items-center h-[80vh]">
+    <PageLayout>
       <div className="w-full max-w-2xl p-6 md:p-10 my-8 shadow-lg bg-card-bg">
         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
           나에게 맞는 공간 찾기 테스트
@@ -96,6 +97,6 @@ export default function SpaceTypeTestPage() {
           <p className="text-center text-gray-600 text-xl py-10">테스트를 불러오는 중입니다...</p>
         )}
       </div>
-    </div>
+    </PageLayout>
   );
 }
