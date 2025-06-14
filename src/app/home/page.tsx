@@ -53,7 +53,7 @@ export default function HomePage() {
             title={content.projectGallery.title}
             subtitle={content.projectGallery.description}
             images={content.projectGallery.images}
-            height={320}
+            height={480}
           />
       }
       
