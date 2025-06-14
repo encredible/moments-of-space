@@ -217,7 +217,7 @@ export default function HeroSection() {
   }, []); // 컴포넌트 마운트 시 한 번만 실행
   
   return (
-    <section className="h-[80vh] overflow-hidden mb-8 z-0 relative">
+    <section className="h-[70vh] overflow-hidden mb-8 z-0 relative">
       {/* 랜덤 이미지들 렌더링 */}
       {randomImages.map((img, index) => (
         <div 
