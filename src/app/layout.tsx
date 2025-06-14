@@ -1,9 +1,9 @@
 import "./globals.css";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
-import MarqueeText from "@/app/components/MarqueeText";
-import NavigationBar from "@/app/components/NavigationBar";
-import footerContent from '@/app/data/footer_content.json';
+import Header from "@/app/components/layout/Header";
+import Footer from "@/app/components/layout/Footer";
+import MarqueeText from "@/app/components/layout/MarqueeText";
+import NavigationBar from "@/app/components/layout/NavigationBar";
+import footerContent from '@/app/components/layout/footer_content.json';
 
 export default function RootLayout({
   children,

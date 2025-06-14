@@ -1,6 +1,6 @@
 'use client';
 
-import footerContent from '@/app/data/footer_content.json';
+import footerContent from '@/app/components/layout/footer_content.json';
 
 // footer_content.json을 위한 타입 정의
 interface FooterContent {
