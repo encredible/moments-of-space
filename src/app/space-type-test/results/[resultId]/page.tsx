@@ -1,14 +1,20 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import resultsData, { ResultType } from '../../results'; // 경로 수정
-import { useParams, useRouter } from 'next/navigation';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HomeIcon, ArrowPathIcon, TagIcon, LightBulbIcon, SparklesIcon, PaintBrushIcon, ShoppingCartIcon, ChatBubbleLeftRightIcon, CheckBadgeIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, ArrowPathIcon, TagIcon, LightBulbIcon, SparklesIcon, PaintBrushIcon, ShoppingCartIcon, ChatBubbleLeftRightIcon, CheckBadgeIcon, UserIcon } from '@heroicons/react/24/outline';
 
 export default function TestResultPage() {
   const params = useParams();
-  const router = useRouter(); // useRouter는 현재 사용되지 않지만, 향후 확장성을 위해 유지
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  
+  // URL 매개변수에서 사용자 이름과 MBTI 가져오기
+  const userName = searchParams.get('name') || '';
+  const userMbti = searchParams.get('mbti') || '모름';
+  
   const resultId = params.resultId as string;
   const result = resultsData.find((r: ResultType) => r.id.toLowerCase() === resultId?.toLowerCase()); // 타입 명시
 
@@ -42,7 +48,18 @@ export default function TestResultPage() {
         <div className="max-w-3xl mx-auto bg-white shadow-2xl overflow-hidden my-8">
           <div className={`p-6 md:p-10 ${accentClass} text-white`}>
             <h1 className="text-3xl md:text-4xl font-bold mb-2 text-center">{result.name}</h1>
-            <p className="text-xl md:text-2xl text-center opacity-90">'✅ 공간 MBTI 유형: {result.id}형 – {result.name}'</p>
+            <p className="text-xl md:text-2xl text-center opacity-90 mb-2">✅ 공간 MBTI 유형: {result.id}형 – {result.name}</p>
+            {userName && (
+              <div className="flex flex-col items-center mt-4">
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg py-2 px-6 inline-flex items-center">
+                  <UserIcon className="w-5 h-5 mr-2" />
+                  <span className="font-medium">{userName}</span>
+                  {userMbti !== '모름' && (
+                    <span className="ml-3 bg-white/30 rounded-full px-3 py-1 text-sm">실제 MBTI: {userMbti}</span>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="p-6 md:p-10">
