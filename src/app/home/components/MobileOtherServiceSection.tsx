@@ -14,7 +14,7 @@ export default function MobileOtherServiceSection() {
         description={description}
       />
       
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto px-10">
         {items.map((item, index) => (
           <div
             key={`icon-${index}`}
