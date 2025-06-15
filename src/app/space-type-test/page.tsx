@@ -133,7 +133,7 @@ export default function SpaceTypeTestPage() {
                   id="userMbti"
                   value={userMbti}
                   onChange={handleMbtiChange}
-                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
                 >
                   {mbtiOptions.map((option) => (
                     <option key={option} value={option}>{option}</option>
@@ -144,7 +144,7 @@ export default function SpaceTypeTestPage() {
             
             <button
               onClick={handleStartTest}
-              className="w-full mt-8 py-4 bg-neutral-800 text-white text-lg font-semibold rounded-md hover:bg-orange-600 transition-colors duration-300"
+              className="w-full mt-8 py-4 bg-neutral-800 text-white text-lg font-semibold rounded-md hover:bg-orange-400 transition-colors duration-300"
             >
               테스트 시작하기
             </button>

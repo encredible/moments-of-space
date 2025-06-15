@@ -4,7 +4,7 @@ import resultsData, { ResultType } from '../../results';
 import { useParams, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowPathIcon, SparklesIcon, ShareIcon, CameraIcon } from '@heroicons/react/24/outline';
+import { ArrowPathIcon, SparklesIcon, ShareIcon, CameraIcon, LinkIcon } from '@heroicons/react/24/outline';
 import { toPng } from 'html-to-image';
 import { saveAs } from 'file-saver';
 
@@ -106,6 +106,26 @@ export default function TestResultPage() {
     }
   };
 
+  // URL 클립보드에 복사하는 함수
+  const copyUrlToClipboard = async () => {
+    if (!isValidResult(result)) return;
+    
+    try {
+      setIsSharing(true);
+      setShareMessage('URL 복사 중...');
+      
+      // 현재 URL 가져오기
+      const currentUrl = window.location.href;
+      
+      // 클립보드에 복사
+      await navigator.clipboard.writeText(currentUrl);
+      updateShareMessage('URL이 클립보드에 복사되었습니다!');
+    } catch (error) {
+      console.error('URL 복사 중 오류 발생:', error);
+      updateShareMessage('URL 복사에 실패했습니다.');
+    }
+  };
+
   if (!result) {
     return (
       <div className="container mx-auto p-4 md:p-8 text-center min-h-screen flex flex-col justify-center items-center">
@@ -124,7 +144,21 @@ export default function TestResultPage() {
 
   // 일관된 색상으로 변경
   const mainTextColor = 'text-black';
-
+  
+  function isInAppBrowser() {
+    const ua = navigator.userAgent.toLowerCase();
+    
+    return (
+      ua.includes('kakaotalk') ||
+      ua.includes('instagram') ||
+      ua.includes('fbav') || // Facebook
+      ua.includes('line') ||
+      ua.includes('naver') ||
+      ua.includes('daum') ||
+      ua.includes('whale') && ua.includes('naver') // Naver Whale (네이버앱 기반)
+    );
+  }
+  
   return (
     <div className={`min-h-screen ${mainTextColor} font-handwriting`}>
       <div className="container mx-auto p-3">
@@ -177,7 +211,7 @@ export default function TestResultPage() {
                   <div className="text-center rounded-t-md text-md font-extrabold py-2 bg-background">
                     👩 나의 MBTI
                   </div>
-                  <div className="text-center rounded-b-md bg-result-card-bg">
+                  <div className="text-center rounded-b-md bg-result-card-bg py-2">
                     {userMbti !== '모름' ? `안녕나야, ${userMbti}` : `${userName}`}
                   </div>
                 </div>
@@ -185,7 +219,7 @@ export default function TestResultPage() {
                   <div className="text-center rounded-t-md text-md font-extrabold py-2 bg-background">
                     🏠 나의 공간 MBTI
                   </div>
-                  <div className="text-center rounded-b-md bg-result-card-bg">
+                  <div className="text-center rounded-b-md bg-result-card-bg py-2">
                     {result.name} {result.id}
                   </div>
                 </div>
@@ -210,8 +244,9 @@ export default function TestResultPage() {
             </div>
           </div>
         </div>)}
-        {/* 이미지 저장 및 공유 버튼 */}
-        <div className="max-w-md mx-auto mt-6 mb-10 flex flex-col items-center">
+      </div>
+      {/* 이미지 저장 및 공유 버튼 */}
+      <div className="max-w-xl mx-auto mt-6 mb-10 flex flex-col items-center">
           {isSharing ? (
             <div className="text-center py-3">
               <p className="text-gray-700">{shareMessage}</p>
@@ -226,16 +261,26 @@ export default function TestResultPage() {
                 이미지로 저장
               </button>
               <button 
-                onClick={shareResult}
+                onClick={copyUrlToClipboard}
                 disabled={!result}
                 className={`px-4 py-2 ${result ? 'bg-neutral-700 hover:bg-orange-400' : 'bg-gray-400 cursor-not-allowed'} text-white font-medium rounded-lg transition-colors flex items-center`}>
-                <ShareIcon className="w-5 h-5 mr-2" />
-                결과 공유하기
+                <LinkIcon className="w-5 h-5 mr-2" />
+                URL 복사하기
               </button>
+              {
+                !isInAppBrowser() && (
+                  <button
+                    onClick={shareResult}
+                    disabled={!result}
+                    className={`px-4 py-2 ${result ? 'bg-neutral-700 hover:bg-orange-400' : 'bg-gray-400 cursor-not-allowed'} text-white font-medium rounded-lg transition-colors flex items-center`}>
+                    <ShareIcon className="w-5 h-5 mr-2" />
+                    결과 공유하기
+                  </button>
+                )
+              }
             </div>
           )}
         </div>
-      </div>
     </div>
   );
 }
