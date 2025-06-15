@@ -1,10 +1,10 @@
 "use client";
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import resultsData, { ResultType } from '../../results'; // 경로 수정
 import { useParams, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HomeIcon, ArrowPathIcon, SparklesIcon, ShareIcon, CameraIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, ArrowPathIcon, SparklesIcon, ShareIcon, CameraIcon, ClipboardDocumentIcon } from '@heroicons/react/24/outline';
 import { toPng } from 'html-to-image';
 import { saveAs } from 'file-saver';
 
@@ -25,6 +25,18 @@ export default function TestResultPage() {
   // 타입 가드 함수로 result가 undefined가 아닌지 확인
   const isValidResult = (result: ResultType | undefined): result is ResultType => {
     return result !== undefined;
+  };
+
+  // 브라우저 체크 함수
+  const isMobileBrowser = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+  };
+
+  // 카카오 브라우저 체크 함수
+  const isKakaoBrowser = () => {
+    return /KAKAOTALK/i.test(navigator.userAgent);
   };
   
   // 상태 메시지 업데이트 헬퍼 함수
@@ -67,6 +79,30 @@ export default function TestResultPage() {
   };
   
   // 결과 카드를 공유하는 함수 (Web Share API 사용)
+  // 결과 URL 생성 함수
+  const getShareUrl = () => {
+    const baseUrl = window.location.origin;
+    const path = window.location.pathname;
+    const searchParams = new URLSearchParams();
+    if (userName) searchParams.set('name', userName);
+    if (userMbti !== '모름') searchParams.set('mbti', userMbti);
+    
+    const queryString = searchParams.toString();
+    return `${baseUrl}${path}${queryString ? `?${queryString}` : ''}`;
+  };
+
+  // 클립보드에 복사하는 함수
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (error) {
+      console.error('클립보드 복사 실패:', error);
+      return false;
+    }
+  };
+
+  // 결과 공유 함수
   const shareResult = async () => {
     if (!resultCardRef.current || !isValidResult(result)) return;
     
@@ -80,15 +116,35 @@ export default function TestResultPage() {
       // dataUrl을 Blob으로 변환
       const blobData = await fetch(dataUrl).then(res => res.blob());
       
-      if (navigator.share) {
-        const file = new File([blobData], fileName, { type: 'image/png' });
+      // 카카오 브라우저 처리
+      if (isKakaoBrowser()) {
+        // 카카오 브라우저에서는 이미지 다운로드 후 URL 복사 제공
+        saveAs(blobData, fileName);
+        const shareUrl = getShareUrl();
+        const copied = await copyToClipboard(shareUrl);
         
+        if (copied) {
+          updateShareMessage('이미지가 저장되었습니다! \n결과 링크가 클립보드에 복사되었습니다.');
+        } else {
+          updateShareMessage('이미지가 저장되었습니다! \n공유를 위해 결과 페이지 주소를 복사해 보세요.');
+        }
+      } else if (navigator.share) {
         try {
-          await navigator.share({
+          // 모던 브라우저의 경우 Web Share API 사용
+          const file = new File([blobData], fileName, { type: 'image/png' });
+          const shareData: any = {
             title: `${userName || '나의'} 공간유형 - ${result.name}`,
             text: '모먼츠 오브 스페이스에서 나의 공간유형 테스트 결과를 확인해보세요!',
-            files: [file]
-          });
+          };
+          
+          // 파일 공유 지원 체크
+          if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            shareData.files = [file];
+          } else {
+            shareData.url = getShareUrl();
+          }
+          
+          await navigator.share(shareData);
           updateShareMessage('공유되었습니다!');
         } catch (error) {
           console.error('공유 중 오류 발생:', error);
@@ -96,13 +152,33 @@ export default function TestResultPage() {
           updateShareMessage('이미지가 저장되었습니다!');
         }
       } else {
-        // Web Share API를 지원하지 않는 경우 이미지 다운로드
+        // 지원하지 않는 브라우저는 이미지 다운로드만 제공
         saveAs(blobData, fileName);
         updateShareMessage('이미지가 저장되었습니다!');
       }
     } catch (error) {
       console.error('공유 준비 중 오류 발생:', error);
       updateShareMessage('공유 준비 중 오류가 발생했습니다.');
+    }
+  };
+
+  // URL 복사 함수
+  const copyResultUrl = async () => {
+    try {
+      setIsSharing(true);
+      setShareMessage('URL 복사 중...');
+      
+      const shareUrl = getShareUrl();
+      const copied = await copyToClipboard(shareUrl);
+      
+      if (copied) {
+        updateShareMessage('결과 페이지 주소가 클립보드에 복사되었습니다!');
+      } else {
+        updateShareMessage('URL 복사에 실패했습니다.');
+      }
+    } catch (error) {
+      console.error('URL 복사 중 오류 발생:', error);
+      updateShareMessage('URL 복사 중 오류가 발생했습니다.');
     }
   };
 
@@ -213,11 +289,11 @@ export default function TestResultPage() {
         {/* 이미지 저장 및 공유 버튼 */}
         <div className="max-w-md mx-auto mt-6 mb-10 flex flex-col items-center">
           {isSharing ? (
-            <div className="text-center py-3">
-              <p className="text-gray-700">{shareMessage}</p>
+            <div className="text-center p-4">
+              <p className="text-gray-700 whitespace-pre-line">{shareMessage}</p>
             </div>
           ) : (
-            <div className="flex space-x-4 font-korean-button">
+            <div className="flex flex-wrap justify-center gap-3 font-korean-button">
               <button 
                 onClick={saveAsImage}
                 disabled={!result}
@@ -231,6 +307,13 @@ export default function TestResultPage() {
                 className={`px-4 py-2 ${result ? 'bg-neutral-700 hover:bg-orange-400' : 'bg-gray-400 cursor-not-allowed'} text-white font-medium rounded-lg transition-colors flex items-center`}>
                 <ShareIcon className="w-5 h-5 mr-2" />
                 결과 공유하기
+              </button>
+              <button 
+                onClick={copyResultUrl}
+                disabled={!result}
+                className={`px-4 py-2 ${result ? 'bg-neutral-700 hover:bg-orange-400' : 'bg-gray-400 cursor-not-allowed'} text-white font-medium rounded-lg transition-colors flex items-center`}>
+                <ClipboardDocumentIcon className="w-5 h-5 mr-2" />
+                URL 복사하기
               </button>
             </div>
           )}
