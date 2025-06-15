@@ -2,6 +2,15 @@
 
 /* 나눔스퀘어 폰트 정의 */
 @font-face {
+  font-family: 'NanumOeHarMeoNiGeurSsi';
+  src: url('../fonts/NanumOeHarMeoNiGeurSsi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 나눔스퀘어 폰트 정의 */
+@font-face {
   font-family: 'NanumSquare';
   src: url('../fonts/NanumSquareR.otf') format('opentype');
   font-weight: normal;
@@ -76,6 +85,10 @@ body {
 
 .font-gillsansnova-book {
   font-family: 'GillSansNovaBook', sans-serif;
+}
+
+.font-handwriting {
+  font-family: 'NanumOeHarMeoNiGeurSsi', sans-serif;
 }
 
 /* Marquee Animation */

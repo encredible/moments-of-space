@@ -128,17 +128,17 @@ export default function TestResultPage() {
   const mainTextColor = 'text-black';
 
   return (
-    <div className={`min-h-screen ${mainTextColor}`}>
-      <div className="container mx-auto p-4 md:p-8 ">
+    <div className={`min-h-screen ${mainTextColor} font-handwriting`}>
+      <div className="container mx-auto p-3">
         {/* 디자인 헨더 */}
-        {result && (<div ref={resultCardRef} className="border bg-white border-gray-200 shadow-md overflow-hidden w-90 md:w-160 md:mx-auto">
+        {result && (<div ref={resultCardRef} className="border bg-white border-gray-200 shadow-md overflow-hidden w-full md:w-100 mx-auto p-6">
           {/* 헤더 부분 - LIVING COLLAGE */}
           <div className="p-4 text-black text-center relative">
             <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center space-x-2">
               <div className="w-3 h-3 rounded-full bg-yellow-200"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-200"></div>
             </div>
-            <h1 className="text-xl font-bold">LIVING COLLAGE</h1>
+            <h1 className="text-lg font-bold font-gillsansnova-book">LIVING COLLAGE</h1>
             <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center space-x-2">
               <div className="w-3 h-3 rounded-full bg-yellow-200"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-200"></div>
@@ -147,20 +147,20 @@ export default function TestResultPage() {
           
           {/* 공간 유형 제목 */}
           <div className="p-4">
-            <h2 className="text-2xl font-bold text-center bg-background">
-              {userName}의 공간은 <span className="block">{result.name}</span>
+            <h2 className="text-2xl text-center bg-background font-bold rounded-md py-3">
+              {userName}의 공간은 <span className="font-extrabold">{result.name}</span>
             </h2>
-            <div className="flex justify-center mt-3 flex-wrap gap-2 bg-result-card-bg">
+            <div className="flex justify-center mt-3 flex-wrap bg-result-card-bg rounded-md">
               {
                 result.recommendedItems.map((item, index) => (
-                  <span key={'recommendedItems-' + index} className="text-sm px-2 py-1"># {item}</span>
+                  <span key={'recommendedItems-' + index} className="text-md px-1 py-1">#{item}</span>
                 ))
               }
             </div>
           </div>
           
           {/* 이미지 소개 */}
-          <div className="p-6 flex justify-center border-2 mx-6 my-4">
+          <div className="p-6 flex justify-center border-1 mx-6 my-4">
             <Image
               src={result.imagePath}
               alt={result.name}
@@ -171,35 +171,35 @@ export default function TestResultPage() {
           </div>
           
           {/* MBTI 결과 영역 */}
-          <div className="px-6 pb-6 pt-2 mx-6 mb-4">
-            <div className="flex flex-col space-y-8">
+          <div className="">
+            <div className="flex flex-col">
               {/* 유저 정보 표시 */}
-              <div className="flex justify-around">
-                <div className="p-3 rounded flex-1 mr-1">
-                  <div className="text-center text-xs py-2 bg-background">
+              <div className="flex justify-around font-korean">
+                <div className="flex-1 mr-1 mb-2">
+                  <div className="text-center rounded-t-md text-md font-extrabold py-2 bg-background">
                     👩 나의 MBTI
                   </div>
-                  <div className="text-center font-bold bg-result-card-bg">
+                  <div className="text-center rounded-b-md bg-result-card-bg">
                     {userMbti !== '모름' ? `안녕나야, ${userMbti}` : `${userName}`}
                   </div>
                 </div>
-                <div className="p-3 rounded flex-1 ml-1">
-                  <div className="text-center text-xs py-2 bg-background">
+                <div className="flex-1 ml-1 mb-2">
+                  <div className="text-center rounded-t-md text-md font-extrabold py-2 bg-background">
                     🏠 나의 공간 MBTI
                   </div>
-                  <div className="text-center font-bold bg-result-card-bg">
-                    {result.name} {userMbti !== '모름' ? userMbti : ''}
+                  <div className="text-center rounded-b-md bg-result-card-bg">
+                    {result.name} {result.id}
                   </div>
                 </div>
               </div>
               
               {/* 특징 리스트 */}
-              <div className="p-4 bg-result-card-bg">
+              <div className="p-4 bg-result-card-bg rounded-md">
                 {result.features && Array.isArray(result.features) ? (
                   result.features.map((feature, index) => (
-                    <div key={index} className="flex items-center">
-                      <div className="w-2 h-2 bg-black mr-2"></div>
-                      <span>{feature}</span>
+                    <div key={index} className="flex items-center font-bold">
+                      {index % 2 == 0 ? <span>◆</span> : <span>◇</span>}
+                      <span className="pl-1">{feature}</span>
                     </div>
                   ))
                 ) : (
@@ -219,18 +219,18 @@ export default function TestResultPage() {
               <p className="text-gray-700">{shareMessage}</p>
             </div>
           ) : (
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 font-korean-button">
               <button 
                 onClick={saveAsImage}
                 disabled={!result}
-                className={`px-4 py-2 ${result ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-400 cursor-not-allowed'} text-white font-medium rounded-lg transition-colors flex items-center`}>
+                className={`px-4 py-2 ${result ? 'bg-neutral-700 hover:bg-orange-400' : 'bg-gray-400 cursor-not-allowed'} text-white font-medium rounded-lg transition-colors flex items-center`}>
                 <CameraIcon className="w-5 h-5 mr-2" />
                 이미지로 저장
               </button>
               <button 
                 onClick={shareResult}
                 disabled={!result}
-                className={`px-4 py-2 ${result ? 'bg-green-600 hover:bg-green-700' : 'bg-gray-400 cursor-not-allowed'} text-white font-medium rounded-lg transition-colors flex items-center`}>
+                className={`px-4 py-2 ${result ? 'bg-neutral-700 hover:bg-orange-400' : 'bg-gray-400 cursor-not-allowed'} text-white font-medium rounded-lg transition-colors flex items-center`}>
                 <ShareIcon className="w-5 h-5 mr-2" />
                 결과 공유하기
               </button>
