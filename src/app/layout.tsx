@@ -4,6 +4,7 @@ import Footer from "@/app/components/layout/Footer";
 import MarqueeText from "@/app/components/layout/MarqueeText";
 import NavigationBar from "@/app/components/layout/NavigationBar";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function RootLayout({
   children,
@@ -14,6 +15,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className="font-korean antialiased min-h-screen">
         <Analytics />
+        <SpeedInsights />
         <MarqueeText className="sticky top-0 z-50" />
         <NavigationBar /> {/* Add NavigationBar here */}
         <Header />
