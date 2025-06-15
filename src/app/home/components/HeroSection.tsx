@@ -251,9 +251,10 @@ export default function HeroSection({isMobile}: HeroSectionProps) {
       setDragOffset({ x: offsetX, y: offsetY });
     }
     
-    // 드래그 중인 이미지의 zIndex를 높임
+    // 드래그 중인 이미지의 zIndex를 높이고 rotate를 0으로 설정
     const updatedImages = [...randomImages];
     updatedImages[index].zIndex = 100; // 다른 이미지보다 높은 zIndex
+    updatedImages[index].rotate = 0;  // 로테이션 0으로 설정
     setRandomImages(updatedImages);
   };
   
@@ -271,9 +272,16 @@ export default function HeroSection({isMobile}: HeroSectionProps) {
       const newLeft = ((e.clientX - containerRect.left - dragOffset.x) / containerWidth) * 100;
       const newTop = ((e.clientY - containerRect.top - dragOffset.y) / containerHeight) * 100;
       
-      // 경계 내부로 제한
-      const boundedLeft = Math.max(0, Math.min(newLeft, 100 - 10)); // 이미지가 최소 10% 안으로 들어오도록
-      const boundedTop = Math.max(0, Math.min(newTop, 100 - 10));
+      // 경계 내부로 제한 (현재 이미지의 크기 고려)
+      const currentImage = randomImages[draggedImageIndex];
+      
+      // 이미지 크기를 퍼센트로 변환 (가로 및 세로 각각 계산)
+      const imageSizeWidthPercent = (currentImage.size / containerWidth) * 100;
+      const imageSizeHeightPercent = (currentImage.size / containerHeight) * 100;
+      
+      // 크기를 고려하여 경계 제한
+      const boundedLeft = Math.max(0, Math.min(newLeft, 100 - imageSizeWidthPercent));
+      const boundedTop = Math.max(0, Math.min(newTop, 100 - imageSizeHeightPercent));
       
       // 이미지 위치 업데이트
       const updatedImages = [...randomImages];
