@@ -96,7 +96,7 @@ export default function SpaceTypeTestPage() {
 
   return (
     <PageLayout>
-      <div className="mx-auto w-full max-w-2xl p-6 md:p-10 my-8 shadow-lg bg-card-bg">
+      <div className="mx-auto w-full max-w-2xl p-6 md:p-10 my-8 shadow-lg bg-result-card-bg">
         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
           나에게 맞는 공간 찾기 테스트
         </h1>
