@@ -78,7 +78,7 @@ const services: PictogramService[] = [
 ];
 
 const DesktopOtherServiceSection: React.FC = () => {
-  const [hoveredService, setHoveredService] = useState<string | null>(null);
+  const [hoveredService, setHoveredService] = useState<string>('furniture-assembly');
   
   return (
     <section className="hidden py-16 md:block">
@@ -98,7 +98,6 @@ const DesktopOtherServiceSection: React.FC = () => {
               zIndex: service.zIndex || (service.highlight ? 10 : 1),
             }}
             onMouseEnter={() => setHoveredService(service.id)}
-            onMouseLeave={() => setHoveredService(null)}
           >
             <div
               className="relative flex flex-col items-center"
