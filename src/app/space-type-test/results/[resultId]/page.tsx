@@ -147,10 +147,10 @@ export default function TestResultPage() {
           
           {/* 공간 유형 제목 */}
           <div className="py-4">
-            <h2 className="text-2xl text-center bg-background font-bold rounded-md py-3">
+            <h2 className="text-2xl text-center bg-background font-bold rounded-md py-2 my-4">
               {userName}의 공간은 <span className="font-extrabold">{result.name}</span>
             </h2>
-            <div className="flex justify-center mt-3 flex-wrap bg-result-card-bg rounded-md">
+            <div className="flex justify-center flex-wrap bg-result-card-bg rounded-md py-2">
               {
                 result.recommendedItems.map((item, index) => (
                   <span key={'recommendedItems-' + index} className="text-md font-bold px-1 py-1">#{item}</span>
@@ -160,7 +160,7 @@ export default function TestResultPage() {
           </div>
           
           {/* 이미지 소개 */}
-          <div className="mb-2 flex justify-center border-1">
+          <div className="flex justify-center border-1 mb-4">
             <Image
               src={result.imagePath}
               alt={result.name}
@@ -175,7 +175,7 @@ export default function TestResultPage() {
             <div className="flex flex-col">
               {/* 유저 정보 표시 */}
               <div className="flex justify-around font-korean">
-                <div className="flex-1 mr-1 mb-2">
+                <div className="flex-1 mr-2 mb-4">
                   <div className="text-center rounded-t-md text-md font-extrabold py-2 bg-background">
                     👩 나의 MBTI
                   </div>
@@ -183,7 +183,7 @@ export default function TestResultPage() {
                     {userMbti !== '모름' ? `안녕나야, ${userMbti}` : `${userName}`}
                   </div>
                 </div>
-                <div className="flex-1 ml-1 mb-2">
+                <div className="flex-1 ml-2 mb-4">
                   <div className="text-center rounded-t-md text-md font-extrabold py-2 bg-background">
                     🏠 나의 공간 MBTI
                   </div>
