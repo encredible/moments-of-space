@@ -32,6 +32,7 @@
   --foreground: #171717;
   --custom-bg: #ecece5; /* 원하는 커스텀 배경색 */
   --card-bg: #f3f2ee;
+  --result-card-bg: #f7f7f7;
 
   /* 부드러운 스크롤 동작 */
   scroll-behavior: smooth;
@@ -42,6 +43,7 @@
   --color-foreground: var(--foreground);
   --color-custom-bg: var(--custom-bg); /* 커스텀 색상 추가 */
   --color-card-bg: var(--card-bg); /* 커스텀 색상 추가 */
+  --color-result-card-bg: var(--result-card-bg)
 }
 
 body {

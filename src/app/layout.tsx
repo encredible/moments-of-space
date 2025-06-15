@@ -10,9 +10,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // footer_content에서 kakao_talk_link 값을 가져옵니다
-  const typedFooterContent = footerContent as any;
-  
   return (
     <html lang="ko">
       <body className="font-korean antialiased min-h-screen">
