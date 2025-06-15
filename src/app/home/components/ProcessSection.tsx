@@ -28,8 +28,7 @@ const ProcessSection = () => {
                 src={step.imageSrc}
                 alt={step.title}
                 fill
-                sizes="100vw"
-                className="object-cover"
+                className="object-contain"
                 style={{clipPath: isMobile ? "polygon(90px 0, 100% 0, 100% 100%, 0 100%, 0 90px)" : "polygon(120px 0, 100% 0, 100% 100%, 0 100%, 0 120px)"}}
                 priority={index === 0}
               />
