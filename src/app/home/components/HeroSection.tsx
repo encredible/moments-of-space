@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 
 // 히어로 섹션에 표시할 이미지 파일 목록
@@ -27,6 +27,11 @@ interface HeroSectionProps {
 export default function HeroSection({isMobile}: HeroSectionProps) {
   // 랜덤 이미지 배열 상태
   const [randomImages, setRandomImages] = useState<RandomImageProps[]>([]);
+  
+  // 드래그 관련 상태
+  const [draggedImageIndex, setDraggedImageIndex] = useState<number | null>(null);
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
   
   // 두 이미지 영역이 겹치는지 확인하는 함수
   const imagesOverlap = (img1: RandomImageProps, img2: RandomImageProps) => {
@@ -223,8 +228,102 @@ export default function HeroSection({isMobile}: HeroSectionProps) {
     setRandomImages(selectedImages);
   }, []); // 컴포넌트 마운트 시 한 번만 실행
   
+  // 드래그 시작 핸들러
+  const handleDragStart = (index: number, e: React.PointerEvent) => {
+    // 현재 드래그 중인 이미지 인덱스 설정
+    setDraggedImageIndex(index);
+    
+    // 드래그 시작 위치와 이미지 위치 간의 오프셋 계산
+    const container = containerRef.current;
+    if (container) {
+      const containerRect = container.getBoundingClientRect();
+      const containerWidth = containerRect.width;
+      const containerHeight = containerRect.height;
+      
+      // 현재 이미지 요소의 위치 (퍼센트→픽셀)
+      const imgTop = (randomImages[index].top / 100) * containerHeight;
+      const imgLeft = (randomImages[index].left / 100) * containerWidth;
+      
+      // 포인터 위치와 이미지 위치 간의 오프셋 계산
+      const offsetX = e.clientX - containerRect.left - imgLeft;
+      const offsetY = e.clientY - containerRect.top - imgTop;
+      
+      setDragOffset({ x: offsetX, y: offsetY });
+    }
+    
+    // 드래그 중인 이미지의 zIndex를 높임
+    const updatedImages = [...randomImages];
+    updatedImages[index].zIndex = 100; // 다른 이미지보다 높은 zIndex
+    setRandomImages(updatedImages);
+  };
+  
+  // 드래그 중 핸들러
+  const handleDrag = (e: React.PointerEvent) => {
+    if (draggedImageIndex === null) return;
+    
+    const container = containerRef.current;
+    if (container) {
+      const containerRect = container.getBoundingClientRect();
+      const containerWidth = containerRect.width;
+      const containerHeight = containerRect.height;
+      
+      // 포인터 위치를 이미지의 새 위치로 변환 (오프셋 고려)
+      const newLeft = ((e.clientX - containerRect.left - dragOffset.x) / containerWidth) * 100;
+      const newTop = ((e.clientY - containerRect.top - dragOffset.y) / containerHeight) * 100;
+      
+      // 경계 내부로 제한
+      const boundedLeft = Math.max(0, Math.min(newLeft, 100 - 10)); // 이미지가 최소 10% 안으로 들어오도록
+      const boundedTop = Math.max(0, Math.min(newTop, 100 - 10));
+      
+      // 이미지 위치 업데이트
+      const updatedImages = [...randomImages];
+      updatedImages[draggedImageIndex].left = boundedLeft;
+      updatedImages[draggedImageIndex].top = boundedTop;
+      setRandomImages(updatedImages);
+    }
+  };
+  
+  // 드래그 종료 핸들러
+  const handleDragEnd = () => {
+    if (draggedImageIndex === null) return;
+    
+    // 드래그 중인 이미지의 zIndex 원상복구 (다른 이미지보다는 높게 유지)
+    const updatedImages = [...randomImages];
+    updatedImages[draggedImageIndex].zIndex = 10 + draggedImageIndex; 
+    setRandomImages(updatedImages);
+    
+    // 드래그 상태 초기화
+    setDraggedImageIndex(null);
+  };
+  
+  // 이벤트 등록/해제
+  useEffect(() => {
+    const handlePointerMove = (e: PointerEvent) => {
+      if (draggedImageIndex !== null) {
+        e.preventDefault(); // 브라우저 기본 동작 방지
+        handleDrag(e as unknown as React.PointerEvent);
+      }
+    };
+    
+    const handlePointerUp = () => {
+      if (draggedImageIndex !== null) {
+        handleDragEnd();
+      }
+    };
+    
+    // 전역 이벤트 리스너 등록
+    document.addEventListener('pointermove', handlePointerMove);
+    document.addEventListener('pointerup', handlePointerUp);
+    
+    return () => {
+      // 정리 함수
+      document.removeEventListener('pointermove', handlePointerMove);
+      document.removeEventListener('pointerup', handlePointerUp);
+    };
+  }, [draggedImageIndex]);
+  
   return (
-    <section className="h-[70vh] overflow-hidden mb-8 z-0 relative">
+    <section ref={containerRef} className="h-[70vh] overflow-hidden mb-8 z-0 relative">
       {/* 랜덤 이미지들 렌더링 */}
       {randomImages.map((img, index) => (
         <div 
@@ -235,14 +334,21 @@ export default function HeroSection({isMobile}: HeroSectionProps) {
             left: `${img.left}%`,
             transform: `rotate(${img.rotate}deg)`,
             zIndex: img.zIndex,
+            cursor: 'grab',
+            userSelect: 'none',
           }}
+          onPointerDown={(e) => handleDragStart(index, e)}
         >
           <Image 
             src={`/images/hero/${img.src}`}
             alt={`Interior design element ${index + 1}`}
             width={img.size}
             height={img.size}
-            style={{ objectFit: 'contain' }}
+            style={{ 
+              objectFit: 'contain',
+              pointerEvents: 'none' // 이미지 자체에는 포인터 이벤트 전달하지 않음
+            }}
+            draggable={false}
           />
         </div>
       ))}
