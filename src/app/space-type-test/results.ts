@@ -39,7 +39,7 @@ const resultsData: ResultType[] = [
       '“정리된 느낌보다 분위기 있는 게 좋아요.”',
       '“침대 옆 무드등, 침구의 색감, 작은 향기가 저를 안정시켜요.”',
     ],
-    imagePath: '/images/results/infp.svg',
+    imagePath: '/images/results/infp.jpg',
     colorTheme: {
       background: 'bg-slate-100',
       text: 'text-slate-700',
@@ -69,7 +69,7 @@ const resultsData: ResultType[] = [
       '“정리된 느낌보다 분위기 있는 게 좋아요.”',
       '“침대 옆 무드등, 침구의 색감, 작은 향기가 저를 안정시켜요.”',
     ],
-    imagePath: '/images/results/estj.svg',
+    imagePath: '/images/results/estj.jpg',
     colorTheme: {
       background: 'bg-amber-50',
       text: 'text-amber-700',
@@ -100,7 +100,7 @@ const resultsData: ResultType[] = [
       '“내 기분에 따라 공간도 바뀌어야 해요.”',
       '“좋아하는 걸 눈에 보이게 두는 게 저한테는 중요해요.”',
     ],
-    imagePath: '/images/results/enfp.svg',
+    imagePath: '/images/results/enfp.jpg',
     colorTheme: {
       background: 'bg-purple-100',
       text: 'text-purple-700',
@@ -130,7 +130,7 @@ const resultsData: ResultType[] = [
       '“포근한 조명, 깨끗한 침구만으로도 하루가 치유돼요.”',
       '“나도 편하고, 다른 사람도 머무르기 좋은 공간이면 충분해요.”',
     ],
-    imagePath: '/images/results/isfj.svg',
+    imagePath: '/images/results/isfj.jpg',
     colorTheme: {
       background: 'bg-stone-100',
       text: 'text-stone-700',
@@ -160,7 +160,7 @@ const resultsData: ResultType[] = [
       '“자꾸 공간을 바꾸고 싶어지는 건 내 두뇌가 살아있다는 증거죠.”',
       '“누가 보면 엉망 같아도, 저한텐 딱이에요.”',
     ],
-    imagePath: '/images/results/entp.svg',
+    imagePath: '/images/results/entp.jpg',
     colorTheme: {
       background: 'bg-teal-100',
       text: 'text-teal-700',
@@ -190,7 +190,7 @@ const resultsData: ResultType[] = [
       '“하나를 들이기 전에 치수를 재고 위치를 먼저 그려요.”',
       '“가끔은 남들이 보기엔 심심할 수도 있어요, 그래도 저는 딱 좋아요.”',
     ],
-    imagePath: '/images/results/istj.svg',
+    imagePath: '/images/results/istj.jpg',
     colorTheme: {
       background: 'bg-gray-100',
       text: 'text-gray-800',
@@ -220,7 +220,7 @@ const resultsData: ResultType[] = [
       '“실용적이냐고요? 그건 두 번째 문제죠.”',
       '“집에 에너지가 느껴져야 살고 있는 느낌이 들어요.”',
     ],
-    imagePath: '/images/results/esfp.svg',
+    imagePath: '/images/results/esfp.jpg',
     colorTheme: {
       background: 'bg-pink-100',
       text: 'text-pink-700',
@@ -250,7 +250,7 @@ const resultsData: ResultType[] = [
       '“심플해 보이지만, 다 계산된 구조입니다.”',
       '“나만의 구조 안에서 일과 휴식을 나누는 것이 중요해요.”',
     ],
-    imagePath: '/images/results/intj.svg',
+    imagePath: '/images/results/intj.jpg',
     colorTheme: {
       background: 'bg-blue-gray-100',
       text: 'text-blue-gray-800',
@@ -280,7 +280,7 @@ const resultsData: ResultType[] = [
       '“소품 하나도 쉽게 고르지 않아요, 그 안에 의미가 담겨 있어야 하거든요.”',
       '“공간은 나를 더 깊이 들여다보게 만들어야 해요.”',
     ],
-    imagePath: '/images/results/infj.svg',
+    imagePath: '/images/results/infj.jpg',
     colorTheme: {
       background: 'bg-emerald-50',
       text: 'text-emerald-800',
@@ -310,7 +310,7 @@ const resultsData: ResultType[] = [
       '“정리는 ‘그때그때’ 하는 거예요, 쓰기 편하면 된 거 아닌가요?”',
       '“하나의 가구가 여러 역할을 해주면 가장 좋아요.”',
     ],
-    imagePath: '/images/results/estp.svg',
+    imagePath: '/images/results/estp.jpg',
     colorTheme: {
       background: 'bg-orange-100',
       text: 'text-orange-800',
@@ -340,7 +340,7 @@ const resultsData: ResultType[] = [
       '“정돈되어 있되, 틀에 갇히지 않았으면 좋겠어요.”',
       '“자기만의 논리로 만든 공간이 제일 편해요.”',
     ],
-    imagePath: '/images/results/intp.svg',
+    imagePath: '/images/results/intp.jpg',
     colorTheme: {
       background: 'bg-indigo-100',
       text: 'text-indigo-800',
@@ -370,7 +370,7 @@ const resultsData: ResultType[] = [
       '“보기에도 따뜻하고, 앉기에도 편안한 공간이 목표예요.”',
       '“나를 위한 공간이지만, 함께할 수 있어야 더 좋아요.”',
     ],
-    imagePath: '/images/results/esfj.svg',
+    imagePath: '/images/results/esfj.jpg',
     colorTheme: {
       background: 'bg-rose-100',
       text: 'text-rose-800',
@@ -400,7 +400,7 @@ const resultsData: ResultType[] = [
       '“공간은 말 없이 나를 도와주는 조력자 같은 존재예요.”',
       '“딱 필요한 만큼만 있고, 딱 내가 원하는 대로 작동하면 됩니다.”',
     ],
-    imagePath: '/images/results/istp.svg',
+    imagePath: '/images/results/istp.jpg',
     colorTheme: {
       background: 'bg-slate-100',
       text: 'text-slate-800',
@@ -430,7 +430,7 @@ const resultsData: ResultType[] = [
       '“혼자보단 함께 있을 때 더 따뜻하게 느껴지는 공간을 좋아해요.”',
       '“예쁘기만 한 것보다, 의미 있고 편안한 공간을 원해요.”',
     ],
-    imagePath: '/images/results/enfj.svg',
+    imagePath: '/images/results/enfj.jpg',
     colorTheme: {
       background: 'bg-purple-100',
       text: 'text-purple-800',
@@ -460,7 +460,7 @@ const resultsData: ResultType[] = [
       '“크게 꾸미지 않아도, 작은 조명이 켜지면 분위기가 완성돼요.”',
       '“어지럽거나 답답하지 않은, 내 마음 같은 공간이 필요해요.”',
     ],
-    imagePath: '/images/results/isfp.svg',
+    imagePath: '/images/results/isfp.jpg',
     colorTheme: {
       background: 'bg-pink-100',
       text: 'text-pink-800',
@@ -490,7 +490,7 @@ const resultsData: ResultType[] = [
       '“예쁜 것보다는 ‘좋은 시스템’이 중요해요.”',
       '“내가 원하는 방식대로 흘러가는 공간이 가장 안정감을 줘요.”',
     ],
-    imagePath: '/images/results/entj.svg',
+    imagePath: '/images/results/entj.jpg',
     colorTheme: {
       background: 'bg-gray-800',
       text: 'text-gray-100',

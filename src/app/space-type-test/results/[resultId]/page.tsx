@@ -135,37 +135,37 @@ export default function TestResultPage() {
           {/* 헤더 부분 - LIVING COLLAGE */}
           <div className="p-4 text-black text-center relative">
             <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center space-x-2">
-              <div className="w-3 h-3 rounded-full bg-yellow-200"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-200"></div>
+              <div className="w-3 h-3 rounded-full bg-background"></div>
+              <div className="w-3 h-3 rounded-full bg-background"></div>
             </div>
             <h1 className="text-lg font-bold font-gillsansnova-book">LIVING COLLAGE</h1>
             <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center space-x-2">
-              <div className="w-3 h-3 rounded-full bg-yellow-200"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-200"></div>
+              <div className="w-3 h-3 rounded-full bg-background"></div>
+              <div className="w-3 h-3 rounded-full bg-background"></div>
             </div>
           </div>
           
           {/* 공간 유형 제목 */}
-          <div className="p-4">
+          <div className="py-4">
             <h2 className="text-2xl text-center bg-background font-bold rounded-md py-3">
               {userName}의 공간은 <span className="font-extrabold">{result.name}</span>
             </h2>
             <div className="flex justify-center mt-3 flex-wrap bg-result-card-bg rounded-md">
               {
                 result.recommendedItems.map((item, index) => (
-                  <span key={'recommendedItems-' + index} className="text-md px-1 py-1">#{item}</span>
+                  <span key={'recommendedItems-' + index} className="text-md font-bold px-1 py-1">#{item}</span>
                 ))
               }
             </div>
           </div>
           
           {/* 이미지 소개 */}
-          <div className="p-6 flex justify-center border-1 mx-6 my-4">
+          <div className="mb-2 flex justify-center border-1">
             <Image
               src={result.imagePath}
               alt={result.name}
-              width={250}
-              height={250}
+              width={400}
+              height={400}
               className="object-contain"
             />
           </div>
