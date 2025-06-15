@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import Button from './Button';
+import {useMediaQuery} from "react-responsive";
 
 export interface SplitSectionProps {
   imageUrl: string;
@@ -40,6 +41,7 @@ export default function SplitSection({
 }: SplitSectionProps) {
   // 자세히 보기 상태 관리
   const [isDetailsVisible, setIsDetailsVisible] = useState(false);
+  const isMobile = useMediaQuery({maxWidth: 767}); // md 미만이면 모바일
   
   // 자세히 보기 토글 함수
   const toggleDetails = () => {
@@ -58,7 +60,7 @@ export default function SplitSection({
           width={imageWidth}
           height={imageHeight}
           className="object-cover"
-          style={{ clipPath: "polygon(120px 0, 100% 0, 100% 100%, 0 100%, 0 120px)" }}
+          style={{ clipPath: isMobile ? "polygon(90px 0, 100% 0, 100% 100%, 0 100%, 0 90px)" : "polygon(120px 0, 100% 0, 100% 100%, 0 100%, 0 120px)" }}
           priority={priority}
         />
       </div>

@@ -2,10 +2,12 @@ import React, {useState} from 'react';
 import Image from 'next/image';
 import homeContent from "@/app/home/content.json";
 import SectionTitle from "@/app/components/SectionTitle";
+import {useMediaQuery} from "react-responsive";
 
 const ProcessSection = () => {
   const [activeStep, setActiveStep] = useState(0);
   const processSteps = homeContent.process.processSteps;
+  const isMobile = useMediaQuery({maxWidth: 767}); // md 미만이면 모바일
   
   return (
     <section className="py-12 md:py-16 lg:py-20">
@@ -28,7 +30,7 @@ const ProcessSection = () => {
                 fill
                 sizes="100vw"
                 className="object-cover"
-                style={{clipPath: "polygon(120px 0, 100% 0, 100% 100%, 0 100%, 0 120px)"}}
+                style={{clipPath: isMobile ? "polygon(90px 0, 100% 0, 100% 100%, 0 100%, 0 90px)" : "polygon(120px 0, 100% 0, 100% 100%, 0 100%, 0 120px)"}}
                 priority={index === 0}
               />
             </div>
