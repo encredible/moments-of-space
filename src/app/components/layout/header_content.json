@@ -3,11 +3,11 @@
   "navItems": [
     {
       "text": "서비스",
-      "href": "/#services-section"
+      "href": "#services-section"
     },
     {
       "text": "프로젝트",
-      "href": "/#project-gallery"
+      "href": "#project-gallery"
     },
     {
       "text": "상담신청",

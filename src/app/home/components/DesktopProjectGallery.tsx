@@ -208,7 +208,7 @@ const DesktopProjectGallery = ({
       {/* 갤러리 스크롤 컨테이너 - 모바일에서는 좌우 스크롤 금지 */}
       <div 
         ref={scrollContainerRef}
-        className="relative overflow-x-auto hide-scrollbar flex gap-10"
+        className="relative overflow-x-auto hide-scrollbar flex gap-12 pl-4 pr-4 pb-4"
         style={{
           scrollbarWidth: "none", 
           msOverflowStyle: "none",
