@@ -230,6 +230,9 @@ export default function HeroSection({isMobile}: HeroSectionProps) {
   
   // 드래그 시작 핸들러
   const handleDragStart = (index: number, e: React.PointerEvent) => {
+    // 모바일 환경에서는 드래그 기능 비활성화
+    if (isMobile) return;
+    
     // 현재 드래그 중인 이미지 인덱스 설정
     setDraggedImageIndex(index);
     
@@ -342,7 +345,7 @@ export default function HeroSection({isMobile}: HeroSectionProps) {
             left: `${img.left}%`,
             transform: `rotate(${img.rotate}deg)`,
             zIndex: img.zIndex,
-            cursor: 'grab',
+            cursor: isMobile ? 'default' : 'grab',
             userSelect: 'none',
           }}
           onPointerDown={(e) => handleDragStart(index, e)}
