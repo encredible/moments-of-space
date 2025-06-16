@@ -184,8 +184,8 @@ export default function TestResultPage() {
             </h2>
             <div className="flex justify-center flex-wrap bg-result-card-bg rounded-md py-2">
               {
-                result.recommendedItems.map((item, index) => (
-                  <span key={'recommendedItems-' + index} className="text-md font-bold px-1 py-1">#{item}</span>
+                result.styleKeywords.map((item, index) => (
+                  <span key={'styleKeywords-' + index} className="text-md font-bold px-1 py-1">#{item}</span>
                 ))
               }
             </div>
@@ -226,20 +226,17 @@ export default function TestResultPage() {
               </div>
               
               {/* 특징 리스트 */}
-              <div className="p-4 bg-result-card-bg rounded-md">
-                {result.features && Array.isArray(result.features) ? (
-                  result.features.map((feature, index) => (
-                    <div key={index} className="flex items-center font-bold">
-                      {index % 2 == 0 ? <span>◆</span> : <span>◇</span>}
-                      <span className="pl-1">{feature}</span>
-                    </div>
+              <div className="p-4 bg-result-card-bg rounded-md font-korean">
+                <div className="text-md font-bold mt-2">◆ 공간 취향 요약</div>
+                <div className="text-sm whitespace-pre-wrap leading-relaxed">{result.summary}</div>
+                <div className="text-md font-bold mt-4">◆ 공간 특징</div>
+                <div className="text-sm whitespace-pre-wrap leading-relaxed">{result.features}</div>
+                <div className="text-md font-bold mt-4">◆ 생각 노트</div>
+                {
+                  result.notes.map((item, index) => (
+                    <div key={"notes-" + index} className="text-sm whitespace-pre-wrap my-1">{item}</div>
                   ))
-                ) : (
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-black mr-2"></div>
-                    <span>특징 정보가 없습니다.</span>
-                  </div>
-                )}
+                }
               </div>
             </div>
           </div>
