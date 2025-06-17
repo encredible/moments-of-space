@@ -229,93 +229,232 @@
     "images": [
       {
         "after": {
-          "src": "/images/project/kitchen_after.jpeg",
-          "alt": "주방 after"
+          "src": "/images/project/33m2 1-2.jpg",
+          "alt": "33m2 공간 스타일링 후 모습"
         },
         "before": {
-          "src": "/images/project/kitchen_before.jpeg",
-          "alt": "주방 before"
+          "src": "/images/project/33m2 1-1.jpg",
+          "alt": "33m2 공간 스타일링 전 모습"
         },
         "hasPair": true
       },
       {
         "after": {
-          "src": "/images/project/livingroom_after.jpeg",
-          "alt": "거실 after"
-        },
-        "before": {
-          "src": "/images/project/livingroom_before.jpeg",
-          "alt": "거실 before"
-        },
-        "hasPair": true
-      },
-      {
-        "after": {
-          "src": "/images/project/3_after.jpeg",
-          "alt": "거실 after"
-        },
-        "before": {
-          "src": "/images/project/3_before.jpeg",
-          "alt": "거실 before"
-        },
-        "hasPair": true
-      },
-      {
-        "after": {
-          "src": "/images/project/4_after.jpeg",
-          "alt": "거실 after"
-        },
-        "before": {
-          "src": "/images/project/4_before.jpeg",
-          "alt": "거실 before"
-        },
-        "hasPair": true
-      },
-      {
-        "after": {
-          "src": "/images/project/5_after.jpeg",
-          "alt": "거실 after"
-        },
-        "before": {
-          "src": "/images/project/5_before.jpeg",
-          "alt": "거실 before"
-        },
-        "hasPair": true
-      },
-      {
-        "after": {
-          "src": "/images/project/6_after.jpeg",
-          "alt": "거실 after"
-        },
-        "before": {
-          "src": "/images/project/6_before.jpeg",
-          "alt": "거실 before"
-        },
-        "hasPair": true
-      },
-      {
-        "after": {
-          "src": "/images/project/project-highlight-2.jpg",
-          "alt": "프로젝트 하이라이트 2"
+          "src": "/images/project/glow 1.jpg",
+          "alt": "글로우 공간 스타일링 모습"
         },
         "before": null,
         "hasPair": false
       },
       {
         "after": {
-          "src": "/images/project/project-highlight-3.jpg",
-          "alt": "프로젝트 하이라이트 3"
+          "src": "/images/project/glow 2.jpg",
+          "alt": "글로우 공간 인테리어 디테일"
         },
         "before": null,
         "hasPair": false
       },
       {
         "after": {
-          "src": "/images/project/project-highlight-4.jpg",
-          "alt": "프로젝트 하이라이트 4"
+          "src": "/images/project/glow 3.jpg",
+          "alt": "글로우 공간 인테리어 전경"
         },
         "before": null,
         "hasPair": false
+      },
+      {
+        "after": {
+          "src": "/images/project/glow 4-2.jpg",
+          "alt": "글로우 4 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/glow 4-1.jpg",
+          "alt": "글로우 4 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/glow 5.jpg",
+          "alt": "글로우 5 인테리어 디자인"
+        },
+        "before": null,
+        "hasPair": false
+      },
+      {
+        "after": {
+          "src": "/images/project/illya 1-2.jpg",
+          "alt": "일리야 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/illya 1-1.jpg",
+          "alt": "일리야 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/jaejung 1-2.jpg",
+          "alt": "재중 1 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/jaejung 1-1.jpg",
+          "alt": "재중 1 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/jaejung 2.jpg",
+          "alt": "재중 2 인테리어 디자인"
+        },
+        "before": null,
+        "hasPair": false
+      },
+      {
+        "after": {
+          "src": "/images/project/kig two rm 1-2.jpg",
+          "alt": "키그 투룸 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/kig two rm 1-1.jpg",
+          "alt": "키그 투룸 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/lfort 1-2.jpg",
+          "alt": "엘포트 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/lfort 1-1.jpg",
+          "alt": "엘포트 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/office 1-2.jpg",
+          "alt": "오피스 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/office 1-1.jpg",
+          "alt": "오피스 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/raemian 12-2.jpg",
+          "alt": "래미안 12 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/raemian 12-1.jpg",
+          "alt": "래미안 12 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/raemian 13.jpg",
+          "alt": "래미안 13 인테리어 디자인"
+        },
+        "before": null,
+        "hasPair": false
+      },
+      {
+        "after": {
+          "src": "/images/project/raemian 2-2.jpg",
+          "alt": "래미안 2 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/raemian 2-1.jpg",
+          "alt": "래미안 2 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/raemian 4-2.jpg",
+          "alt": "래미안 4 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/raemian 4-1.jpg",
+          "alt": "래미안 4 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/raemian 7.jpg",
+          "alt": "래미안 7 인테리어 디자인"
+        },
+        "before": null,
+        "hasPair": false
+      },
+      {
+        "after": {
+          "src": "/images/project/raemian 8-2.jpg",
+          "alt": "래미안 8 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/raemian 8-1.jpg",
+          "alt": "래미안 8 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/seopangyo 1-2.jpg",
+          "alt": "서판교 1 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/seopangyo 1-1.jpg",
+          "alt": "서판교 1 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/seopangyo 2.jpg",
+          "alt": "서판교 2 인테리어 디자인"
+        },
+        "before": null,
+        "hasPair": false
+      },
+      {
+        "after": {
+          "src": "/images/project/seopangyo 3-2.jpg",
+          "alt": "서판교 3 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/seopangyo 3-1.jpg",
+          "alt": "서판교 3 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/seopangyo 4-2.jpg",
+          "alt": "서판교 4 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/seopangyo 4-1.jpg",
+          "alt": "서판교 4 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/somdalee 1-2.jpg",
+          "alt": "솜다리 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/somdalee 1-1.jpg",
+          "alt": "솜다리 공간 스타일링 전 모습"
+        },
+        "hasPair": true
       }
     ]
   }
