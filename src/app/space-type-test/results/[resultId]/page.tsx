@@ -180,7 +180,7 @@ export default function TestResultPage() {
           {/* 공간 유형 제목 */}
           <div className="py-4">
             <h2 className="text-2xl text-center bg-background font-bold rounded-md py-2 my-4">
-              {userName}의 공간은 <span className="font-extrabold">{result.name}</span>
+              {userName}의 공간은 {result.name} {result.id}
             </h2>
             <div className="flex justify-center flex-wrap bg-result-card-bg rounded-md py-2">
               {
@@ -212,7 +212,7 @@ export default function TestResultPage() {
                     👩 나의 MBTI
                   </div>
                   <div className="text-center rounded-b-md bg-result-card-bg py-2">
-                    {userMbti !== '모름' ? `안녕나야, ${userMbti}` : `${userName}`}
+                    {userMbti}
                   </div>
                 </div>
                 <div className="flex-1 ml-2 mb-4">
@@ -220,7 +220,7 @@ export default function TestResultPage() {
                     🏠 나의 공간 MBTI
                   </div>
                   <div className="text-center rounded-b-md bg-result-card-bg py-2">
-                    {result.name} {result.id}
+                    {result.id}
                   </div>
                 </div>
               </div>
