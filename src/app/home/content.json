@@ -314,6 +314,25 @@
       },
       {
         "after": {
+          "src": "/images/project/raemian 8-2.jpg",
+          "alt": "래미안 8 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/raemian 8-1.jpg",
+          "alt": "래미안 8 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/raemian 7.jpg",
+          "alt": "래미안 7 인테리어 디자인"
+        },
+        "before": null,
+        "hasPair": false
+      },
+      {
+        "after": {
           "src": "/images/project/raemian 4-2.jpg",
           "alt": "래미안 4 공간 스타일링 후 모습"
         },
@@ -325,14 +344,11 @@
       },
       {
         "after": {
-          "src": "/images/project/raemian 8-2.jpg",
-          "alt": "래미안 8 공간 스타일링 후 모습"
+          "src": "/images/project/raemian 13.jpg",
+          "alt": "래미안 13 인테리어 디자인"
         },
-        "before": {
-          "src": "/images/project/raemian 8-1.jpg",
-          "alt": "래미안 8 공간 스타일링 전 모습"
-        },
-        "hasPair": true
+        "before": null,
+        "hasPair": false
       },
       {
         "after": {
@@ -396,22 +412,6 @@
           "alt": "오피스 공간 스타일링 전 모습"
         },
         "hasPair": true
-      },
-      {
-        "after": {
-          "src": "/images/project/raemian 13.jpg",
-          "alt": "래미안 13 인테리어 디자인"
-        },
-        "before": null,
-        "hasPair": false
-      },
-      {
-        "after": {
-          "src": "/images/project/raemian 7.jpg",
-          "alt": "래미안 7 인테리어 디자인"
-        },
-        "before": null,
-        "hasPair": false
       },
       {
         "after": {
