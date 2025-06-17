@@ -229,71 +229,6 @@
     "images": [
       {
         "after": {
-          "src": "/images/project/33m2 1-2.jpg",
-          "alt": "33m2 공간 스타일링 후 모습"
-        },
-        "before": {
-          "src": "/images/project/33m2 1-1.jpg",
-          "alt": "33m2 공간 스타일링 전 모습"
-        },
-        "hasPair": true
-      },
-      {
-        "after": {
-          "src": "/images/project/glow 1.jpg",
-          "alt": "글로우 공간 스타일링 모습"
-        },
-        "before": null,
-        "hasPair": false
-      },
-      {
-        "after": {
-          "src": "/images/project/glow 2.jpg",
-          "alt": "글로우 공간 인테리어 디테일"
-        },
-        "before": null,
-        "hasPair": false
-      },
-      {
-        "after": {
-          "src": "/images/project/glow 3.jpg",
-          "alt": "글로우 공간 인테리어 전경"
-        },
-        "before": null,
-        "hasPair": false
-      },
-      {
-        "after": {
-          "src": "/images/project/glow 4-2.jpg",
-          "alt": "글로우 4 공간 스타일링 후 모습"
-        },
-        "before": {
-          "src": "/images/project/glow 4-1.jpg",
-          "alt": "글로우 4 공간 스타일링 전 모습"
-        },
-        "hasPair": true
-      },
-      {
-        "after": {
-          "src": "/images/project/glow 5.jpg",
-          "alt": "글로우 5 인테리어 디자인"
-        },
-        "before": null,
-        "hasPair": false
-      },
-      {
-        "after": {
-          "src": "/images/project/illya 1-2.jpg",
-          "alt": "일리야 공간 스타일링 후 모습"
-        },
-        "before": {
-          "src": "/images/project/illya 1-1.jpg",
-          "alt": "일리야 공간 스타일링 전 모습"
-        },
-        "hasPair": true
-      },
-      {
-        "after": {
           "src": "/images/project/jaejung 1-2.jpg",
           "alt": "재중 1 공간 스타일링 후 모습"
         },
@@ -313,17 +248,6 @@
       },
       {
         "after": {
-          "src": "/images/project/kig two rm 1-2.jpg",
-          "alt": "키그 투룸 스타일링 후 모습"
-        },
-        "before": {
-          "src": "/images/project/kig two rm 1-1.jpg",
-          "alt": "키그 투룸 스타일링 전 모습"
-        },
-        "hasPair": true
-      },
-      {
-        "after": {
           "src": "/images/project/lfort 1-2.jpg",
           "alt": "엘포트 공간 스타일링 후 모습"
         },
@@ -335,12 +259,12 @@
       },
       {
         "after": {
-          "src": "/images/project/office 1-2.jpg",
-          "alt": "오피스 공간 스타일링 후 모습"
+          "src": "/images/project/raemian 2-2.jpg",
+          "alt": "래미안 2 공간 스타일링 후 모습"
         },
         "before": {
-          "src": "/images/project/office 1-1.jpg",
-          "alt": "오피스 공간 스타일링 전 모습"
+          "src": "/images/project/raemian 2-1.jpg",
+          "alt": "래미안 2 공간 스타일링 전 모습"
         },
         "hasPair": true
       },
@@ -357,20 +281,34 @@
       },
       {
         "after": {
-          "src": "/images/project/raemian 13.jpg",
-          "alt": "래미안 13 인테리어 디자인"
+          "src": "/images/project/33m2 1-2.jpg",
+          "alt": "33m2 공간 스타일링 후 모습"
         },
-        "before": null,
-        "hasPair": false
+        "before": {
+          "src": "/images/project/33m2 1-1.jpg",
+          "alt": "33m2 공간 스타일링 전 모습"
+        },
+        "hasPair": true
       },
       {
         "after": {
-          "src": "/images/project/raemian 2-2.jpg",
-          "alt": "래미안 2 공간 스타일링 후 모습"
+          "src": "/images/project/illya 1-2.jpg",
+          "alt": "일리야 공간 스타일링 후 모습"
         },
         "before": {
-          "src": "/images/project/raemian 2-1.jpg",
-          "alt": "래미안 2 공간 스타일링 전 모습"
+          "src": "/images/project/illya 1-1.jpg",
+          "alt": "일리야 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/kig two rm 1-2.jpg",
+          "alt": "키그 투룸 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/kig two rm 1-1.jpg",
+          "alt": "키그 투룸 스타일링 전 모습"
         },
         "hasPair": true
       },
@@ -384,14 +322,6 @@
           "alt": "래미안 4 공간 스타일링 전 모습"
         },
         "hasPair": true
-      },
-      {
-        "after": {
-          "src": "/images/project/raemian 7.jpg",
-          "alt": "래미안 7 인테리어 디자인"
-        },
-        "before": null,
-        "hasPair": false
       },
       {
         "after": {
@@ -455,6 +385,76 @@
           "alt": "솜다리 공간 스타일링 전 모습"
         },
         "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/office 1-2.jpg",
+          "alt": "오피스 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/office 1-1.jpg",
+          "alt": "오피스 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/raemian 13.jpg",
+          "alt": "래미안 13 인테리어 디자인"
+        },
+        "before": null,
+        "hasPair": false
+      },
+      {
+        "after": {
+          "src": "/images/project/raemian 7.jpg",
+          "alt": "래미안 7 인테리어 디자인"
+        },
+        "before": null,
+        "hasPair": false
+      },
+      {
+        "after": {
+          "src": "/images/project/glow 1.jpg",
+          "alt": "글로우 공간 스타일링 모습"
+        },
+        "before": null,
+        "hasPair": false
+      },
+      {
+        "after": {
+          "src": "/images/project/glow 2.jpg",
+          "alt": "글로우 공간 인테리어 디테일"
+        },
+        "before": null,
+        "hasPair": false
+      },
+      {
+        "after": {
+          "src": "/images/project/glow 3.jpg",
+          "alt": "글로우 공간 인테리어 전경"
+        },
+        "before": null,
+        "hasPair": false
+      },
+      {
+        "after": {
+          "src": "/images/project/glow 4-2.jpg",
+          "alt": "글로우 4 공간 스타일링 후 모습"
+        },
+        "before": {
+          "src": "/images/project/glow 4-1.jpg",
+          "alt": "글로우 4 공간 스타일링 전 모습"
+        },
+        "hasPair": true
+      },
+      {
+        "after": {
+          "src": "/images/project/glow 5.jpg",
+          "alt": "글로우 5 인테리어 디자인"
+        },
+        "before": null,
+        "hasPair": false
       }
     ]
   }
