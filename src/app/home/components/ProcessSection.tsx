@@ -12,6 +12,7 @@ const ProcessSection = () => {
   return (
     <section className="py-12 md:py-16 lg:py-20">
       <SectionTitle
+        className="md:mb-32"
         title={homeContent.process.title}
         description={homeContent.process.description}
       />

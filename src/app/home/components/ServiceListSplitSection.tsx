@@ -9,7 +9,7 @@ export default function ServiceListSplitSection() {
 
   return (
     <section id="services-section">
-      <SectionTitle title={serviceList.title} description={serviceList.description} />
+      <SectionTitle className="md:mb-32" title={serviceList.title} description={serviceList.description} />
       {serviceList.items.map((service: SplitSectionProps, index: number) => (
         <SplitSection
           key={`service-section-${index}`}
