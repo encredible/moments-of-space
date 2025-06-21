@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:justify-between pb-2 text-xs">
             <div>
               <p className="mb-1 font-bold">공간의 순간</p>
-              <p className="mb-1">대표 : {typedFooterContent.ceo} ㅣ 사업자번호 : {typedFooterContent.businessNumber} ㅣ 통신판매업번호 :</p>
+              <p className="mb-1">대표 : {typedFooterContent.ceo} ㅣ 사업자번호 : {typedFooterContent.businessNumber}</p>
               <p>{typedFooterContent.detailedAddress}</p>
             </div>
           </div>
