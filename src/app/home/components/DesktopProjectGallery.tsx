@@ -17,8 +17,8 @@ interface GalleryImage {
 }
 
 interface HorizontalBeforeAfterGalleryProps {
-  title?: string;
-  subtitle?: string;
+  title: string;
+  subtitle: string;
   images: GalleryImage[];
   height?: number; // 갤러리 이미지 높이 (픽셀 단위)
 }

@@ -17,8 +17,8 @@ interface GalleryImage {
 }
 
 interface HorizontalGalleryProps {
-  title?: string;
-  subtitle?: string;
+  title: string;
+  subtitle: string;
   images: GalleryImage[];
   height?: number; // 갤러리 이미지 높이 (픽셀 단위)
 }
@@ -123,6 +123,13 @@ const MobileProjectGallery = ({
                     priority={index < 3} // 처음 몇 개 이미지는 우선 로드
                   />
                 </div>
+                
+                {/* Befrore | After 라벨 */}
+                {(image.hasPair) && (
+                  <div className="absolute top-3 left-3 text-neutral-100 px-2 py-1 text-xs font-medium z-10">
+                    Before | After
+                  </div>
+                )}
                 
                 {/* Before 이미지 (오버레이) - 페어가 있는 경우만 */}
                 {image.hasPair && image.before && (
