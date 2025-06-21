@@ -246,17 +246,17 @@ export default function TestResultPage() {
       <div className="max-w-xl mx-auto mt-6 mb-10 flex flex-col items-center">
           {isSharing ? (
             <div className="text-center py-3">
-              <p className="text-gray-700">{shareMessage}</p>
+              <p className="text-gray-700 font-korean-button">{shareMessage}</p>
             </div>
           ) : (
             <div className="flex space-x-4 font-korean-button">
-              <button 
-                onClick={saveAsImage}
-                disabled={!result}
-                className={`px-4 py-2 ${result ? 'bg-neutral-700 hover:bg-orange-400' : 'bg-gray-400 cursor-not-allowed'} text-white font-medium rounded-lg transition-colors flex items-center`}>
-                <CameraIcon className="w-5 h-5 mr-2" />
-                이미지로 저장
-              </button>
+              {/*<button */}
+              {/*  onClick={saveAsImage}*/}
+              {/*  disabled={!result}*/}
+              {/*  className={`px-4 py-2 ${result ? 'bg-neutral-700 hover:bg-orange-400' : 'bg-gray-400 cursor-not-allowed'} text-white font-medium rounded-lg transition-colors flex items-center`}>*/}
+              {/*  <CameraIcon className="w-5 h-5 mr-2" />*/}
+              {/*  이미지로 저장*/}
+              {/*</button>*/}
               <button 
                 onClick={copyUrlToClipboard}
                 disabled={!result}
@@ -264,17 +264,17 @@ export default function TestResultPage() {
                 <LinkIcon className="w-5 h-5 mr-2" />
                 URL 복사하기
               </button>
-              {
-                !isInAppBrowser() && (
-                  <button
-                    onClick={shareResult}
-                    disabled={!result}
-                    className={`px-4 py-2 ${result ? 'bg-neutral-700 hover:bg-orange-400' : 'bg-gray-400 cursor-not-allowed'} text-white font-medium rounded-lg transition-colors flex items-center`}>
-                    <ShareIcon className="w-5 h-5 mr-2" />
-                    결과 공유하기
-                  </button>
-                )
-              }
+              {/*{*/}
+              {/*  !isInAppBrowser() && (*/}
+              {/*    <button*/}
+              {/*      onClick={shareResult}*/}
+              {/*      disabled={!result}*/}
+              {/*      className={`px-4 py-2 ${result ? 'bg-neutral-700 hover:bg-orange-400' : 'bg-gray-400 cursor-not-allowed'} text-white font-medium rounded-lg transition-colors flex items-center`}>*/}
+              {/*      <ShareIcon className="w-5 h-5 mr-2" />*/}
+              {/*      결과 공유하기*/}
+              {/*    </button>*/}
+              {/*  )*/}
+              {/*}*/}
             </div>
           )}
         </div>
