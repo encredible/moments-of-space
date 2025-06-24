@@ -35,9 +35,6 @@ const MobileProjectGallery = ({
   const [showBeforeStates, setShowBeforeStates] = useState<boolean[]>(new Array(images.length).fill(false));
   // 페이드 효과를 위한 상태
   const [fadeStates, setFadeStates] = useState<boolean[]>(new Array(images.length).fill(false));
-  // 우선 로드할 이미지 인덱스 상태
-  const [priorityIndices, setPriorityIndices] = useState<number[]>([0, 1, 2, 3, 4]);
-
   const scrollToImage = (index: number) => {
     if (!scrollContainerRef.current) return;
     
@@ -53,34 +50,8 @@ const MobileProjectGallery = ({
         block: "nearest",
         inline: "center",
       });
-      
-      // 포커스된 이미지 다음 3개 이미지에 priority 부여
-      updatePriorityImages(index);
     }
   };
-  
-  // 포커스된 이미지 다음 3개 이미지에 priority 부여하는 함수
-  const updatePriorityImages = (focusedIndex: number) => {
-    const nextPriorityIndices: number[] = [];
-    
-    // 선택된 이미지 포함
-    nextPriorityIndices.push(focusedIndex);
-    
-    // 다음 3개 이미지 추가
-    for (let i = 1; i <= 5; i++) {
-      const nextIndex = focusedIndex + i;
-      if (nextIndex < images.length) {
-        nextPriorityIndices.push(nextIndex);
-      }
-    }
-    
-    setPriorityIndices(nextPriorityIndices);
-  };
-  
-  // 초기 마운트 시 첫 이미지와 다음 3개 이미지에 priority 부여
-  useEffect(() => {
-    updatePriorityImages(0);
-  }, []);
   
   // 이미지 더블 클릭 핸들러
   const handleDoubleClick = (index: number) => {
@@ -150,7 +121,7 @@ const MobileProjectGallery = ({
                     }}
                     sizes="(max-width: 768px) 90vw, 45vw"
                     quality={80}
-                    priority={priorityIndices.includes(index)}
+                    priority
                   />
                 </div>
                 
@@ -180,7 +151,7 @@ const MobileProjectGallery = ({
                       }}
                       sizes="(max-width: 768px) 90vw, 45vw"
                       quality={80}
-                      loading="eager"
+                      priority
                     />
                   </div>
                 )}
