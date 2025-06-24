@@ -175,9 +175,9 @@ export default function SpaceTypeTestPage() {
                     <button
                       key={option.id}
                       onClick={() => handleAnswer(option.value)}
-                      className="w-full text-left p-5 border border-gray-300 hover:border-orange-900 hover:bg-orange-400
-                                transition-all duration-200 ease-in-out group">
-                      <span className="text-lg font-medium text-gray-700 group-hover:text-orange-900">
+                      className="w-full text-left p-5 border border-gray-300
+                                transition-all duration-200 ease-in-out">
+                      <span className="text-lg font-medium text-gray-700">
                         {option.text}
                       </span>
                     </button>
